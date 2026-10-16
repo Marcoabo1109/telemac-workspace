@@ -1,0 +1,80 @@
+\chapter{Vasque: Uncovering of  a beach}
+\section{Purpose}
+To demonstrate that TELEMAC-2D is capable of representing the drying of a
+cylindrical beach presenting a pool.
+Also to show that TELEMAC works properly when disconnected water bodies exist
+within the study domain.
+
+\section{Description}
+\subsection{approach}
+A grid made of squares split into two triangles is used to represent a
+cylindrical beach presenting a pool. The
+water initially covers the entire domain. As the tide falls by 0,60 m, a
+46 m cross-shore length of the beach is
+uncovered, thus leaving the pool full of water at rest.
+
+\subsection{Geometry and mesh}
+\begin{itemize}
+\item Size of the model: channel = 46~m $\times$ 9~m
+\item Initial water level 0~m
+\end{itemize}
+
+The mesh is regular. It is made up with squares split into two triangles.
+\begin{itemize}
+\item 828 triangular elements
+\item 470 nodes
+\item Maximum size range: 2~m
+\end{itemize}
+
+\subsection{Boundaries}
+
+\begin{itemize}
+\item Shoreline: solid wall with slip condition
+\item Offshore boundary: Q = - 5 H / 0.6 imposed
+\item Lateral boundaries: solid walls with slip condition in the channel
+  \end{itemize}
+
+\subsection{bottom}
+The bottom is  defined by $Z_B=-0.6+0.01x+0.1e^{-\frac{-(x-19)^2}{20}}$.
+The strickler friction formula is used with friction coefficient =~40
+
+Mesh and topography are shown on Figure \ref{fig:vasque:Mesh} and \ref{fig:vasque:Bottom}
+
+\begin{figure}[H]
+ \centering
+ \includegraphicsmaybe{[width=.7\textwidth]}{../img/Mesh.png}
+  \caption{2D-mesh of the vasque case.}\label{fig:vasque:Mesh}
+\end{figure}
+\begin{figure}[H]
+ \centering
+ \includegraphicsmaybe{[width=.7\textwidth]}{../img/Bottom.png}
+  \caption{bathymetry of the vasque case.}\label{fig:vasque:Bottom}
+\end{figure}
+
+\subsection{Physical parameters}
+
+The model of turbulence is constant viscosity
+with velocity diffusivity = 10$^{-2}$~m$^2$/s.
+
+\subsection{Numerical parameters}
+Type of advection:
+\begin{itemize}
+\item Methods of characteristics on velocities (scheme \#1),
+\item Conservative + modified SUPG on depth (mandatory scheme)
+\item Solver accuracy =~10$^{-4}$
+\item Implicitation for depth and for velocity : 0.6
+\item Time step = 1~s.
+\item Simulation duration =~300 s.
+\end{itemize}
+
+
+\section{result}
+The water level decreases regularly over the beach. At the end of the
+calculation, the water depth is equal to
+zero upstream and downstream of the pool, and the water level in the pool
+is completely horizontal (see Figure \ref{fig:vasque:FreeSurface})
+\begin{figure}[H]
+ \centering
+ \includegraphicsmaybe{[width=.7\textwidth]}{../img/FreeSurface_Y5.png}
+  \caption{Evolution of the free surface elevation in time.}\label{fig:vasque:FreeSurface}
+\end{figure}
