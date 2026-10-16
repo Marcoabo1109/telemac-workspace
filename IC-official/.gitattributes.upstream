@@ -1,0 +1,3 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+telemac_workspace/tapajos-telemac-platform/data/tapajos/stations/raw/*.xml -text

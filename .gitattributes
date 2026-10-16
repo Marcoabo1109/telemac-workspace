@@ -1,0 +1,2 @@
+# Preserve snapshot bytes; large files use documented lossless archives.
+* -filter -diff -merge -text

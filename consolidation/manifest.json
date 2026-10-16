@@ -411,10 +411,11 @@
   },
   {
     "source": "IC-official/.gitattributes",
-    "published": "IC-official/.gitattributes",
+    "published": "IC-official/.gitattributes.upstream",
     "bytes": 147,
     "sha256": "4cfb9cc2e908ff1b7e87ba7bf0b71e1d2044c85dbc84054211f219a360edb0cc",
-    "gzip": false
+    "gzip": false,
+    "attribute_rules_archived": true
   },
   {
     "source": "IC-official/.github/workflows/tapajos-tests.yml",
@@ -7033,10 +7034,11 @@
   },
   {
     "source": "telemac-examples-ref/.gitattributes",
-    "published": "telemac-examples-ref/.gitattributes",
+    "published": "telemac-examples-ref/.gitattributes.upstream",
     "bytes": 294,
     "sha256": "05c113f87df126ea48ac96ee8fce443b61b062847063cba61440dacecb7bf17d",
-    "gzip": false
+    "gzip": false,
+    "attribute_rules_archived": true
   },
   {
     "source": "telemac-examples-ref/README.txt",
@@ -20267,10 +20269,11 @@
   },
   {
     "source": "tapajos-telemac-platform/vendor/telemac/.gitattributes",
-    "published": "tapajos-telemac-platform/vendor/telemac/.gitattributes",
+    "published": "tapajos-telemac-platform/vendor/telemac/.gitattributes.upstream",
     "bytes": 347,
     "sha256": "aa2d50723afbbd0f3e1635f9808989fd94c2dacf0b2bd05447e6bd9b9b3b9409",
-    "gzip": false
+    "gzip": false,
+    "attribute_rules_archived": true
   },
   {
     "source": "tapajos-telemac-platform/vendor/telemac/.gitfilterspec",

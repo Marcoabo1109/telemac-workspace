@@ -9,3 +9,5 @@ As cópias `IC-official` e `tapajos-telemac-platform` permanecem distintas. Não
 A pasta `entrega_caso_tapajos` continha apenas `.DS_Store`; não havia entrega científica a incluir nela. `github-publication.json` na raiz é um registro histórico da publicação anterior em `Marcoabo1109/IC`.
 
 Os originais em `/Users/marcoabo/telemac_workspace` não foram movidos nem alterados. Esta cópia foi preparada em `publication/telemac-workspace`.
+
+As regras `.gitattributes` de origem foram preservadas como `.gitattributes.upstream`; regras novas desativam filtros LFS e conversão de texto, para armazenar os bytes diretamente. O inventário registra esses caminhos de publicação.
