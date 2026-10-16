@@ -1,0 +1,65 @@
+{
+  "status": "executed_budget_review_required",
+  "returncode": 0,
+  "balance": {
+    "water_relative": [
+      1.477555e-15
+    ],
+    "sediment_relative_initial_active_layer": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "sediment_cumulated_lost_kg": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "results": [
+    {
+      "file": "r2d_nestor2.slf",
+      "sha256": "3b5aa7f72384cc3c1ed63afd1c2b6f3d6425f0cf4c1a6782d542e91bdccdbee2",
+      "final_time_s": 150.0
+    },
+    {
+      "file": "gai_nestor2.slf",
+      "sha256": "ae6d7ee6f049cc666a41d40d037017ef3cae2c238266d14dde6651c7b2178144",
+      "final_time_s": 150.0
+    }
+  ]
+}

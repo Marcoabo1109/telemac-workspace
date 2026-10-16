@@ -1,0 +1,1647 @@
+
+
+Loading Options and Configurations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+          ___          _____ 
+         / _ \        | ____|
+ __   __| (_) | _ __  | |__  
+ \ \ / / > _ < | '_ \ |___ \ 
+  \ V / | (_) || |_) | ___) |
+   \_/   \___/ | .__/ |____/ 
+               | |           
+               |_|           
+
+
+Running your CAS file(s) for:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+gnu: 
+    
+
+    +> Portable GNU/OpenMPI TELEMAC2D build, no architecture-specific patch
+
+    +> root:    /opt/telemac
+    +> module: ad / api / artemis / bief
+               damocles  / gaia  / gretel  / hermes
+               identify_liq_bnd  / khione  / mascaret  / nestor
+               parallel  / partel  / postel3d  / special
+               stbtel  / telemac2d  / telemac3d  / tomawac
+               waqtel
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+... processing the steering file
+  ~> Checking keyword/rubrique coherence
+  ~> Checking keyword/rubrique coherence
+
+... checking parallelisation
+
+... handling temporary directories
+         copying: t2d_flume_bc.cas -> /app/models/synthetic_sediment/sand_bedload/t2d_flume_bc.cas_2026-10-13-23h22min16s/T2DCAS
+         copying: telemac2d.dico -> /app/models/synthetic_sediment/sand_bedload/t2d_flume_bc.cas_2026-10-13-23h22min16s/T2DDICO
+         copying: geo_flume_bc.slf -> /app/models/synthetic_sediment/sand_bedload/t2d_flume_bc.cas_2026-10-13-23h22min16s/T2DGEO
+         copying: geo_flume_bc.cli -> /app/models/synthetic_sediment/sand_bedload/t2d_flume_bc.cas_2026-10-13-23h22min16s/T2DCLI
+         copying: gai_flume_bc.cas -> /app/models/synthetic_sediment/sand_bedload/t2d_flume_bc.cas_2026-10-13-23h22min16s/GAICAS
+         copying: gaia.dico -> /app/models/synthetic_sediment/sand_bedload/t2d_flume_bc.cas_2026-10-13-23h22min16s/GAIDICO
+         copying: geo_flume_bc.slf -> /app/models/synthetic_sediment/sand_bedload/t2d_flume_bc.cas_2026-10-13-23h22min16s/GAIGEO
+         copying: geo_flume_bc.cli -> /app/models/synthetic_sediment/sand_bedload/t2d_flume_bc.cas_2026-10-13-23h22min16s/GAICLI
+
+... checking the executable
+  > compiling objs
+         compiling: user_condin_h.f ... completed
+         compiling: user_corfon.f ... completed
+         created: out_user_fortran
+
+
+Running your simulation(s) :
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+In /app/models/synthetic_sediment/sand_bedload/t2d_flume_bc.cas_2026-10-13-23h22min16s:
+mpirun -np 1 /app/models/synthetic_sediment/sand_bedload/t2d_flume_bc.cas_2026-10-13-23h22min16s/out_user_fortran
+
+
+ MASTER PROCESSOR NUMBER            0  OF THE GROUP OF            1
+ EXECUTABLE FILE: /app/models/synthetic_sediment/sand_bedload/t2d_flume_bc.cas_2026-10-13-23h22min16s/A.EXE
+ LISTING OF TELEMAC2D------------------------------------------------------------------------------
+
+                TTTTT  EEEEE  L      EEEEE  M   M  AAAAA  CCCCC
+                  T    E      L      E      MM MM  A   A  C
+                  T    EEE    L      EEE    M M M  AAAAA  C
+                  T    E      L      E      M   M  A   A  C
+                  T    EEEEE  LLLLL  EEEEE  M   M  A   A  CCCCC
+
+                        2D    VERSION V8P5   FORTRAN 2003
+
+                        ~^~^~^~^~^~^~^~^~^~^~^^~^~^~^~^~^~
+                          ~                            ~
+                               \   '    o      '
+                               /\ o       \  o
+                             >=)'>    '   /\ '
+                               \/   \   >=)'>        ~
+                               /    /\    \/
+                        ~         >=)'>   /     .
+                                    \/                   )
+                                    /                   (
+                                          ~          )   )
+                          }     ~              (    (   (
+                         {                      )    )   )
+                          }  }         .       (    (   (
+                         {  {               /^^^^^^^^^^^^
+                        ^^^^^^^^^\         /
+                                  ^^^^^^^^^
+
+ DIFFERENT NUMBER OF PARALLEL PROCESSORS:
+ DECLARED BEFORE (CASE OF COUPLING ?):           1
+ TELEMAC-2D :           0
+ VALUE            1  IS KEPT
+
+                   ********************************************
+                   *               LECDON:                    *
+                   *        AFTER CALLING DAMOCLES            *
+                   *        CHECKING OF DATA  READ            *
+                   *         IN THE STEERING FILE             *
+                   ********************************************
+
+ NO SPECIFIC TREATMENT OF DRY ZONES
+  IN FINITE VOLUMES
+
+ EXITING LECDON. NAME OF THE STUDY:
+ FLUME BC TEST
+
+ OPENING FILES FOR TELEMAC2D
+ OPENING: T2DGEO-geo_flume_bc.slf
+ OPENING: T2DCLI-geo_flume_bc.cli
+ OPENING: T2DRES-r2d_flume_bc.slf
+
+                          *****************************
+                          *    MEMORY ORGANIZATION    *
+                          *****************************
+
+ READ_MESH_INFO: TITLE= newSelafin
+            NUMBER OF ELEMENTS:     5400
+            NUMBER OF POINTS:     3010
+
+            TYPE OF ELEMENT: TRIANGLE
+            TYPE OF BND ELEMENT: POINT
+
+            FORMAT NOT INDICATED IN TITLE
+
+ MXPTEL (BIEF) : MAXIMUM NUMBER OF ELEMENTS AROUND A POINT:   7
+                 MAXIMUM NUMBER OF POINTS AROUND A POINT:   7
+ USER_CORRXY (BIEF):NO MODIFICATION OF COORDINATES
+
+ MESH: MESH   ALLOCATED
+
+                     *************************************
+                     *    END OF MEMORY ORGANIZATION:    *
+                     *************************************
+
+ LISTING OF GAIA------------------------------------------------------------------------------
+                     COUPLED WITH TELEMAC2D INTERNALLY
+
+ DIFFERENT NUMBER OF PARALLEL PROCESSORS:
+ DECLARED BEFORE (CASE OF COUPLING ?):           1
+ GAIA :           0
+ VALUE            1  IS KEPT
+
+                   ********************************************
+                   *               LECDON:                    *
+                   *        AFTER CALLING DAMOCLES            *
+                   *        CHECKING OF DATA  READ            *
+                   *         IN THE STEERING FILE             *
+                   ********************************************
+
+ OPENING FILES FOR GAIA
+ OPENING: GAIGEO-geo_flume_bc.slf
+ OPENING: GAIRES-gai_flume_bc.slf
+ OPENING: GAICLI-geo_flume_bc.cli
+
+                     *******************************
+                     *     MEMORY ORGANISATION     *
+                     *******************************
+
+ READ_MESH_INFO: TITLE= newSelafin
+            NUMBER OF ELEMENTS:     5400
+            NUMBER OF POINTS:     3010
+
+            TYPE OF ELEMENT: TRIANGLE
+            TYPE OF BND ELEMENT: POINT
+
+            FORMAT NOT INDICATED IN TITLE
+
+ MXPTEL (BIEF) : MAXIMUM NUMBER OF ELEMENTS AROUND A POINT:   7
+                 MAXIMUM NUMBER OF POINTS AROUND A POINT:   7
+ USER_CORRXY (BIEF):NO MODIFICATION OF COORDINATES
+
+ MESH: MESH_S ALLOCATED
+
+                     *************************************
+                     *    END OF MEMORY ORGANIZATION:    *
+                     *************************************
+
+ INITIALIZING TELEMAC2D FOR
+ INBIEF (BIEF): NOT A VECTOR MACHINE (ACCORDING TO YOUR DATA)
+
+ FONSTR (BIEF): NO BATHYMETRY IN THE GEOMETRY FILE
+                AND NO BATHYMETRY FILE. THE BOTTOM
+                LEVEL IS FIXED TO ZERO BUT STILL
+                CAN BE MODIFIED IN CORFON.
+
+ STRCHE (BIEF): NO MODIFICATION OF FRICTION
+
+ THERE IS     2 LIQUID BOUNDARIES:
+
+ BOUNDARY    1 :
+  BEGINS AT BOUNDARY POINT:      301 , WITH GLOBAL NUMBER:      3010
+  AND COORDINATES:     30.00000           0.000000
+  ENDS AT BOUNDARY POINT:      310 , WITH GLOBAL NUMBER:       301
+  AND COORDINATES:     30.00000           1.000000
+
+ BOUNDARY    2 :
+  BEGINS AT BOUNDARY POINT:      610 , WITH GLOBAL NUMBER:         1
+  AND COORDINATES:     0.000000           1.000000
+  ENDS AT BOUNDARY POINT:        1 , WITH GLOBAL NUMBER:      2710
+  AND COORDINATES:     0.000000           0.000000
+
+ THERE IS     2 SOLID BOUNDARIES:
+
+ BOUNDARY    1 :
+  BEGINS AT BOUNDARY POINT:        1 , WITH GLOBAL NUMBER:      2710
+  AND COORDINATES:     0.000000           0.000000
+  ENDS AT BOUNDARY POINT:      301 , WITH GLOBAL NUMBER:      3010
+  AND COORDINATES:     30.00000           0.000000
+
+ BOUNDARY    2 :
+  BEGINS AT BOUNDARY POINT:      310 , WITH GLOBAL NUMBER:       301
+  AND COORDINATES:     30.00000           1.000000
+  ENDS AT BOUNDARY POINT:      610 , WITH GLOBAL NUMBER:         1
+  AND COORDINATES:     0.000000           1.000000
+
+ CORFON (TELEMAC2D): NO BOTTOM SMOOTHINGS
+
+================================================================================
+ ITERATION        0    TIME:   0.0000 S
+ TELEMAC2D COUPLED WITH: GAIA
+ TELEMAC-2D: INTERNAL COUPLING WITH GAIA
+ INBIEF (BIEF): NOT A VECTOR MACHINE (ACCORDING TO YOUR DATA)
+
+ THERE IS     2 LIQUID BOUNDARIES:
+
+ BOUNDARY    1 :
+  BEGINS AT BOUNDARY POINT:      301 , WITH GLOBAL NUMBER:      3010
+  AND COORDINATES:     30.00000           0.000000
+  ENDS AT BOUNDARY POINT:      310 , WITH GLOBAL NUMBER:       301
+  AND COORDINATES:     30.00000           1.000000
+
+ BOUNDARY    2 :
+  BEGINS AT BOUNDARY POINT:      610 , WITH GLOBAL NUMBER:         1
+  AND COORDINATES:     0.000000           1.000000
+  ENDS AT BOUNDARY POINT:        1 , WITH GLOBAL NUMBER:      2710
+  AND COORDINATES:     0.000000           0.000000
+
+ THERE IS     2 SOLID BOUNDARIES:
+
+ BOUNDARY    1 :
+  BEGINS AT BOUNDARY POINT:        1 , WITH GLOBAL NUMBER:      2710
+  AND COORDINATES:     0.000000           0.000000
+  ENDS AT BOUNDARY POINT:      301 , WITH GLOBAL NUMBER:      3010
+  AND COORDINATES:     30.00000           0.000000
+
+ BOUNDARY    2 :
+  BEGINS AT BOUNDARY POINT:      310 , WITH GLOBAL NUMBER:       301
+  AND COORDINATES:     30.00000           1.000000
+  ENDS AT BOUNDARY POINT:      610 , WITH GLOBAL NUMBER:         1
+  AND COORDINATES:     0.000000           1.000000
+
+                    GAIA INITIAL MASS OF SEDIMENTS:
+ TOTAL MASS OF CLASS  1 =    4770000.    ( KG )
+ QSCL REINITIALISED IN INIT_TRANSPORT
+ FOR CLASS            1
+ QS REINITIALISED IN INIT_TRANSPORT
+
+================================================================================
+ ITERATION        0    TIME:   0.0000 S
+
+ GAIA COUPLED WITH: TELEMAC2D
+ TELEMAC2D INITIALIZED
+
+                  ********************************
+                  *                              *
+                  *       KINETIC SCHEME         *
+                  *     FIRST ORDRE IN SPACE     *
+                  *                              *
+                  ********************************
+
+================================================================================
+ ITERATION     5400    TIME:  29.5330 S
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+
+================================================================================
+ ITERATION     5400    TIME:  29.5401 S
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.4576158E-06  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    1                =    -0.000000      ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    2                =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =     0.000000      ( KG/S )
+     DEPOSITION FLUX                           =     0.000000      ( KG/S )
+     TOTAL MASS                                =     4770000.      ( KG )
+     LOST MASS                                 =   -0.5866218E-19  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =   -0.1229815E-25
+     RELATIVE ERROR 0N MASS                    =   -0.1281909E-12
+
+ MAXIMAL EVOLUTION (M)    :    0.2858372E-06 NODE  :  2774
+ MINIMAL EVOLUTION (M)    :   -0.2775669E-05 NODE  :  1807
+ TOTAL MAXIMAL EVOLUTION  :    0.5192539E-03 NODE  :  2430
+ TOTAL MINIMAL EVOLUTION  :   -0.2711784E-01 NODE  :  1807
+ TIME-STEP:    7.0917399746858942E-003
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    3.527204     M3
+     FLUX BOUNDARY    1:   -0.2225482E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    0.3550000E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        29.54     S :    0.3346747E-15
+
+================================================================================
+ ITERATION    10800    TIME:  1 MN  10.9365 S   (       70.9365 S)
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+
+================================================================================
+ ITERATION    10800    TIME:  1 MN  10.9446 S     (     70.9446 S)
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =   -0.5205426E-05  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =   -0.6488529E-03  ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    1                =   -0.7133809E-03  ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    2                =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =     0.000000      ( KG/S )
+     DEPOSITION FLUX                           =     0.000000      ( KG/S )
+     TOTAL MASS                                =     4770000.      ( KG )
+     LOST MASS                                 =   -0.1672875E-18  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =   -0.3507076E-25
+
+ MAXIMAL EVOLUTION (M)    :    0.3428718E-07 NODE  :    31
+ MINIMAL EVOLUTION (M)    :   -0.1428258E-05 NODE  :  1807
+ TOTAL MAXIMAL EVOLUTION  :    0.9043077E-03 NODE  :  2432
+ TOTAL MINIMAL EVOLUTION  :   -0.3769245E-01 NODE  :  1807
+ TIME-STEP:    8.0225046117507887E-003
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    3.589043     M3
+     FLUX BOUNDARY    1:   -0.4219976E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    0.3550000E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        70.94     S :    0.4740458E-15
+
+================================================================================
+ ITERATION    16200    TIME:  1 MN  54.2731 S   (      114.2731 S)
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+
+================================================================================
+ ITERATION    16200    TIME:  1 MN  54.2812 S     (    114.2812 S)
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.5209336E-06  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    1                =    -0.000000      ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    2                =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =     0.000000      ( KG/S )
+     DEPOSITION FLUX                           =     0.000000      ( KG/S )
+     TOTAL MASS                                =     4770000.      ( KG )
+     LOST MASS                                 =    0.8793203E-19  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =    0.1843439E-25
+     RELATIVE ERROR 0N MASS                    =    0.1687970E-12
+
+ MAXIMAL EVOLUTION (M)    :    0.6642911E-07 NODE  :  2449
+ MINIMAL EVOLUTION (M)    :   -0.1278520E-05 NODE  :  1807
+ TOTAL MAXIMAL EVOLUTION  :    0.1124427E-02 NODE  :  2435
+ TOTAL MINIMAL EVOLUTION  :   -0.4516994E-01 NODE  :  1807
+ TIME-STEP:    8.0729859444445135E-003
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    3.465683     M3
+     FLUX BOUNDARY    1:   -0.3387759E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    0.3550000E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        114.3     S :    0.1490342E-15
+
+================================================================================
+ ITERATION    21600    TIME:  2 MN  38.2920 S   (      158.2920 S)
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+
+================================================================================
+ ITERATION    21600    TIME:  2 MN  38.3003 S     (    158.3003 S)
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.5315385E-06  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    1                =    -0.000000      ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    2                =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =     0.000000      ( KG/S )
+     DEPOSITION FLUX                           =     0.000000      ( KG/S )
+     TOTAL MASS                                =     4770000.      ( KG )
+     LOST MASS                                 =    0.3793025E-19  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =    0.7951833E-26
+     RELATIVE ERROR 0N MASS                    =    0.7135936E-13
+
+ MAXIMAL EVOLUTION (M)    :    0.6207766E-07 NODE  :  2443
+ MINIMAL EVOLUTION (M)    :   -0.9632951E-06 NODE  :  1807
+ TOTAL MAXIMAL EVOLUTION  :    0.1480497E-02 NODE  :  2438
+ TOTAL MINIMAL EVOLUTION  :   -0.5125616E-01 NODE  :  1807
+ TIME-STEP:    8.2373307046515309E-003
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    3.531676     M3
+     FLUX BOUNDARY    1:   -0.3540916E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    0.3550000E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        158.3     S :    0.3030228E-16
+
+================================================================================
+ ITERATION    27000    TIME:  3 MN  22.9991 S   (      202.9991 S)
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+
+================================================================================
+ ITERATION    27000    TIME:  3 MN  23.0074 S     (    203.0074 S)
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.5360584E-06  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    1                =    -0.000000      ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    2                =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =     0.000000      ( KG/S )
+     DEPOSITION FLUX                           =     0.000000      ( KG/S )
+     TOTAL MASS                                =     4770000.      ( KG )
+     LOST MASS                                 =   -0.2219600E-18  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =   -0.4653249E-25
+     RELATIVE ERROR 0N MASS                    =   -0.4140593E-12
+
+ MAXIMAL EVOLUTION (M)    :    0.6164360E-07 NODE  :  2447
+ MINIMAL EVOLUTION (M)    :   -0.7976022E-06 NODE  :  1807
+ TOTAL MAXIMAL EVOLUTION  :    0.1778851E-02 NODE  :  2441
+ TOTAL MINIMAL EVOLUTION  :   -0.5594839E-01 NODE  :  1807
+ TIME-STEP:    8.3073765923200992E-003
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    3.506002     M3
+     FLUX BOUNDARY    1:   -0.3576186E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    0.3550000E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        203.0     S :    0.5076509E-15
+
+================================================================================
+ ITERATION    32400    TIME:  4 MN   7.9754 S   (      247.9754 S)
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+
+================================================================================
+ ITERATION    32400    TIME:  4 MN   7.9838 S     (    247.9838 S)
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.5388654E-06  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    1                =    -0.000000      ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    2                =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =     0.000000      ( KG/S )
+     DEPOSITION FLUX                           =     0.000000      ( KG/S )
+     TOTAL MASS                                =     4770000.      ( KG )
+     LOST MASS                                 =   -0.1448105E-18  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =   -0.3035860E-25
+     RELATIVE ERROR 0N MASS                    =   -0.2687323E-12
+
+ MAXIMAL EVOLUTION (M)    :    0.6488895E-07 NODE  :  2449
+ MINIMAL EVOLUTION (M)    :   -0.6775482E-06 NODE  :  1807
+ TOTAL MAXIMAL EVOLUTION  :    0.2093617E-02 NODE  :  2443
+ TOTAL MINIMAL EVOLUTION  :   -0.5993357E-01 NODE  :  1807
+ TIME-STEP:    8.3508775955912062E-003
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    3.514035     M3
+     FLUX BOUNDARY    1:   -0.3526464E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    0.3550000E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        248.0     S :   -0.1906387E-14
+
+================================================================================
+ ITERATION    37800    TIME:  4 MN  53.1634 S   (      293.1634 S)
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+
+================================================================================
+ ITERATION    37800    TIME:  4 MN  53.1718 S     (    293.1718 S)
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.5408772E-06  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    1                =    -0.000000      ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    2                =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =     0.000000      ( KG/S )
+     DEPOSITION FLUX                           =     0.000000      ( KG/S )
+     TOTAL MASS                                =     4770000.      ( KG )
+     LOST MASS                                 =    0.1654998E-18  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =    0.3469598E-25
+     RELATIVE ERROR 0N MASS                    =    0.3059842E-12
+
+ MAXIMAL EVOLUTION (M)    :    0.6369997E-07 NODE  :  2451
+ MINIMAL EVOLUTION (M)    :   -0.5802236E-06 NODE  :  1807
+ TOTAL MAXIMAL EVOLUTION  :    0.2403190E-02 NODE  :  2445
+ TOTAL MINIMAL EVOLUTION  :   -0.6331139E-01 NODE  :  1807
+ TIME-STEP:    8.3820539106308264E-003
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    3.514462     M3
+     FLUX BOUNDARY    1:   -0.3558885E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    0.3550000E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        293.2     S :   -0.1878246E-14
+
+================================================================================
+ ITERATION    43200    TIME:  5 MN  38.4787 S   (      338.4787 S)
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+
+================================================================================
+ ITERATION    43200    TIME:  5 MN  38.4871 S     (    338.4871 S)
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.5420590E-06  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    1                =    -0.000000      ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    2                =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =     0.000000      ( KG/S )
+     DEPOSITION FLUX                           =     0.000000      ( KG/S )
+     TOTAL MASS                                =     4770000.      ( KG )
+     LOST MASS                                 =    0.1524382E-19  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =    0.3195769E-26
+     RELATIVE ERROR 0N MASS                    =    0.2812207E-13
+
+ MAXIMAL EVOLUTION (M)    :    0.6501249E-07 NODE  :  2453
+ MINIMAL EVOLUTION (M)    :   -0.5097683E-06 NODE  :  1807
+ TOTAL MAXIMAL EVOLUTION  :    0.2708780E-02 NODE  :  2447
+ TOTAL MINIMAL EVOLUTION  :   -0.6624845E-01 NODE  :  1807
+ TIME-STEP:    8.4003690611196453E-003
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    3.514333     M3
+     FLUX BOUNDARY    1:   -0.3543956E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    0.3550000E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        338.5     S :    0.3310442E-14
+
+================================================================================
+ ITERATION    48600    TIME:  6 MN  23.8782 S   (      383.8782 S)
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+
+================================================================================
+ ITERATION    48600    TIME:  6 MN  23.8866 S     (    383.8866 S)
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.5428980E-06  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    1                =    -0.000000      ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    2                =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =     0.000000      ( KG/S )
+     DEPOSITION FLUX                           =     0.000000      ( KG/S )
+     TOTAL MASS                                =     4770000.      ( KG )
+     LOST MASS                                 =    0.1625697E-18  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =    0.3408169E-25
+     RELATIVE ERROR 0N MASS                    =    0.2994479E-12
+
+ MAXIMAL EVOLUTION (M)    :    0.6514060E-07 NODE  :  2455
+ MINIMAL EVOLUTION (M)    :   -0.4511070E-06 NODE  :  1807
+ TOTAL MAXIMAL EVOLUTION  :    0.3012848E-02 NODE  :  2449
+ TOTAL MINIMAL EVOLUTION  :   -0.6883701E-01 NODE  :  1807
+ TIME-STEP:    8.4133710964064360E-003
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    3.515960     M3
+     FLUX BOUNDARY    1:   -0.3549487E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    0.3550000E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        383.9     S :    0.1712422E-14
+
+================================================================================
+ ITERATION    54000    TIME:  7 MN   9.3343 S   (      429.3343 S)
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+
+================================================================================
+ ITERATION    54000    TIME:  7 MN   9.3427 S     (    429.3427 S)
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.5434280E-06  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    1                =    -0.000000      ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    2                =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =     0.000000      ( KG/S )
+     DEPOSITION FLUX                           =     0.000000      ( KG/S )
+     TOTAL MASS                                =     4770000.      ( KG )
+     LOST MASS                                 =   -0.2429216E-19  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =   -0.5092697E-26
+     RELATIVE ERROR 0N MASS                    =   -0.4470171E-13
+
+ MAXIMAL EVOLUTION (M)    :    0.6577710E-07 NODE  :  2457
+ MINIMAL EVOLUTION (M)    :   -0.4041398E-06 NODE  :  1807
+ TOTAL MAXIMAL EVOLUTION  :    0.3312580E-02 NODE  :  2451
+ TOTAL MINIMAL EVOLUTION  :   -0.7114193E-01 NODE  :  1807
+ TIME-STEP:    8.4215847731295788E-003
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    3.516295     M3
+     FLUX BOUNDARY    1:   -0.3548151E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    0.3550000E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        429.3     S :   -0.3689596E-14
+
+================================================================================
+ ITERATION    59400    TIME:  7 MN  54.8262 S   (      474.8262 S)
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+
+================================================================================
+ ITERATION    59400    TIME:  7 MN  54.8347 S     (    474.8347 S)
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.5437709E-06  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    1                =    -0.000000      ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    2                =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =     0.000000      ( KG/S )
+     DEPOSITION FLUX                           =     0.000000      ( KG/S )
+     TOTAL MASS                                =     4770000.      ( KG )
+     LOST MASS                                 =   -0.4180460E-19  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =   -0.8764067E-26
+     RELATIVE ERROR 0N MASS                    =   -0.7687907E-13
+
+ MAXIMAL EVOLUTION (M)    :    0.6629185E-07 NODE  :  2459
+ MINIMAL EVOLUTION (M)    :   -0.3725517E-06 NODE  :  1808
+ TOTAL MAXIMAL EVOLUTION  :    0.3610290E-02 NODE  :  2452
+ TOTAL MINIMAL EVOLUTION  :   -0.7321518E-01 NODE  :  1807
+ TIME-STEP:    8.4268980766424150E-003
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    3.517235     M3
+     FLUX BOUNDARY    1:   -0.3548279E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    0.3550000E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        474.8     S :    0.3068651E-15
+
+================================================================================
+ ITERATION    64800    TIME:  8 MN  40.3409 S   (      520.3409 S)
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+
+================================================================================
+ ITERATION    64800    TIME:  8 MN  40.3494 S     (    520.3494 S)
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.5439768E-06  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    1                =    -0.000000      ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    2                =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =     0.000000      ( KG/S )
+     DEPOSITION FLUX                           =     0.000000      ( KG/S )
+     TOTAL MASS                                =     4770000.      ( KG )
+     LOST MASS                                 =    0.1380978E-19  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =    0.2895132E-26
+     RELATIVE ERROR 0N MASS                    =    0.2538671E-13
+
+ MAXIMAL EVOLUTION (M)    :    0.6685976E-07 NODE  :  2461
+ MINIMAL EVOLUTION (M)    :   -0.3458824E-06 NODE  :  1808
+ TOTAL MAXIMAL EVOLUTION  :    0.3905503E-02 NODE  :  2454
+ TOTAL MINIMAL EVOLUTION  :   -0.7509341E-01 NODE  :  1807
+ TIME-STEP:    8.4300890207173081E-003
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    3.517898     M3
+     FLUX BOUNDARY    1:   -0.3548534E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    0.3550000E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        520.3     S :    0.2048736E-14
+
+================================================================================
+ ITERATION    70200    TIME:  9 MN  25.8685 S   (      565.8685 S)
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+
+================================================================================
+ ITERATION    70200    TIME:  9 MN  25.8769 S     (    565.8769 S)
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.5440856E-06  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    1                =    -0.000000      ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    2                =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =     0.000000      ( KG/S )
+     DEPOSITION FLUX                           =     0.000000      ( KG/S )
+     TOTAL MASS                                =     4770000.      ( KG )
+     LOST MASS                                 =    0.1189101E-18  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =    0.2492874E-25
+     RELATIVE ERROR 0N MASS                    =    0.2185503E-12
+
+ MAXIMAL EVOLUTION (M)    :    0.6743377E-07 NODE  :  2463
+ MINIMAL EVOLUTION (M)    :   -0.3228931E-06 NODE  :  2410
+ TOTAL MAXIMAL EVOLUTION  :    0.4195938E-02 NODE  :  2456
+ TOTAL MINIMAL EVOLUTION  :   -0.7680648E-01 NODE  :  1807
+ TIME-STEP:    8.4317753705675930E-003
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    3.518616     M3
+     FLUX BOUNDARY    1:   -0.3548415E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    0.3550000E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        565.9     S :    0.1108991E-15
+
+================================================================================
+ ITERATION    75600    TIME: 10 MN  11.4022 S   (      611.4022 S)
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+
+================================================================================
+ ITERATION    75600    TIME: 10 MN  11.4106 S     (    611.4106 S)
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.5441250E-06  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    1                =    -0.000000      ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    2                =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =     0.000000      ( KG/S )
+     DEPOSITION FLUX                           =     0.000000      ( KG/S )
+     TOTAL MASS                                =     4770000.      ( KG )
+     LOST MASS                                 =   -0.7000314E-19  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =   -0.1467571E-25
+     RELATIVE ERROR 0N MASS                    =   -0.1286527E-12
+
+ MAXIMAL EVOLUTION (M)    :    0.6797946E-07 NODE  :  2464
+ MINIMAL EVOLUTION (M)    :   -0.3030494E-06 NODE  :  2410
+ TOTAL MAXIMAL EVOLUTION  :    0.4485295E-02 NODE  :  2457
+ TOTAL MINIMAL EVOLUTION  :   -0.7837750E-01 NODE  :  1807
+ TIME-STEP:    8.4323862927367984E-003
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    3.519299     M3
+     FLUX BOUNDARY    1:   -0.3548551E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    0.3550000E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        611.4     S :   -0.1362869E-15
+
+================================================================================
+ ITERATION    81000    TIME: 10 MN  56.9369 S   (      656.9369 S)
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+
+================================================================================
+ ITERATION    81000    TIME: 10 MN  56.9453 S     (    656.9453 S)
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.5441139E-06  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    1                =    -0.000000      ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    2                =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =     0.000000      ( KG/S )
+     DEPOSITION FLUX                           =     0.000000      ( KG/S )
+     TOTAL MASS                                =     4770000.      ( KG )
+     LOST MASS                                 =   -0.1361849E-18  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =   -0.2855029E-25
+     RELATIVE ERROR 0N MASS                    =   -0.2502874E-12
+
+ MAXIMAL EVOLUTION (M)    :    0.6865200E-07 NODE  :  2466
+ MINIMAL EVOLUTION (M)    :   -0.2853955E-06 NODE  :  2410
+ TOTAL MAXIMAL EVOLUTION  :    0.4769982E-02 NODE  :  2459
+ TOTAL MINIMAL EVOLUTION  :   -0.7982526E-01 NODE  :  1807
+ TIME-STEP:    8.4322136325704171E-003
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    3.519960     M3
+     FLUX BOUNDARY    1:   -0.3548552E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    0.3550000E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        656.9     S :    0.2822884E-17
+
+================================================================================
+ ITERATION    86400    TIME: 11 MN  42.4691 S   (      702.4691 S)
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+
+================================================================================
+ ITERATION    86400    TIME: 11 MN  42.4775 S     (    702.4775 S)
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.5440662E-06  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    1                =    -0.000000      ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    2                =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =     0.000000      ( KG/S )
+     DEPOSITION FLUX                           =     0.000000      ( KG/S )
+     TOTAL MASS                                =     4770000.      ( KG )
+     LOST MASS                                 =   -0.4053719E-19  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =   -0.8498363E-26
+     RELATIVE ERROR 0N MASS                    =   -0.7450783E-13
+
+ MAXIMAL EVOLUTION (M)    :    0.6926834E-07 NODE  :  2468
+ MINIMAL EVOLUTION (M)    :   -0.2695752E-06 NODE  :  2410
+ TOTAL MAXIMAL EVOLUTION  :    0.5053258E-02 NODE  :  2460
+ TOTAL MINIMAL EVOLUTION  :   -0.8116512E-01 NODE  :  1807
+ TIME-STEP:    8.4314748558620180E-003
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    3.520608     M3
+     FLUX BOUNDARY    1:   -0.3548603E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    0.3550000E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        702.5     S :   -0.3270045E-14
+
+================================================================================
+ ITERATION    91800    TIME: 12 MN  27.9961 S   (      747.9961 S)
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+
+================================================================================
+ ITERATION    91800    TIME: 12 MN  28.0045 S     (    748.0045 S)
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.5439921E-06  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    1                =    -0.000000      ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    2                =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =     0.000000      ( KG/S )
+     DEPOSITION FLUX                           =     0.000000      ( KG/S )
+     TOTAL MASS                                =     4770000.      ( KG )
+     LOST MASS                                 =    0.7975049E-19  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =    0.1671918E-25
+     RELATIVE ERROR 0N MASS                    =    0.1466023E-12
+
+ MAXIMAL EVOLUTION (M)    :    0.6994368E-07 NODE  :  2469
+ MINIMAL EVOLUTION (M)    :   -0.2553175E-06 NODE  :  2410
+ TOTAL MAXIMAL EVOLUTION  :    0.5331038E-02 NODE  :  2462
+ TOTAL MINIMAL EVOLUTION  :   -0.8240975E-01 NODE  :  1807
+ TIME-STEP:    8.4303258730811844E-003
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    3.521236     M3
+     FLUX BOUNDARY    1:   -0.3548635E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    0.3550000E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        748.0     S :   -0.3565681E-15
+
+================================================================================
+ ITERATION    97200    TIME: 13 MN  13.5160 S   (      793.5160 S)
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+
+================================================================================
+ ITERATION    97200    TIME: 13 MN  13.5245 S     (    793.5245 S)
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.5438990E-06  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    1                =    -0.000000      ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    2                =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =     0.000000      ( KG/S )
+     DEPOSITION FLUX                           =     0.000000      ( KG/S )
+     TOTAL MASS                                =     4770000.      ( KG )
+     LOST MASS                                 =   -0.2540032E-20  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =   -0.5325015E-27
+     RELATIVE ERROR 0N MASS                    =   -0.4670044E-14
+
+ MAXIMAL EVOLUTION (M)    :    0.7060581E-07 NODE  :  2471
+ MINIMAL EVOLUTION (M)    :   -0.2423981E-06 NODE  :  2410
+ TOTAL MAXIMAL EVOLUTION  :    0.5609513E-02 NODE  :  2463
+ TOTAL MINIMAL EVOLUTION  :   -0.8356981E-01 NODE  :  1807
+ TIME-STEP:    8.4288831005156686E-003
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    3.521850     M3
+     FLUX BOUNDARY    1:   -0.3548668E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    0.3550000E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        793.5     S :    0.9080558E-17
+
+================================================================================
+ ITERATION   102600    TIME: 13 MN  59.0276 S   (      839.0276 S)
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+
+================================================================================
+ ITERATION   102600    TIME: 13 MN  59.0361 S     (    839.0361 S)
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.5437925E-06  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    1                =    -0.000000      ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    2                =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =     0.000000      ( KG/S )
+     DEPOSITION FLUX                           =     0.000000      ( KG/S )
+     TOTAL MASS                                =     4770000.      ( KG )
+     LOST MASS                                 =   -0.1661222E-18  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =   -0.3482645E-25
+     RELATIVE ERROR 0N MASS                    =   -0.3054882E-12
+
+ MAXIMAL EVOLUTION (M)    :    0.7133289E-07 NODE  :  2472
+ MINIMAL EVOLUTION (M)    :   -0.2306357E-06 NODE  :  2410
+ TOTAL MAXIMAL EVOLUTION  :    0.5882581E-02 NODE  :  2464
+ TOTAL MINIMAL EVOLUTION  :   -0.8465426E-01 NODE  :  1807
+ TIME-STEP:    8.4272331210171886E-003
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    3.522449     M3
+     FLUX BOUNDARY    1:   -0.3548699E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    0.3550000E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        839.0     S :    0.4487170E-14
+
+================================================================================
+ ITERATION   108000    TIME: 14 MN  44.5299 S   (      884.5299 S)
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+
+================================================================================
+ ITERATION   108000    TIME: 14 MN  44.5383 S     (    884.5383 S)
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.5436769E-06  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    1                =    -0.000000      ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    2                =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =     0.000000      ( KG/S )
+     DEPOSITION FLUX                           =     0.000000      ( KG/S )
+     TOTAL MASS                                =     4770000.      ( KG )
+     LOST MASS                                 =   -0.2023620E-18  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =   -0.4242390E-25
+     RELATIVE ERROR 0N MASS                    =   -0.3722100E-12
+
+ MAXIMAL EVOLUTION (M)    :    0.7198042E-07 NODE  :  2474
+ MINIMAL EVOLUTION (M)    :   -0.2198796E-06 NODE  :  2410
+ TOTAL MAXIMAL EVOLUTION  :    0.6152833E-02 NODE  :  2466
+ TOTAL MINIMAL EVOLUTION  :   -0.8567079E-01 NODE  :  1807
+ TIME-STEP:    8.4254412679462647E-003
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    3.523035     M3
+     FLUX BOUNDARY    1:   -0.3548727E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    0.3550000E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        884.5     S :   -0.1301161E-14
+
+================================================================================
+ ITERATION   113400    TIME: 15 MN  30.0222 S   (      930.0222 S)
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+
+================================================================================
+ ITERATION   113400    TIME: 15 MN  30.0307 S     (    930.0307 S)
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.5435553E-06  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    1                =    -0.000000      ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    2                =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =     0.000000      ( KG/S )
+     DEPOSITION FLUX                           =     0.000000      ( KG/S )
+     TOTAL MASS                                =     4770000.      ( KG )
+     LOST MASS                                 =   -0.1473422E-19  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =   -0.3088935E-26
+     RELATIVE ERROR 0N MASS                    =   -0.2710713E-13
+
+ MAXIMAL EVOLUTION (M)    :    0.7279117E-07 NODE  :  2475
+ MINIMAL EVOLUTION (M)    :   -0.2100046E-06 NODE  :  2410
+ TOTAL MAXIMAL EVOLUTION  :    0.6422604E-02 NODE  :  2467
+ TOTAL MINIMAL EVOLUTION  :   -0.8662597E-01 NODE  :  1807
+ TIME-STEP:    8.4235570348869387E-003
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    3.523608     M3
+     FLUX BOUNDARY    1:   -0.3548754E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    0.3550000E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        930.0     S :    0.5529184E-15
+
+================================================================================
+ ITERATION   118800    TIME: 16 MN  15.5042 S   (      975.5042 S)
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+
+================================================================================
+ ITERATION   118800    TIME: 16 MN  15.5127 S     (    975.5127 S)
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.5434302E-06  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    1                =    -0.000000      ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    2                =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =     0.000000      ( KG/S )
+     DEPOSITION FLUX                           =     0.000000      ( KG/S )
+     TOTAL MASS                                =     4770000.      ( KG )
+     LOST MASS                                 =    0.6311484E-19  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =    0.1323162E-25
+     RELATIVE ERROR 0N MASS                    =    0.1161416E-12
+
+ MAXIMAL EVOLUTION (M)    :    0.7354136E-07 NODE  :  2476
+ MINIMAL EVOLUTION (M)    :   -0.2009061E-06 NODE  :  2410
+ TOTAL MAXIMAL EVOLUTION  :    0.6688021E-02 NODE  :  2468
+ TOTAL MINIMAL EVOLUTION  :   -0.8752551E-01 NODE  :  1807
+ TIME-STEP:    8.4216181336867375E-003
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    3.524169     M3
+     FLUX BOUNDARY    1:   -0.3548780E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    0.3550000E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        975.5     S :    0.1178723E-14
+
+================================================================================
+ ITERATION   124200    TIME: 17 MN   0.9757 S   (     1020.9757 S)
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+
+================================================================================
+ ITERATION   124200    TIME: 17 MN   0.9841 S     (   1020.9841 S)
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.5433034E-06  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    1                =    -0.000000      ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    2                =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =     0.000000      ( KG/S )
+     DEPOSITION FLUX                           =     0.000000      ( KG/S )
+     TOTAL MASS                                =     4770000.      ( KG )
+     LOST MASS                                 =   -0.1999875E-20  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =   -0.4192610E-27
+     RELATIVE ERROR 0N MASS                    =   -0.3680954E-14
+
+ MAXIMAL EVOLUTION (M)    :    0.7423729E-07 NODE  :  2477
+ MINIMAL EVOLUTION (M)    :   -0.1924951E-06 NODE  :  2410
+ TOTAL MAXIMAL EVOLUTION  :    0.6949174E-02 NODE  :  2469
+ TOTAL MINIMAL EVOLUTION  :   -0.8837438E-01 NODE  :  1807
+ TIME-STEP:    8.4196533310484153E-003
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    3.524718     M3
+     FLUX BOUNDARY    1:   -0.3548804E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    0.3550000E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        1021.     S :    0.1271953E-14
+
+================================================================================
+ ITERATION   129600    TIME: 17 MN  46.4365 S   (     1066.4365 S)
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+
+================================================================================
+ ITERATION   129600    TIME: 17 MN  46.4449 S     (   1066.4449 S)
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.5431764E-06  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    1                =    -0.000000      ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    2                =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =     0.000000      ( KG/S )
+     DEPOSITION FLUX                           =     0.000000      ( KG/S )
+     TOTAL MASS                                =     4770000.      ( KG )
+     LOST MASS                                 =   -0.3740450E-19  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =   -0.7841614E-26
+     RELATIVE ERROR 0N MASS                    =   -0.6886253E-13
+
+ MAXIMAL EVOLUTION (M)    :    0.7510280E-07 NODE  :  2479
+ MINIMAL EVOLUTION (M)    :   -0.1846962E-06 NODE  :  2410
+ TOTAL MAXIMAL EVOLUTION  :    0.7210126E-02 NODE  :  2471
+ TOTAL MINIMAL EVOLUTION  :   -0.8917693E-01 NODE  :  1807
+ TIME-STEP:    8.4176847022710624E-003
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    3.525257     M3
+     FLUX BOUNDARY    1:   -0.3548827E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    0.3550000E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        1066.     S :    0.2544556E-14
+
+================================================================================
+ ITERATION   135000    TIME: 18 MN  31.8867 S   (     1111.8867 S)
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+
+================================================================================
+ ITERATION   135000    TIME: 18 MN  31.8951 S     (   1111.8951 S)
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.5430502E-06  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    1                =    -0.000000      ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    2                =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =     0.000000      ( KG/S )
+     DEPOSITION FLUX                           =     0.000000      ( KG/S )
+     TOTAL MASS                                =     4770000.      ( KG )
+     LOST MASS                                 =   -0.6785463E-19  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =   -0.1422529E-25
+     RELATIVE ERROR 0N MASS                    =   -0.1249510E-12
+
+ MAXIMAL EVOLUTION (M)    :    0.7593984E-07 NODE  :  2480
+ MINIMAL EVOLUTION (M)    :   -0.1774442E-06 NODE  :  2410
+ TOTAL MAXIMAL EVOLUTION  :    0.7469413E-02 NODE  :  2472
+ TOTAL MINIMAL EVOLUTION  :   -0.8993701E-01 NODE  :  1807
+ TIME-STEP:    8.4157290160473859E-003
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    3.525785     M3
+     FLUX BOUNDARY    1:   -0.3548849E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    0.3550000E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        1112.     S :    0.2575558E-15
+
+================================================================================
+ ITERATION   140400    TIME: 19 MN  17.3264 S   (     1157.3264 S)
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+
+================================================================================
+ ITERATION   140400    TIME: 19 MN  17.3348 S     (   1157.3348 S)
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.5429256E-06  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    1                =    -0.000000      ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    2                =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =     0.000000      ( KG/S )
+     DEPOSITION FLUX                           =     0.000000      ( KG/S )
+     TOTAL MASS                                =     4770000.      ( KG )
+     LOST MASS                                 =   -0.1015953E-19  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =   -0.2129880E-26
+     RELATIVE ERROR 0N MASS                    =   -0.1871256E-13
+
+ MAXIMAL EVOLUTION (M)    :    0.7675018E-07 NODE  :  2481
+ MINIMAL EVOLUTION (M)    :   -0.1706826E-06 NODE  :  2410
+ TOTAL MAXIMAL EVOLUTION  :    0.7725229E-02 NODE  :  2473
+ TOTAL MINIMAL EVOLUTION  :   -0.9065799E-01 NODE  :  1807
+ TIME-STEP:    8.4137989101698060E-003
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    3.526304     M3
+     FLUX BOUNDARY    1:   -0.3548869E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    0.3550000E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        1157.     S :   -0.2107300E-14
+
+================================================================================
+ ITERATION   145800    TIME: 20 MN   2.7558 S   (     1202.7558 S)
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+
+================================================================================
+ ITERATION   145800    TIME: 20 MN   2.7642 S     (   1202.7642 S)
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.5428034E-06  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    1                =    -0.000000      ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    2                =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =     0.000000      ( KG/S )
+     DEPOSITION FLUX                           =     0.000000      ( KG/S )
+     TOTAL MASS                                =     4770000.      ( KG )
+     LOST MASS                                 =    0.1335190E-18  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =    0.2799141E-25
+     RELATIVE ERROR 0N MASS                    =    0.2459805E-12
+
+ MAXIMAL EVOLUTION (M)    :    0.7754258E-07 NODE  :  2482
+ MINIMAL EVOLUTION (M)    :   -0.1643635E-06 NODE  :  2410
+ TOTAL MAXIMAL EVOLUTION  :    0.7977989E-02 NODE  :  2474
+ TOTAL MINIMAL EVOLUTION  :   -0.9134291E-01 NODE  :  1807
+ TIME-STEP:    8.4119041776948098E-003
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    3.526813     M3
+     FLUX BOUNDARY    1:   -0.3548889E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    0.3550000E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        1203.     S :    0.1021385E-14
+
+================================================================================
+ ITERATION   151200    TIME: 20 MN  48.1751 S   (     1248.1751 S)
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+
+================================================================================
+ ITERATION   151200    TIME: 20 MN  48.1835 S     (   1248.1835 S)
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.5426838E-06  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    1                =    -0.000000      ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    2                =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =     0.000000      ( KG/S )
+     DEPOSITION FLUX                           =     0.000000      ( KG/S )
+     TOTAL MASS                                =     4770000.      ( KG )
+     LOST MASS                                 =   -0.1548792E-19  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =   -0.3246943E-26
+     RELATIVE ERROR 0N MASS                    =   -0.2853949E-13
+
+ MAXIMAL EVOLUTION (M)    :    0.7837779E-07 NODE  :  2484
+ MINIMAL EVOLUTION (M)    :   -0.1584450E-06 NODE  :  2410
+ TOTAL MAXIMAL EVOLUTION  :    0.8227705E-02 NODE  :  2475
+ TOTAL MINIMAL EVOLUTION  :   -0.9199446E-01 NODE  :  1807
+ TIME-STEP:    8.4100521680290502E-003
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    3.527313     M3
+     FLUX BOUNDARY    1:   -0.3548908E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    0.3550000E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        1248.     S :   -0.1043679E-14
+
+================================================================================
+ ITERATION   156600    TIME: 21 MN  33.5844 S   (     1293.5844 S)
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+
+================================================================================
+ ITERATION   156600    TIME: 21 MN  33.5928 S     (   1293.5928 S)
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.5425674E-06  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    1                =    -0.000000      ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    2                =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =     0.000000      ( KG/S )
+     DEPOSITION FLUX                           =     0.000000      ( KG/S )
+     TOTAL MASS                                =     4770000.      ( KG )
+     LOST MASS                                 =    0.4739835E-19  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =    0.9936761E-26
+     RELATIVE ERROR 0N MASS                    =    0.8735937E-13
+
+ MAXIMAL EVOLUTION (M)    :    0.7930720E-07 NODE  :  2485
+ MINIMAL EVOLUTION (M)    :   -0.1528897E-06 NODE  :  2410
+ TOTAL MAXIMAL EVOLUTION  :    0.8474972E-02 NODE  :  2476
+ TOTAL MINIMAL EVOLUTION  :   -0.9261507E-01 NODE  :  1807
+ TIME-STEP:    8.4082481550372175E-003
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    3.527805     M3
+     FLUX BOUNDARY    1:   -0.3548926E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    0.3550000E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        1294.     S :    0.2176296E-15
+
+================================================================================
+ ITERATION   162000    TIME: 22 MN  18.9842 S   (     1338.9842 S)
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+
+================================================================================
+ ITERATION   162000    TIME: 22 MN  18.9926 S     (   1338.9926 S)
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.5424544E-06  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    1                =    -0.000000      ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    2                =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =     0.000000      ( KG/S )
+     DEPOSITION FLUX                           =     0.000000      ( KG/S )
+     TOTAL MASS                                =     4770000.      ( KG )
+     LOST MASS                                 =   -0.1617119E-19  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =   -0.3390188E-26
+     RELATIVE ERROR 0N MASS                    =   -0.2981116E-13
+
+ MAXIMAL EVOLUTION (M)    :    0.8023075E-07 NODE  :  2486
+ MINIMAL EVOLUTION (M)    :   -0.1476656E-06 NODE  :  2410
+ TOTAL MAXIMAL EVOLUTION  :    0.8719656E-02 NODE  :  2478
+ TOTAL MINIMAL EVOLUTION  :   -0.9320690E-01 NODE  :  1807
+ TIME-STEP:    8.4064962080260264E-003
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    3.528289     M3
+     FLUX BOUNDARY    1:   -0.3548943E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    0.3550000E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        1339.     S :    0.2617443E-15
+
+================================================================================
+ ITERATION   167400    TIME: 23 MN   4.3747 S   (     1384.3747 S)
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+
+================================================================================
+ ITERATION   167400    TIME: 23 MN   4.3831 S     (   1384.3831 S)
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.5423448E-06  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    1                =    -0.000000      ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    2                =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =     0.000000      ( KG/S )
+     DEPOSITION FLUX                           =     0.000000      ( KG/S )
+     TOTAL MASS                                =     4770000.      ( KG )
+     LOST MASS                                 =    0.1390672E-18  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =    0.2915455E-25
+     RELATIVE ERROR 0N MASS                    =    0.2564184E-12
+
+ MAXIMAL EVOLUTION (M)    :    0.8114688E-07 NODE  :  2487
+ MINIMAL EVOLUTION (M)    :   -0.1427433E-06 NODE  :  2410
+ TOTAL MAXIMAL EVOLUTION  :    0.8964538E-02 NODE  :  2479
+ TOTAL MINIMAL EVOLUTION  :   -0.9377194E-01 NODE  :  1807
+ TIME-STEP:    8.4047986562233341E-003
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    3.528764     M3
+     FLUX BOUNDARY    1:   -0.3548960E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    0.3550000E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        1384.     S :    0.2509595E-14
+
+================================================================================
+ ITERATION   172800    TIME: 23 MN  49.7562 S   (     1429.7562 S)
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+
+================================================================================
+ ITERATION   172800    TIME: 23 MN  49.7646 S     (   1429.7646 S)
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.5422389E-06  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    1                =    -0.000000      ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    2                =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =     0.000000      ( KG/S )
+     DEPOSITION FLUX                           =     0.000000      ( KG/S )
+     TOTAL MASS                                =     4770000.      ( KG )
+     LOST MASS                                 =   -0.7118721E-20  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =   -0.1492394E-26
+     RELATIVE ERROR 0N MASS                    =   -0.1312838E-13
+
+ MAXIMAL EVOLUTION (M)    :    0.8208667E-07 NODE  :  2488
+ MINIMAL EVOLUTION (M)    :   -0.1380976E-06 NODE  :  2410
+ TOTAL MAXIMAL EVOLUTION  :    0.9207162E-02 NODE  :  2480
+ TOTAL MINIMAL EVOLUTION  :   -0.9431196E-01 NODE  :  1807
+ TIME-STEP:    8.4031574931881237E-003
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    3.529233     M3
+     FLUX BOUNDARY    1:   -0.3548976E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    0.3550000E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        1430.     S :   -0.1254168E-14
+
+================================================================================
+ ITERATION   178200    TIME: 24 MN  35.1289 S   (     1475.1289 S)
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+
+================================================================================
+ ITERATION   178200    TIME: 24 MN  35.1373 S     (   1475.1373 S)
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.5421367E-06  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    1                =    -0.000000      ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    2                =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =     0.000000      ( KG/S )
+     DEPOSITION FLUX                           =     0.000000      ( KG/S )
+     TOTAL MASS                                =     4770000.      ( KG )
+     LOST MASS                                 =    0.1669923E-18  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =    0.3500886E-25
+     RELATIVE ERROR 0N MASS                    =    0.3080261E-12
+
+ MAXIMAL EVOLUTION (M)    :    0.8295713E-07 NODE  :  2489
+ MINIMAL EVOLUTION (M)    :   -0.1337060E-06 NODE  :  2410
+ TOTAL MAXIMAL EVOLUTION  :    0.9447144E-02 NODE  :  2481
+ TOTAL MINIMAL EVOLUTION  :   -0.9482857E-01 NODE  :  1807
+ TIME-STEP:    8.4015737073954693E-003
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    3.529694     M3
+     FLUX BOUNDARY    1:   -0.3548992E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    0.3550000E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        1475.     S :    0.8182380E-15
+
+================================================================================
+ ITERATION   183600    TIME: 25 MN  20.4933 S   (     1520.4933 S)
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+
+================================================================================
+ ITERATION   183600    TIME: 25 MN  20.5017 S     (   1520.5017 S)
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.5420390E-06  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    1                =    -0.000000      ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    2                =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =     0.000000      ( KG/S )
+     DEPOSITION FLUX                           =     0.000000      ( KG/S )
+     TOTAL MASS                                =     4770000.      ( KG )
+     LOST MASS                                 =   -0.2046476E-18  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =   -0.4290306E-25
+     RELATIVE ERROR 0N MASS                    =   -0.3775515E-12
+
+ MAXIMAL EVOLUTION (M)    :    0.8384337E-07 NODE  :  2490
+ MINIMAL EVOLUTION (M)    :   -0.1295316E-06 NODE  :  2410
+ TOTAL MAXIMAL EVOLUTION  :    0.9685128E-02 NODE  :  2482
+ TOTAL MINIMAL EVOLUTION  :   -0.9532327E-01 NODE  :  1807
+ TIME-STEP:    8.4000587556553596E-003
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    3.530147     M3
+     FLUX BOUNDARY    1:   -0.3549007E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    0.3550000E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        1521.     S :   -0.3074171E-14
+
+================================================================================
+ ITERATION   189000    TIME: 26 MN   5.8496 S   (     1565.8496 S)
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+
+================================================================================
+ ITERATION   189000    TIME: 26 MN   5.8580 S     (   1565.8580 S)
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.5419451E-06  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    1                =    -0.000000      ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    2                =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =     0.000000      ( KG/S )
+     DEPOSITION FLUX                           =     0.000000      ( KG/S )
+     TOTAL MASS                                =     4770000.      ( KG )
+     LOST MASS                                 =   -0.1620629E-18  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =   -0.3397545E-25
+     RELATIVE ERROR 0N MASS                    =   -0.2990394E-12
+
+ MAXIMAL EVOLUTION (M)    :    0.8476778E-07 NODE  :  2491
+ MINIMAL EVOLUTION (M)    :   -0.1255712E-06 NODE  :  2410
+ TOTAL MAXIMAL EVOLUTION  :    0.9920557E-02 NODE  :  2483
+ TOTAL MINIMAL EVOLUTION  :   -0.9579739E-01 NODE  :  1807
+ TIME-STEP:    8.3986031185109052E-003
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    3.530595     M3
+     FLUX BOUNDARY    1:   -0.3549021E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    0.3550000E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        1566.     S :   -0.1541191E-14
+
+================================================================================
+ ITERATION   194400    TIME: 26 MN  51.1983 S   (     1611.1983 S)
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+
+================================================================================
+ ITERATION   194400    TIME: 26 MN  51.2067 S     (   1611.2067 S)
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.5418548E-06  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    1                =    -0.000000      ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    2                =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =     0.000000      ( KG/S )
+     DEPOSITION FLUX                           =     0.000000      ( KG/S )
+     TOTAL MASS                                =     4770000.      ( KG )
+     LOST MASS                                 =    0.7503897E-19  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =    0.1573144E-25
+     RELATIVE ERROR 0N MASS                    =    0.1384854E-12
+
+ MAXIMAL EVOLUTION (M)    :    0.8572555E-07 NODE  :  2492
+ MINIMAL EVOLUTION (M)    :   -0.1218128E-06 NODE  :  2410
+ TOTAL MAXIMAL EVOLUTION  :    0.1015420E-01 NODE  :  2484
+ TOTAL MINIMAL EVOLUTION  :   -0.9625217E-01 NODE  :  1807
+ TIME-STEP:    8.3972037289618343E-003
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    3.531035     M3
+     FLUX BOUNDARY    1:   -0.3549035E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    0.3550000E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        1611.     S :    0.3911983E-15
+
+================================================================================
+ ITERATION   199800    TIME: 27 MN  36.5395 S   (     1656.5395 S)
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+
+================================================================================
+ ITERATION   199800    TIME: 27 MN  36.5479 S     (   1656.5479 S)
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.5417681E-06  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    1                =    -0.000000      ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    2                =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =     0.000000      ( KG/S )
+     DEPOSITION FLUX                           =     0.000000      ( KG/S )
+     TOTAL MASS                                =     4770000.      ( KG )
+     LOST MASS                                 =   -0.3551326E-20  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =   -0.7445127E-27
+     RELATIVE ERROR 0N MASS                    =   -0.6555067E-14
+
+ MAXIMAL EVOLUTION (M)    :    0.8668921E-07 NODE  :  2493
+ MINIMAL EVOLUTION (M)    :   -0.1182411E-06 NODE  :  2410
+ TOTAL MAXIMAL EVOLUTION  :    0.1038527E-01 NODE  :  2485
+ TOTAL MINIMAL EVOLUTION  :   -0.9668874E-01 NODE  :  1807
+ TIME-STEP:    8.3958599689660501E-003
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    3.531470     M3
+     FLUX BOUNDARY    1:   -0.3549048E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    0.3550000E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        1657.     S :    0.1933006E-14
+
+================================================================================
+ ITERATION   205200    TIME: 28 MN  21.8737 S   (     1701.8737 S)
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+
+================================================================================
+ ITERATION   205200    TIME: 28 MN  21.8821 S     (   1701.8821 S)
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.5416849E-06  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    1                =    -0.000000      ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    2                =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =     0.000000      ( KG/S )
+     DEPOSITION FLUX                           =     0.000000      ( KG/S )
+     TOTAL MASS                                =     4770000.      ( KG )
+     LOST MASS                                 =   -0.1633872E-18  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =   -0.3425309E-25
+     RELATIVE ERROR 0N MASS                    =   -0.3016278E-12
+
+ MAXIMAL EVOLUTION (M)    :    0.8765649E-07 NODE  :  2494
+ MINIMAL EVOLUTION (M)    :   -0.1148426E-06 NODE  :  2410
+ TOTAL MAXIMAL EVOLUTION  :    0.1061443E-01 NODE  :  2486
+ TOTAL MINIMAL EVOLUTION  :   -0.9710816E-01 NODE  :  1807
+ TIME-STEP:    8.3945711648158589E-003
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    3.531898     M3
+     FLUX BOUNDARY    1:   -0.3549061E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    0.3550000E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        1702.     S :    0.5823241E-15
+
+================================================================================
+ ITERATION   210600    TIME: 29 MN   7.2010 S   (     1747.2010 S)
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+
+================================================================================
+ ITERATION   210600    TIME: 29 MN   7.2094 S     (   1747.2094 S)
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.5416052E-06  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    1                =    -0.000000      ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    2                =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =     0.000000      ( KG/S )
+     DEPOSITION FLUX                           =     0.000000      ( KG/S )
+     TOTAL MASS                                =     4770000.      ( KG )
+     LOST MASS                                 =   -0.6455193E-20  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =   -0.1353290E-26
+     RELATIVE ERROR 0N MASS                    =   -0.1191863E-13
+
+ MAXIMAL EVOLUTION (M)    :    0.8864534E-07 NODE  :  2495
+ MINIMAL EVOLUTION (M)    :   -0.1116052E-06 NODE  :  2410
+ TOTAL MAXIMAL EVOLUTION  :    0.1084098E-01 NODE  :  2487
+ TOTAL MINIMAL EVOLUTION  :   -0.9751137E-01 NODE  :  1807
+ TIME-STEP:    8.3933363798262706E-003
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    3.532321     M3
+     FLUX BOUNDARY    1:   -0.3549074E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    0.3550000E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        1747.     S :   -0.1017332E-15
+
+================================================================================
+ ITERATION   216000    TIME: 29 MN  52.5218 S   (     1792.5218 S)
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+
+================================================================================
+ ITERATION   216000    TIME: 29 MN  52.5302 S     (   1792.5302 S)
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.5415289E-06  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    1                =    -0.000000      ( KG/S  >0 = ENTERING )
+     BEDLOAD FLUX BOUNDARY    2                =    0.6452800E-04  ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =     0.000000      ( KG/S )
+     DEPOSITION FLUX                           =     0.000000      ( KG/S )
+     TOTAL MASS                                =     4770000.      ( KG )
+     LOST MASS                                 =    0.8262854E-19  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =    0.1732255E-25
+     RELATIVE ERROR 0N MASS                    =    0.1525838E-12
+
+ MAXIMAL EVOLUTION (M)    :    0.8963626E-07 NODE  :  2496
+ MINIMAL EVOLUTION (M)    :   -0.1085176E-06 NODE  :  2410
+ TOTAL MAXIMAL EVOLUTION  :    0.1106508E-01 NODE  :  2488
+ TOTAL MINIMAL EVOLUTION  :   -0.9789927E-01 NODE  :  1807
+ TIME-STEP:    8.3921545524338146E-003
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    3.532738     M3
+     FLUX BOUNDARY    1:   -0.3549086E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    0.3550000E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        1793.     S :   -0.4495713E-14
+
+================================================================================
+ ITERATION   216891    TIME: 30 MN   0.0000 S   (     1800.0000 S)
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    3.532806     M3
+     FLUX BOUNDARY    1:   -0.3549088E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    0.3550000E-01 M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        1800.     S :    0.1173317E-14
+--------------------------------------------------------------------------------
+                   FINAL BALANCE OF WATER VOLUME
+
+     RELATIVE ERROR CUMULATED ON VOLUME:    0.2639792E-14
+
+     INITIAL VOLUME              :     3.102000     M3
+     FINAL VOLUME                :     3.532806     M3
+     VOLUME THAT ENTERED THE DOMAIN:    0.4308064     M3  ( IF <0 EXIT )
+     TOTAL VOLUME LOST             :    0.9325873E-14 M3
+
+ END OF TIME LOOP
+
+ EXITING MPI
+
+                     *************************************
+                     *    END OF MEMORY ORGANIZATION:    *
+                     *************************************
+
+ CORRECT END OF RUN
+
+ ELAPSE TIME :
+                              3  MINUTES
+                             29  SECONDS
+STOP 0
+... merging separated result files
+
+... handling result files
+
+        moving: r2d_flume_bc.slf
+        moving: gai_flume_bc.slf
+... deleting working dir
+
+
+
+My work is done
+
+

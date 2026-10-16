@@ -1,0 +1,4 @@
+case.cas_*/
+out_user_fortran*
+*.o
+*.mod

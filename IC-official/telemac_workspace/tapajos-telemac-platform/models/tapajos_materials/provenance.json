@@ -1,0 +1,60 @@
+{
+  "solver_git": "https://gitlab.pam-retd.fr/otm/telemac-mascaret.git",
+  "solver_commit": "d1bff193746fd76425d7715a6e4d20d42eb8877e",
+  "solver_version": "v8p5r0",
+  "river": "Tapajós · Itaituba, Pará",
+  "crs": "EPSG:32721",
+  "release_xy_m": [
+    612302.43359375,
+    9526412.0
+  ],
+  "release_sigma_m": 180,
+  "duration_s": 3600,
+  "dt_s": 1,
+  "nodes": 852,
+  "triangles": 1588,
+  "data": {
+    "axis": {
+      "url": "https://api.openstreetmap.org/api/0.6/map?bbox=-55.995,-4.315,-55.955,-4.275",
+      "retrieved_on": "2026-09-09",
+      "raw_sha256": "f50cd92bfc84a4bc95bbf169e3d8a00792e16dabd4fed189c3b3870e561eaf78",
+      "way_id": 26158344,
+      "version": "24",
+      "timestamp": "2026-01-09T17:30:25Z",
+      "tags": {
+        "boat": "yes",
+        "est_width": "800",
+        "name": "Rio Tapajós",
+        "source": "aerial yahoo",
+        "waterway": "river",
+        "width": "3000"
+      },
+      "attribution": "© OpenStreetMap contributors",
+      "license": "ODbL 1.0",
+      "license_url": "https://www.openstreetmap.org/copyright"
+    },
+    "stage_statistics": "data/tapajos/stations/itaituba_sgb_monthly_levels.json"
+  },
+  "assumptions": {
+    "flow_m3_s": 6000,
+    "width_m": 1200,
+    "bed": "schematic 4–8 m depth",
+    "datum": "local assumed; not tied to observed gauge",
+    "initial_hydrodynamics": "still water; startup transient",
+    "diffusivity_m2_s": 5,
+    "concentrations": "C/C0 normalized; initial Gaussian pulse identical for all materials",
+    "pollutant_half_life_s": 1800,
+    "sediment_settling_m_s": 0.001
+  },
+  "limitations": [
+    "Uncalibrated exploratory geometry; spatial convergence of tracer not achieved.",
+    "Sediment is a suspended scalar with settling sink, without erosion or bed feedback; not GAIA.",
+    "Pollutant is hypothetical first-order decay, without species-specific chemistry.",
+    "ANA observed daily series are available in the project but are not imposed in this short assumed-flow scenario."
+  ],
+  "range": [
+    0.0,
+    0.9883651733398438
+  ],
+  "result_sha256": "66229f23a0b6586790cc94ab6d6296d0af2035f19d87d20f8381f77979f243a6"
+}

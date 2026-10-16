@@ -1,0 +1,246 @@
+{
+  "source_commit": "d1bff193746fd76425d7715a6e4d20d42eb8877e",
+  "checks": [
+    {
+      "group": "synthetic_sediment",
+      "case": "mud_exchange",
+      "module": "telemac2d",
+      "status": "dictionary_and_input_files_valid"
+    },
+    {
+      "group": "synthetic_sediment",
+      "case": "mud_exchange",
+      "module": "gaia",
+      "status": "dictionary_and_input_files_valid"
+    },
+    {
+      "group": "synthetic_sediment",
+      "case": "mud_deposition",
+      "module": "telemac2d",
+      "status": "dictionary_and_input_files_valid"
+    },
+    {
+      "group": "synthetic_sediment",
+      "case": "mud_deposition",
+      "module": "gaia",
+      "status": "dictionary_and_input_files_valid"
+    },
+    {
+      "group": "synthetic_sediment",
+      "case": "mud_erosion",
+      "module": "telemac2d",
+      "status": "dictionary_and_input_files_valid"
+    },
+    {
+      "group": "synthetic_sediment",
+      "case": "mud_erosion",
+      "module": "gaia",
+      "status": "dictionary_and_input_files_valid"
+    },
+    {
+      "group": "synthetic_sediment",
+      "case": "mud_passive",
+      "module": "telemac2d",
+      "status": "dictionary_and_input_files_valid"
+    },
+    {
+      "group": "synthetic_sediment",
+      "case": "mud_passive",
+      "module": "gaia",
+      "status": "dictionary_and_input_files_valid"
+    },
+    {
+      "group": "synthetic_sediment",
+      "case": "sand_bedload",
+      "module": "telemac2d",
+      "status": "dictionary_and_input_files_valid"
+    },
+    {
+      "group": "synthetic_sediment",
+      "case": "sand_bedload",
+      "module": "gaia",
+      "status": "dictionary_and_input_files_valid"
+    },
+    {
+      "group": "synthetic_sediment",
+      "case": "nestor_dig",
+      "module": "telemac2d",
+      "status": "dictionary_and_input_files_valid"
+    },
+    {
+      "group": "synthetic_sediment",
+      "case": "nestor_dig",
+      "module": "gaia",
+      "status": "dictionary_and_input_files_valid"
+    },
+    {
+      "group": "synthetic_sediment",
+      "case": "nestor_dump",
+      "module": "telemac2d",
+      "status": "dictionary_and_input_files_valid"
+    },
+    {
+      "group": "synthetic_sediment",
+      "case": "nestor_dump",
+      "module": "gaia",
+      "status": "dictionary_and_input_files_valid"
+    },
+    {
+      "group": "synthetic_sediment",
+      "case": "nestor_dig_dump",
+      "module": "telemac2d",
+      "status": "dictionary_and_input_files_valid"
+    },
+    {
+      "group": "synthetic_sediment",
+      "case": "nestor_dig_dump",
+      "module": "gaia",
+      "status": "dictionary_and_input_files_valid"
+    },
+    {
+      "group": "synthetic_sand_final_budget",
+      "case": "sand_bedload",
+      "module": "telemac2d",
+      "status": "dictionary_and_input_files_valid"
+    },
+    {
+      "group": "synthetic_sand_final_budget",
+      "case": "sand_bedload",
+      "module": "gaia",
+      "status": "dictionary_and_input_files_valid"
+    },
+    {
+      "group": "synthetic_micropollutant",
+      "case": "micropol_deposition",
+      "module": "telemac2d",
+      "status": "dictionary_and_input_files_valid"
+    },
+    {
+      "group": "synthetic_micropollutant",
+      "case": "micropol_deposition",
+      "module": "waqtel",
+      "status": "dictionary_and_input_files_valid"
+    },
+    {
+      "group": "synthetic_micropollutant",
+      "case": "micropol_adsorption",
+      "module": "telemac2d",
+      "status": "dictionary_and_input_files_valid"
+    },
+    {
+      "group": "synthetic_micropollutant",
+      "case": "micropol_adsorption",
+      "module": "waqtel",
+      "status": "dictionary_and_input_files_valid"
+    },
+    {
+      "group": "synthetic_micropollutant",
+      "case": "micropol_desorption",
+      "module": "telemac2d",
+      "status": "dictionary_and_input_files_valid"
+    },
+    {
+      "group": "synthetic_micropollutant",
+      "case": "micropol_desorption",
+      "module": "waqtel",
+      "status": "dictionary_and_input_files_valid"
+    },
+    {
+      "group": "synthetic_micropollutant_dt360",
+      "case": "micropol_deposition",
+      "module": "telemac2d",
+      "status": "dictionary_and_input_files_valid"
+    },
+    {
+      "group": "synthetic_micropollutant_dt360",
+      "case": "micropol_deposition",
+      "module": "waqtel",
+      "status": "dictionary_and_input_files_valid"
+    },
+    {
+      "group": "synthetic_micropollutant_dt360",
+      "case": "micropol_adsorption",
+      "module": "telemac2d",
+      "status": "dictionary_and_input_files_valid"
+    },
+    {
+      "group": "synthetic_micropollutant_dt360",
+      "case": "micropol_adsorption",
+      "module": "waqtel",
+      "status": "dictionary_and_input_files_valid"
+    },
+    {
+      "group": "synthetic_micropollutant_dt360",
+      "case": "micropol_desorption",
+      "module": "telemac2d",
+      "status": "dictionary_and_input_files_valid"
+    },
+    {
+      "group": "synthetic_micropollutant_dt360",
+      "case": "micropol_desorption",
+      "module": "waqtel",
+      "status": "dictionary_and_input_files_valid"
+    },
+    {
+      "group": "synthetic_micropollutant_dt360_tight",
+      "case": "micropol_deposition",
+      "module": "telemac2d",
+      "status": "dictionary_and_input_files_valid"
+    },
+    {
+      "group": "synthetic_micropollutant_dt360_tight",
+      "case": "micropol_deposition",
+      "module": "waqtel",
+      "status": "dictionary_and_input_files_valid"
+    },
+    {
+      "group": "synthetic_micropollutant_dt360_tight",
+      "case": "micropol_adsorption",
+      "module": "telemac2d",
+      "status": "dictionary_and_input_files_valid"
+    },
+    {
+      "group": "synthetic_micropollutant_dt360_tight",
+      "case": "micropol_adsorption",
+      "module": "waqtel",
+      "status": "dictionary_and_input_files_valid"
+    },
+    {
+      "group": "synthetic_micropollutant_dt360_tight",
+      "case": "micropol_desorption",
+      "module": "telemac2d",
+      "status": "dictionary_and_input_files_valid"
+    },
+    {
+      "group": "synthetic_micropollutant_dt360_tight",
+      "case": "micropol_desorption",
+      "module": "waqtel",
+      "status": "dictionary_and_input_files_valid"
+    },
+    {
+      "group": "synthetic_sand_fixed",
+      "case": "sand_fixed",
+      "module": "telemac2d",
+      "status": "dictionary_and_input_files_valid"
+    },
+    {
+      "group": "synthetic_sand_fixed",
+      "case": "sand_fixed",
+      "module": "gaia",
+      "status": "dictionary_and_input_files_valid"
+    },
+    {
+      "group": "synthetic_sand_diagnostic",
+      "case": "sand_diagnostic",
+      "module": "telemac2d",
+      "status": "dictionary_and_input_files_valid"
+    },
+    {
+      "group": "synthetic_sand_diagnostic",
+      "case": "sand_diagnostic",
+      "module": "gaia",
+      "status": "dictionary_and_input_files_valid"
+    }
+  ],
+  "scope": "Dictionary and input-file integrity only; runtime acceptance is recorded separately in execution.json."
+}

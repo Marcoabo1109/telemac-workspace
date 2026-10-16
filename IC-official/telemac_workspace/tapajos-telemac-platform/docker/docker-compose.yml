@@ -1,0 +1,21 @@
+services:
+  backend:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.app
+    ports: ["127.0.0.1:8000:8000"]
+    volumes: ["../runs:/app/runs", "../models:/app/models"]
+    environment:
+      TELEMAC_NCORES: ${TELEMAC_NCORES:-1}
+      ANA_TOKEN: ${ANA_TOKEN:-}
+  frontend:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.frontend
+    ports: ["127.0.0.1:3000:3000"]
+    depends_on: [backend]
+  jupyter:
+    profiles: ["notebooks"]
+    image: quay.io/jupyter/scipy-notebook:2025-03-14
+    ports: ["127.0.0.1:8888:8888"]
+    volumes: ["..:/home/jovyan/work"]

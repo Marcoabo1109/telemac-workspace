@@ -1,0 +1,315 @@
+
+
+Loading Options and Configurations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+          ___          _____ 
+         / _ \        | ____|
+ __   __| (_) | _ __  | |__  
+ \ \ / / > _ < | '_ \ |___ \ 
+  \ V / | (_) || |_) | ___) |
+   \_/   \___/ | .__/ |____/ 
+               | |           
+               |_|           
+
+
+Running your CAS file(s) for:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+gnu: 
+    
+
+    +> Portable GNU/OpenMPI TELEMAC2D build, no architecture-specific patch
+
+    +> root:    /opt/telemac
+    +> module: ad / api / artemis / bief
+               damocles  / gaia  / gretel  / hermes
+               identify_liq_bnd  / khione  / mascaret  / nestor
+               parallel  / partel  / postel3d  / special
+               stbtel  / telemac2d  / telemac3d  / tomawac
+               waqtel
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+... processing the steering file
+  ~> Checking keyword/rubrique coherence
+  ~> Checking keyword/rubrique coherence
+
+... checking parallelisation
+
+... handling temporary directories
+         copying: t2d_flume_bc.cas -> /app/models/synthetic_sand_fixed/sand_fixed/t2d_flume_bc.cas_2026-10-14-10h32min03s/T2DCAS
+         copying: telemac2d.dico -> /app/models/synthetic_sand_fixed/sand_fixed/t2d_flume_bc.cas_2026-10-14-10h32min03s/T2DDICO
+         copying: geo_flume_bc.slf -> /app/models/synthetic_sand_fixed/sand_fixed/t2d_flume_bc.cas_2026-10-14-10h32min03s/T2DGEO
+         copying: geo_flume_bc.cli -> /app/models/synthetic_sand_fixed/sand_fixed/t2d_flume_bc.cas_2026-10-14-10h32min03s/T2DCLI
+         copying: gai_flume_bc.cas -> /app/models/synthetic_sand_fixed/sand_fixed/t2d_flume_bc.cas_2026-10-14-10h32min03s/GAICAS
+         copying: gaia.dico -> /app/models/synthetic_sand_fixed/sand_fixed/t2d_flume_bc.cas_2026-10-14-10h32min03s/GAIDICO
+         copying: geo_flume_bc.slf -> /app/models/synthetic_sand_fixed/sand_fixed/t2d_flume_bc.cas_2026-10-14-10h32min03s/GAIGEO
+         copying: geo_flume_bc.cli -> /app/models/synthetic_sand_fixed/sand_fixed/t2d_flume_bc.cas_2026-10-14-10h32min03s/GAICLI
+
+... checking the executable
+  > compiling objs
+         compiling: user_condin_h.f ... completed
+         compiling: user_corfon.f ... completed
+         created: out_user_fortran
+
+
+Running your simulation(s) :
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+In /app/models/synthetic_sand_fixed/sand_fixed/t2d_flume_bc.cas_2026-10-14-10h32min03s:
+mpirun -np 1 /app/models/synthetic_sand_fixed/sand_fixed/t2d_flume_bc.cas_2026-10-14-10h32min03s/out_user_fortran
+
+
+ MASTER PROCESSOR NUMBER            0  OF THE GROUP OF            1
+ EXECUTABLE FILE: /app/models/synthetic_sand_fixed/sand_fixed/t2d_flume_bc.cas_2026-10-14-10h32min03s/A.EXE
+ LISTING OF TELEMAC2D------------------------------------------------------------------------------
+
+                TTTTT  EEEEE  L      EEEEE  M   M  AAAAA  CCCCC
+                  T    E      L      E      MM MM  A   A  C
+                  T    EEE    L      EEE    M M M  AAAAA  C
+                  T    E      L      E      M   M  A   A  C
+                  T    EEEEE  LLLLL  EEEEE  M   M  A   A  CCCCC
+
+                        2D    VERSION V8P5   FORTRAN 2003
+
+                        ~^~^~^~^~^~^~^~^~^~^~^^~^~^~^~^~^~
+                          ~                            ~
+                               \   '    o      '
+                               /\ o       \  o
+                             >=)'>    '   /\ '
+                               \/   \   >=)'>        ~
+                               /    /\    \/
+                        ~         >=)'>   /     .
+                                    \/                   )
+                                    /                   (
+                                          ~          )   )
+                          }     ~              (    (   (
+                         {                      )    )   )
+                          }  }         .       (    (   (
+                         {  {               /^^^^^^^^^^^^
+                        ^^^^^^^^^\         /
+                                  ^^^^^^^^^
+
+ DIFFERENT NUMBER OF PARALLEL PROCESSORS:
+ DECLARED BEFORE (CASE OF COUPLING ?):           1
+ TELEMAC-2D :           0
+ VALUE            1  IS KEPT
+
+                   ********************************************
+                   *               LECDON:                    *
+                   *        AFTER CALLING DAMOCLES            *
+                   *        CHECKING OF DATA  READ            *
+                   *         IN THE STEERING FILE             *
+                   ********************************************
+
+ NO SPECIFIC TREATMENT OF DRY ZONES
+  IN FINITE VOLUMES
+
+ EXITING LECDON. NAME OF THE STUDY:
+ FLUME BC TEST
+
+ OPENING FILES FOR TELEMAC2D
+ OPENING: T2DGEO-geo_flume_bc.slf
+ OPENING: T2DCLI-geo_flume_bc.cli
+ OPENING: T2DRES-r2d_flume_bc.slf
+
+                          *****************************
+                          *    MEMORY ORGANIZATION    *
+                          *****************************
+
+ READ_MESH_INFO: TITLE= newSelafin
+            NUMBER OF ELEMENTS:     5400
+            NUMBER OF POINTS:     3010
+
+            TYPE OF ELEMENT: TRIANGLE
+            TYPE OF BND ELEMENT: POINT
+
+            FORMAT NOT INDICATED IN TITLE
+
+ MXPTEL (BIEF) : MAXIMUM NUMBER OF ELEMENTS AROUND A POINT:   7
+                 MAXIMUM NUMBER OF POINTS AROUND A POINT:   7
+ USER_CORRXY (BIEF):NO MODIFICATION OF COORDINATES
+
+ MESH: MESH   ALLOCATED
+
+                     *************************************
+                     *    END OF MEMORY ORGANIZATION:    *
+                     *************************************
+
+ LISTING OF GAIA------------------------------------------------------------------------------
+                     COUPLED WITH TELEMAC2D INTERNALLY
+
+ DIFFERENT NUMBER OF PARALLEL PROCESSORS:
+ DECLARED BEFORE (CASE OF COUPLING ?):           1
+ GAIA :           0
+ VALUE            1  IS KEPT
+
+                   ********************************************
+                   *               LECDON:                    *
+                   *        AFTER CALLING DAMOCLES            *
+                   *        CHECKING OF DATA  READ            *
+                   *         IN THE STEERING FILE             *
+                   ********************************************
+
+ OPENING FILES FOR GAIA
+ OPENING: GAIGEO-geo_flume_bc.slf
+ OPENING: GAIRES-gai_flume_bc.slf
+ OPENING: GAICLI-geo_flume_bc.cli
+
+                     *******************************
+                     *     MEMORY ORGANISATION     *
+                     *******************************
+
+ READ_MESH_INFO: TITLE= newSelafin
+            NUMBER OF ELEMENTS:     5400
+            NUMBER OF POINTS:     3010
+
+            TYPE OF ELEMENT: TRIANGLE
+            TYPE OF BND ELEMENT: POINT
+
+            FORMAT NOT INDICATED IN TITLE
+
+ MXPTEL (BIEF) : MAXIMUM NUMBER OF ELEMENTS AROUND A POINT:   7
+                 MAXIMUM NUMBER OF POINTS AROUND A POINT:   7
+ USER_CORRXY (BIEF):NO MODIFICATION OF COORDINATES
+
+ MESH: MESH_S ALLOCATED
+
+                     *************************************
+                     *    END OF MEMORY ORGANIZATION:    *
+                     *************************************
+
+ INITIALIZING TELEMAC2D FOR
+ INBIEF (BIEF): NOT A VECTOR MACHINE (ACCORDING TO YOUR DATA)
+
+ FONSTR (BIEF): NO BATHYMETRY IN THE GEOMETRY FILE
+                AND NO BATHYMETRY FILE. THE BOTTOM
+                LEVEL IS FIXED TO ZERO BUT STILL
+                CAN BE MODIFIED IN CORFON.
+
+ STRCHE (BIEF): NO MODIFICATION OF FRICTION
+
+ THERE IS     2 LIQUID BOUNDARIES:
+
+ BOUNDARY    1 :
+  BEGINS AT BOUNDARY POINT:      301 , WITH GLOBAL NUMBER:      3010
+  AND COORDINATES:     30.00000           0.000000
+  ENDS AT BOUNDARY POINT:      310 , WITH GLOBAL NUMBER:       301
+  AND COORDINATES:     30.00000           1.000000
+
+ BOUNDARY    2 :
+  BEGINS AT BOUNDARY POINT:      610 , WITH GLOBAL NUMBER:         1
+  AND COORDINATES:     0.000000           1.000000
+  ENDS AT BOUNDARY POINT:        1 , WITH GLOBAL NUMBER:      2710
+  AND COORDINATES:     0.000000           0.000000
+
+ THERE IS     2 SOLID BOUNDARIES:
+
+ BOUNDARY    1 :
+  BEGINS AT BOUNDARY POINT:        1 , WITH GLOBAL NUMBER:      2710
+  AND COORDINATES:     0.000000           0.000000
+  ENDS AT BOUNDARY POINT:      301 , WITH GLOBAL NUMBER:      3010
+  AND COORDINATES:     30.00000           0.000000
+
+ BOUNDARY    2 :
+  BEGINS AT BOUNDARY POINT:      310 , WITH GLOBAL NUMBER:       301
+  AND COORDINATES:     30.00000           1.000000
+  ENDS AT BOUNDARY POINT:      610 , WITH GLOBAL NUMBER:         1
+  AND COORDINATES:     0.000000           1.000000
+
+ CORFON (TELEMAC2D): NO BOTTOM SMOOTHINGS
+
+ DESIRED SIMULATION DURATION:   1800.0000000000000
+
+================================================================================
+ ITERATION        0    TIME:   0.0000 S
+ TELEMAC2D COUPLED WITH: GAIA
+ TELEMAC-2D: INTERNAL COUPLING WITH GAIA
+ INBIEF (BIEF): NOT A VECTOR MACHINE (ACCORDING TO YOUR DATA)
+
+ THERE IS     2 LIQUID BOUNDARIES:
+
+ BOUNDARY    1 :
+  BEGINS AT BOUNDARY POINT:      301 , WITH GLOBAL NUMBER:      3010
+  AND COORDINATES:     30.00000           0.000000
+  ENDS AT BOUNDARY POINT:      310 , WITH GLOBAL NUMBER:       301
+  AND COORDINATES:     30.00000           1.000000
+
+ BOUNDARY    2 :
+  BEGINS AT BOUNDARY POINT:      610 , WITH GLOBAL NUMBER:         1
+  AND COORDINATES:     0.000000           1.000000
+  ENDS AT BOUNDARY POINT:        1 , WITH GLOBAL NUMBER:      2710
+  AND COORDINATES:     0.000000           0.000000
+
+ THERE IS     2 SOLID BOUNDARIES:
+
+ BOUNDARY    1 :
+  BEGINS AT BOUNDARY POINT:        1 , WITH GLOBAL NUMBER:      2710
+  AND COORDINATES:     0.000000           0.000000
+  ENDS AT BOUNDARY POINT:      301 , WITH GLOBAL NUMBER:      3010
+  AND COORDINATES:     30.00000           0.000000
+
+ BOUNDARY    2 :
+  BEGINS AT BOUNDARY POINT:      310 , WITH GLOBAL NUMBER:       301
+  AND COORDINATES:     30.00000           1.000000
+  ENDS AT BOUNDARY POINT:      610 , WITH GLOBAL NUMBER:         1
+  AND COORDINATES:     0.000000           1.000000
+
+                    GAIA INITIAL MASS OF SEDIMENTS:
+ TOTAL MASS OF CLASS  1 =    4770000.    ( KG )
+ QSCL REINITIALISED IN INIT_TRANSPORT
+ FOR CLASS            1
+ QS REINITIALISED IN INIT_TRANSPORT
+
+================================================================================
+ ITERATION        0    TIME:   0.0000 S
+
+ GAIA COUPLED WITH: TELEMAC2D
+ TELEMAC2D INITIALIZED
+
+                  ********************************
+                  *                              *
+                  *       KINETIC SCHEME         *
+                  *     FIRST ORDRE IN SPACE     *
+                  *                              *
+                  ********************************
+ ERROR: FIXED TIME-STEP AND CFL NOT GIVEN!...!
+ TIME-STEP MAY NOT SATISFY CFL CONDITION
+ THIS OPTION IS NOT ACCEPTED WITH FINITE VOLUMES
+
+ PLANTE: PROGRAM STOPPED AFTER AN ERROR
+ RETURNING EXIT CODE:            2
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 0 in communicator MPI_COMM_WORLD
+with errorcode 2.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/opt/telemac/scripts/python3/telemac2d.py", line 7, in <module>
+    main('telemac2d')
+  File "/opt/telemac/scripts/python3/runcode.py", line 288, in main
+    run_study(cas_file, code_name, options)
+  File "/opt/telemac/scripts/python3/execution/run_cas.py", line 169, in run_study
+    run_local_cas(my_study, options)
+  File "/opt/telemac/scripts/python3/execution/run_cas.py", line 65, in run_local_cas
+    my_study.run(options)
+  File "/opt/telemac/scripts/python3/execution/study.py", line 659, in run
+    self.run_local()
+  File "/opt/telemac/scripts/python3/execution/study.py", line 480, in run_local
+    run_code(self.run_cmd, self.sortie_file)
+  File "/opt/telemac/scripts/python3/execution/run.py", line 182, in run_code
+    raise TelemacException('Fail to run\n'+exe)
+utils.exceptions.TelemacException: Fail to run
+mpirun -np 1 /app/models/synthetic_sand_fixed/sand_fixed/t2d_flume_bc.cas_2026-10-14-10h32min03s/out_user_fortran

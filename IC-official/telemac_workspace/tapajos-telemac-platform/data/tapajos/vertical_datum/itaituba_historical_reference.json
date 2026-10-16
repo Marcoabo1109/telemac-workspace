@@ -1,0 +1,31 @@
+{
+  "status": "historical_documentary_candidate_not_verified_for_model",
+  "source": {
+    "title": "ETC HBSA Tapajós — Estudo de Impacto Ambiental",
+    "url": "https://portos.terradedireitos.org.br/wp-content/uploads/2024/02/EIA-Hidrovias-do-Brasil.pdf",
+    "retrieved_on": "2026-10-09",
+    "sha256": "97ade1c466dbaee19d3843126aca7f1d23e082b7c995aaa84fdedc28978b024c",
+    "pages": [
+      182,
+      217
+    ],
+    "station_description": "F-43-4382B-001/82, versão 1/2009"
+  },
+  "station": "17730000",
+  "nr_above_gauge_zero_m": 2.27,
+  "imbituba_above_nr_offset_m": 5.242,
+  "derived_gauge_to_imbituba_offset_m": 2.972,
+  "equations": {
+    "stage_nr_m": "gauge_cm / 100 - 2.270",
+    "stage_imbituba_m": "gauge_cm / 100 + 2.972",
+    "bed_imbituba_m": "5.242 - sounding_positive_depth_below_nr_m"
+  },
+  "uncertainty_m": null,
+  "applicability_epoch_verified": false,
+  "limitations": [
+    "Confirmar ficha original, marcos e alterações do zero da régua antes de aplicar às séries de 2007.",
+    "Confirmar referência vertical e edição de cada carta.",
+    "Relação local histórica; não é uma transformação geodésica nacional.",
+    "Cartas raster RGB não são grades numéricas de profundidade."
+  ]
+}

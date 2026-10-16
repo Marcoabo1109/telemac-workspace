@@ -1,0 +1,11 @@
+{
+  "crs": "EPSG:32721",
+  "horizontal_unit": "m",
+  "vertical_datum": null,
+  "bathymetry": "placeholder_zero",
+  "boundary": "all walls; classify liquid boundaries before simulation",
+  "refinement": "approximate medial axis, not surveyed thalweg",
+  "nodes": 218,
+  "triangles": 372,
+  "calibrated": false
+}

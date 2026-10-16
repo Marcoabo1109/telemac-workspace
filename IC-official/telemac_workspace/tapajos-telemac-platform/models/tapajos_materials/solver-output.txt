@@ -1,0 +1,593 @@
+
+
+Loading Options and Configurations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+          ___          _____
+         / _ \        | ____|
+ __   __| (_) | _ __  | |__
+ \ \ / / > _ < | '_ \ |___ \
+  \ V / | (_) || |_) | ___) |
+   \_/   \___/ | .__/ |____/
+               | |
+               |_|
+
+
+Running your CAS file(s) for:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+gnu:
+
+
+    +> Portable GNU/OpenMPI TELEMAC2D build, no architecture-specific patch
+
+    +> root:    /opt/telemac
+    +> module: ad / api / artemis / bief
+               damocles  / gaia  / gretel  / hermes
+               identify_liq_bnd  / khione  / mascaret  / nestor
+               parallel  / partel  / postel3d  / special
+               stbtel  / telemac2d  / telemac3d  / tomawac
+               waqtel
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+... processing the steering file
+  ~> Checking keyword/rubrique coherence
+
+... checking parallelisation
+
+... handling temporary directories
+         copying: case.cas -> /work/models/tapajos_materials/case.cas_2026-10-09-11h43min48s/T2DCAS
+         copying: telemac2d.dico -> /work/models/tapajos_materials/case.cas_2026-10-09-11h43min48s/T2DDICO
+         copying: mesh.cli -> /work/models/tapajos_materials/case.cas_2026-10-09-11h43min48s/T2DCLI
+         copying: mesh.slf -> /work/models/tapajos_materials/case.cas_2026-10-09-11h43min48s/T2DGEO
+         copying: tapajos.qsl -> /work/models/tapajos_materials/case.cas_2026-10-09-11h43min48s/T2DIMP
+
+... checking the executable
+  > compiling objs
+         compiling: difsou.f ... completed
+         compiling: user_condin_trac.f ... completed
+         created: out_user_fortran
+
+
+Running your simulation(s) :
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+In /work/models/tapajos_materials/case.cas_2026-10-09-11h43min48s:
+mpirun -np 1 /work/models/tapajos_materials/case.cas_2026-10-09-11h43min48s/out_user_fortran
+
+
+ MASTER PROCESSOR NUMBER            0  OF THE GROUP OF            1
+ EXECUTABLE FILE: /work/models/tapajos_materials/case.cas_2026-10-09-11h43min48s/A.EXE
+ LISTING OF TELEMAC2D------------------------------------------------------------------------------
+
+                TTTTT  EEEEE  L      EEEEE  M   M  AAAAA  CCCCC
+                  T    E      L      E      MM MM  A   A  C
+                  T    EEE    L      EEE    M M M  AAAAA  C
+                  T    E      L      E      M   M  A   A  C
+                  T    EEEEE  LLLLL  EEEEE  M   M  A   A  CCCCC
+
+                        2D    VERSION V8P5   FORTRAN 2003
+
+                        ~^~^~^~^~^~^~^~^~^~^~^^~^~^~^~^~^~
+                          ~                            ~
+                               \   '    o      '
+                               /\ o       \  o
+                             >=)'>    '   /\ '
+                               \/   \   >=)'>        ~
+                               /    /\    \/
+                        ~         >=)'>   /     .
+                                    \/                   )
+                                    /                   (
+                                          ~          )   )
+                          }     ~              (    (   (
+                         {                      )    )   )
+                          }  }         .       (    (   (
+                         {  {               /^^^^^^^^^^^^
+                        ^^^^^^^^^\         /
+                                  ^^^^^^^^^
+
+ DIFFERENT NUMBER OF PARALLEL PROCESSORS:
+ DECLARED BEFORE (CASE OF COUPLING ?):           1
+ TELEMAC-2D :           0
+ VALUE            1  IS KEPT
+
+                   ********************************************
+                   *               LECDON:                    *
+                   *        AFTER CALLING DAMOCLES            *
+                   *        CHECKING OF DATA  READ            *
+                   *         IN THE STEERING FILE             *
+                   ********************************************
+
+ LECDON: FINITE VOLUME SCHEME ON THE TRACER      1
+ IMPOSED VALUE: IMPLICITATION = 0.
+ LECDON : FINITE VOLUME SCHEME ON THE TRACER      1
+ IMPOSED VALUE: SUPG OPTION = 0 FOR DEPTH
+ LECDON: FINITE VOLUME SCHEME ON THE TRACER      2
+ IMPOSED VALUE: IMPLICITATION = 0.
+ LECDON : FINITE VOLUME SCHEME ON THE TRACER      2
+ IMPOSED VALUE: SUPG OPTION = 0 FOR DEPTH
+ LECDON: FINITE VOLUME SCHEME ON THE TRACER      3
+ IMPOSED VALUE: IMPLICITATION = 0.
+ LECDON : FINITE VOLUME SCHEME ON THE TRACER      3
+ IMPOSED VALUE: SUPG OPTION = 0 FOR DEPTH
+
+ EXITING LECDON. NAME OF THE STUDY:
+ TAPAJOS THREE MATERIALS POC
+
+ OPENING FILES FOR TELEMAC2D
+ OPENING: T2DGEO-mesh.slf
+ OPENING: T2DCLI-mesh.cli
+ OPENING: T2DRES-materials.slf
+ OPENING: T2DIMP-tapajos.qsl
+
+                          *****************************
+                          *    MEMORY ORGANIZATION    *
+                          *****************************
+
+ READ_MESH_INFO: TITLE= TAPAJOS OSM AXIS - ASSUMED BED FLOW DATUM
+            NUMBER OF ELEMENTS:     1588
+            NUMBER OF POINTS:      852
+
+            TYPE OF ELEMENT: TRIANGLE
+            TYPE OF BND ELEMENT: POINT
+
+            DOUBLE PRECISION FORMAT (R8)
+
+ MXPTEL (BIEF) : MAXIMUM NUMBER OF ELEMENTS AROUND A POINT:   7
+                 MAXIMUM NUMBER OF POINTS AROUND A POINT:   7
+ USER_CORRXY (BIEF):NO MODIFICATION OF COORDINATES
+
+ MESH: MESH   ALLOCATED
+
+                     *************************************
+                     *    END OF MEMORY ORGANIZATION:    *
+                     *************************************
+
+ INITIALIZING TELEMAC2D FOR
+ INBIEF (BIEF): NOT A VECTOR MACHINE (ACCORDING TO YOUR DATA)
+ STRCHE (BIEF): NO MODIFICATION OF FRICTION
+
+ THERE IS     2 LIQUID BOUNDARIES:
+
+ BOUNDARY    1 :
+  BEGINS AT BOUNDARY POINT:       65 , WITH GLOBAL NUMBER:         5
+  AND COORDINATES:     615033.2           9526953.
+  ENDS AT BOUNDARY POINT:       79 , WITH GLOBAL NUMBER:         4
+  AND COORDINATES:     614228.9           9527844.
+
+ BOUNDARY    2 :
+  BEGINS AT BOUNDARY POINT:        3 , WITH GLOBAL NUMBER:        10
+  AND COORDINATES:     611438.2           9526677.
+  ENDS AT BOUNDARY POINT:       17 , WITH GLOBAL NUMBER:         9
+  AND COORDINATES:     611614.2           9525490.
+
+ THERE IS     2 SOLID BOUNDARIES:
+
+ BOUNDARY    1 :
+  BEGINS AT BOUNDARY POINT:       17 , WITH GLOBAL NUMBER:         9
+  AND COORDINATES:     611614.2           9525490.
+  ENDS AT BOUNDARY POINT:       65 , WITH GLOBAL NUMBER:         5
+  AND COORDINATES:     615033.2           9526953.
+
+ BOUNDARY    2 :
+  BEGINS AT BOUNDARY POINT:       79 , WITH GLOBAL NUMBER:         4
+  AND COORDINATES:     614228.9           9527844.
+  ENDS AT BOUNDARY POINT:        3 , WITH GLOBAL NUMBER:        10
+  AND COORDINATES:     611438.2           9526677.
+
+ USER_CORFON (TELEMAC2D): NO MODIFICATION OF BOTTOM
+
+ CORFON (TELEMAC2D): NO BOTTOM SMOOTHINGS
+
+================================================================================
+ ITERATION        0    TIME:   0.0000 S
+
+                            BALANCE OF CONSERVATIVE (UNIT:  * M3)
+     INITIAL QUANTITY OF TRACER   :    1409750.
+
+                            BALANCE OF POLLUTANT (UNIT:  * M3)
+     INITIAL QUANTITY OF TRACER   :    1409750.
+
+                            BALANCE OF SEDIMENT (UNIT:  * M3)
+     INITIAL QUANTITY OF TRACER   :    1409750.
+ TELEMAC2D INITIALIZED
+ THE LIQUID BOUNDARIES FILE CONTAINS
+           2  LINES WITH:
+ Q(2)     SL(1)
+ USING STREAMLINE VERSION V8P5 FOR CHARACTERISTICS
+
+================================================================================
+ ITERATION      600    TIME: 10 MN   0.0000 S   (      600.0000 S)
+ LIQUID BOUNDARY: SL(1)    =   3.7100000000000000
+ LIQUID BOUNDARY: Q(2)     =   6000.0000000000000
+ LIQUID BOUNDARY: Q(2)     =   6000.0000000000000
+--------------------------------------------------------------------------------
+                          ADVECTION STEP
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+ GRACJG (BIEF) :        2 ITERATIONS, RELATIVE PRECISION:   0.1101986E-04
+--------------------------------------------------------------------------------
+                     DIFFUSION OF TRACERS STEP
+ CVTRVF (BIEF):      1 SUB-ITERATIONS
+ GRACJG (BIEF) :        1 ITERATIONS, RELATIVE PRECISION:   0.1762163E-06
+
+                            BALANCE OF CONSERVATIVE (UNIT:  * M3)
+
+     INITIAL QUANTITY                  :     1409721.
+     FINAL QUANTITY                    :     1409721.
+     BOUNDARY   1 FLUX:           -0.4382847E-07 ( >0 : ENTERING  <0 : EXITING )
+     BOUNDARY   2 FLUX:            -0.000000     ( >0 : ENTERING  <0 : EXITING )
+     TOTAL QUANTITY LOST               :    0.4224373E-01
+     RELATIVE ERROR                    :    0.2996602E-07
+ CVTRVF (BIEF):      1 SUB-ITERATIONS
+ GRACJG (BIEF) :        1 ITERATIONS, RELATIVE PRECISION:   0.1762425E-06
+
+                            BALANCE OF POLLUTANT (UNIT:  * M3)
+
+     INITIAL QUANTITY                  :     1119239.
+     FINAL QUANTITY                    :     1118808.
+     BOUNDARY   1 FLUX:           -0.3502778E-07 ( >0 : ENTERING  <0 : EXITING )
+     BOUNDARY   2 FLUX:            -0.000000     ( >0 : ENTERING  <0 : EXITING )
+     QUANTITY CREATED BY SOURCE TERM   :      -430.9964
+     TOTAL QUANTITY LOST               :    0.3350053E-01
+     RELATIVE ERROR                    :    0.2993153E-07
+ CVTRVF (BIEF):      1 SUB-ITERATIONS
+ GRACJG (BIEF) :        1 ITERATIONS, RELATIVE PRECISION:   0.1764950E-06
+
+                            BALANCE OF SEDIMENT (UNIT:  * M3)
+
+     INITIAL QUANTITY                  :     1301332.
+     FINAL QUANTITY                    :     1301160.
+     BOUNDARY   1 FLUX:           -0.3915790E-07 ( >0 : ENTERING  <0 : EXITING )
+     BOUNDARY   2 FLUX:            -0.000000     ( >0 : ENTERING  <0 : EXITING )
+     QUANTITY CREATED BY SOURCE TERM   :      -172.5668
+     TOTAL QUANTITY LOST               :    0.3997051E-01
+     RELATIVE ERROR                    :    0.3071507E-07
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :   0.2898181E+08 M3
+     FLUX BOUNDARY    1:    -9774.407     M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:     6000.000     M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        600.0     S :   -0.2466106E-09
+
+================================================================================
+ ITERATION     1200    TIME: 20 MN   0.0000 S   (     1200.0000 S)
+ LIQUID BOUNDARY: SL(1)    =   3.7100000000000000
+ LIQUID BOUNDARY: Q(2)     =   6000.0000000000000
+ LIQUID BOUNDARY: Q(2)     =   6000.0000000000000
+--------------------------------------------------------------------------------
+                          ADVECTION STEP
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+ GRACJG (BIEF) :        2 ITERATIONS, RELATIVE PRECISION:   0.3340278E-05
+--------------------------------------------------------------------------------
+                     DIFFUSION OF TRACERS STEP
+ CVTRVF (BIEF):      1 SUB-ITERATIONS
+ GRACJG (BIEF) :        1 ITERATIONS, RELATIVE PRECISION:   0.1681062E-06
+
+                            BALANCE OF CONSERVATIVE (UNIT:  * M3)
+
+     INITIAL QUANTITY                  :     1409678.
+     FINAL QUANTITY                    :     1409677.
+     BOUNDARY   1 FLUX:           -0.7960168     ( >0 : ENTERING  <0 : EXITING )
+     BOUNDARY   2 FLUX:            -0.000000     ( >0 : ENTERING  <0 : EXITING )
+     TOTAL QUANTITY LOST               :   -0.3158019E-01
+     RELATIVE ERROR                    :   -0.2240241E-07
+ CVTRVF (BIEF):      1 SUB-ITERATIONS
+ GRACJG (BIEF) :        1 ITERATIONS, RELATIVE PRECISION:   0.1680845E-06
+
+                            BALANCE OF POLLUTANT (UNIT:  * M3)
+
+     INITIAL QUANTITY                  :     888304.4
+     FINAL QUANTITY                    :     887961.9
+     BOUNDARY   1 FLUX:           -0.5042876     ( >0 : ENTERING  <0 : EXITING )
+     BOUNDARY   2 FLUX:            -0.000000     ( >0 : ENTERING  <0 : EXITING )
+     QUANTITY CREATED BY SOURCE TERM   :      -342.0513
+     TOTAL QUANTITY LOST               :   -0.1989276E-01
+     RELATIVE ERROR                    :   -0.2239408E-07
+ CVTRVF (BIEF):      1 SUB-ITERATIONS
+ GRACJG (BIEF) :        1 ITERATIONS, RELATIVE PRECISION:   0.1701561E-06
+
+                            BALANCE OF SEDIMENT (UNIT:  * M3)
+
+     INITIAL QUANTITY                  :     1195764.
+     FINAL QUANTITY                    :     1195587.
+     BOUNDARY   1 FLUX:           -0.6674194     ( >0 : ENTERING  <0 : EXITING )
+     BOUNDARY   2 FLUX:            -0.000000     ( >0 : ENTERING  <0 : EXITING )
+     QUANTITY CREATED BY SOURCE TERM   :      -176.2623
+     TOTAL QUANTITY LOST               :   -0.2624721E-01
+     RELATIVE ERROR                    :   -0.2195016E-07
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :   0.2706313E+08 M3
+     FLUX BOUNDARY    1:    -8247.835     M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:     6000.000     M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        1200.     S :    0.1437890E-10
+
+================================================================================
+ ITERATION     1800    TIME: 30 MN   0.0000 S   (     1800.0000 S)
+ LIQUID BOUNDARY: SL(1)    =   3.7100000000000000
+ LIQUID BOUNDARY: Q(2)     =   6000.0000000000000
+ LIQUID BOUNDARY: Q(2)     =   6000.0000000000000
+--------------------------------------------------------------------------------
+                          ADVECTION STEP
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+ GRACJG (BIEF) :        2 ITERATIONS, RELATIVE PRECISION:   0.2244922E-05
+--------------------------------------------------------------------------------
+                     DIFFUSION OF TRACERS STEP
+ CVTRVF (BIEF):      1 SUB-ITERATIONS
+ GRACJG (BIEF) :        1 ITERATIONS, RELATIVE PRECISION:   0.1117159E-06
+
+                            BALANCE OF CONSERVATIVE (UNIT:  * M3)
+
+     INITIAL QUANTITY                  :     1405000.
+     FINAL QUANTITY                    :     1404975.
+     BOUNDARY   1 FLUX:            -24.72563     ( >0 : ENTERING  <0 : EXITING )
+     BOUNDARY   2 FLUX:            -0.000000     ( >0 : ENTERING  <0 : EXITING )
+     TOTAL QUANTITY LOST               :   -0.1693141E-01
+     RELATIVE ERROR                    :   -0.1205083E-07
+ CVTRVF (BIEF):      1 SUB-ITERATIONS
+ GRACJG (BIEF) :        1 ITERATIONS, RELATIVE PRECISION:   0.1117100E-06
+
+                            BALANCE OF POLLUTANT (UNIT:  * M3)
+
+     INITIAL QUANTITY                  :     702659.8
+     FINAL QUANTITY                    :     702376.8
+     BOUNDARY   1 FLUX:            -12.41559     ( >0 : ENTERING  <0 : EXITING )
+     BOUNDARY   2 FLUX:            -0.000000     ( >0 : ENTERING  <0 : EXITING )
+     QUANTITY CREATED BY SOURCE TERM   :      -270.5837
+     TOTAL QUANTITY LOST               :   -0.8442619E-02
+     RELATIVE ERROR                    :   -0.1201523E-07
+ CVTRVF (BIEF):      1 SUB-ITERATIONS
+ GRACJG (BIEF) :        1 ITERATIONS, RELATIVE PRECISION:   0.1141005E-06
+
+                            BALANCE OF SEDIMENT (UNIT:  * M3)
+
+     INITIAL QUANTITY                  :     1092091.
+     FINAL QUANTITY                    :     1091915.
+     BOUNDARY   1 FLUX:            -19.23999     ( >0 : ENTERING  <0 : EXITING )
+     BOUNDARY   2 FLUX:            -0.000000     ( >0 : ENTERING  <0 : EXITING )
+     QUANTITY CREATED BY SOURCE TERM   :      -156.8973
+     TOTAL QUANTITY LOST               :   -0.1423854E-01
+     RELATIVE ERROR                    :   -0.1303787E-07
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :   0.2757839E+08 M3
+     FLUX BOUNDARY    1:    -4588.138     M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:     6000.000     M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        1800.     S :    0.3194214E-11
+
+================================================================================
+ ITERATION     2400    TIME: 40 MN   0.0000 S   (     2400.0000 S)
+ LIQUID BOUNDARY: SL(1)    =   3.7100000000000000
+ LIQUID BOUNDARY: Q(2)     =   6000.0000000000000
+ LIQUID BOUNDARY: Q(2)     =   6000.0000000000000
+--------------------------------------------------------------------------------
+                          ADVECTION STEP
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+ GRACJG (BIEF) :        1 ITERATIONS, ABSOLUTE PRECISION:   0.9447949E-04
+--------------------------------------------------------------------------------
+                     DIFFUSION OF TRACERS STEP
+ CVTRVF (BIEF):      1 SUB-ITERATIONS
+ GRACJG (BIEF) :        1 ITERATIONS, RELATIVE PRECISION:   0.9936251E-07
+
+                            BALANCE OF CONSERVATIVE (UNIT:  * M3)
+
+     INITIAL QUANTITY                  :     1328940.
+     FINAL QUANTITY                    :     1328598.
+     BOUNDARY   1 FLUX:            -342.0510     ( >0 : ENTERING  <0 : EXITING )
+     BOUNDARY   2 FLUX:            -0.000000     ( >0 : ENTERING  <0 : EXITING )
+     TOTAL QUANTITY LOST               :    0.1693877E-01
+     RELATIVE ERROR                    :    0.1274607E-07
+ CVTRVF (BIEF):      1 SUB-ITERATIONS
+ GRACJG (BIEF) :        1 ITERATIONS, RELATIVE PRECISION:   0.9935621E-07
+
+                            BALANCE OF POLLUTANT (UNIT:  * M3)
+
+     INITIAL QUANTITY                  :     527383.2
+     FINAL QUANTITY                    :     527044.0
+     BOUNDARY   1 FLUX:            -136.1054     ( >0 : ENTERING  <0 : EXITING )
+     BOUNDARY   2 FLUX:            -0.000000     ( >0 : ENTERING  <0 : EXITING )
+     QUANTITY CREATED BY SOURCE TERM   :      -203.0798
+     TOTAL QUANTITY LOST               :    0.6732759E-02
+     RELATIVE ERROR                    :    0.1276635E-07
+ CVTRVF (BIEF):      1 SUB-ITERATIONS
+ GRACJG (BIEF) :        1 ITERATIONS, RELATIVE PRECISION:   0.1024021E-06
+
+                            BALANCE OF SEDIMENT (UNIT:  * M3)
+
+     INITIAL QUANTITY                  :     948117.9
+     FINAL QUANTITY                    :     947737.3
+     BOUNDARY   1 FLUX:            -244.9027     ( >0 : ENTERING  <0 : EXITING )
+     BOUNDARY   2 FLUX:            -0.000000     ( >0 : ENTERING  <0 : EXITING )
+     QUANTITY CREATED BY SOURCE TERM   :      -135.6476
+     TOTAL QUANTITY LOST               :    0.1225486E-01
+     RELATIVE ERROR                    :    0.1292546E-07
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :   0.2787384E+08 M3
+     FLUX BOUNDARY    1:    -6691.425     M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:     6000.000     M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        2400.     S :    0.9791261E-09
+
+================================================================================
+ ITERATION     3000    TIME: 50 MN   0.0000 S   (     3000.0000 S)
+ LIQUID BOUNDARY: SL(1)    =   3.7100000000000000
+ LIQUID BOUNDARY: Q(2)     =   6000.0000000000000
+ LIQUID BOUNDARY: Q(2)     =   6000.0000000000000
+--------------------------------------------------------------------------------
+                          ADVECTION STEP
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+ GRACJG (BIEF) :        1 ITERATIONS, ABSOLUTE PRECISION:   0.4057138E-04
+--------------------------------------------------------------------------------
+                     DIFFUSION OF TRACERS STEP
+ CVTRVF (BIEF):      1 SUB-ITERATIONS
+ GRACJG (BIEF) :        1 ITERATIONS, RELATIVE PRECISION:   0.7848177E-07
+
+                            BALANCE OF CONSERVATIVE (UNIT:  * M3)
+
+     INITIAL QUANTITY                  :     938403.1
+     FINAL QUANTITY                    :     937546.5
+     BOUNDARY   1 FLUX:            -856.5078     ( >0 : ENTERING  <0 : EXITING )
+     BOUNDARY   2 FLUX:            -0.000000     ( >0 : ENTERING  <0 : EXITING )
+     TOTAL QUANTITY LOST               :    0.1964907E-01
+     RELATIVE ERROR                    :    0.2093884E-07
+ CVTRVF (BIEF):      1 SUB-ITERATIONS
+ GRACJG (BIEF) :        1 ITERATIONS, RELATIVE PRECISION:   0.7843683E-07
+
+                            BALANCE OF POLLUTANT (UNIT:  * M3)
+
+     INITIAL QUANTITY                  :     295320.4
+     FINAL QUANTITY                    :     294936.8
+     BOUNDARY   1 FLUX:            -269.9712     ( >0 : ENTERING  <0 : EXITING )
+     BOUNDARY   2 FLUX:            -0.000000     ( >0 : ENTERING  <0 : EXITING )
+     QUANTITY CREATED BY SOURCE TERM   :      -113.7215
+     TOTAL QUANTITY LOST               :    0.6183515E-02
+     RELATIVE ERROR                    :    0.2093832E-07
+ CVTRVF (BIEF):      1 SUB-ITERATIONS
+ GRACJG (BIEF) :        1 ITERATIONS, RELATIVE PRECISION:   0.8526903E-07
+
+                            BALANCE OF SEDIMENT (UNIT:  * M3)
+
+     INITIAL QUANTITY                  :     613192.4
+     FINAL QUANTITY                    :     612540.8
+     BOUNDARY   1 FLUX:            -563.0639     ( >0 : ENTERING  <0 : EXITING )
+     BOUNDARY   2 FLUX:            -0.000000     ( >0 : ENTERING  <0 : EXITING )
+     QUANTITY CREATED BY SOURCE TERM   :      -88.59033
+     TOTAL QUANTITY LOST               :    0.1405135E-01
+     RELATIVE ERROR                    :    0.2291507E-07
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :   0.2750245E+08 M3
+     FLUX BOUNDARY    1:    -6253.709     M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:     6000.000     M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        3000.     S :    0.5603714E-09
+
+================================================================================
+ ITERATION     3600    TIME:  1 H  0 MIN   0.0000 S   (     3600.0000 S)
+ LIQUID BOUNDARY: SL(1)    =   3.7100000000000000
+ LIQUID BOUNDARY: Q(2)     =   6000.0000000000000
+ LIQUID BOUNDARY: Q(2)     =   6000.0000000000000
+--------------------------------------------------------------------------------
+                          ADVECTION STEP
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+ GRACJG (BIEF) :        1 ITERATIONS, ABSOLUTE PRECISION:   0.2751458E-04
+--------------------------------------------------------------------------------
+                     DIFFUSION OF TRACERS STEP
+ CVTRVF (BIEF):      1 SUB-ITERATIONS
+ GRACJG (BIEF) :        1 ITERATIONS, RELATIVE PRECISION:   0.7862468E-07
+
+                            BALANCE OF CONSERVATIVE (UNIT:  * M3)
+
+     INITIAL QUANTITY                  :     467157.6
+     FINAL QUANTITY                    :     466479.1
+     BOUNDARY   1 FLUX:            -678.5121     ( >0 : ENTERING  <0 : EXITING )
+     BOUNDARY   2 FLUX:            -0.000000     ( >0 : ENTERING  <0 : EXITING )
+     TOTAL QUANTITY LOST               :    0.8830452E-02
+     RELATIVE ERROR                    :    0.1890251E-07
+
+                      FINAL BALANCE OF CONSERVATIVE (UNIT:  * M3)
+
+     INITIAL QUANTITY                  :     1409750.
+     FINAL QUANTITY                    :     466479.1
+     QUANTITY ENTERED THROUGH LIQ. BND.:    -943247.2      ( IF <0 EXIT )
+     TOTAL QUANTITY LOST               :     23.98808
+     RELATIVE ERROR                    :    0.1701584E-04
+
+ CVTRVF (BIEF):      1 SUB-ITERATIONS
+ GRACJG (BIEF) :        1 ITERATIONS, RELATIVE PRECISION:   0.7871803E-07
+
+                            BALANCE OF POLLUTANT (UNIT:  * M3)
+
+     INITIAL QUANTITY                  :     116550.4
+     FINAL QUANTITY                    :     116336.0
+     BOUNDARY   1 FLUX:            -169.4502     ( >0 : ENTERING  <0 : EXITING )
+     BOUNDARY   2 FLUX:            -0.000000     ( >0 : ENTERING  <0 : EXITING )
+     QUANTITY CREATED BY SOURCE TERM   :      -44.88156
+     TOTAL QUANTITY LOST               :    0.2202616E-02
+     RELATIVE ERROR                    :    0.1889840E-07
+
+                      FINAL BALANCE OF POLLUTANT (UNIT:  * M3)
+
+     INITIAL QUANTITY                  :     1409750.
+     FINAL QUANTITY                    :     116336.0
+     QUANTITY ENTERED THROUGH LIQ. BND.:    -304492.2      ( IF <0 EXIT )
+     QUANTITY CREATED BY SOURCE TERM   :    -988904.8
+     TOTAL QUANTITY LOST               :     17.31581
+     RELATIVE ERROR                    :    0.1228289E-04
+
+ CVTRVF (BIEF):      1 SUB-ITERATIONS
+ GRACJG (BIEF) :        1 ITERATIONS, RELATIVE PRECISION:   0.8076587E-07
+
+                            BALANCE OF SEDIMENT (UNIT:  * M3)
+
+     INITIAL QUANTITY                  :     278312.4
+     FINAL QUANTITY                    :     277864.2
+     BOUNDARY   1 FLUX:            -407.4761     ( >0 : ENTERING  <0 : EXITING )
+     BOUNDARY   2 FLUX:            -0.000000     ( >0 : ENTERING  <0 : EXITING )
+     QUANTITY CREATED BY SOURCE TERM   :      -40.75131
+     TOTAL QUANTITY LOST               :    0.6095078E-02
+     RELATIVE ERROR                    :    0.2190013E-07
+
+                      FINAL BALANCE OF SEDIMENT (UNIT:  * M3)
+
+     INITIAL QUANTITY                  :     1409750.
+     FINAL QUANTITY                    :     277864.2
+     QUANTITY ENTERED THROUGH LIQ. BND.:    -623268.3      ( IF <0 EXIT )
+     QUANTITY CREATED BY SOURCE TERM   :    -508596.5
+     TOTAL QUANTITY LOST               :     21.28140
+     RELATIVE ERROR                    :    0.1509587E-04
+
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :   0.2764837E+08 M3
+     FLUX BOUNDARY    1:    -5677.949     M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:     6000.000     M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        3600.     S :    0.6426853E-10
+--------------------------------------------------------------------------------
+                   FINAL BALANCE OF WATER VOLUME
+
+     RELATIVE ERROR CUMULATED ON VOLUME:   -0.1562230E-06
+
+     INITIAL VOLUME              :    0.2728726E+08 M3
+     FINAL VOLUME                :    0.2764837E+08 M3
+     VOLUME THAT ENTERED THE DOMAIN:     361112.1     M3  ( IF <0 EXIT )
+     TOTAL VOLUME LOST             :    -4.319311     M3
+
+ END OF TIME LOOP
+
+ EXITING MPI
+
+                     *************************************
+                     *    END OF MEMORY ORGANIZATION:    *
+                     *************************************
+
+ CORRECT END OF RUN
+
+ ELAPSE TIME :
+                              3  SECONDS
+Note: The following floating-point exceptions are signalling: IEEE_UNDERFLOW_FLAG
+STOP 0
+... merging separated result files
+
+... handling result files
+
+        moving: materials.slf
+... deleting working dir
+
+
+
+My work is done

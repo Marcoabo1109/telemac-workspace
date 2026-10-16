@@ -1,0 +1,16 @@
+# Requires the official-source solver image built by docker/Dockerfile.
+services:
+  backend:
+    image: tapajos-platform-backend:latest
+    ports: ["127.0.0.1:${POC_API_PORT:-8001}:8000"]
+    volumes: ["..:/app"]
+    environment:
+      TELEMAC_EXECUTABLE: /app/docker/run-telemac
+      OMPI_ALLOW_RUN_AS_ROOT: "1"
+      OMPI_ALLOW_RUN_AS_ROOT_CONFIRM: "1"
+  frontend:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.frontend
+    ports: ["127.0.0.1:${POC_PORT:-3001}:3000"]
+    depends_on: [backend]

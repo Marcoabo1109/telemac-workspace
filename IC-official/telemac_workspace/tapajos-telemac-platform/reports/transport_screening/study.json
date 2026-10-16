@@ -1,0 +1,298 @@
+{
+  "status": "exploratory_not_calibrated",
+  "geometry": "assumed mixed volume; no spatial coupling to TELEMAC",
+  "assumptions": "All Parameters values are hypothetical, not measured Tapajos sediment or metal properties.",
+  "limitations": [
+    "No metal species or reactions beyond instantaneous linear partitioning.",
+    "No shear-dependent erosion, spatial plume, bed morphology feedback or ecological thresholds.",
+    "Pareto candidates do not establish a dredging recommendation or economic optimum."
+  ],
+  "step_sensitivity": [
+    {
+      "status": "hypothetical_well_mixed_reach_not_spatial_prediction",
+      "parameters": {
+        "volume_m3": 27640000.0,
+        "area_m2": 4170000.0,
+        "discharge_m3_s": 6000.0,
+        "settling_m_s": 0.0001,
+        "kd_m3_kg": 1.0,
+        "suspended_in_kg_m3": 0.02,
+        "dissolved_in_kg_m3": 1e-09,
+        "particulate_in_kg_kg": 1e-06,
+        "bed_initial_kg": 100000000.0,
+        "bed_metal_kg_kg": 1e-06,
+        "erosion_kg_s": 0.0,
+        "dredge_kg_s": 25,
+        "resuspension_fraction": 0.05
+      },
+      "duration_s": 86400.0,
+      "dt_s": 120,
+      "sediment_kg": {
+        "suspended": 515019.9606675622,
+        "bed": 98514360.93488483,
+        "initial_total": 100552800.0,
+        "inflow": 10368000.0,
+        "outflow": 9839419.104447588,
+        "removed": 2052000.0,
+        "balance_residual": -1.4901161193847656e-08
+      },
+      "metal_kg": {
+        "water_total": 0.577815950837996,
+        "bed": 97.86100844760722,
+        "initial_total": 100.58044,
+        "inflow": 10.886399999999814,
+        "outflow": 10.98282326921459,
+        "removed": 2.04519233234047,
+        "balance_residual": 4.654054919228656e-13
+      },
+      "dissolved_peak_kg_m3": 2.058658182137531e-08,
+      "dissolved_exposure_kg_s_m3": 0.001773507442987856
+    },
+    {
+      "status": "hypothetical_well_mixed_reach_not_spatial_prediction",
+      "parameters": {
+        "volume_m3": 27640000.0,
+        "area_m2": 4170000.0,
+        "discharge_m3_s": 6000.0,
+        "settling_m_s": 0.0001,
+        "kd_m3_kg": 1.0,
+        "suspended_in_kg_m3": 0.02,
+        "dissolved_in_kg_m3": 1e-09,
+        "particulate_in_kg_kg": 1e-06,
+        "bed_initial_kg": 100000000.0,
+        "bed_metal_kg_kg": 1e-06,
+        "erosion_kg_s": 0.0,
+        "dredge_kg_s": 25,
+        "resuspension_fraction": 0.05
+      },
+      "duration_s": 86400.0,
+      "dt_s": 60,
+      "sediment_kg": {
+        "suspended": 518632.12622486794,
+        "bed": 98518550.09512404,
+        "initial_total": 100552800.0,
+        "inflow": 10368000.0,
+        "outflow": 9831617.778651293,
+        "removed": 2052000.0,
+        "balance_residual": 1.9371509552001953e-07
+      },
+      "metal_kg": {
+        "water_total": 0.5816033070992457,
+        "bed": 97.86122526262412,
+        "initial_total": 100.58044,
+        "inflow": 10.886399999999755,
+        "outflow": 10.978862990241934,
+        "removed": 2.045148440034694,
+        "balance_residual": 2.398081733190338e-13
+      },
+      "dissolved_peak_kg_m3": 2.065531620143185e-08,
+      "dissolved_exposure_kg_s_m3": 0.0017843003345816824
+    },
+    {
+      "status": "hypothetical_well_mixed_reach_not_spatial_prediction",
+      "parameters": {
+        "volume_m3": 27640000.0,
+        "area_m2": 4170000.0,
+        "discharge_m3_s": 6000.0,
+        "settling_m_s": 0.0001,
+        "kd_m3_kg": 1.0,
+        "suspended_in_kg_m3": 0.02,
+        "dissolved_in_kg_m3": 1e-09,
+        "particulate_in_kg_kg": 1e-06,
+        "bed_initial_kg": 100000000.0,
+        "bed_metal_kg_kg": 1e-06,
+        "erosion_kg_s": 0.0,
+        "dredge_kg_s": 25,
+        "resuspension_fraction": 0.05
+      },
+      "duration_s": 86400.0,
+      "dt_s": 30,
+      "sediment_kg": {
+        "suspended": 520444.54253561515,
+        "bed": 98520649.87368862,
+        "initial_total": 100552800.0,
+        "inflow": 10368000.0,
+        "outflow": 9827705.583775904,
+        "removed": 2052000.0,
+        "balance_residual": 1.4901161193847656e-07
+      },
+      "metal_kg": {
+        "water_total": 0.5835031994523702,
+        "bed": 97.86133434441066,
+        "initial_total": 100.58044,
+        "inflow": 10.886400000000403,
+        "outflow": 10.976876016348236,
+        "removed": 2.045126439788626,
+        "balance_residual": -5.080380560684716e-13
+      },
+      "dissolved_peak_kg_m3": 2.0721409794348466e-08,
+      "dissolved_exposure_kg_s_m3": 0.0017897104952651996
+    }
+  ],
+  "candidates": [
+    {
+      "status": "hypothetical_well_mixed_reach_not_spatial_prediction",
+      "parameters": {
+        "volume_m3": 27640000.0,
+        "area_m2": 4170000.0,
+        "discharge_m3_s": 6000.0,
+        "settling_m_s": 0.0001,
+        "kd_m3_kg": 1.0,
+        "suspended_in_kg_m3": 0.02,
+        "dissolved_in_kg_m3": 1e-09,
+        "particulate_in_kg_kg": 1e-06,
+        "bed_initial_kg": 100000000.0,
+        "bed_metal_kg_kg": 1e-06,
+        "erosion_kg_s": 0.0,
+        "dredge_kg_s": 0.0,
+        "resuspension_fraction": 0.05
+      },
+      "duration_s": 86400.0,
+      "dt_s": 60.0,
+      "sediment_kg": {
+        "suspended": 513285.4032851702,
+        "bed": 100671922.66616629,
+        "initial_total": 100552800.0,
+        "inflow": 10368000.0,
+        "outflow": 9735591.930548437,
+        "removed": 0.0,
+        "balance_residual": -8.940696716308594e-08
+      },
+      "metal_kg": {
+        "water_total": 0.5759333387158171,
+        "bed": 100.01375038000374,
+        "initial_total": 100.58044,
+        "inflow": 10.886399999999755,
+        "outflow": 10.877156281280353,
+        "removed": 0.0,
+        "balance_residual": 1.545430450278218e-13
+      },
+      "dissolved_peak_kg_m3": 2.0586538029198416e-08,
+      "dissolved_exposure_kg_s_m3": 0.0017680896629198148,
+      "pareto": true
+    },
+    {
+      "status": "hypothetical_well_mixed_reach_not_spatial_prediction",
+      "parameters": {
+        "volume_m3": 27640000.0,
+        "area_m2": 4170000.0,
+        "discharge_m3_s": 6000.0,
+        "settling_m_s": 0.0001,
+        "kd_m3_kg": 1.0,
+        "suspended_in_kg_m3": 0.02,
+        "dissolved_in_kg_m3": 1e-09,
+        "particulate_in_kg_kg": 1e-06,
+        "bed_initial_kg": 100000000.0,
+        "bed_metal_kg_kg": 1e-06,
+        "erosion_kg_s": 0.0,
+        "dredge_kg_s": 10.0,
+        "resuspension_fraction": 0.05
+      },
+      "duration_s": 86400.0,
+      "dt_s": 60.0,
+      "sediment_kg": {
+        "suspended": 515424.0924610492,
+        "bed": 99810573.63774927,
+        "initial_total": 100552800.0,
+        "inflow": 10368000.0,
+        "outflow": 9774002.269789595,
+        "removed": 820800.0,
+        "balance_residual": -8.940696716308594e-08
+      },
+      "metal_kg": {
+        "water_total": 0.578201513701999,
+        "bed": 99.15271200778787,
+        "initial_total": 100.58044,
+        "inflow": 10.886399999999755,
+        "outflow": 10.917840477011621,
+        "removed": 0.8180860014984043,
+        "balance_residual": 1.4033219031261979e-13
+      },
+      "dissolved_peak_kg_m3": 2.0587566738958805e-08,
+      "dissolved_exposure_kg_s_m3": 0.001774574897974353,
+      "pareto": true
+    },
+    {
+      "status": "hypothetical_well_mixed_reach_not_spatial_prediction",
+      "parameters": {
+        "volume_m3": 27640000.0,
+        "area_m2": 4170000.0,
+        "discharge_m3_s": 6000.0,
+        "settling_m_s": 0.0001,
+        "kd_m3_kg": 1.0,
+        "suspended_in_kg_m3": 0.02,
+        "dissolved_in_kg_m3": 1e-09,
+        "particulate_in_kg_kg": 1e-06,
+        "bed_initial_kg": 100000000.0,
+        "bed_metal_kg_kg": 1e-06,
+        "erosion_kg_s": 0.0,
+        "dredge_kg_s": 25.0,
+        "resuspension_fraction": 0.05
+      },
+      "duration_s": 86400.0,
+      "dt_s": 60.0,
+      "sediment_kg": {
+        "suspended": 518632.12622486794,
+        "bed": 98518550.09512404,
+        "initial_total": 100552800.0,
+        "inflow": 10368000.0,
+        "outflow": 9831617.778651293,
+        "removed": 2052000.0,
+        "balance_residual": 1.9371509552001953e-07
+      },
+      "metal_kg": {
+        "water_total": 0.5816033070992457,
+        "bed": 97.86122526262412,
+        "initial_total": 100.58044,
+        "inflow": 10.886399999999755,
+        "outflow": 10.978862990241934,
+        "removed": 2.045148440034694,
+        "balance_residual": 2.398081733190338e-13
+      },
+      "dissolved_peak_kg_m3": 2.065531620143185e-08,
+      "dissolved_exposure_kg_s_m3": 0.0017843003345816824,
+      "pareto": true
+    },
+    {
+      "status": "hypothetical_well_mixed_reach_not_spatial_prediction",
+      "parameters": {
+        "volume_m3": 27640000.0,
+        "area_m2": 4170000.0,
+        "discharge_m3_s": 6000.0,
+        "settling_m_s": 0.0001,
+        "kd_m3_kg": 1.0,
+        "suspended_in_kg_m3": 0.02,
+        "dissolved_in_kg_m3": 1e-09,
+        "particulate_in_kg_kg": 1e-06,
+        "bed_initial_kg": 100000000.0,
+        "bed_metal_kg_kg": 1e-06,
+        "erosion_kg_s": 0.0,
+        "dredge_kg_s": 50.0,
+        "resuspension_fraction": 0.05
+      },
+      "duration_s": 86400.0,
+      "dt_s": 60.0,
+      "sediment_kg": {
+        "suspended": 523978.8491645651,
+        "bed": 96365177.52408133,
+        "initial_total": 100552800.0,
+        "inflow": 10368000.0,
+        "outflow": 9927643.6267542,
+        "removed": 4104000.0,
+        "balance_residual": 8.940696716308594e-08
+      },
+      "metal_kg": {
+        "water_total": 0.5872716837609393,
+        "bed": 95.70893961168986,
+        "initial_total": 100.58044,
+        "inflow": 10.886399999999755,
+        "outflow": 11.080556956096823,
+        "removed": 4.090071748452547,
+        "balance_residual": 4.2454928461665986e-13
+      },
+      "dissolved_peak_kg_m3": 2.0853386906805404e-08,
+      "dissolved_exposure_kg_s_m3": 0.0018005029323537088,
+      "pareto": true
+    }
+  ]
+}

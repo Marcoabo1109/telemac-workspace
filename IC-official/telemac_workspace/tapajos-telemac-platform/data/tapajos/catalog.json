@@ -1,0 +1,474 @@
+{
+  "schema_version": 1,
+  "project": "Tapajós TELEMAC research platform",
+  "updated_on": "2026-10-01",
+  "datasets": [
+    {
+      "id": "osm-river-axis",
+      "title": "Eixo do rio Tapajós — OpenStreetMap",
+      "category": "geometry",
+      "status": "available",
+      "fitness": "context_only",
+      "local_path": "data/tapajos/geometry/osm_tapajos_axis.geojson",
+      "sha256": "757234febc9e4d9ed70282c01736f8d77ed3e698c9e4b2fedb9fa389d5b20eab",
+      "source": {
+        "institution": "OpenStreetMap contributors",
+        "url": "https://api.openstreetmap.org/api/0.6/map?bbox=-55.995,-4.315,-55.955,-4.275",
+        "retrieved_on": "2026-09-09",
+        "license": "ODbL 1.0",
+        "license_url": "https://www.openstreetmap.org/copyright"
+      },
+      "spatial_reference": {
+        "horizontal_crs": "EPSG:4326",
+        "vertical_datum": null
+      },
+      "temporal": {
+        "kind": "snapshot",
+        "source_timestamp": "2026-01-09T17:30:25Z"
+      },
+      "variables": [],
+      "limitations": [
+        "É linha central aproximada, não polígono de margens levantado.",
+        "Tags de largura conflitantes não são tratadas como medição."
+      ]
+    },
+    {
+      "id": "sgb-itaituba-monthly-stage-statistics",
+      "title": "Estatísticas mensais de nível — Itaituba 17730000",
+      "category": "stage",
+      "status": "available",
+      "fitness": "context_only",
+      "local_path": "data/tapajos/stations/itaituba_sgb_monthly_levels.json",
+      "sha256": "131d812ef25162a79401052d2df805fddeb232ea97b0a036f203412f4048f740",
+      "source": {
+        "institution": "Serviço Geológico do Brasil",
+        "title": "Prognóstico de níveis do rio Tapajós para o período de vazante de 2025",
+        "url": "https://www.sgb.gov.br/sace/boletins/monitoramento_especial/20250916_10-20250930%20-%20105555.pdf",
+        "retrieved_on": "2026-09-09",
+        "publication_date": "2025-09-11",
+        "license": "Termos de reutilização não registrados; revisar antes de redistribuir o PDF"
+      },
+      "spatial_reference": {
+        "horizontal_crs": null,
+        "vertical_datum": "Zero local da régua; vínculo geodésico desconhecido"
+      },
+      "temporal": {
+        "kind": "monthly_statistics",
+        "start": "1974",
+        "end": "2024"
+      },
+      "variables": [
+        {
+          "name": "stage statistics",
+          "unit": "cm"
+        }
+      ],
+      "limitations": [
+        "Não é série diária observada e não pode ser usada como hidrograma.",
+        "Cota de régua não é profundidade nem elevação geodésica."
+      ]
+    },
+    {
+      "id": "exploratory-domain",
+      "title": "Domínio exploratório por buffer do eixo",
+      "category": "geometry",
+      "status": "derived",
+      "fitness": "exploration_only",
+      "local_path": "models/tapajos_trecho1/domain.geojson",
+      "sha256": "8e702c57ad106e9a073ea4fffc6e082c9ddc0bfde44241bd68df2c1e38a319d4",
+      "source": {
+        "institution": "Projeto IC-RIOS",
+        "url": "https://github.com/Marcoabo1109/IC",
+        "retrieved_on": "2026-09-09",
+        "license": "MIT para o código; geometria derivada do eixo OSM sob ODbL"
+      },
+      "spatial_reference": {
+        "horizontal_crs": "EPSG:4326",
+        "vertical_datum": null
+      },
+      "temporal": {
+        "kind": "not_applicable"
+      },
+      "variables": [],
+      "limitations": [
+        "Largura de 1200 m assumida; não representa margens levantadas."
+      ]
+    },
+    {
+      "id": "exploratory-bathymetry",
+      "title": "Batimetria analítica exploratória",
+      "category": "bathymetry",
+      "status": "derived",
+      "fitness": "exploration_only",
+      "local_path": "models/tapajos_trecho1/mesh.slf",
+      "sha256": "e3e6dccce44439a8cf648fb1054c5970f2f391c658cae80ce37aab9da58b4b07",
+      "source": {
+        "institution": "Projeto IC-RIOS",
+        "url": "https://github.com/Marcoabo1109/IC",
+        "retrieved_on": "2026-09-09",
+        "license": "MIT para o gerador; não é dado observado"
+      },
+      "spatial_reference": {
+        "horizontal_crs": "EPSG:32721",
+        "vertical_datum": "Zero local assumido da régua"
+      },
+      "temporal": {
+        "kind": "not_applicable"
+      },
+      "variables": [
+        {
+          "name": "BOTTOM",
+          "unit": "m"
+        }
+      ],
+      "limitations": [
+        "Seção parabólica de 4–8 m e declividade assumida; não é levantamento batimétrico."
+      ]
+    },
+    {
+      "id": "exploratory-boundary-series",
+      "title": "Série de contorno exploratória",
+      "category": "boundary_series",
+      "status": "derived",
+      "fitness": "exploration_only",
+      "local_path": "models/tapajos_trecho1/tapajos.qsl",
+      "sha256": "b490113db17045c15b3c558c5eaa4945a84c8ec03e9a99e34df1035aa0f19bfe",
+      "source": {
+        "institution": "Projeto IC-RIOS",
+        "url": "https://github.com/Marcoabo1109/IC",
+        "retrieved_on": "2026-09-09",
+        "license": "MIT; valores são hipóteses de cenário"
+      },
+      "spatial_reference": {
+        "horizontal_crs": null,
+        "vertical_datum": "Zero local assumido da régua"
+      },
+      "temporal": {
+        "kind": "constant_scenario",
+        "start": "0 s",
+        "end": "3600 s"
+      },
+      "variables": [
+        {
+          "name": "flow",
+          "unit": "m3/s"
+        },
+        {
+          "name": "stage",
+          "unit": "m"
+        }
+      ],
+      "limitations": [
+        "Vazão de 6000 m3/s e nível 3,71 m são hipóteses constantes, não observações sincronizadas."
+      ]
+    },
+    {
+      "id": "observed-boundary-template-2007",
+      "title": "Forçantes observadas preparadas — Acará/Itaituba 2007",
+      "category": "boundary_series",
+      "status": "derived",
+      "fitness": "context_only",
+      "local_path": "data/tapajos/scenarios/observed_2007/scenario.json",
+      "sha256": "d473c7e168f4fd3f10d7ecb27fdde2f102592cfd979c22dd991234b6639cffdb",
+      "source": {
+        "institution": "Projeto IC-RIOS, derivado de dados da ANA",
+        "url": "https://telemetriaws1.ana.gov.br/ServiceANA.asmx/HidroSerieHistorica",
+        "retrieved_on": "2026-10-01",
+        "license": "Dados abertos da ANA; transformação do projeto sob MIT"
+      },
+      "spatial_reference": {
+        "horizontal_crs": null,
+        "vertical_datum": "Zero local da régua de Itaituba; sem vínculo com o datum da malha"
+      },
+      "temporal": {
+        "kind": "daily_observations",
+        "start": "2007-01-01",
+        "end": "2007-12-31"
+      },
+      "variables": [
+        { "name": "upstream discharge", "unit": "m3/s" },
+        { "name": "downstream local-gauge stage", "unit": "m" }
+      ],
+      "limitations": [
+        "Template de forçante, não cenário calibrado ou pronto para execução científica.",
+        "A cota está em metros sobre o zero local da régua, não em elevação geodésica da malha.",
+        "A propagação e os aportes laterais entre Acará e Itaituba ainda exigem calibração."
+      ]
+    },
+    {
+      "id": "surveyed-bank-polygon",
+      "title": "Polígono de margens verificado",
+      "category": "geometry",
+      "status": "missing",
+      "fitness": "required",
+      "variables": [],
+      "limitations": [
+        "Necessário para substituir o buffer de largura assumida."
+      ]
+    },
+    {
+      "id": "surveyed-bathymetry",
+      "title": "Batimetria ou seções transversais levantadas",
+      "category": "bathymetry",
+      "status": "missing",
+      "fitness": "required",
+      "variables": [{ "name": "bed elevation", "unit": "m" }],
+      "limitations": ["DEM terrestre não substitui profundidade submersa."]
+    },
+    {
+      "id": "daily-discharge",
+      "title": "Série diária de vazão observada — Acará do Tapajós 17650002",
+      "category": "flow",
+      "status": "available",
+      "fitness": "required",
+      "station": {
+        "code": "17650002",
+        "name": "Acará do Tapajós"
+      },
+      "local_path": "data/tapajos/stations/processed/ana_17650002_discharge_consisted_1996-01-01_2011-01-31.csv",
+      "sha256": "af13c3c7a9416783437ca77205933125b88ada5369e79640f13c217e41e5a8d9",
+      "artifacts": [
+        {
+          "role": "raw_response",
+          "local_path": "data/tapajos/stations/raw/ana_17650002_discharge_consisted_1996-01-01_2011-01-31.xml",
+          "sha256": "adca6660abd7ccbc44516ba9f2e1679a14863f3083280d76f1845fcaeebf0b9b"
+        },
+        {
+          "role": "transformation_manifest",
+          "local_path": "data/tapajos/stations/manifests/ana_17650002_discharge_consisted_1996-01-01_2011-01-31.json",
+          "sha256": "1850fe568bbd065246c3bd083c2dc898543080d5ded4c21ca5dbd05c84183da6"
+        }
+      ],
+      "source": {
+        "institution": "Agência Nacional de Águas e Saneamento Básico (ANA)",
+        "title": "HidroSerieHistorica — dados de vazão",
+        "url": "https://telemetriaws1.ana.gov.br/ServiceANA.asmx/HidroSerieHistorica?codEstacao=17650002&dataInicio=01%2F01%2F1960&dataFim=30%2F09%2F2026&tipoDados=3&nivelConsistencia=2",
+        "retrieved_on": "2026-10-01",
+        "license": "Dados abertos da ANA; atribuição institucional preservada"
+      },
+      "temporal": {
+        "kind": "daily_observations",
+        "start": "1996-01-01",
+        "end": "2011-01-31"
+      },
+      "quality": {
+        "records": 5420,
+        "start": "1996-01-01",
+        "end": "2011-01-31",
+        "missing_days": 90,
+        "completeness_percent": 98.37,
+        "consistency_level": 2
+      },
+      "variables": [{ "name": "discharge", "unit": "m3/s" }],
+      "limitations": [
+        "A janela comum com a cota de Itaituba é 1996-01-01 a 2011-01-31.",
+        "A estação fica a montante do trecho de Itaituba; validar propagação e aportes laterais antes de aplicá-la ao contorno da malha.",
+        "Existem 90 dias ausentes; nenhuma lacuna foi interpolada."
+      ]
+    },
+    {
+      "id": "daily-stage",
+      "title": "Série diária de nível observada — Itaituba 17730000",
+      "category": "stage",
+      "status": "available",
+      "fitness": "required",
+      "station": {
+        "code": "17730000",
+        "name": "Itaituba"
+      },
+      "local_path": "data/tapajos/stations/processed/ana_17730000_stage_consisted_1974-01-01_2014-05-31.csv",
+      "sha256": "711a190aa6add6026407b1bbebbe3094fc96153a2cc54b4f5706f330eaf1831f",
+      "artifacts": [
+        {
+          "role": "raw_response",
+          "local_path": "data/tapajos/stations/raw/ana_17730000_stage_consisted_1974-01-01_2014-05-31.xml",
+          "sha256": "77982ecf570069ee6ee31f3ebfb97d9e94296ac89f5da850ece8d47362ffe8b2"
+        },
+        {
+          "role": "transformation_manifest",
+          "local_path": "data/tapajos/stations/manifests/ana_17730000_stage_consisted_1974-01-01_2014-05-31.json",
+          "sha256": "114ccdff23980770f36ff5a15598129ffb204fce19f693366f1048db24fb7643"
+        }
+      ],
+      "source": {
+        "institution": "Agência Nacional de Águas e Saneamento Básico (ANA)",
+        "title": "HidroSerieHistorica — dados consistidos de cota",
+        "url": "https://telemetriaws1.ana.gov.br/ServiceANA.asmx/HidroSerieHistorica?codEstacao=17730000&dataInicio=01%2F01%2F1974&dataFim=31%2F12%2F2024&tipoDados=1&nivelConsistencia=2",
+        "retrieved_on": "2026-09-18",
+        "license": "Dados abertos da ANA; atribuição institucional preservada"
+      },
+      "spatial_reference": {
+        "horizontal_crs": null,
+        "vertical_datum": "Zero local da régua; vínculo geodésico ainda desconhecido"
+      },
+      "temporal": {
+        "kind": "daily_observations",
+        "start": "1974-01-01",
+        "end": "2014-05-31"
+      },
+      "quality": {
+        "records": 14361,
+        "start": "1974-01-01",
+        "end": "2014-05-31",
+        "missing_days": 400,
+        "completeness_percent": 97.29,
+        "consistency_level": 2
+      },
+      "variables": [{ "name": "stage", "unit": "cm" }],
+      "limitations": [
+        "A série termina em 2014-05-31 apesar da consulta até 2024.",
+        "Há 400 dias ausentes; nenhuma lacuna foi interpolada.",
+        "Cota da régua não é profundidade nem elevação geodésica; falta vínculo de datum.",
+        "O serviço legado respondeu em 18/09/2026, mas deve ser substituído pelo HidroWebService autorizado quando possível."
+      ]
+    },
+    {
+      "id": "vertical-datum-tie",
+      "title": "Vínculo entre régua e datum vertical da malha",
+      "category": "vertical_datum",
+      "status": "missing",
+      "fitness": "required",
+      "variables": [{ "name": "gauge offset", "unit": "m" }],
+      "limitations": [
+        "Obrigatório antes de converter cota da régua em elevação de contorno."
+      ]
+    },
+    {
+      "id": "bed-granulometry",
+      "title": "Granulometria do leito",
+      "category": "sediment",
+      "status": "missing",
+      "fitness": "required",
+      "variables": [{ "name": "grain-size fractions", "unit": "fraction" }],
+      "limitations": ["Necessária para parametrização GAIA defensável."]
+    },
+    {
+      "id": "suspended-sediment",
+      "title": "Concentração de sedimentos em suspensão",
+      "category": "sediment",
+      "status": "missing",
+      "fitness": "required",
+      "variables": [
+        { "name": "suspended sediment concentration", "unit": "kg/m3" }
+      ],
+      "limitations": [
+        "Deve possuir método de amostragem, datas e limites de detecção."
+      ]
+    },
+    {
+      "id": "metal-concentrations",
+      "title": "Concentrações observadas de metais",
+      "category": "metals",
+      "status": "missing",
+      "fitness": "required",
+      "variables": [{ "name": "metal concentration", "unit": "ug/L or mg/kg" }],
+      "limitations": [
+        "Separar fase dissolvida, particulada e sedimento; registrar limites de detecção."
+      ]
+    },
+    {
+      "id": "metal-partition-parameters",
+      "title": "Parâmetros de partição e reações dos metais",
+      "category": "metals",
+      "status": "missing",
+      "fitness": "required",
+      "variables": [
+        { "name": "partition/reaction parameters", "unit": "method-specific" }
+      ],
+      "limitations": [
+        "Não assumir proporcionalidade linear sem base experimental ou bibliográfica revisada."
+      ]
+    }
+  ],
+  "gates": [
+    {
+      "id": "exploratory-demo",
+      "title": "Demonstração exploratória",
+      "requirements": [
+        { "dataset_id": "osm-river-axis", "accepted_statuses": ["available"] },
+        {
+          "dataset_id": "sgb-itaituba-monthly-stage-statistics",
+          "accepted_statuses": ["available"]
+        },
+        {
+          "dataset_id": "exploratory-domain",
+          "accepted_statuses": ["derived"]
+        },
+        {
+          "dataset_id": "exploratory-bathymetry",
+          "accepted_statuses": ["derived"]
+        },
+        {
+          "dataset_id": "exploratory-boundary-series",
+          "accepted_statuses": ["derived"]
+        }
+      ]
+    },
+    {
+      "id": "hydrodynamic-calibration",
+      "title": "Calibração hidrodinâmica",
+      "requirements": [
+        {
+          "dataset_id": "surveyed-bank-polygon",
+          "accepted_statuses": ["available"]
+        },
+        {
+          "dataset_id": "surveyed-bathymetry",
+          "accepted_statuses": ["available"]
+        },
+        { "dataset_id": "daily-discharge", "accepted_statuses": ["available"] },
+        { "dataset_id": "daily-stage", "accepted_statuses": ["available"] },
+        {
+          "dataset_id": "vertical-datum-tie",
+          "accepted_statuses": ["available"]
+        }
+      ]
+    },
+    {
+      "id": "sediment-transport",
+      "title": "Transporte de sedimentos / GAIA",
+      "requirements": [
+        {
+          "dataset_id": "surveyed-bathymetry",
+          "accepted_statuses": ["available"]
+        },
+        { "dataset_id": "daily-discharge", "accepted_statuses": ["available"] },
+        { "dataset_id": "daily-stage", "accepted_statuses": ["available"] },
+        {
+          "dataset_id": "vertical-datum-tie",
+          "accepted_statuses": ["available"]
+        },
+        {
+          "dataset_id": "bed-granulometry",
+          "accepted_statuses": ["available"]
+        },
+        {
+          "dataset_id": "suspended-sediment",
+          "accepted_statuses": ["available"]
+        }
+      ]
+    },
+    {
+      "id": "metals-assessment",
+      "title": "Avaliação de metais",
+      "requirements": [
+        {
+          "dataset_id": "bed-granulometry",
+          "accepted_statuses": ["available"]
+        },
+        {
+          "dataset_id": "suspended-sediment",
+          "accepted_statuses": ["available"]
+        },
+        {
+          "dataset_id": "metal-concentrations",
+          "accepted_statuses": ["available"]
+        },
+        {
+          "dataset_id": "metal-partition-parameters",
+          "accepted_statuses": ["available"]
+        }
+      ]
+    }
+  ]
+}

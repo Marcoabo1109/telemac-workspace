@@ -1,0 +1,18 @@
+{
+  "status": "completed",
+  "job": "06c70aaaa38b4ec289446caa24231151",
+  "solver": "TELEMAC-2D v8p5r0 source build",
+  "duration_s": 3600.0,
+  "frames": 31,
+  "nodes": 228,
+  "triangles": 397,
+  "minimum_depth_m": 3.789335012435913,
+  "maximum_speed_m_s": 1.4739181610296703,
+  "maximum_froude": 0.23398781024304022,
+  "tracer_min": 0.0,
+  "tracer_max": 1.0,
+  "result_sha256": "40aa925a3a72c9613c8bdbe903e06f62ee60a1a66a7225f49fcabc6676a0a8f9",
+  "interpretation": "Uncalibrated startup scenario; assumed hydraulics and normalized conservative tracer, not measured metals.",
+  "relative_cumulative_volume_error": -4.988062e-07,
+  "relative_final_tracer_mass_error": -0.008688563
+}

@@ -1,0 +1,22 @@
+{
+  "name": "psi_L2_dt0.5",
+  "level": 2,
+  "dt_s": 0.5,
+  "tracer_scheme": 5,
+  "nodes": 3291,
+  "triangles": 6352,
+  "duration_s": 3600,
+  "input_sha256": "e734e67b6ab1e68883d60f9f697c1b67498f4501e8217bf13122097080254654",
+  "job": "977a61aa2d5741e48e1ed051e98b8f65",
+  "balance": {
+    "water_relative": -7.710161e-08,
+    "tracer_relative": -0.006335823
+  },
+  "min_depth_all_frames_m": 3.7109525203704834,
+  "tracer_range_all_frames": [
+    0.0,
+    1.0
+  ],
+  "final_water_volume_m3": 27645582.62304781,
+  "final_tracer_inventory_normalized_m3": 21653351.300681386
+}

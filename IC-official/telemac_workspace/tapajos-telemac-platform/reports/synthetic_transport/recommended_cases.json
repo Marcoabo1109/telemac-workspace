@@ -1,0 +1,62 @@
+{
+  "data_kind": "synthetic_only",
+  "cases": [
+    {
+      "id": "mud_exchange",
+      "path": "models/synthetic_sediment/mud_exchange",
+      "purpose": "GAIA/Nestor synthetic reference"
+    },
+    {
+      "id": "mud_deposition",
+      "path": "models/synthetic_sediment/mud_deposition",
+      "purpose": "GAIA/Nestor synthetic reference"
+    },
+    {
+      "id": "mud_erosion",
+      "path": "models/synthetic_sediment/mud_erosion",
+      "purpose": "GAIA/Nestor synthetic reference"
+    },
+    {
+      "id": "mud_passive",
+      "path": "models/synthetic_sediment/mud_passive",
+      "purpose": "GAIA/Nestor synthetic reference"
+    },
+    {
+      "id": "nestor_dig",
+      "path": "models/synthetic_sediment/nestor_dig",
+      "purpose": "GAIA/Nestor synthetic reference"
+    },
+    {
+      "id": "nestor_dump",
+      "path": "models/synthetic_sediment/nestor_dump",
+      "purpose": "GAIA/Nestor synthetic reference"
+    },
+    {
+      "id": "nestor_dig_dump",
+      "path": "models/synthetic_sediment/nestor_dig_dump",
+      "purpose": "GAIA/Nestor synthetic reference"
+    },
+    {
+      "id": "sand_diagnostic",
+      "path": "models/synthetic_sand_diagnostic/sand_diagnostic",
+      "purpose": "Sand bedload plus final budget diagnostic; full output equality verified"
+    },
+    {
+      "id": "micropol_deposition",
+      "path": "models/synthetic_micropollutant_dt360_tight/micropol_deposition",
+      "purpose": "WAQTEL synthetic partition/deposition benchmark; dt=360 s, accuracy=1e-12"
+    },
+    {
+      "id": "micropol_adsorption",
+      "path": "models/synthetic_micropollutant_dt360_tight/micropol_adsorption",
+      "purpose": "WAQTEL synthetic partition/deposition benchmark; dt=360 s, accuracy=1e-12"
+    },
+    {
+      "id": "micropol_desorption",
+      "path": "models/synthetic_micropollutant_dt360_tight/micropol_desorption",
+      "purpose": "WAQTEL synthetic partition/deposition benchmark; dt=360 s, accuracy=1e-12"
+    }
+  ],
+  "tank_configuration": "models/synthetic_transport/scenarios.json",
+  "integration_status": "GAIA and WAQTEL benchmarks are independent; joint spatial sediment-metal integration remains a next step"
+}

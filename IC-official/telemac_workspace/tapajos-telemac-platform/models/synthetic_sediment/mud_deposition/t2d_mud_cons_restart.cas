@@ -1,0 +1,46 @@
+/DEBUGGER = 1
+/
+/
+FORTRAN FILE             = 'user_fortran'
+BOUNDARY CONDITIONS FILE = geo_mud_cons-t2d.cli
+GEOMETRY FILE            = geo_mud_cons-t2d.slf
+RESULTS FILE             = r2d_mud_cons-t2d.slf
+GAIA STEERING FILE       = gai_mud_cons_restart-t2d.cas
+COUPLING WITH            = 'GAIA'
+/
+RESTART MODE = YES
+RESTART FILE = restart_mud_cons_t2d.slf
+RESTART FILE FORMAT = 'SERAFIND'
+/
+/----------------------------------------------------------------------/
+/                     GENERAL OPTIONS
+/----------------------------------------------------------------------/
+/
+TITLE = 'MUD CONSERVATION'
+INITIAL CONDITIONS = SPECIAL
+VARIABLES FOR GRAPHIC PRINTOUTS = 'U,V,H,S,B'
+TIME STEP = 0.04
+NUMBER OF TIME STEPS = 500
+GRAPHIC PRINTOUT PERIOD = 100
+LISTING FOR PRINTOUT PERIOD = 100
+/
+LAW OF BOTTOM FRICTION = 3
+FRICTION COEFFICIENT = 40.
+/
+/----------------------------------------------------------------------/
+/                      PROPAGATION
+/----------------------------------------------------------------------/
+/
+SOLVER = 7
+TURBULENCE MODEL = 1
+VELOCITY DIFFUSIVITY = 0.D0
+MAXIMUM NUMBER OF ITERATIONS FOR SOLVER = 100
+SOLVER ACCURACY = 1.E-15
+IMPLICITATION FOR DEPTH = 0.6
+IMPLICITATION FOR VELOCITY = 0.6
+MASS-LUMPING ON H = 1.
+/---------------------------------------------------------------
+MASS-BALANCE = YES
+TYPE OF ADVECTION = 1;5
+SUPG OPTION       = 2;0
+/----------------------------------------------------------------------/

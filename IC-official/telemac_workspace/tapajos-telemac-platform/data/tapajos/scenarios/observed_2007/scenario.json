@@ -1,0 +1,384 @@
+{
+  "schema_version": 1,
+  "scenario": "observed_2007",
+  "status": "forcing_prepared_execution_blocked",
+  "period": {
+    "start": "2007-01-01",
+    "end": "2007-12-31",
+    "days": 365
+  },
+  "primary_boundaries": {
+    "upstream": "Acará do Tapajós 17650002 discharge",
+    "downstream": "Itaituba 17730000 stage"
+  },
+  "controls": [
+    "Buburé 17710000 discharge",
+    "Buburé 17710000 stage"
+  ],
+  "statistics": {
+    "q_acara_m3_s": {
+      "minimum": 3423.06,
+      "maximum": 28678.6,
+      "mean": 10292.943452054795,
+      "median": 7950.11,
+      "p05": 3506.4,
+      "p95": 25731.960000000003
+    },
+    "h_itaituba_cm": {
+      "minimum": 188.0,
+      "maximum": 833.0,
+      "mean": 530.1890410958904,
+      "median": 566.0,
+      "p05": 206.2,
+      "p95": 808.6
+    },
+    "q_bubure_m3_s": {
+      "minimum": 3604.53,
+      "maximum": 28594.0,
+      "mean": 11953.445342465753,
+      "median": 9754.39,
+      "p05": 3682.4139999999998,
+      "p95": 27255.140000000003
+    },
+    "h_bubure_cm": {
+      "minimum": 432.0,
+      "maximum": 830.0,
+      "mean": 584.9397260273972,
+      "median": 567.0,
+      "p05": 434.2,
+      "p95": 814.8
+    }
+  },
+  "lag_diagnostic": {
+    "best": {
+      "lag_days": 22,
+      "correlation": 0.8307657098106609,
+      "pairs": 343
+    },
+    "lags": [
+      {
+        "lag_days": -30,
+        "correlation": 0.4677742687589314,
+        "pairs": 335
+      },
+      {
+        "lag_days": -29,
+        "correlation": 0.4806364994342853,
+        "pairs": 336
+      },
+      {
+        "lag_days": -28,
+        "correlation": 0.49340597538588293,
+        "pairs": 337
+      },
+      {
+        "lag_days": -27,
+        "correlation": 0.5060671964104594,
+        "pairs": 338
+      },
+      {
+        "lag_days": -26,
+        "correlation": 0.5186014035810734,
+        "pairs": 339
+      },
+      {
+        "lag_days": -25,
+        "correlation": 0.5310443739913489,
+        "pairs": 340
+      },
+      {
+        "lag_days": -24,
+        "correlation": 0.543357968109073,
+        "pairs": 341
+      },
+      {
+        "lag_days": -23,
+        "correlation": 0.5554772423730528,
+        "pairs": 342
+      },
+      {
+        "lag_days": -22,
+        "correlation": 0.5674954924904425,
+        "pairs": 343
+      },
+      {
+        "lag_days": -21,
+        "correlation": 0.5793372967725208,
+        "pairs": 344
+      },
+      {
+        "lag_days": -20,
+        "correlation": 0.590981996944795,
+        "pairs": 345
+      },
+      {
+        "lag_days": -19,
+        "correlation": 0.6024120902541423,
+        "pairs": 346
+      },
+      {
+        "lag_days": -18,
+        "correlation": 0.6136666570378287,
+        "pairs": 347
+      },
+      {
+        "lag_days": -17,
+        "correlation": 0.6248341786659618,
+        "pairs": 348
+      },
+      {
+        "lag_days": -16,
+        "correlation": 0.6358254073904284,
+        "pairs": 349
+      },
+      {
+        "lag_days": -15,
+        "correlation": 0.6466233702448209,
+        "pairs": 350
+      },
+      {
+        "lag_days": -14,
+        "correlation": 0.6572062910277158,
+        "pairs": 351
+      },
+      {
+        "lag_days": -13,
+        "correlation": 0.6675828034158094,
+        "pairs": 352
+      },
+      {
+        "lag_days": -12,
+        "correlation": 0.677734674685484,
+        "pairs": 353
+      },
+      {
+        "lag_days": -11,
+        "correlation": 0.687682797895363,
+        "pairs": 354
+      },
+      {
+        "lag_days": -10,
+        "correlation": 0.6974232991700517,
+        "pairs": 355
+      },
+      {
+        "lag_days": -9,
+        "correlation": 0.7069218582730814,
+        "pairs": 356
+      },
+      {
+        "lag_days": -8,
+        "correlation": 0.7161509008448546,
+        "pairs": 357
+      },
+      {
+        "lag_days": -7,
+        "correlation": 0.7251193409684042,
+        "pairs": 358
+      },
+      {
+        "lag_days": -6,
+        "correlation": 0.7338038531045128,
+        "pairs": 359
+      },
+      {
+        "lag_days": -5,
+        "correlation": 0.742181881358801,
+        "pairs": 360
+      },
+      {
+        "lag_days": -4,
+        "correlation": 0.7502068521629094,
+        "pairs": 361
+      },
+      {
+        "lag_days": -3,
+        "correlation": 0.7578535211623325,
+        "pairs": 362
+      },
+      {
+        "lag_days": -2,
+        "correlation": 0.7651050248675029,
+        "pairs": 363
+      },
+      {
+        "lag_days": -1,
+        "correlation": 0.7718735713360158,
+        "pairs": 364
+      },
+      {
+        "lag_days": 0,
+        "correlation": 0.7781381025896457,
+        "pairs": 365
+      },
+      {
+        "lag_days": 1,
+        "correlation": 0.7839777389390565,
+        "pairs": 364
+      },
+      {
+        "lag_days": 2,
+        "correlation": 0.7892902220660133,
+        "pairs": 363
+      },
+      {
+        "lag_days": 3,
+        "correlation": 0.7940802203064607,
+        "pairs": 362
+      },
+      {
+        "lag_days": 4,
+        "correlation": 0.7983856039374746,
+        "pairs": 361
+      },
+      {
+        "lag_days": 5,
+        "correlation": 0.8022524462762559,
+        "pairs": 360
+      },
+      {
+        "lag_days": 6,
+        "correlation": 0.8056995565327129,
+        "pairs": 359
+      },
+      {
+        "lag_days": 7,
+        "correlation": 0.808786393392768,
+        "pairs": 358
+      },
+      {
+        "lag_days": 8,
+        "correlation": 0.8115536923923917,
+        "pairs": 357
+      },
+      {
+        "lag_days": 9,
+        "correlation": 0.8140603255397095,
+        "pairs": 356
+      },
+      {
+        "lag_days": 10,
+        "correlation": 0.8163390522550644,
+        "pairs": 355
+      },
+      {
+        "lag_days": 11,
+        "correlation": 0.8184244546581714,
+        "pairs": 354
+      },
+      {
+        "lag_days": 12,
+        "correlation": 0.8203519859879475,
+        "pairs": 353
+      },
+      {
+        "lag_days": 13,
+        "correlation": 0.8221180467733867,
+        "pairs": 352
+      },
+      {
+        "lag_days": 14,
+        "correlation": 0.8237362459834978,
+        "pairs": 351
+      },
+      {
+        "lag_days": 15,
+        "correlation": 0.8252201147723729,
+        "pairs": 350
+      },
+      {
+        "lag_days": 16,
+        "correlation": 0.8265565326619039,
+        "pairs": 349
+      },
+      {
+        "lag_days": 17,
+        "correlation": 0.8277559572725878,
+        "pairs": 348
+      },
+      {
+        "lag_days": 18,
+        "correlation": 0.8287793982829494,
+        "pairs": 347
+      },
+      {
+        "lag_days": 19,
+        "correlation": 0.8296032751963331,
+        "pairs": 346
+      },
+      {
+        "lag_days": 20,
+        "correlation": 0.8302089807248572,
+        "pairs": 345
+      },
+      {
+        "lag_days": 21,
+        "correlation": 0.8305996447706323,
+        "pairs": 344
+      },
+      {
+        "lag_days": 22,
+        "correlation": 0.8307657098106609,
+        "pairs": 343
+      },
+      {
+        "lag_days": 23,
+        "correlation": 0.8306952116463387,
+        "pairs": 342
+      },
+      {
+        "lag_days": 24,
+        "correlation": 0.8303890576015425,
+        "pairs": 341
+      },
+      {
+        "lag_days": 25,
+        "correlation": 0.8298097416613668,
+        "pairs": 340
+      },
+      {
+        "lag_days": 26,
+        "correlation": 0.8289683970247028,
+        "pairs": 339
+      },
+      {
+        "lag_days": 27,
+        "correlation": 0.8278520341314254,
+        "pairs": 338
+      },
+      {
+        "lag_days": 28,
+        "correlation": 0.8264598417497573,
+        "pairs": 337
+      },
+      {
+        "lag_days": 29,
+        "correlation": 0.8248339135411835,
+        "pairs": 336
+      },
+      {
+        "lag_days": 30,
+        "correlation": 0.8229852932838198,
+        "pairs": 335
+      }
+    ],
+    "interpretation": "lag > 0: jusante atrasada; associação não prova tempo de viagem; avaliar tendência/sazonalidade"
+  },
+  "execution_ready": false,
+  "blocked_by": [
+    "Unknown geodetic offset between Itaituba gauge zero and mesh datum",
+    "No surveyed bathymetry or verified bank polygon",
+    "Propagation and lateral inflows between Acará and Itaituba require calibration"
+  ],
+  "stage_reference": "The QSL template writes metres above the Itaituba local gauge zero; it is not a geodetic model elevation and must not be executed as a calibrated boundary before applying a documented datum offset.",
+  "artifacts": {
+    "daily_forcing": {
+      "path": "data/tapajos/scenarios/observed_2007/forcing_daily.csv",
+      "sha256": "8cad404320ccb1a0c083e950af984957930621bf3a4ce15356e921e34f76c80b"
+    },
+    "qsl_template": {
+      "path": "data/tapajos/scenarios/observed_2007/forcing_local_gauge_datum.qsl.template",
+      "sha256": "05b4dee21aac327d7822d62357b41c0a1618259deb54c248b54f15a5ac5a4004"
+    }
+  }
+}

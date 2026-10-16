@@ -1,0 +1,37 @@
+{
+  "status": "executed_budget_review_required",
+  "returncode": 0,
+  "balance": {
+    "water_relative": [
+      -5.731055e-14
+    ],
+    "sediment_relative_initial_active_layer": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "sediment_cumulated_lost_kg": [
+      0.0
+    ]
+  },
+  "results": [
+    {
+      "file": "r2d_mud_cons-t2d.slf",
+      "sha256": "51e48c2eb4a1b28349662c694f33da74e1a436312714450a376aa6231aa47e9a",
+      "final_time_s": 40.0
+    },
+    {
+      "file": "gai_mud_cons-t2d.slf",
+      "sha256": "5f9c4a41426c80727b140d18faa823a32063cd4cf2b2877f3da1122d0fd035dc",
+      "final_time_s": 40.0
+    }
+  ]
+}

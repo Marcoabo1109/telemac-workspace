@@ -1,0 +1,304 @@
+{
+  "schema_version": 1,
+  "dataset": "ANA station 17710000 discharge",
+  "source": {
+    "institution": "Agência Nacional de Águas e Saneamento Básico (ANA)",
+    "url": "https://telemetriaws1.ana.gov.br/ServiceANA.asmx/HidroSerieHistorica",
+    "retrieved_on": "2026-10-01",
+    "service": "HidroSerieHistorica (legacy read-only service)"
+  },
+  "transformation": {
+    "parser": "scripts.tapajos_data.parse_legacy_xml",
+    "gap_policy": "No interpolation; absent dates remain absent",
+    "duplicate_policy": "Highest consistency record retained per date"
+  },
+  "artifacts": {
+    "raw": {
+      "path": "data/tapajos/stations/raw/ana_17710000_discharge_consisted_2004-10-21_2025-10-29.xml",
+      "sha256": "8286493d19cbe66fe2336ecbd6a293416576a0369038840b635aa57b0796d8c3"
+    },
+    "canonical": {
+      "path": "data/tapajos/stations/processed/ana_17710000_discharge_consisted_2004-10-21_2025-10-29.csv",
+      "sha256": "8e003fcd9273703a7c1806a2e8db197f3235ab8b998b6e8f7c52766cdd3d0777"
+    }
+  },
+  "quality": {
+    "records": 6707,
+    "start": "2004-10-21",
+    "end": "2025-10-29",
+    "expected_days": 7679,
+    "missing_days": 972,
+    "completeness_percent": 87.34,
+    "gap_count": 52,
+    "maximum_gap_days": 338,
+    "gaps": [
+      {
+        "start": "2013-03-01",
+        "end": "2013-04-30",
+        "days": 61
+      },
+      {
+        "start": "2014-07-01",
+        "end": "2014-12-31",
+        "days": 184
+      },
+      {
+        "start": "2020-07-15",
+        "end": "2021-06-17",
+        "days": 338
+      },
+      {
+        "start": "2024-01-01",
+        "end": "2024-01-02",
+        "days": 2
+      },
+      {
+        "start": "2024-01-11",
+        "end": "2024-01-12",
+        "days": 2
+      },
+      {
+        "start": "2024-01-14",
+        "end": "2024-01-17",
+        "days": 4
+      },
+      {
+        "start": "2024-01-21",
+        "end": "2024-01-23",
+        "days": 3
+      },
+      {
+        "start": "2024-01-28",
+        "end": "2024-01-30",
+        "days": 3
+      },
+      {
+        "start": "2024-02-07",
+        "end": "2024-02-08",
+        "days": 2
+      },
+      {
+        "start": "2024-02-18",
+        "end": "2024-02-23",
+        "days": 6
+      },
+      {
+        "start": "2024-03-03",
+        "end": "2024-03-04",
+        "days": 2
+      },
+      {
+        "start": "2024-03-16",
+        "end": "2024-03-16",
+        "days": 1
+      },
+      {
+        "start": "2024-03-18",
+        "end": "2024-03-18",
+        "days": 1
+      },
+      {
+        "start": "2024-03-24",
+        "end": "2024-03-30",
+        "days": 7
+      },
+      {
+        "start": "2024-04-03",
+        "end": "2024-04-03",
+        "days": 1
+      },
+      {
+        "start": "2024-04-12",
+        "end": "2024-04-15",
+        "days": 4
+      },
+      {
+        "start": "2024-04-18",
+        "end": "2024-04-18",
+        "days": 1
+      },
+      {
+        "start": "2024-04-21",
+        "end": "2024-04-22",
+        "days": 2
+      },
+      {
+        "start": "2024-05-01",
+        "end": "2024-05-03",
+        "days": 3
+      },
+      {
+        "start": "2024-05-05",
+        "end": "2024-05-09",
+        "days": 5
+      },
+      {
+        "start": "2024-05-14",
+        "end": "2024-06-12",
+        "days": 30
+      },
+      {
+        "start": "2024-06-23",
+        "end": "2024-06-23",
+        "days": 1
+      },
+      {
+        "start": "2024-07-25",
+        "end": "2024-09-18",
+        "days": 56
+      },
+      {
+        "start": "2024-09-24",
+        "end": "2024-09-26",
+        "days": 3
+      },
+      {
+        "start": "2024-10-01",
+        "end": "2024-10-06",
+        "days": 6
+      },
+      {
+        "start": "2024-10-08",
+        "end": "2024-10-16",
+        "days": 9
+      },
+      {
+        "start": "2024-10-19",
+        "end": "2024-10-26",
+        "days": 8
+      },
+      {
+        "start": "2024-11-01",
+        "end": "2024-11-01",
+        "days": 1
+      },
+      {
+        "start": "2024-11-04",
+        "end": "2024-11-04",
+        "days": 1
+      },
+      {
+        "start": "2024-11-09",
+        "end": "2024-11-18",
+        "days": 10
+      },
+      {
+        "start": "2024-11-24",
+        "end": "2024-11-25",
+        "days": 2
+      },
+      {
+        "start": "2024-11-29",
+        "end": "2024-12-01",
+        "days": 3
+      },
+      {
+        "start": "2024-12-05",
+        "end": "2024-12-05",
+        "days": 1
+      },
+      {
+        "start": "2024-12-07",
+        "end": "2024-12-07",
+        "days": 1
+      },
+      {
+        "start": "2024-12-21",
+        "end": "2024-12-26",
+        "days": 6
+      },
+      {
+        "start": "2024-12-31",
+        "end": "2025-01-03",
+        "days": 4
+      },
+      {
+        "start": "2025-01-07",
+        "end": "2025-01-08",
+        "days": 2
+      },
+      {
+        "start": "2025-01-17",
+        "end": "2025-01-18",
+        "days": 2
+      },
+      {
+        "start": "2025-01-31",
+        "end": "2025-02-01",
+        "days": 2
+      },
+      {
+        "start": "2025-02-06",
+        "end": "2025-02-08",
+        "days": 3
+      },
+      {
+        "start": "2025-02-16",
+        "end": "2025-02-24",
+        "days": 9
+      },
+      {
+        "start": "2025-03-07",
+        "end": "2025-03-08",
+        "days": 2
+      },
+      {
+        "start": "2025-03-14",
+        "end": "2025-03-16",
+        "days": 3
+      },
+      {
+        "start": "2025-03-21",
+        "end": "2025-03-21",
+        "days": 1
+      },
+      {
+        "start": "2025-03-26",
+        "end": "2025-03-26",
+        "days": 1
+      },
+      {
+        "start": "2025-03-30",
+        "end": "2025-09-03",
+        "days": 158
+      },
+      {
+        "start": "2025-09-14",
+        "end": "2025-09-14",
+        "days": 1
+      },
+      {
+        "start": "2025-09-23",
+        "end": "2025-09-24",
+        "days": 2
+      },
+      {
+        "start": "2025-09-26",
+        "end": "2025-09-26",
+        "days": 1
+      },
+      {
+        "start": "2025-10-03",
+        "end": "2025-10-05",
+        "days": 3
+      },
+      {
+        "start": "2025-10-14",
+        "end": "2025-10-17",
+        "days": 4
+      },
+      {
+        "start": "2025-10-20",
+        "end": "2025-10-23",
+        "days": 4
+      }
+    ],
+    "unit": "m3/s",
+    "minimum": 2381.19,
+    "maximum": 38150.9,
+    "consistency_counts": {
+      "1": 279,
+      "2": 6428
+    }
+  }
+}

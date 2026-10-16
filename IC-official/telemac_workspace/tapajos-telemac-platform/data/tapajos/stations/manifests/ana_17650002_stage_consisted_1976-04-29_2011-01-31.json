@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "dataset": "ANA station 17650002 stage",
+  "source": {
+    "institution": "Agência Nacional de Águas e Saneamento Básico (ANA)",
+    "url": "https://telemetriaws1.ana.gov.br/ServiceANA.asmx/HidroSerieHistorica",
+    "retrieved_on": "2026-10-01",
+    "service": "HidroSerieHistorica (legacy read-only service)"
+  },
+  "transformation": {
+    "parser": "scripts.tapajos_data.parse_legacy_xml",
+    "gap_policy": "No interpolation; absent dates remain absent",
+    "duplicate_policy": "Highest consistency record retained per date"
+  },
+  "artifacts": {
+    "raw": {
+      "path": "data/tapajos/stations/raw/ana_17650002_stage_consisted_1976-04-29_2011-01-31.xml",
+      "sha256": "4db05ff68ab500ea034b1f6d70557f37f71f36c900169155e6f5f44db90e1a03"
+    },
+    "canonical": {
+      "path": "data/tapajos/stations/processed/ana_17650002_stage_consisted_1976-04-29_2011-01-31.csv",
+      "sha256": "77f31c75a62d223a78e84d0f268875d2d5d4028a8af8b2050be7130b1f14620b"
+    }
+  },
+  "quality": {
+    "records": 9218,
+    "start": "1976-04-29",
+    "end": "2011-01-31",
+    "expected_days": 12696,
+    "missing_days": 3478,
+    "completeness_percent": 72.61,
+    "gap_count": 15,
+    "maximum_gap_days": 1407,
+    "gaps": [
+      {
+        "start": "1979-09-01",
+        "end": "1981-12-31",
+        "days": 853
+      },
+      {
+        "start": "1982-03-01",
+        "end": "1982-06-30",
+        "days": 122
+      },
+      {
+        "start": "1982-09-01",
+        "end": "1982-12-31",
+        "days": 122
+      },
+      {
+        "start": "1983-07-31",
+        "end": "1983-07-31",
+        "days": 1
+      },
+      {
+        "start": "1983-08-26",
+        "end": "1987-07-02",
+        "days": 1407
+      },
+      {
+        "start": "1990-04-01",
+        "end": "1991-12-10",
+        "days": 619
+      },
+      {
+        "start": "1992-04-23",
+        "end": "1992-10-14",
+        "days": 175
+      },
+      {
+        "start": "1993-06-05",
+        "end": "1993-06-26",
+        "days": 22
+      },
+      {
+        "start": "1994-08-01",
+        "end": "1994-10-06",
+        "days": 67
+      },
+      {
+        "start": "2009-10-01",
+        "end": "2009-10-19",
+        "days": 19
+      },
+      {
+        "start": "2009-10-26",
+        "end": "2009-12-06",
+        "days": 42
+      },
+      {
+        "start": "2009-12-11",
+        "end": "2009-12-13",
+        "days": 3
+      },
+      {
+        "start": "2010-05-01",
+        "end": "2010-05-24",
+        "days": 24
+      },
+      {
+        "start": "2010-05-26",
+        "end": "2010-05-26",
+        "days": 1
+      },
+      {
+        "start": "2010-05-30",
+        "end": "2010-05-30",
+        "days": 1
+      }
+    ],
+    "unit": "cm",
+    "minimum": 313.0,
+    "maximum": 1049.0,
+    "consistency_counts": {
+      "2": 9218
+    }
+  }
+}

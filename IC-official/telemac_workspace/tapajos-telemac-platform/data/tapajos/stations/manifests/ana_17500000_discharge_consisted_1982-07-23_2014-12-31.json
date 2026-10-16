@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "dataset": "ANA station 17500000 discharge",
+  "source": {
+    "institution": "Agência Nacional de Águas e Saneamento Básico (ANA)",
+    "url": "https://telemetriaws1.ana.gov.br/ServiceANA.asmx/HidroSerieHistorica",
+    "retrieved_on": "2026-10-01",
+    "service": "HidroSerieHistorica (legacy read-only service)"
+  },
+  "transformation": {
+    "parser": "scripts.tapajos_data.parse_legacy_xml",
+    "gap_policy": "No interpolation; absent dates remain absent",
+    "duplicate_policy": "Highest consistency record retained per date"
+  },
+  "artifacts": {
+    "raw": {
+      "path": "data/tapajos/stations/raw/ana_17500000_discharge_consisted_1982-07-23_2014-12-31.xml",
+      "sha256": "a466abb212c381c35b16ea99d3fc381d87915e2a5ad6ca954d8a2916be8e0e40"
+    },
+    "canonical": {
+      "path": "data/tapajos/stations/processed/ana_17500000_discharge_consisted_1982-07-23_2014-12-31.csv",
+      "sha256": "c2912a5ac206778530ad1a4d9758a52c7e7fbcb9cd99156772def685a5277604"
+    }
+  },
+  "quality": {
+    "records": 11346,
+    "start": "1982-07-23",
+    "end": "2014-12-31",
+    "expected_days": 11850,
+    "missing_days": 504,
+    "completeness_percent": 95.75,
+    "gap_count": 5,
+    "maximum_gap_days": 152,
+    "gaps": [
+      {
+        "start": "1982-12-01",
+        "end": "1983-01-20",
+        "days": 51
+      },
+      {
+        "start": "1983-01-22",
+        "end": "1983-02-28",
+        "days": 38
+      },
+      {
+        "start": "1991-07-14",
+        "end": "1991-11-30",
+        "days": 140
+      },
+      {
+        "start": "1992-05-01",
+        "end": "1992-08-31",
+        "days": 123
+      },
+      {
+        "start": "2003-10-01",
+        "end": "2004-02-29",
+        "days": 152
+      }
+    ],
+    "unit": "m3/s",
+    "minimum": 2626.99,
+    "maximum": 29732.1,
+    "consistency_counts": {
+      "2": 11346
+    }
+  }
+}

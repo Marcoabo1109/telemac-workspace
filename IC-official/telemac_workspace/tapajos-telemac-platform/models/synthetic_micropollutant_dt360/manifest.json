@@ -1,0 +1,120 @@
+{
+  "status": "prepared_not_executed",
+  "solver_commit": "d1bff193746fd76425d7715a6e4d20d42eb8877e",
+  "source": "https://gitlab.pam-retd.fr/otm/telemac-mascaret",
+  "data_kind": "synthetic_upstream_benchmarks_not_Tapajos_measurements",
+  "cases": [
+    {
+      "id": "micropol_deposition",
+      "status": "prepared_not_executed",
+      "source_example": "waqtel/waq2d_micropol",
+      "telemac_cas": "t2d_waq2d_micropol.cas",
+      "coupled_module": "waqtel",
+      "coupled_cas": "waq_micropol_steer.cas",
+      "overrides": {},
+      "expected_results": [
+        "r2d_waq2d_micropol.slf"
+      ],
+      "input_sha256": {
+        "f2d_waq2d_micropol.slf": "ee99609000cba2e638a034b36c20d29e66654653969e851243ff62af8ca68442",
+        "f2d_waq2d_micropol_kin2.slf": "81fd121c6b6e8960d3c2a9a49113164bf6708548afbba0b8ddc460d535629e51",
+        "f2d_waq2d_micropol_sed.slf": "3165495acc00c578c382401f0948bd4651f3d9d70ab2b0b0c091608f50393fe2",
+        "f2d_waq2d_micropol_sed_desorp.slf": "8ebc91856a75a2eb1db33010bf0f5bce32b32a0b2fe5885639b8d3fc49706a75",
+        "f2d_waq2d_micropol_sed_desorp_decay.slf": "a9045a606bbfa3cb3193347a4f6bc93120e4a61b1c4786e60b3d1f72fb672abf",
+        "f2d_waq2d_micropol_sed_desorp_decay_k2.slf": "b10b813314117c40f283ac701d71ac56279483994f0d01a76b6831a289dfb9d5",
+        "f2d_waq2d_micropol_sed_desorp_k2.slf": "655af2529735c2f8f07a3d373ed7c1f42a71a998ee035f2cc3d81ec283361107",
+        "f2d_waq2d_micropol_sed_k2.slf": "73d5e052ac03586da94baed350f9697a4b4404f5b1ba3d13a19c8f87ad400bb2",
+        "f2d_waq2d_micropol_sed_sorp.slf": "e414b4848810eb5901187b3466d6ed9f0192ab6248d849e985ce68c08b97122d",
+        "f2d_waq2d_micropol_sed_sorp_k2.slf": "7b41695c6b4295d54bcf67d06c27f909e7276a5b0893bee16b392c59fba94198",
+        "f2d_waq2d_micropol_sorp.slf": "98f92264b9343e1a93587660cc3d55f2de8f41bd1f7c58fbf49dadbbe21c183a",
+        "f2d_waq2d_micropol_sorp_k2.slf": "0e9d4581bea85ba20978ba0017ef4f92c3a5dbf73942122feee9bbf4a0c62bba",
+        "f2d_waq2d_sed_sorp_k2.slf": "7b41695c6b4295d54bcf67d06c27f909e7276a5b0893bee16b392c59fba94198",
+        "geo_waq2d_micropol.cli": "9fdbd4135ce4e3740fa25e550fc4870e9a60ae97965d0cc4a0e2e5d11c87436f",
+        "geo_waq2d_micropol.slf": "f261b9499a03d452ae483c49b3e8cb5c3f8c9bcdd7f1cc56de947dd3402ad212",
+        "t2d_waq2d_micropol.cas": "b70872cc8b8cf78ed1cdab2f64d3864b2e7a604344fa8966f0b5170418036fa2",
+        "t2d_waq2d_micropol_kin2.cas": "e88b9fdb062406da13098dbdb768afb5ad04604fe41451e08c29998767013354",
+        "vnv_waq2d_micropol.py": "215a27d35f7033eca6a75b3382d8683b523026655a5392d111f92fecd13ff4f2",
+        "vnv_waq2d_micropol_kin2.py": "974f5314ad4c81b3a7d5a0b82916295b7d662659d1b65d35bd1bbfc72a2921ad",
+        "waq_micropol_steer.cas": "f3f824c374f7b65b41d13d2b433204c42e92829f3b988131667dc42acfdf0df6",
+        "waq_micropol_steer_kin2.cas": "1f1b16d1fd7e31d3601b6c5fb6aa2e118cdf9e4ca56432d3cb161a3ac60b6209"
+      },
+      "duration_s": 11520000.0
+    },
+    {
+      "id": "micropol_adsorption",
+      "status": "prepared_not_executed",
+      "source_example": "waqtel/waq2d_micropol",
+      "telemac_cas": "t2d_waq2d_micropol.cas",
+      "coupled_module": "waqtel",
+      "coupled_cas": "waq_micropol_steer.cas",
+      "overrides": {
+        "SEDIMENT SETTLING VELOCITY": "0."
+      },
+      "expected_results": [
+        "r2d_waq2d_micropol.slf"
+      ],
+      "input_sha256": {
+        "f2d_waq2d_micropol.slf": "ee99609000cba2e638a034b36c20d29e66654653969e851243ff62af8ca68442",
+        "f2d_waq2d_micropol_kin2.slf": "81fd121c6b6e8960d3c2a9a49113164bf6708548afbba0b8ddc460d535629e51",
+        "f2d_waq2d_micropol_sed.slf": "3165495acc00c578c382401f0948bd4651f3d9d70ab2b0b0c091608f50393fe2",
+        "f2d_waq2d_micropol_sed_desorp.slf": "8ebc91856a75a2eb1db33010bf0f5bce32b32a0b2fe5885639b8d3fc49706a75",
+        "f2d_waq2d_micropol_sed_desorp_decay.slf": "a9045a606bbfa3cb3193347a4f6bc93120e4a61b1c4786e60b3d1f72fb672abf",
+        "f2d_waq2d_micropol_sed_desorp_decay_k2.slf": "b10b813314117c40f283ac701d71ac56279483994f0d01a76b6831a289dfb9d5",
+        "f2d_waq2d_micropol_sed_desorp_k2.slf": "655af2529735c2f8f07a3d373ed7c1f42a71a998ee035f2cc3d81ec283361107",
+        "f2d_waq2d_micropol_sed_k2.slf": "73d5e052ac03586da94baed350f9697a4b4404f5b1ba3d13a19c8f87ad400bb2",
+        "f2d_waq2d_micropol_sed_sorp.slf": "e414b4848810eb5901187b3466d6ed9f0192ab6248d849e985ce68c08b97122d",
+        "f2d_waq2d_micropol_sed_sorp_k2.slf": "7b41695c6b4295d54bcf67d06c27f909e7276a5b0893bee16b392c59fba94198",
+        "f2d_waq2d_micropol_sorp.slf": "98f92264b9343e1a93587660cc3d55f2de8f41bd1f7c58fbf49dadbbe21c183a",
+        "f2d_waq2d_micropol_sorp_k2.slf": "0e9d4581bea85ba20978ba0017ef4f92c3a5dbf73942122feee9bbf4a0c62bba",
+        "f2d_waq2d_sed_sorp_k2.slf": "7b41695c6b4295d54bcf67d06c27f909e7276a5b0893bee16b392c59fba94198",
+        "geo_waq2d_micropol.cli": "9fdbd4135ce4e3740fa25e550fc4870e9a60ae97965d0cc4a0e2e5d11c87436f",
+        "geo_waq2d_micropol.slf": "f261b9499a03d452ae483c49b3e8cb5c3f8c9bcdd7f1cc56de947dd3402ad212",
+        "t2d_waq2d_micropol.cas": "ce1ea7f035b460907a83a00cf4d9af17d42e91cbc3ec57015cfbc4797bc291e3",
+        "t2d_waq2d_micropol_kin2.cas": "e88b9fdb062406da13098dbdb768afb5ad04604fe41451e08c29998767013354",
+        "vnv_waq2d_micropol.py": "215a27d35f7033eca6a75b3382d8683b523026655a5392d111f92fecd13ff4f2",
+        "vnv_waq2d_micropol_kin2.py": "974f5314ad4c81b3a7d5a0b82916295b7d662659d1b65d35bd1bbfc72a2921ad",
+        "waq_micropol_steer.cas": "29572262e0a4efedf59dff587e0a65a70ebca00a3d87bbc9993a757c8dc4560c",
+        "waq_micropol_steer_kin2.cas": "1f1b16d1fd7e31d3601b6c5fb6aa2e118cdf9e4ca56432d3cb161a3ac60b6209"
+      },
+      "duration_s": 11520000.0
+    },
+    {
+      "id": "micropol_desorption",
+      "status": "prepared_not_executed",
+      "source_example": "waqtel/waq2d_micropol",
+      "telemac_cas": "t2d_waq2d_micropol.cas",
+      "coupled_module": "waqtel",
+      "coupled_cas": "waq_micropol_steer.cas",
+      "overrides": {
+        "SEDIMENT SETTLING VELOCITY": "0."
+      },
+      "expected_results": [
+        "r2d_waq2d_micropol.slf"
+      ],
+      "input_sha256": {
+        "f2d_waq2d_micropol.slf": "ee99609000cba2e638a034b36c20d29e66654653969e851243ff62af8ca68442",
+        "f2d_waq2d_micropol_kin2.slf": "81fd121c6b6e8960d3c2a9a49113164bf6708548afbba0b8ddc460d535629e51",
+        "f2d_waq2d_micropol_sed.slf": "3165495acc00c578c382401f0948bd4651f3d9d70ab2b0b0c091608f50393fe2",
+        "f2d_waq2d_micropol_sed_desorp.slf": "8ebc91856a75a2eb1db33010bf0f5bce32b32a0b2fe5885639b8d3fc49706a75",
+        "f2d_waq2d_micropol_sed_desorp_decay.slf": "a9045a606bbfa3cb3193347a4f6bc93120e4a61b1c4786e60b3d1f72fb672abf",
+        "f2d_waq2d_micropol_sed_desorp_decay_k2.slf": "b10b813314117c40f283ac701d71ac56279483994f0d01a76b6831a289dfb9d5",
+        "f2d_waq2d_micropol_sed_desorp_k2.slf": "655af2529735c2f8f07a3d373ed7c1f42a71a998ee035f2cc3d81ec283361107",
+        "f2d_waq2d_micropol_sed_k2.slf": "73d5e052ac03586da94baed350f9697a4b4404f5b1ba3d13a19c8f87ad400bb2",
+        "f2d_waq2d_micropol_sed_sorp.slf": "e414b4848810eb5901187b3466d6ed9f0192ab6248d849e985ce68c08b97122d",
+        "f2d_waq2d_micropol_sed_sorp_k2.slf": "7b41695c6b4295d54bcf67d06c27f909e7276a5b0893bee16b392c59fba94198",
+        "f2d_waq2d_micropol_sorp.slf": "98f92264b9343e1a93587660cc3d55f2de8f41bd1f7c58fbf49dadbbe21c183a",
+        "f2d_waq2d_micropol_sorp_k2.slf": "0e9d4581bea85ba20978ba0017ef4f92c3a5dbf73942122feee9bbf4a0c62bba",
+        "f2d_waq2d_sed_sorp_k2.slf": "7b41695c6b4295d54bcf67d06c27f909e7276a5b0893bee16b392c59fba94198",
+        "geo_waq2d_micropol.cli": "9fdbd4135ce4e3740fa25e550fc4870e9a60ae97965d0cc4a0e2e5d11c87436f",
+        "geo_waq2d_micropol.slf": "f261b9499a03d452ae483c49b3e8cb5c3f8c9bcdd7f1cc56de947dd3402ad212",
+        "t2d_waq2d_micropol.cas": "b70872cc8b8cf78ed1cdab2f64d3864b2e7a604344fa8966f0b5170418036fa2",
+        "t2d_waq2d_micropol_kin2.cas": "e88b9fdb062406da13098dbdb768afb5ad04604fe41451e08c29998767013354",
+        "vnv_waq2d_micropol.py": "215a27d35f7033eca6a75b3382d8683b523026655a5392d111f92fecd13ff4f2",
+        "vnv_waq2d_micropol_kin2.py": "974f5314ad4c81b3a7d5a0b82916295b7d662659d1b65d35bd1bbfc72a2921ad",
+        "waq_micropol_steer.cas": "29572262e0a4efedf59dff587e0a65a70ebca00a3d87bbc9993a757c8dc4560c",
+        "waq_micropol_steer_kin2.cas": "1f1b16d1fd7e31d3601b6c5fb6aa2e118cdf9e4ca56432d3cb161a3ac60b6209"
+      },
+      "duration_s": 11520000.0
+    }
+  ]
+}

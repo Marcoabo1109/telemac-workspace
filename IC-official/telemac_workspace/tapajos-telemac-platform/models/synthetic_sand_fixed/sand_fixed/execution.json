@@ -1,0 +1,11 @@
+{
+  "status": "solver_failed",
+  "returncode": 1,
+  "solver_commit": "d1bff193746fd76425d7715a6e4d20d42eb8877e",
+  "balance": {
+    "water_relative": [],
+    "sediment_relative_initial_active_layer": [],
+    "sediment_cumulated_lost_kg": [],
+    "sediment_final_relative_reported": []
+  }
+}

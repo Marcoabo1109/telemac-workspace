@@ -1,0 +1,21 @@
+  date|2000.01.01-00:00:00|
+L-line|  3.0000000    |  4.0000000    |        blue|  4.000    |  4.000    |
+L-text|  4.2000000    |  4.0000000    |       black|  8.000    |Dig_by_time|
+L-line|  3.0000000    |  3.0000000    |        blue|  4.000    |  4.000    |
+L-text|  4.2000000    |  3.0000000    |       black|  8.000    |Dig_by_criterion|
+L-circ|  3.0000000    |  3.0000000    |       black|  4.000    |  50.00    |    no| green
+L-circ|  3.5000000    |  3.0000000    |       black|  4.000    |  50.00    |    no| green
+L-circ|  4.0000000    |  3.0000000    |       black|  4.000    |  50.00    |    no| green
+L-line|  3.0000000    |  2.0000000    |         red|  4.000    |  4.000    |
+L-text|  4.2000000    |  2.0000000    |       black|  8.000    |Dump_by_time|
+L-circ|  3.0000000    |  1.0000000    |       black|  4.000    |  50.00    |    no| green
+L-line|  3.0000000    |  1.0000000    |       green|  4.000    |  4.000    |
+L-text|  4.2000000    |  1.0000000    |       black|  8.000    |Backfill_to_level|
+L-line|  3.0000000    |  0.0000000    | saddlebrown|  4.000    |  4.000    |
+L-text|  4.2000000    |  0.0000000    |       black|  8.000    |Reset_bottom|
+L-circ|  7.0000000    |  4.0000000    |        blue|  4.000    |  50.00    |    no| green
+L-text|  7.2000000    |  4.0000000    |       black|  8.000    |Save_water_level|
+X-axis|  45.000000    |  180.00000    |       black|          4|       -999|
+Y-axis| -1.0000000    |  2.0000000    |       black|          4|       -999|
+  text|  151.00000    |  1.0000000    |       black|  8.000    |201_Abschnitt_1_2_1000m**2                                                                                                      |
+  line|  50.000000    |  1.0000000    |        blue|  4.000    |  150.0    |

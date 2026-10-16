@@ -1,0 +1,22 @@
+{
+  "VELOCITY U": {
+    "max_abs_difference": 0.008337736129760742,
+    "unit": "M/S"
+  },
+  "VELOCITY V": {
+    "max_abs_difference": 0.0317920446395874,
+    "unit": "M/S"
+  },
+  "WATER DEPTH": {
+    "max_abs_difference": 0.0019172430038452148,
+    "unit": "M"
+  },
+  "FREE SURFACE": {
+    "max_abs_difference": 0.001918792724609375,
+    "unit": "M"
+  },
+  "BOTTOM": {
+    "max_abs_difference": 0.0,
+    "unit": "M"
+  }
+}

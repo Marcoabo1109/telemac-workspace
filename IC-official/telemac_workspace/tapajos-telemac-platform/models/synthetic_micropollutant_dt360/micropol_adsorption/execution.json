@@ -1,0 +1,18 @@
+{
+  "status": "executed_budget_review_required",
+  "returncode": 0,
+  "balance": {
+    "water_relative": [
+      0.0
+    ],
+    "sediment_relative_initial_active_layer": [],
+    "sediment_cumulated_lost_kg": []
+  },
+  "results": [
+    {
+      "file": "r2d_waq2d_micropol.slf",
+      "sha256": "71f4021585e885ae02e3ff74ebfb66eb1d882195b875881b6191bca14904aeac",
+      "final_time_s": 11520000.0
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "date_local": "2026-10-13",
+  "timezone": "America/Sao_Paulo",
+  "solver": "TELEMAC-MASCARET v8p5r0",
+  "source_commit": "d1bff193746fd76425d7715a6e4d20d42eb8877e",
+  "docker_image": "tapajos-platform-backend:latest",
+  "docker_image_id": "sha256:358d71efa5e06f0fb55c7b61b0d75682c9e2178daeccf9e0ba9d88de18928d39",
+  "solver_execution": "serial MPI ncsize=1 in Docker, Python 3.11",
+  "test_environment": "local project venv Python 3.14",
+  "software_tests": {
+    "passed": 79,
+    "skipped_optional": 1,
+    "verified_date_local": "2026-10-14"
+  },
+  "data": "synthetic only",
+  "consolidated_date_local": "2026-10-14"
+}

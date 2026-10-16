@@ -1,0 +1,14 @@
+      SUBROUTINE USER_CONDIN_TRAC
+      USE BIEF
+      USE DECLARATIONS_TELEMAC2D
+      IMPLICIT NONE
+      INTEGER I,J
+      DOUBLE PRECISION C
+      DO I=1,NPOIN
+        C=EXP(-((X(I)-612302.43359375D0)**2
+     &        +(Y(I)-9526412.00000000D0)**2)/(2.D0*180.D0**2))
+        DO J=1,3
+          T%ADR(J)%P%R(I)=C
+        ENDDO
+      ENDDO
+      END

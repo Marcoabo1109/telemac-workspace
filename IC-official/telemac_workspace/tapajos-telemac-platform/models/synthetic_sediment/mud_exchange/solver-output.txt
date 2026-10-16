@@ -1,0 +1,713 @@
+
+
+Loading Options and Configurations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+          ___          _____ 
+         / _ \        | ____|
+ __   __| (_) | _ __  | |__  
+ \ \ / / > _ < | '_ \ |___ \ 
+  \ V / | (_) || |_) | ___) |
+   \_/   \___/ | .__/ |____/ 
+               | |           
+               |_|           
+
+
+Running your CAS file(s) for:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+gnu: 
+    
+
+    +> Portable GNU/OpenMPI TELEMAC2D build, no architecture-specific patch
+
+    +> root:    /opt/telemac
+    +> module: ad / api / artemis / bief
+               damocles  / gaia  / gretel  / hermes
+               identify_liq_bnd  / khione  / mascaret  / nestor
+               parallel  / partel  / postel3d  / special
+               stbtel  / telemac2d  / telemac3d  / tomawac
+               waqtel
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+... processing the steering file
+  ~> Checking keyword/rubrique coherence
+  ~> Checking keyword/rubrique coherence
+
+... checking parallelisation
+
+... handling temporary directories
+         copying: t2d_mud_cons.cas -> /app/models/synthetic_sediment/mud_exchange/t2d_mud_cons.cas_2026-10-13-23h21min46s/T2DCAS
+         copying: telemac2d.dico -> /app/models/synthetic_sediment/mud_exchange/t2d_mud_cons.cas_2026-10-13-23h21min46s/T2DDICO
+         copying: geo_mud_cons-t2d.cli -> /app/models/synthetic_sediment/mud_exchange/t2d_mud_cons.cas_2026-10-13-23h21min46s/T2DCLI
+         copying: geo_mud_cons-t2d.slf -> /app/models/synthetic_sediment/mud_exchange/t2d_mud_cons.cas_2026-10-13-23h21min46s/T2DGEO
+         copying: gai_mud_cons-t2d.cas -> /app/models/synthetic_sediment/mud_exchange/t2d_mud_cons.cas_2026-10-13-23h21min46s/GAICAS
+         copying: gaia.dico -> /app/models/synthetic_sediment/mud_exchange/t2d_mud_cons.cas_2026-10-13-23h21min46s/GAIDICO
+         copying: geo_mud_cons-t2d.cli -> /app/models/synthetic_sediment/mud_exchange/t2d_mud_cons.cas_2026-10-13-23h21min46s/GAICLI
+         copying: geo_mud_cons-t2d.slf -> /app/models/synthetic_sediment/mud_exchange/t2d_mud_cons.cas_2026-10-13-23h21min46s/GAIGEO
+
+... checking the executable
+  > compiling objs
+         compiling: user_condin_h.f ... completed
+         compiling: user_condin_trac.f ... completed
+         created: out_user_fortran
+
+
+Running your simulation(s) :
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+In /app/models/synthetic_sediment/mud_exchange/t2d_mud_cons.cas_2026-10-13-23h21min46s:
+mpirun -np 1 /app/models/synthetic_sediment/mud_exchange/t2d_mud_cons.cas_2026-10-13-23h21min46s/out_user_fortran
+
+
+ MASTER PROCESSOR NUMBER            0  OF THE GROUP OF            1
+ EXECUTABLE FILE: /app/models/synthetic_sediment/mud_exchange/t2d_mud_cons.cas_2026-10-13-23h21min46s/A.EXE
+ LISTING OF TELEMAC2D------------------------------------------------------------------------------
+
+                TTTTT  EEEEE  L      EEEEE  M   M  AAAAA  CCCCC
+                  T    E      L      E      MM MM  A   A  C
+                  T    EEE    L      EEE    M M M  AAAAA  C
+                  T    E      L      E      M   M  A   A  C
+                  T    EEEEE  LLLLL  EEEEE  M   M  A   A  CCCCC
+
+                        2D    VERSION V8P5   FORTRAN 2003
+
+                        ~^~^~^~^~^~^~^~^~^~^~^^~^~^~^~^~^~
+                          ~                            ~
+                               \   '    o      '
+                               /\ o       \  o
+                             >=)'>    '   /\ '
+                               \/   \   >=)'>        ~
+                               /    /\    \/
+                        ~         >=)'>   /     .
+                                    \/                   )
+                                    /                   (
+                                          ~          )   )
+                          }     ~              (    (   (
+                         {                      )    )   )
+                          }  }         .       (    (   (
+                         {  {               /^^^^^^^^^^^^
+                        ^^^^^^^^^\         /
+                                  ^^^^^^^^^
+
+ DIFFERENT NUMBER OF PARALLEL PROCESSORS:
+ DECLARED BEFORE (CASE OF COUPLING ?):           1
+ TELEMAC-2D :           0
+ VALUE            1  IS KEPT
+
+                   ********************************************
+                   *               LECDON:                    *
+                   *        AFTER CALLING DAMOCLES            *
+                   *        CHECKING OF DATA  READ            *
+                   *         IN THE STEERING FILE             *
+                   ********************************************
+
+ LECDON: FINITE VOLUME SCHEME ON THE TRACER      1
+ IMPOSED VALUE: IMPLICITATION = 0.
+ LECDON : FINITE VOLUME SCHEME ON THE TRACER      1
+ IMPOSED VALUE: SUPG OPTION = 0 FOR DEPTH
+
+ EXITING LECDON. NAME OF THE STUDY:
+ MUD CONSERVATION
+
+ OPENING FILES FOR TELEMAC2D
+ OPENING: T2DGEO-geo_mud_cons-t2d.slf
+ OPENING: T2DCLI-geo_mud_cons-t2d.cli
+ OPENING: T2DRES-r2d_mud_cons-t2d.slf
+
+                          *****************************
+                          *    MEMORY ORGANIZATION    *
+                          *****************************
+
+ READ_MESH_INFO: TITLE= TELEMAC 2D : GOUTTE D'EAU DANS UN BASSIN$
+            NUMBER OF ELEMENTS:     8978
+            NUMBER OF POINTS:     4624
+
+            TYPE OF ELEMENT: TRIANGLE
+            TYPE OF BND ELEMENT: POINT
+
+            SINGLE PRECISION FORMAT (R4)
+
+ MXPTEL (BIEF) : MAXIMUM NUMBER OF ELEMENTS AROUND A POINT:   7
+                 MAXIMUM NUMBER OF POINTS AROUND A POINT:   7
+ USER_CORRXY (BIEF):NO MODIFICATION OF COORDINATES
+
+ MESH: MESH   ALLOCATED
+
+                     *************************************
+                     *    END OF MEMORY ORGANIZATION:    *
+                     *************************************
+
+ LISTING OF GAIA------------------------------------------------------------------------------
+                     COUPLED WITH TELEMAC2D INTERNALLY
+
+ DIFFERENT NUMBER OF PARALLEL PROCESSORS:
+ DECLARED BEFORE (CASE OF COUPLING ?):           1
+ GAIA :           0
+ VALUE            1  IS KEPT
+
+                   ********************************************
+                   *               LECDON:                    *
+                   *        AFTER CALLING DAMOCLES            *
+                   *        CHECKING OF DATA  READ            *
+                   *         IN THE STEERING FILE             *
+                   ********************************************
+
+ OPENING FILES FOR GAIA
+ OPENING: GAIGEO-geo_mud_cons-t2d.slf
+ OPENING: GAIRES-gai_mud_cons-t2d.slf
+ OPENING: GAICLI-geo_mud_cons-t2d.cli
+
+                     *******************************
+                     *     MEMORY ORGANISATION     *
+                     *******************************
+
+ READ_MESH_INFO: TITLE= TELEMAC 2D : GOUTTE D'EAU DANS UN BASSIN$
+            NUMBER OF ELEMENTS:     8978
+            NUMBER OF POINTS:     4624
+
+            TYPE OF ELEMENT: TRIANGLE
+            TYPE OF BND ELEMENT: POINT
+
+            SINGLE PRECISION FORMAT (R4)
+
+ MXPTEL (BIEF) : MAXIMUM NUMBER OF ELEMENTS AROUND A POINT:   7
+                 MAXIMUM NUMBER OF POINTS AROUND A POINT:   7
+ USER_CORRXY (BIEF):NO MODIFICATION OF COORDINATES
+
+ MESH: MESH_S ALLOCATED
+
+                     *************************************
+                     *    END OF MEMORY ORGANIZATION:    *
+                     *************************************
+
+ INITIALIZING TELEMAC2D FOR
+ INBIEF (BIEF): NOT A VECTOR MACHINE (ACCORDING TO YOUR DATA)
+
+ FONSTR (BIEF): NO BATHYMETRY IN THE GEOMETRY FILE
+                AND NO BATHYMETRY FILE. THE BOTTOM
+                LEVEL IS FIXED TO ZERO BUT STILL
+                CAN BE MODIFIED IN CORFON.
+
+ STRCHE (BIEF): NO MODIFICATION OF FRICTION
+
+ THERE IS     1 SOLID BOUNDARIES:
+
+ BOUNDARY    1 :
+  BEGINS AT BOUNDARY POINT:        1 , WITH GLOBAL NUMBER:         1
+  AND COORDINATES:     0.000000           0.000000
+  ENDS AT BOUNDARY POINT:        1 , WITH GLOBAL NUMBER:         1
+  AND COORDINATES:     0.000000           0.000000
+
+ USER_CORFON (TELEMAC2D): NO MODIFICATION OF BOTTOM
+
+ CORFON (TELEMAC2D): NO BOTTOM SMOOTHINGS
+
+================================================================================
+ ITERATION        0    TIME:   0.0000 S
+
+                            BALANCE OF COH SEDIMENT1 (UNIT: g/l * M3)
+     INITIAL QUANTITY OF TRACER   :    149.6940
+ TELEMAC2D COUPLED WITH: GAIA
+ TELEMAC-2D: INTERNAL COUPLING WITH GAIA
+ INBIEF (BIEF): NOT A VECTOR MACHINE (ACCORDING TO YOUR DATA)
+
+ THERE IS     1 SOLID BOUNDARIES:
+
+ BOUNDARY    1 :
+  BEGINS AT BOUNDARY POINT:        1 , WITH GLOBAL NUMBER:         1
+  AND COORDINATES:     0.000000           0.000000
+  ENDS AT BOUNDARY POINT:        1 , WITH GLOBAL NUMBER:         1
+  AND COORDINATES:     0.000000           0.000000
+
+                    GAIA INITIAL MASS OF SEDIMENTS:
+ TOTAL MASS OF CLASS  1 =    4040102.    ( KG )
+ QSCL REINITIALISED IN INIT_TRANSPORT
+ FOR CLASS            1
+ QS REINITIALISED IN INIT_TRANSPORT
+
+================================================================================
+ ITERATION        0    TIME:   0.0000 S
+
+ GAIA COUPLED WITH: TELEMAC2D
+ TELEMAC2D INITIALIZED
+ USING STREAMLINE VERSION V8P5 FOR CHARACTERISTICS
+
+================================================================================
+ ITERATION      100    TIME:   4.0000 S
+--------------------------------------------------------------------------------
+                          ADVECTION STEP
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+ GMRES (BIEF) :       10 ITERATIONS, RELATIVE PRECISION:    0.000000
+
+================================================================================
+ ITERATION      100    TIME:   4.0000 S
+
+--------------------------------------------------------------------------------
+                     DIFFUSION OF TRACERS STEP
+ CVTRVF (BIEF):      1 SUB-ITERATIONS
+ GRACJG (BIEF) :        0 ITERATIONS, RELATIVE PRECISION:   0.1374683E-15
+
+                            BALANCE OF COH SEDIMENT1 (UNIT: g/l * M3)
+
+     INITIAL QUANTITY                  :     154.8823
+     FINAL QUANTITY                    :     154.8793
+     QUANTITY CREATED BY SOURCE TERM   :     -0.3064303E-02
+     TOTAL QUANTITY LOST               :   -0.7389644E-12
+     RELATIVE ERROR                    :   -0.4771135E-14
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.3064303E-02  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    -0.000000      ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =    0.5165278      ( KG/S )
+     DEPOSITION FLUX                           =    0.5931354      ( KG/S )
+     TOTAL MASS                                =     4040097.      ( KG )
+     LOST MASS                                 =    0.3197655E-16  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =    0.7914788E-23
+     RELATIVE ERROR 0N MASS                    =    0.1043518E-13
+ TOTAL MAXIMAL EVOLUTION  :    0.3948203E-03 NODE  :  2413
+ TOTAL MINIMAL EVOLUTION  :   -0.2341630E-03 NODE  :  2983
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    999.7839     M3
+     RELATIVE ERROR IN VOLUME AT T =        4.000     S :    0.2160517E-14
+
+================================================================================
+ ITERATION      200    TIME:   8.0000 S
+--------------------------------------------------------------------------------
+                          ADVECTION STEP
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+ GMRES (BIEF) :       10 ITERATIONS, RELATIVE PRECISION:    0.000000
+
+================================================================================
+ ITERATION      200    TIME:   8.0000 S
+
+--------------------------------------------------------------------------------
+                     DIFFUSION OF TRACERS STEP
+ CVTRVF (BIEF):      1 SUB-ITERATIONS
+ GRACJG (BIEF) :        0 ITERATIONS, RELATIVE PRECISION:   0.1272113E-15
+
+                            BALANCE OF COH SEDIMENT1 (UNIT: g/l * M3)
+
+     INITIAL QUANTITY                  :     157.1515
+     FINAL QUANTITY                    :     157.1540
+     QUANTITY CREATED BY SOURCE TERM   :      0.2555392E-02
+     TOTAL QUANTITY LOST               :   -0.1705303E-12
+     RELATIVE ERROR                    :   -0.1085115E-14
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =   -0.2555392E-02  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    -0.000000      ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =    0.6343908      ( KG/S )
+     DEPOSITION FLUX                           =    0.5705060      ( KG/S )
+     TOTAL MASS                                =     4040095.      ( KG )
+     LOST MASS                                 =   -0.6893676E-16  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =   -0.1706312E-22
+     RELATIVE ERROR 0N MASS                    =   -0.2697698E-13
+ TOTAL MAXIMAL EVOLUTION  :    0.7853877E-03 NODE  :  2412
+ TOTAL MINIMAL EVOLUTION  :   -0.4075567E-03 NODE  :  3694
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    999.7839     M3
+     RELATIVE ERROR IN VOLUME AT T =        8.000     S :   -0.1250826E-14
+
+================================================================================
+ ITERATION      300    TIME:  12.0000 S
+--------------------------------------------------------------------------------
+                          ADVECTION STEP
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+ GMRES (BIEF) :       10 ITERATIONS, ABSOLUTE PRECISION:    0.000000
+
+================================================================================
+ ITERATION      300    TIME:  12.0000 S
+
+--------------------------------------------------------------------------------
+                     DIFFUSION OF TRACERS STEP
+ CVTRVF (BIEF):      1 SUB-ITERATIONS
+ GRACJG (BIEF) :        0 ITERATIONS, RELATIVE PRECISION:   0.1301440E-15
+
+                            BALANCE OF COH SEDIMENT1 (UNIT: g/l * M3)
+
+     INITIAL QUANTITY                  :     158.0687
+     FINAL QUANTITY                    :     158.0637
+     QUANTITY CREATED BY SOURCE TERM   :     -0.5024542E-02
+     TOTAL QUANTITY LOST               :   -0.2842171E-12
+     RELATIVE ERROR                    :   -0.1798061E-14
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.5024542E-02  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    -0.000000      ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =    0.4646902      ( KG/S )
+     DEPOSITION FLUX                           =    0.5903038      ( KG/S )
+     TOTAL MASS                                =     4040094.      ( KG )
+     LOST MASS                                 =    0.7556404E-16  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =    0.1870350E-22
+     RELATIVE ERROR 0N MASS                    =    0.1503899E-13
+ TOTAL MAXIMAL EVOLUTION  :    0.1169973E-02 NODE  :  2412
+ TOTAL MINIMAL EVOLUTION  :   -0.4682215E-03 NODE  :  3856
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    999.7839     M3
+     RELATIVE ERROR IN VOLUME AT T =        12.00     S :   -0.1933094E-14
+
+================================================================================
+ ITERATION      400    TIME:  16.0000 S
+--------------------------------------------------------------------------------
+                          ADVECTION STEP
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+ GMRES (BIEF) :       10 ITERATIONS, ABSOLUTE PRECISION:    0.000000
+
+================================================================================
+ ITERATION      400    TIME:  16.0000 S
+
+--------------------------------------------------------------------------------
+                     DIFFUSION OF TRACERS STEP
+ CVTRVF (BIEF):      1 SUB-ITERATIONS
+ GRACJG (BIEF) :        0 ITERATIONS, RELATIVE PRECISION:   0.1343242E-15
+
+                            BALANCE OF COH SEDIMENT1 (UNIT: g/l * M3)
+
+     INITIAL QUANTITY                  :     158.0781
+     FINAL QUANTITY                    :     158.0607
+     QUANTITY CREATED BY SOURCE TERM   :     -0.1746236E-01
+     TOTAL QUANTITY LOST               :   -0.8242296E-12
+     RELATIVE ERROR                    :   -0.5214065E-14
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.1746236E-01  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    -0.000000      ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =    0.1773406      ( KG/S )
+     DEPOSITION FLUX                           =    0.6138996      ( KG/S )
+     TOTAL MASS                                =     4040094.      ( KG )
+     LOST MASS                                 =    0.3086151E-16  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =    0.7638795E-23
+     RELATIVE ERROR 0N MASS                    =    0.1767317E-14
+ TOTAL MAXIMAL EVOLUTION  :    0.1548582E-02 NODE  :  2412
+ TOTAL MINIMAL EVOLUTION  :   -0.5454399E-03 NODE  :  3562
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    999.7839     M3
+     RELATIVE ERROR IN VOLUME AT T =        16.00     S :    0.4775879E-14
+
+================================================================================
+ ITERATION      500    TIME:  20.0000 S
+--------------------------------------------------------------------------------
+                          ADVECTION STEP
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+ GMRES (BIEF) :       10 ITERATIONS, ABSOLUTE PRECISION:    0.000000
+
+================================================================================
+ ITERATION      500    TIME:  20.0000 S
+
+--------------------------------------------------------------------------------
+                     DIFFUSION OF TRACERS STEP
+ CVTRVF (BIEF):      1 SUB-ITERATIONS
+ GRACJG (BIEF) :        0 ITERATIONS, RELATIVE PRECISION:   0.1246756E-15
+
+                            BALANCE OF COH SEDIMENT1 (UNIT: g/l * M3)
+
+     INITIAL QUANTITY                  :     157.4157
+     FINAL QUANTITY                    :     157.3927
+     QUANTITY CREATED BY SOURCE TERM   :     -0.2303689E-01
+     TOTAL QUANTITY LOST               :    0.4547474E-12
+     RELATIVE ERROR                    :    0.2888830E-14
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.2303689E-01  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    -0.000000      ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =    0.9283903E-02  ( KG/S )
+     DEPOSITION FLUX                           =    0.5852062      ( KG/S )
+     TOTAL MASS                                =     4040095.      ( KG )
+     LOST MASS                                 =   -0.6959093E-16  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =   -0.1722504E-22
+     RELATIVE ERROR 0N MASS                    =   -0.3020848E-14
+ TOTAL MAXIMAL EVOLUTION  :    0.1921249E-02 NODE  :  2412
+ TOTAL MINIMAL EVOLUTION  :   -0.5928060E-03 NODE  :   613
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    999.7839     M3
+     RELATIVE ERROR IN VOLUME AT T =        20.00     S :   -0.3752477E-14
+
+================================================================================
+ ITERATION      600    TIME:  24.0000 S
+--------------------------------------------------------------------------------
+                          ADVECTION STEP
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+ GMRES (BIEF) :       10 ITERATIONS, ABSOLUTE PRECISION:    0.000000
+
+================================================================================
+ ITERATION      600    TIME:  24.0000 S
+
+--------------------------------------------------------------------------------
+                     DIFFUSION OF TRACERS STEP
+ CVTRVF (BIEF):      1 SUB-ITERATIONS
+ GRACJG (BIEF) :        0 ITERATIONS, RELATIVE PRECISION:   0.1323569E-15
+
+                            BALANCE OF COH SEDIMENT1 (UNIT: g/l * M3)
+
+     INITIAL QUANTITY                  :     156.2264
+     FINAL QUANTITY                    :     156.2025
+     QUANTITY CREATED BY SOURCE TERM   :     -0.2382909E-01
+     TOTAL QUANTITY LOST               :   -0.2842171E-13
+     RELATIVE ERROR                    :   -0.1819265E-15
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.2382909E-01  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    -0.000000      ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =    0.1593340E-01  ( KG/S )
+     DEPOSITION FLUX                           =    0.6116606      ( KG/S )
+     TOTAL MASS                                =     4040096.      ( KG )
+     LOST MASS                                 =   -0.1201461E-16  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =   -0.2973837E-23
+     RELATIVE ERROR 0N MASS                    =   -0.5041992E-15
+ TOTAL MAXIMAL EVOLUTION  :    0.2288136E-02 NODE  :  2412
+ TOTAL MINIMAL EVOLUTION  :   -0.6298747E-03 NODE  :  1384
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    999.7839     M3
+     RELATIVE ERROR IN VOLUME AT T =        24.00     S :   -0.2387940E-14
+
+================================================================================
+ ITERATION      700    TIME:  28.0000 S
+--------------------------------------------------------------------------------
+                          ADVECTION STEP
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+ GMRES (BIEF) :       11 ITERATIONS, ABSOLUTE PRECISION:    0.000000
+
+================================================================================
+ ITERATION      700    TIME:  28.0000 S
+
+--------------------------------------------------------------------------------
+                     DIFFUSION OF TRACERS STEP
+ CVTRVF (BIEF):      1 SUB-ITERATIONS
+ GRACJG (BIEF) :        0 ITERATIONS, RELATIVE PRECISION:   0.1279871E-15
+
+                            BALANCE OF COH SEDIMENT1 (UNIT: g/l * M3)
+
+     INITIAL QUANTITY                  :     154.6671
+     FINAL QUANTITY                    :     154.6462
+     QUANTITY CREATED BY SOURCE TERM   :     -0.2084813E-01
+     TOTAL QUANTITY LOST               :    0.2557954E-12
+     RELATIVE ERROR                    :    0.1653845E-14
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.2084813E-01  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    -0.000000      ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =    0.7434525E-01  ( KG/S )
+     DEPOSITION FLUX                           =    0.5955485      ( KG/S )
+     TOTAL MASS                                =     4040098.      ( KG )
+     LOST MASS                                 =   -0.5691659E-16  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =   -0.1408791E-22
+     RELATIVE ERROR 0N MASS                    =   -0.2730057E-14
+ TOTAL MAXIMAL EVOLUTION  :    0.2649188E-02 NODE  :  2412
+ TOTAL MINIMAL EVOLUTION  :   -0.6690733E-03 NODE  :  4243
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    999.7839     M3
+     RELATIVE ERROR IN VOLUME AT T =        28.00     S :   -0.3866188E-14
+
+================================================================================
+ ITERATION      800    TIME:  32.0000 S
+--------------------------------------------------------------------------------
+                          ADVECTION STEP
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+ GMRES (BIEF) :       10 ITERATIONS, ABSOLUTE PRECISION:    0.000000
+
+================================================================================
+ ITERATION      800    TIME:  32.0000 S
+
+--------------------------------------------------------------------------------
+                     DIFFUSION OF TRACERS STEP
+ CVTRVF (BIEF):      1 SUB-ITERATIONS
+ GRACJG (BIEF) :        0 ITERATIONS, RELATIVE PRECISION:   0.1244013E-15
+
+                            BALANCE OF COH SEDIMENT1 (UNIT: g/l * M3)
+
+     INITIAL QUANTITY                  :     152.8327
+     FINAL QUANTITY                    :     152.8108
+     QUANTITY CREATED BY SOURCE TERM   :     -0.2182889E-01
+     TOTAL QUANTITY LOST               :    0.3979039E-12
+     RELATIVE ERROR                    :    0.2603527E-14
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.2182889E-01  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    -0.000000      ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =    0.4230284E-01  ( KG/S )
+     DEPOSITION FLUX                           =    0.5880250      ( KG/S )
+     TOTAL MASS                                =     4040099.      ( KG )
+     LOST MASS                                 =   -0.1091175E-15  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =   -0.2700859E-22
+     RELATIVE ERROR 0N MASS                    =   -0.4998766E-14
+ TOTAL MAXIMAL EVOLUTION  :    0.3004422E-02 NODE  :  2412
+ TOTAL MINIMAL EVOLUTION  :   -0.6597002E-03 NODE  :  4243
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    999.7839     M3
+     RELATIVE ERROR IN VOLUME AT T =        32.00     S :    0.2274228E-15
+
+================================================================================
+ ITERATION      900    TIME:  36.0000 S
+--------------------------------------------------------------------------------
+                          ADVECTION STEP
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+ GMRES (BIEF) :       10 ITERATIONS, ABSOLUTE PRECISION:    0.000000
+
+================================================================================
+ ITERATION      900    TIME:  36.0000 S
+
+--------------------------------------------------------------------------------
+                     DIFFUSION OF TRACERS STEP
+ CVTRVF (BIEF):      1 SUB-ITERATIONS
+ GRACJG (BIEF) :        0 ITERATIONS, RELATIVE PRECISION:   0.1232224E-15
+
+                            BALANCE OF COH SEDIMENT1 (UNIT: g/l * M3)
+
+     INITIAL QUANTITY                  :     150.8993
+     FINAL QUANTITY                    :     150.8755
+     QUANTITY CREATED BY SOURCE TERM   :     -0.2388072E-01
+     TOTAL QUANTITY LOST               :    0.5400125E-12
+     RELATIVE ERROR                    :    0.3578627E-14
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.2388072E-01  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    -0.000000      ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =    0.1133044E-02  ( KG/S )
+     DEPOSITION FLUX                           =    0.5981510      ( KG/S )
+     TOTAL MASS                                =     4040101.      ( KG )
+     LOST MASS                                 =   -0.9833552E-16  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =   -0.2433986E-22
+     RELATIVE ERROR 0N MASS                    =   -0.4117779E-14
+ TOTAL MAXIMAL EVOLUTION  :    0.3353854E-02 NODE  :  2412
+ TOTAL MINIMAL EVOLUTION  :   -0.6831721E-03 NODE  :  1263
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    999.7839     M3
+     RELATIVE ERROR IN VOLUME AT T =        36.00     S :   -0.1705671E-14
+
+================================================================================
+ ITERATION     1000    TIME:  40.0000 S
+--------------------------------------------------------------------------------
+                          ADVECTION STEP
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+ GMRES (BIEF) :        9 ITERATIONS, ABSOLUTE PRECISION:    0.000000
+
+================================================================================
+ ITERATION     1000    TIME:  40.0000 S
+
+--------------------------------------------------------------------------------
+                     DIFFUSION OF TRACERS STEP
+ CVTRVF (BIEF):      1 SUB-ITERATIONS
+ GRACJG (BIEF) :        0 ITERATIONS, RELATIVE PRECISION:   0.1280998E-15
+
+                            BALANCE OF COH SEDIMENT1 (UNIT: g/l * M3)
+
+     INITIAL QUANTITY                  :     148.8343
+     FINAL QUANTITY                    :     148.8112
+     QUANTITY CREATED BY SOURCE TERM   :     -0.2303895E-01
+     TOTAL QUANTITY LOST               :    0.2557954E-12
+     RELATIVE ERROR                    :    0.1718659E-14
+
+                      FINAL BALANCE OF COH SEDIMENT1 (UNIT: g/l * M3)
+
+     INITIAL QUANTITY                  :     149.6940
+     FINAL QUANTITY                    :     148.8112
+     QUANTITY CREATED BY SOURCE TERM   :   -0.8827613
+     TOTAL QUANTITY LOST               :   -0.2415845E-11
+     RELATIVE ERROR                    :   -0.1613856E-13
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     TOTAL BED EVOLUTIONS                      =    0.2303895E-01  ( KG )
+     BOUNDARIES BEDLOAD FLUX                   =    -0.000000      ( KG/S  >0 = ENTERING )
+     EROSION FLUX                              =     0.000000      ( KG/S )
+     DEPOSITION FLUX                           =    0.5759738      ( KG/S )
+     TOTAL MASS                                =     4040103.      ( KG )
+     LOST MASS                                 =   -0.8693821E-16  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =   -0.2151881E-22
+     RELATIVE ERROR 0N MASS                    =   -0.3773532E-14
+
+                    FINAL MASS-BALANCE OF SEDIMENTS:
+
+                    GAIA MASS-BALANCE OF SEDIMENTS PER CLASS:
+     SEDIMENT CLASS NUMBER                     =        1
+     CUMULATED BED EVOLUTIONS                  =    0.8827613      ( KG )
+     CUMULATED BOUNDARIES BEDLOAD MASS         =     0.000000      ( KG )
+     CUMULATED EROSION                         =     24.22196      ( KG )
+     CUMULATED DEPOSITION                      =     25.10472      ( KG )
+     INITIAL MASS                              =     4040102.      ( KG )
+     INITIAL MASS ACTIVE LAYER                 =     4040102.      ( KG )
+     TOTAL MASS                                =     4040103.      ( KG )
+     CUMULATED LOST MASS                       =    0.5684342E-13  ( KG )
+     RELATIVE ERROR TO INITIAL ACT LAYER MASS  =    0.1406980E-19
+     CUMULATED RELATIVE ERROR ON MASS          =    0.2467275E-11
+     CUMULATED LOST MASS (INI-FINAL+FLUXES)    =    0.5608648E-08  ( KG )
+     RELATIVE ERROR TO TOTAL INITIAL MASS      =    0.1388244E-14
+ TOTAL MAXIMAL EVOLUTION  :    0.3697533E-02 NODE  :  2412
+ TOTAL MINIMAL EVOLUTION  :   -0.6812502E-03 NODE  :  4243
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    999.7839     M3
+     RELATIVE ERROR IN VOLUME AT T =        40.00     S :   -0.1705671E-14
+--------------------------------------------------------------------------------
+                   FINAL BALANCE OF WATER VOLUME
+
+     RELATIVE ERROR CUMULATED ON VOLUME:   -0.3547796E-13
+
+     INITIAL VOLUME              :     999.7839     M3
+     FINAL VOLUME                :     999.7839     M3
+     TOTAL VOLUME LOST             :   -0.3547029E-10 M3
+
+ END OF TIME LOOP
+
+ EXITING MPI
+
+STOP 0
+                     *************************************
+                     *    END OF MEMORY ORGANIZATION:    *
+                     *************************************
+
+ CORRECT END OF RUN
+
+ ELAPSE TIME :
+                              4  SECONDS
+... merging separated result files
+
+... handling result files
+
+        moving: r2d_mud_cons-t2d.slf
+        moving: gai_mud_cons-t2d.slf
+... deleting working dir
+
+
+
+My work is done
+
+

@@ -1,0 +1,104 @@
+
+
+Loading Options and Configurations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+          ___          _____ 
+         / _ \        | ____|
+ __   __| (_) | _ __  | |__  
+ \ \ / / > _ < | '_ \ |___ \ 
+  \ V / | (_) || |_) | ___) |
+   \_/   \___/ | .__/ |____/ 
+               | |           
+               |_|           
+
+
+Running your CAS file(s) for:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+gnu: 
+    
+
+    +> Portable GNU/OpenMPI TELEMAC2D build, no architecture-specific patch
+
+    +> root:    /opt/telemac
+    +> module: ad / api / artemis / bief
+               damocles  / gaia  / gretel  / hermes
+               identify_liq_bnd  / khione  / mascaret  / nestor
+               parallel  / partel  / postel3d  / special
+               stbtel  / telemac2d  / telemac3d  / tomawac
+               waqtel
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+... processing the steering file
+  ~> Checking keyword/rubrique coherence
+  ~> Checking keyword/rubrique coherence
+
+... checking parallelisation
+
+... handling temporary directories
+         copying: t2d_mud_cons.cas -> /app/models/synthetic_sediment/mud_exchange/t2d_mud_cons.cas_2026-10-13-23h21min19s/T2DCAS
+         copying: telemac2d.dico -> /app/models/synthetic_sediment/mud_exchange/t2d_mud_cons.cas_2026-10-13-23h21min19s/T2DDICO
+         copying: geo_mud_cons-t2d.cli -> /app/models/synthetic_sediment/mud_exchange/t2d_mud_cons.cas_2026-10-13-23h21min19s/T2DCLI
+         copying: geo_mud_cons-t2d.slf -> /app/models/synthetic_sediment/mud_exchange/t2d_mud_cons.cas_2026-10-13-23h21min19s/T2DGEO
+         copying: gai_mud_cons-t2d.cas -> /app/models/synthetic_sediment/mud_exchange/t2d_mud_cons.cas_2026-10-13-23h21min19s/GAICAS
+         copying: gaia.dico -> /app/models/synthetic_sediment/mud_exchange/t2d_mud_cons.cas_2026-10-13-23h21min19s/GAIDICO
+         copying: geo_mud_cons-t2d.cli -> /app/models/synthetic_sediment/mud_exchange/t2d_mud_cons.cas_2026-10-13-23h21min19s/GAICLI
+         copying: geo_mud_cons-t2d.slf -> /app/models/synthetic_sediment/mud_exchange/t2d_mud_cons.cas_2026-10-13-23h21min19s/GAIGEO
+
+... checking the executable
+  > compiling objs
+         compiling: user_condin_h.f ... completed
+         compiling: user_condin_trac.f ... completed
+         created: out_user_fortran
+
+
+Running your simulation(s) :
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+In /app/models/synthetic_sediment/mud_exchange/t2d_mud_cons.cas_2026-10-13-23h21min19s:
+mpirun -np 1 /app/models/synthetic_sediment/mud_exchange/t2d_mud_cons.cas_2026-10-13-23h21min19s/out_user_fortran
+
+
+--------------------------------------------------------------------------
+mpirun has detected an attempt to run as root.
+
+Running as root is *strongly* discouraged as any mistake (e.g., in
+defining TMPDIR) or bug can result in catastrophic damage to the OS
+file system, leaving your system in an unusable state.
+
+We strongly suggest that you run mpirun as a non-root user.
+
+You can override this protection by adding the --allow-run-as-root option
+to the cmd line or by setting two environment variables in the following way:
+the variable OMPI_ALLOW_RUN_AS_ROOT=1 to indicate the desire to override this
+protection, and OMPI_ALLOW_RUN_AS_ROOT_CONFIRM=1 to confirm the choice and
+add one more layer of certainty that you want to do so.
+We reiterate our advice against doing so - please proceed at your own risk.
+--------------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/opt/telemac/scripts/python3/telemac2d.py", line 7, in <module>
+    main('telemac2d')
+  File "/opt/telemac/scripts/python3/runcode.py", line 288, in main
+    run_study(cas_file, code_name, options)
+  File "/opt/telemac/scripts/python3/execution/run_cas.py", line 169, in run_study
+    run_local_cas(my_study, options)
+  File "/opt/telemac/scripts/python3/execution/run_cas.py", line 65, in run_local_cas
+    my_study.run(options)
+  File "/opt/telemac/scripts/python3/execution/study.py", line 659, in run
+    self.run_local()
+  File "/opt/telemac/scripts/python3/execution/study.py", line 480, in run_local
+    run_code(self.run_cmd, self.sortie_file)
+  File "/opt/telemac/scripts/python3/execution/run.py", line 182, in run_code
+    raise TelemacException('Fail to run\n'+exe)
+utils.exceptions.TelemacException: Fail to run
+mpirun -np 1 /app/models/synthetic_sediment/mud_exchange/t2d_mud_cons.cas_2026-10-13-23h21min19s/out_user_fortran

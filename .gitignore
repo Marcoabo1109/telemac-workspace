@@ -1,0 +1,16 @@
+.DS_Store
+**/.venv/
+**/node_modules/
+**/__pycache__/
+**/.pytest_cache/
+**/.ruff_cache/
+**/.env
+**/.env.local
+
+# Originals restored from lossless published archives
+/entrega_base_sintetica/base_gaia_metais_dragagem.zip
+/telemac-examples-ref/examples/telemac2d/riv_art/r2d_riv_art.slf
+/telemac-examples-ref/examples/telemac2d/riv_art/r2d_riv_art_old1.slf
+/telemac-examples-ref/examples/telemac2d/riv_art/r2d_riv_art_old2.slf
+/tapajos-telemac-platform/vendor/telemac/documentation/telemac2d/validation/telemac2d_validation_v8p5.pdf
+/tapajos-telemac-platform/vendor/telemac/examples/artemis/westcoast/tom_westcoast.slf

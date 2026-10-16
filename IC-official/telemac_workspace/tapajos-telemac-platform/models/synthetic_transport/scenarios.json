@@ -1,0 +1,71 @@
+{
+  "data_kind": "all_values_synthetic_not_field_measurements",
+  "parameters": {
+    "volume_m3": 1000.0,
+    "area_m2": 200.0,
+    "flow_m3_s": 0.0,
+    "initial_ssc_kg_m3": 0.05,
+    "initial_bed_kg": 10000.0,
+    "initial_dissolved_kg_m3": 1e-06,
+    "initial_suspended_metal_kg_kg": 2e-05,
+    "initial_bed_metal_kg_kg": 2e-05,
+    "inflow_ssc_kg_m3": 0.0,
+    "inflow_dissolved_kg_m3": 0.0,
+    "inflow_particle_metal_kg_kg": 0.0,
+    "settling_m_s": 0.001,
+    "shear_pa": 0.05,
+    "erosion_threshold_pa": 0.1,
+    "deposition_threshold_pa": 1.0,
+    "partheniades_kg_m2_s": 1e-05,
+    "kd_m3_kg": 10.0,
+    "desorption_s_1": 0.001,
+    "dredge_kg_s": 0.0,
+    "dredge_start_s": 600.0,
+    "dredge_end_s": 1800.0,
+    "resuspension_fraction": 0.05,
+    "mobilization_cost": 100.0,
+    "cost_per_kg_removed": 0.2
+  },
+  "duration_s": 3600,
+  "time_steps_s": [
+    20,
+    10,
+    5
+  ],
+  "scenarios": {
+    "partition_only": {
+      "settling_m_s": 0,
+      "partheniades_kg_m2_s": 0
+    },
+    "deposition": {
+      "partheniades_kg_m2_s": 0
+    },
+    "erosion": {
+      "shear_pa": 2,
+      "settling_m_s": 0
+    },
+    "open_flow": {
+      "flow_m3_s": 0.1,
+      "inflow_ssc_kg_m3": 0.02,
+      "inflow_dissolved_kg_m3": 1e-07
+    },
+    "dredging": {
+      "dredge_kg_s": 2
+    },
+    "bed_exhaustion": {
+      "dredge_kg_s": 1000
+    }
+  },
+  "dredge_rates_kg_s": [
+    0,
+    0.5,
+    1,
+    2,
+    5
+  ],
+  "illustrative_constraints": {
+    "min_removed_kg": 500,
+    "max_dissolved_kg_m3": 2e-06,
+    "max_cost": 1000
+  }
+}

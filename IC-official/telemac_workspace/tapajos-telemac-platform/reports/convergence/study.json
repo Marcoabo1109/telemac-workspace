@@ -1,0 +1,264 @@
+{
+  "status": "numerical_experiment_not_physical_validation",
+  "flux_priority": false,
+  "comparison_coordinates": "exact input mesh coordinates, avoiding SERAFIN output float32 rounding",
+  "domain": "fixed schematic geometry and piecewise-linear bed; midpoint refinement does not add bathymetric knowledge",
+  "comparisons_at": "final 3600 s fields; area-weighted RMS",
+  "criteria": {
+    "free_surface_rms_m": 0.02,
+    "velocity_vector_rms_m_s": 0.03,
+    "tracer_rms": 0.02,
+    "water_balance_abs": 0.0001,
+    "tracer_balance_abs": 0.001,
+    "kind": "provisional research tolerances, not regulatory limits"
+  },
+  "cases": [
+    {
+      "name": "characteristics_L0_dt2",
+      "level": 0,
+      "dt_s": 2.0,
+      "tracer_scheme": 1,
+      "nodes": 228,
+      "triangles": 397,
+      "duration_s": 3600,
+      "input_sha256": "4b797e5d627fe7796e5cab27d608d92ecd457e05c184e1892cd294d9fd5db220",
+      "job": "b6b6cfae390245e994ac18979d928ac6",
+      "balance": {
+        "water_relative": -4.988062e-07,
+        "tracer_relative": -0.008688563
+      },
+      "min_depth_all_frames_m": 3.789335012435913,
+      "tracer_range_all_frames": [
+        0.0,
+        1.0
+      ],
+      "final_water_volume_m3": 27653738.070651814,
+      "final_tracer_inventory_normalized_m3": 21333747.426710874
+    },
+    {
+      "name": "psi_L0_dt2",
+      "level": 0,
+      "dt_s": 2.0,
+      "tracer_scheme": 5,
+      "nodes": 228,
+      "triangles": 397,
+      "duration_s": 3600,
+      "input_sha256": "540b1b5a9f178f25d85a0030423d0a0574cff354f197f5749115803a13ea70ca",
+      "job": "99051abd469a4696aac9cb9949a38354",
+      "balance": {
+        "water_relative": -4.988062e-07,
+        "tracer_relative": -0.02777737
+      },
+      "min_depth_all_frames_m": 3.789335012435913,
+      "tracer_range_all_frames": [
+        0.0,
+        1.0
+      ],
+      "final_water_volume_m3": 27653738.070651814,
+      "final_tracer_inventory_normalized_m3": 21644376.047523253
+    },
+    {
+      "name": "psi_L1_dt2",
+      "level": 1,
+      "dt_s": 2.0,
+      "tracer_scheme": 5,
+      "nodes": 852,
+      "triangles": 1588,
+      "duration_s": 3600,
+      "input_sha256": "65e6791d1f81ef9eb136f0a23b66e66d4d1db7fa806c01f6ce55bfbce9d70bb1",
+      "job": "1243e674eea64443a3b45a04f5f58241",
+      "balance": {
+        "water_relative": -4.351938e-07,
+        "tracer_relative": -0.01319896
+      },
+      "min_depth_all_frames_m": 3.781540632247925,
+      "tracer_range_all_frames": [
+        0.0,
+        1.0
+      ],
+      "final_water_volume_m3": 27648340.287296146,
+      "final_tracer_inventory_normalized_m3": 21662328.069482256
+    },
+    {
+      "name": "psi_L2_dt2",
+      "level": 2,
+      "dt_s": 2.0,
+      "tracer_scheme": 5,
+      "nodes": 3291,
+      "triangles": 6352,
+      "duration_s": 3600,
+      "input_sha256": "0faf0792c01919ac227a415531952d98484f9270556d2bf7c07fa5ea11afc446",
+      "job": "fde6d84093c34451957ac3c20d0a4cec",
+      "balance": {
+        "water_relative": 7.974246e-08,
+        "tracer_relative": -0.006101537
+      },
+      "min_depth_all_frames_m": 3.771486520767212,
+      "tracer_range_all_frames": [
+        0.0,
+        1.0
+      ],
+      "final_water_volume_m3": 27641607.357517287,
+      "final_tracer_inventory_normalized_m3": 21653066.930187985
+    },
+    {
+      "name": "psi_L2_dt1",
+      "level": 2,
+      "dt_s": 1.0,
+      "tracer_scheme": 5,
+      "nodes": 3291,
+      "triangles": 6352,
+      "duration_s": 3600,
+      "input_sha256": "0a3fabfebf4f872fe8b4e3197863452883044e64f892f9a14e5620845ae8c87f",
+      "job": "be045de3ae09434ab188e054a34c61d0",
+      "balance": {
+        "water_relative": -1.773959e-07,
+        "tracer_relative": -0.006269681
+      },
+      "min_depth_all_frames_m": 3.761765718460083,
+      "tracer_range_all_frames": [
+        0.0,
+        1.0
+      ],
+      "final_water_volume_m3": 27644154.711104713,
+      "final_tracer_inventory_normalized_m3": 21653564.945451144
+    },
+    {
+      "name": "psi_L2_dt0.5",
+      "level": 2,
+      "dt_s": 0.5,
+      "tracer_scheme": 5,
+      "nodes": 3291,
+      "triangles": 6352,
+      "duration_s": 3600,
+      "input_sha256": "e734e67b6ab1e68883d60f9f697c1b67498f4501e8217bf13122097080254654",
+      "job": "977a61aa2d5741e48e1ed051e98b8f65",
+      "balance": {
+        "water_relative": -7.710161e-08,
+        "tracer_relative": -0.006335823
+      },
+      "min_depth_all_frames_m": 3.7109525203704834,
+      "tracer_range_all_frames": [
+        0.0,
+        1.0
+      ],
+      "final_water_volume_m3": 27645582.62304781,
+      "final_tracer_inventory_normalized_m3": 21653351.300681386
+    }
+  ],
+  "spatial": [
+    {
+      "coarse": "psi_L0_dt2",
+      "fine": "psi_L1_dt2",
+      "difference": {
+        "WATER DEPTH": {
+          "rms": 0.0023780216829051414,
+          "max_abs": 0.015892982512013987
+        },
+        "FREE SURFACE": {
+          "rms": 0.002378014249086822,
+          "max_abs": 0.015892744064331055
+        },
+        "VELOCITY U": {
+          "rms": 0.003991376655339988,
+          "max_abs": 0.03410631418319099
+        },
+        "VELOCITY V": {
+          "rms": 0.004060577761026312,
+          "max_abs": 0.0500098392367363
+        },
+        "PASSIVE TRACER": {
+          "rms": 0.04731475507363035,
+          "max_abs": 0.17043755948554917
+        },
+        "velocity_vector_rms_m_s": 0.0056938018369218375
+      }
+    },
+    {
+      "coarse": "psi_L1_dt2",
+      "fine": "psi_L2_dt2",
+      "difference": {
+        "WATER DEPTH": {
+          "rms": 0.001992914985072039,
+          "max_abs": 0.012854576110839844
+        },
+        "FREE SURFACE": {
+          "rms": 0.0019929238892952097,
+          "max_abs": 0.012854814529418945
+        },
+        "VELOCITY U": {
+          "rms": 0.002452080208878581,
+          "max_abs": 0.026222318410873413
+        },
+        "VELOCITY V": {
+          "rms": 0.002228485032086092,
+          "max_abs": 0.05513727665038459
+        },
+        "PASSIVE TRACER": {
+          "rms": 0.034163386488561806,
+          "max_abs": 0.10978016257377021
+        },
+        "velocity_vector_rms_m_s": 0.003313433700710756
+      }
+    }
+  ],
+  "temporal": [
+    {
+      "coarse": "psi_L2_dt2",
+      "fine": "psi_L2_dt1",
+      "difference": {
+        "WATER DEPTH": {
+          "rms": 0.0023260795965589992,
+          "max_abs": 0.005669593840138987
+        },
+        "FREE SURFACE": {
+          "rms": 0.00232607590073649,
+          "max_abs": 0.005669116973876953
+        },
+        "VELOCITY U": {
+          "rms": 0.000651856790267768,
+          "max_abs": 0.001481175422668457
+        },
+        "VELOCITY V": {
+          "rms": 0.0008409371252468412,
+          "max_abs": 0.0015581697225570679
+        },
+        "PASSIVE TRACER": {
+          "rms": 0.000908005838853141,
+          "max_abs": 0.0024669915435424628
+        },
+        "velocity_vector_rms_m_s": 0.0010639983663693372
+      }
+    },
+    {
+      "coarse": "psi_L2_dt1",
+      "fine": "psi_L2_dt0.5",
+      "difference": {
+        "WATER DEPTH": {
+          "rms": 0.001815967988516399,
+          "max_abs": 0.004951477065333165
+        },
+        "FREE SURFACE": {
+          "rms": 0.0018159638644989942,
+          "max_abs": 0.0049517154693603516
+        },
+        "VELOCITY U": {
+          "rms": 0.0007926958185168455,
+          "max_abs": 0.002079248428799474
+        },
+        "VELOCITY V": {
+          "rms": 0.0011351022377028611,
+          "max_abs": 0.0025472491979599
+        },
+        "PASSIVE TRACER": {
+          "rms": 0.00048740075511928186,
+          "max_abs": 0.0013036578891387762
+        },
+        "velocity_vector_rms_m_s": 0.0013844940414216792
+      }
+    }
+  ],
+  "finest_pair_spatial_pass": false,
+  "finest_pair_temporal_pass": true,
+  "all_psi_balances_pass": false
+}

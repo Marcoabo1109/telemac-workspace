@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "dataset": "ANA station 17675000 stage",
+  "source": {
+    "institution": "Agência Nacional de Águas e Saneamento Básico (ANA)",
+    "url": "https://telemetriaws1.ana.gov.br/ServiceANA.asmx/HidroSerieHistorica",
+    "retrieved_on": "2026-10-01",
+    "service": "HidroSerieHistorica (legacy read-only service)"
+  },
+  "transformation": {
+    "parser": "scripts.tapajos_data.parse_legacy_xml",
+    "gap_policy": "No interpolation; absent dates remain absent",
+    "duplicate_policy": "Highest consistency record retained per date"
+  },
+  "artifacts": {
+    "raw": {
+      "path": "data/tapajos/stations/raw/ana_17675000_stage_consisted_1987-08-15_2023-12-31.xml",
+      "sha256": "3c0b900edb1b28982a1d51d4ffbd95d558058c8c08f7d6b3a3d54e1f19b30594"
+    },
+    "canonical": {
+      "path": "data/tapajos/stations/processed/ana_17675000_stage_consisted_1987-08-15_2023-12-31.csv",
+      "sha256": "a00611b455c9498b52dd060fd0b3207b39ae46f448fd755d13f0a534fb2c98e1"
+    }
+  },
+  "quality": {
+    "records": 9292,
+    "start": "1987-08-15",
+    "end": "2023-12-31",
+    "expected_days": 13288,
+    "missing_days": 3996,
+    "completeness_percent": 69.93,
+    "gap_count": 12,
+    "maximum_gap_days": 3258,
+    "gaps": [
+      {
+        "start": "1988-10-11",
+        "end": "1988-12-07",
+        "days": 58
+      },
+      {
+        "start": "1989-09-01",
+        "end": "1989-10-31",
+        "days": 61
+      },
+      {
+        "start": "1990-03-03",
+        "end": "1990-03-13",
+        "days": 11
+      },
+      {
+        "start": "1990-04-01",
+        "end": "1990-06-13",
+        "days": 74
+      },
+      {
+        "start": "1990-09-01",
+        "end": "1999-08-02",
+        "days": 3258
+      },
+      {
+        "start": "2000-02-13",
+        "end": "2000-03-31",
+        "days": 48
+      },
+      {
+        "start": "2000-10-01",
+        "end": "2000-11-16",
+        "days": 47
+      },
+      {
+        "start": "2003-09-01",
+        "end": "2004-02-29",
+        "days": 182
+      },
+      {
+        "start": "2004-03-25",
+        "end": "2004-04-16",
+        "days": 23
+      },
+      {
+        "start": "2005-03-27",
+        "end": "2005-04-06",
+        "days": 11
+      },
+      {
+        "start": "2013-04-01",
+        "end": "2013-04-30",
+        "days": 30
+      },
+      {
+        "start": "2014-06-22",
+        "end": "2014-12-31",
+        "days": 193
+      }
+    ],
+    "unit": "cm",
+    "minimum": 140.0,
+    "maximum": 1353.0,
+    "consistency_counts": {
+      "2": 9292
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "status": "prepared_not_executed",
+  "solver_commit": "d1bff193746fd76425d7715a6e4d20d42eb8877e",
+  "source": "https://gitlab.pam-retd.fr/otm/telemac-mascaret",
+  "data_kind": "synthetic_upstream_benchmarks_not_Tapajos_measurements",
+  "cases": [
+    {
+      "id": "sand_bedload",
+      "status": "prepared_not_executed",
+      "source_example": "gaia/flume_bc-t2d",
+      "telemac_cas": "t2d_flume_bc.cas",
+      "gaia_cas": "gai_flume_bc.cas",
+      "overrides": {},
+      "expected_results": [
+        "r2d_flume_bc.slf",
+        "gai_flume_bc.slf"
+      ],
+      "input_sha256": {
+        "flume_bc.lqd": "a1a4b2e58850f4d7ae67ef68ba6458f56452000011cbf106a9432864572837eb",
+        "gai_ref_flume_bc_multi.slf": "00ae37c393bccf8e650da455f1f6479c0fe00d6222f8535f18d4821c80563cdd",
+        "gai_ref_flume_bc.slf": "10bb54aec92700dc1c56b8cb0f54ddc2faac786489339c48badad77b75fdb576",
+        "gai_ref_flume_bc_coh.slf": "863131dcfc416af8570329236a604f103192f0a28f23bb29b2b0147b1cb4cae2",
+        "geo_flume_bc.slf": "edc6e52f3f7aff5cabe8b2f87cd56207fe10d80aeff9a025cecc5b035df7882d",
+        "t2d_flume_bc.cas": "0aca09bd542a44b9e46d9b567f2b0742b5fa9e77c4dafb27637e7c10b1954cda",
+        "vnv_flume_bc.py": "26afce990fb85774a432f87d04fd74125aed229fed0347833cd1ab41e15175de",
+        "gai_flume_bc.cas": "40adf27ca411a4ab9dc5fb03a0fe01fa1b3013038eb2ba2d26a061fdb4206e57",
+        "gai_ref_bc_bbfmulti.slf": "f47e4d9d1f102f27aebc6b37975266308afa5278daef43d855bcb6c25da53e24",
+        "gai_ref_flume_bc_multi_dist.slf": "90571b5e7d695b4f85f5f474df5984c9abe27553c855e0655a8113fbd12a6cae",
+        "geo_flume_bc.cli": "8c140c208916a841e7f71880d2f63848d24f40126eb02579573e74d34563385c",
+        "gai_ref_flume_bc_bbf.slf": "d5d875a9c8b184abcf4f6ca6bec94c9d1bffec1c744266a069a8c8a78f8b77fb",
+        "user_fortran/user_corfon.f": "2388167929ce46e39bbbc38af97d42fb3d8230d2df22a7919342d2360082fc74",
+        "user_fortran/user_condin_h.f": "47452ba7948f95055aa20a332dc4eda33d520903938d5b5d5e55cc0bf19c9592"
+      },
+      "duration_s": 1800.0,
+      "hydro_overrides": {
+        "NUMBER OF TIME STEPS": "216891"
+      },
+      "note": "Explicit final iteration from completed adaptive reference run; duration and all physical/numerical parameters retained. Ensures GAIA final mass-balance listing."
+    }
+  ]
+}

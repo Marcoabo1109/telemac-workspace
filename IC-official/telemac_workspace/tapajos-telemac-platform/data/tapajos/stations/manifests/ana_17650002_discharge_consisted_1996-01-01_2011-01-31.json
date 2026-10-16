@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "dataset": "ANA station 17650002 discharge",
+  "source": {
+    "institution": "Agência Nacional de Águas e Saneamento Básico (ANA)",
+    "url": "https://telemetriaws1.ana.gov.br/ServiceANA.asmx/HidroSerieHistorica",
+    "retrieved_on": "2026-10-01",
+    "service": "HidroSerieHistorica (legacy read-only service)"
+  },
+  "transformation": {
+    "parser": "scripts.tapajos_data.parse_legacy_xml",
+    "gap_policy": "No interpolation; absent dates remain absent",
+    "duplicate_policy": "Highest consistency record retained per date"
+  },
+  "artifacts": {
+    "raw": {
+      "path": "data/tapajos/stations/raw/ana_17650002_discharge_consisted_1996-01-01_2011-01-31.xml",
+      "sha256": "adca6660abd7ccbc44516ba9f2e1679a14863f3083280d76f1845fcaeebf0b9b"
+    },
+    "canonical": {
+      "path": "data/tapajos/stations/processed/ana_17650002_discharge_consisted_1996-01-01_2011-01-31.csv",
+      "sha256": "af13c3c7a9416783437ca77205933125b88ada5369e79640f13c217e41e5a8d9"
+    }
+  },
+  "quality": {
+    "records": 5420,
+    "start": "1996-01-01",
+    "end": "2011-01-31",
+    "expected_days": 5510,
+    "missing_days": 90,
+    "completeness_percent": 98.37,
+    "gap_count": 6,
+    "maximum_gap_days": 42,
+    "gaps": [
+      {
+        "start": "2009-10-01",
+        "end": "2009-10-19",
+        "days": 19
+      },
+      {
+        "start": "2009-10-26",
+        "end": "2009-12-06",
+        "days": 42
+      },
+      {
+        "start": "2009-12-11",
+        "end": "2009-12-13",
+        "days": 3
+      },
+      {
+        "start": "2010-05-01",
+        "end": "2010-05-24",
+        "days": 24
+      },
+      {
+        "start": "2010-05-26",
+        "end": "2010-05-26",
+        "days": 1
+      },
+      {
+        "start": "2010-05-30",
+        "end": "2010-05-30",
+        "days": 1
+      }
+    ],
+    "unit": "m3/s",
+    "minimum": 2674.36,
+    "maximum": 30491.1,
+    "consistency_counts": {
+      "2": 5420
+    }
+  }
+}

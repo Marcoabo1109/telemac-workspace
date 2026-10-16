@@ -1,0 +1,263 @@
+{
+  "status": "prepared_not_executed",
+  "solver_commit": "d1bff193746fd76425d7715a6e4d20d42eb8877e",
+  "source": "https://gitlab.pam-retd.fr/otm/telemac-mascaret",
+  "data_kind": "synthetic_upstream_benchmarks_not_Tapajos_measurements",
+  "cases": [
+    {
+      "id": "mud_exchange",
+      "status": "prepared_not_executed",
+      "source_example": "gaia/mud_conservation-t2d",
+      "telemac_cas": "t2d_mud_cons.cas",
+      "gaia_cas": "gai_mud_cons-t2d.cas",
+      "overrides": {},
+      "expected_results": [
+        "r2d_mud_cons-t2d.slf",
+        "gai_mud_cons-t2d.slf"
+      ],
+      "input_sha256": {
+        "f2d_mud_cons-t2d.slf": "88e96ac494e0249fcbc440bed2fd7e00bb7bf980cfbfc74c8ff00723741ec513",
+        "gai_mud_cons-t2d.cas": "291c9a5e84c67399e8a5e6a0d639e72706d01ec00b139baf4a397f5298717839",
+        "gai_mud_cons_from_restart-t2d.cas": "7e1316a8a5aa7e9d3ee41aa55440e5cabaa4b3199e31e327d3843b605e1919f9",
+        "gai_mud_cons_restart-t2d.cas": "618c5621941587392989d8ad5a1c6cac8c2c2d9f2618c9bc9164a0fcf102017e",
+        "gai_ref_mud_cons-t2d.slf": "a451e74bfb72009cbd89970ed6efaf03cb7bc98c0f53c4b9db78bb0115ee9c78",
+        "geo_mud_cons-t2d.cli": "bd0793ca3fff8e6fb902ad4afe678db61f94e5151100b064a302fc996a32bf50",
+        "geo_mud_cons-t2d.slf": "4f32cdfcd8bfb937d483ffa65466038188be92cdebb1990d7ec6627c6a2d899d",
+        "restart_mud_cons_gai.slf": "a27958a56c181b9c25e2e434aa097edc9215ea72c394daddce675ff6b36da3c4",
+        "restart_mud_cons_gai_par.slf": "65f3f93886ddc3ce186fb040868f1073a7245d9c797ce9ef5b1ffbca5efb4e7e",
+        "restart_mud_cons_t2d.slf": "bccdbc1b72c907378bdaba81c823ee6e45282ccab99f6b770bda0fae70a76aae",
+        "restart_mud_cons_t2d_par.slf": "e067dcf2a95cf314062f6c1a6be20e5787d29bb02486f93a2fe3f0f6aa4c107e",
+        "t2d_mud_cons.cas": "b15c8b9d521bababacfb42ea1f41db55c83597b3f0f2f1802ab795726697557b",
+        "t2d_mud_cons_from_restart.cas": "3c7d7d6a9523b70bc445d24db61157b55f36d77df6e6497c70245804a3b17b3c",
+        "t2d_mud_cons_restart.cas": "0e3fdb00ea69f42704c1b22b43843efab11ddaedfc7b668ff224f72fb9acbe46",
+        "user_fortran/user_condin_h.f": "ab1a477784ef1ccda1b475725797465d1f41952ebcd292ba793e6f7ce241ba3e",
+        "user_fortran/user_condin_trac.f": "42a1509ff20fe9f223b783446871000f3eb2c672a179df96d5605e13bf9bf023",
+        "vnv_mud_conservation-t2d.py": "cfc1d4fcea8ac5f2df807b0031cc221bc88bf7b49dd0b6e7ddbb6b174ad00bea",
+        "vnv_mud_conservation_restart-t2d.py": "12831aae4ff29784fbc2ccdab4ffdbbee74d7149ccc8d5498a70630100d9e953"
+      },
+      "duration_s": 40.0
+    },
+    {
+      "id": "mud_deposition",
+      "status": "prepared_not_executed",
+      "source_example": "gaia/mud_conservation-t2d",
+      "telemac_cas": "t2d_mud_cons.cas",
+      "gaia_cas": "gai_mud_cons-t2d.cas",
+      "overrides": {
+        "LAYERS PARTHENIADES CONSTANT": "0."
+      },
+      "expected_results": [
+        "r2d_mud_cons-t2d.slf",
+        "gai_mud_cons-t2d.slf"
+      ],
+      "input_sha256": {
+        "f2d_mud_cons-t2d.slf": "88e96ac494e0249fcbc440bed2fd7e00bb7bf980cfbfc74c8ff00723741ec513",
+        "gai_mud_cons-t2d.cas": "580d658fd5eb35acd5c3c2f2f6412e19ec4e3dc22cb7c02d5c6672790d26f3db",
+        "gai_mud_cons_from_restart-t2d.cas": "7e1316a8a5aa7e9d3ee41aa55440e5cabaa4b3199e31e327d3843b605e1919f9",
+        "gai_mud_cons_restart-t2d.cas": "618c5621941587392989d8ad5a1c6cac8c2c2d9f2618c9bc9164a0fcf102017e",
+        "gai_ref_mud_cons-t2d.slf": "a451e74bfb72009cbd89970ed6efaf03cb7bc98c0f53c4b9db78bb0115ee9c78",
+        "geo_mud_cons-t2d.cli": "bd0793ca3fff8e6fb902ad4afe678db61f94e5151100b064a302fc996a32bf50",
+        "geo_mud_cons-t2d.slf": "4f32cdfcd8bfb937d483ffa65466038188be92cdebb1990d7ec6627c6a2d899d",
+        "restart_mud_cons_gai.slf": "a27958a56c181b9c25e2e434aa097edc9215ea72c394daddce675ff6b36da3c4",
+        "restart_mud_cons_gai_par.slf": "65f3f93886ddc3ce186fb040868f1073a7245d9c797ce9ef5b1ffbca5efb4e7e",
+        "restart_mud_cons_t2d.slf": "bccdbc1b72c907378bdaba81c823ee6e45282ccab99f6b770bda0fae70a76aae",
+        "restart_mud_cons_t2d_par.slf": "e067dcf2a95cf314062f6c1a6be20e5787d29bb02486f93a2fe3f0f6aa4c107e",
+        "t2d_mud_cons.cas": "b15c8b9d521bababacfb42ea1f41db55c83597b3f0f2f1802ab795726697557b",
+        "t2d_mud_cons_from_restart.cas": "3c7d7d6a9523b70bc445d24db61157b55f36d77df6e6497c70245804a3b17b3c",
+        "t2d_mud_cons_restart.cas": "0e3fdb00ea69f42704c1b22b43843efab11ddaedfc7b668ff224f72fb9acbe46",
+        "user_fortran/user_condin_h.f": "ab1a477784ef1ccda1b475725797465d1f41952ebcd292ba793e6f7ce241ba3e",
+        "user_fortran/user_condin_trac.f": "42a1509ff20fe9f223b783446871000f3eb2c672a179df96d5605e13bf9bf023",
+        "vnv_mud_conservation-t2d.py": "cfc1d4fcea8ac5f2df807b0031cc221bc88bf7b49dd0b6e7ddbb6b174ad00bea",
+        "vnv_mud_conservation_restart-t2d.py": "12831aae4ff29784fbc2ccdab4ffdbbee74d7149ccc8d5498a70630100d9e953"
+      },
+      "duration_s": 40.0
+    },
+    {
+      "id": "mud_erosion",
+      "status": "prepared_not_executed",
+      "source_example": "gaia/mud_conservation-t2d",
+      "telemac_cas": "t2d_mud_cons.cas",
+      "gaia_cas": "gai_mud_cons-t2d.cas",
+      "overrides": {
+        "CLASSES SETTLING VELOCITIES": "0."
+      },
+      "expected_results": [
+        "r2d_mud_cons-t2d.slf",
+        "gai_mud_cons-t2d.slf"
+      ],
+      "input_sha256": {
+        "f2d_mud_cons-t2d.slf": "88e96ac494e0249fcbc440bed2fd7e00bb7bf980cfbfc74c8ff00723741ec513",
+        "gai_mud_cons-t2d.cas": "b47b65bcd646f152ceacc01d415fdbc3b32872fcb2f98e4637ae0c12dbfc3673",
+        "gai_mud_cons_from_restart-t2d.cas": "7e1316a8a5aa7e9d3ee41aa55440e5cabaa4b3199e31e327d3843b605e1919f9",
+        "gai_mud_cons_restart-t2d.cas": "618c5621941587392989d8ad5a1c6cac8c2c2d9f2618c9bc9164a0fcf102017e",
+        "gai_ref_mud_cons-t2d.slf": "a451e74bfb72009cbd89970ed6efaf03cb7bc98c0f53c4b9db78bb0115ee9c78",
+        "geo_mud_cons-t2d.cli": "bd0793ca3fff8e6fb902ad4afe678db61f94e5151100b064a302fc996a32bf50",
+        "geo_mud_cons-t2d.slf": "4f32cdfcd8bfb937d483ffa65466038188be92cdebb1990d7ec6627c6a2d899d",
+        "restart_mud_cons_gai.slf": "a27958a56c181b9c25e2e434aa097edc9215ea72c394daddce675ff6b36da3c4",
+        "restart_mud_cons_gai_par.slf": "65f3f93886ddc3ce186fb040868f1073a7245d9c797ce9ef5b1ffbca5efb4e7e",
+        "restart_mud_cons_t2d.slf": "bccdbc1b72c907378bdaba81c823ee6e45282ccab99f6b770bda0fae70a76aae",
+        "restart_mud_cons_t2d_par.slf": "e067dcf2a95cf314062f6c1a6be20e5787d29bb02486f93a2fe3f0f6aa4c107e",
+        "t2d_mud_cons.cas": "b15c8b9d521bababacfb42ea1f41db55c83597b3f0f2f1802ab795726697557b",
+        "t2d_mud_cons_from_restart.cas": "3c7d7d6a9523b70bc445d24db61157b55f36d77df6e6497c70245804a3b17b3c",
+        "t2d_mud_cons_restart.cas": "0e3fdb00ea69f42704c1b22b43843efab11ddaedfc7b668ff224f72fb9acbe46",
+        "user_fortran/user_condin_h.f": "ab1a477784ef1ccda1b475725797465d1f41952ebcd292ba793e6f7ce241ba3e",
+        "user_fortran/user_condin_trac.f": "42a1509ff20fe9f223b783446871000f3eb2c672a179df96d5605e13bf9bf023",
+        "vnv_mud_conservation-t2d.py": "cfc1d4fcea8ac5f2df807b0031cc221bc88bf7b49dd0b6e7ddbb6b174ad00bea",
+        "vnv_mud_conservation_restart-t2d.py": "12831aae4ff29784fbc2ccdab4ffdbbee74d7149ccc8d5498a70630100d9e953"
+      },
+      "duration_s": 40.0
+    },
+    {
+      "id": "mud_passive",
+      "status": "prepared_not_executed",
+      "source_example": "gaia/mud_conservation-t2d",
+      "telemac_cas": "t2d_mud_cons.cas",
+      "gaia_cas": "gai_mud_cons-t2d.cas",
+      "overrides": {
+        "LAYERS PARTHENIADES CONSTANT": "0.",
+        "CLASSES SETTLING VELOCITIES": "0."
+      },
+      "expected_results": [
+        "r2d_mud_cons-t2d.slf",
+        "gai_mud_cons-t2d.slf"
+      ],
+      "input_sha256": {
+        "f2d_mud_cons-t2d.slf": "88e96ac494e0249fcbc440bed2fd7e00bb7bf980cfbfc74c8ff00723741ec513",
+        "gai_mud_cons-t2d.cas": "1258760e07d0ed1f0b0e01f35cf10c89da6a2bb96413713730112bef1b2b34c5",
+        "gai_mud_cons_from_restart-t2d.cas": "7e1316a8a5aa7e9d3ee41aa55440e5cabaa4b3199e31e327d3843b605e1919f9",
+        "gai_mud_cons_restart-t2d.cas": "618c5621941587392989d8ad5a1c6cac8c2c2d9f2618c9bc9164a0fcf102017e",
+        "gai_ref_mud_cons-t2d.slf": "a451e74bfb72009cbd89970ed6efaf03cb7bc98c0f53c4b9db78bb0115ee9c78",
+        "geo_mud_cons-t2d.cli": "bd0793ca3fff8e6fb902ad4afe678db61f94e5151100b064a302fc996a32bf50",
+        "geo_mud_cons-t2d.slf": "4f32cdfcd8bfb937d483ffa65466038188be92cdebb1990d7ec6627c6a2d899d",
+        "restart_mud_cons_gai.slf": "a27958a56c181b9c25e2e434aa097edc9215ea72c394daddce675ff6b36da3c4",
+        "restart_mud_cons_gai_par.slf": "65f3f93886ddc3ce186fb040868f1073a7245d9c797ce9ef5b1ffbca5efb4e7e",
+        "restart_mud_cons_t2d.slf": "bccdbc1b72c907378bdaba81c823ee6e45282ccab99f6b770bda0fae70a76aae",
+        "restart_mud_cons_t2d_par.slf": "e067dcf2a95cf314062f6c1a6be20e5787d29bb02486f93a2fe3f0f6aa4c107e",
+        "t2d_mud_cons.cas": "b15c8b9d521bababacfb42ea1f41db55c83597b3f0f2f1802ab795726697557b",
+        "t2d_mud_cons_from_restart.cas": "3c7d7d6a9523b70bc445d24db61157b55f36d77df6e6497c70245804a3b17b3c",
+        "t2d_mud_cons_restart.cas": "0e3fdb00ea69f42704c1b22b43843efab11ddaedfc7b668ff224f72fb9acbe46",
+        "user_fortran/user_condin_h.f": "ab1a477784ef1ccda1b475725797465d1f41952ebcd292ba793e6f7ce241ba3e",
+        "user_fortran/user_condin_trac.f": "42a1509ff20fe9f223b783446871000f3eb2c672a179df96d5605e13bf9bf023",
+        "vnv_mud_conservation-t2d.py": "cfc1d4fcea8ac5f2df807b0031cc221bc88bf7b49dd0b6e7ddbb6b174ad00bea",
+        "vnv_mud_conservation_restart-t2d.py": "12831aae4ff29784fbc2ccdab4ffdbbee74d7149ccc8d5498a70630100d9e953"
+      },
+      "duration_s": 40.0
+    },
+    {
+      "id": "sand_bedload",
+      "status": "prepared_not_executed",
+      "source_example": "gaia/flume_bc-t2d",
+      "telemac_cas": "t2d_flume_bc.cas",
+      "gaia_cas": "gai_flume_bc.cas",
+      "overrides": {},
+      "expected_results": [
+        "r2d_flume_bc.slf",
+        "gai_flume_bc.slf"
+      ],
+      "input_sha256": {
+        "flume_bc.lqd": "a1a4b2e58850f4d7ae67ef68ba6458f56452000011cbf106a9432864572837eb",
+        "gai_flume_bc.cas": "40adf27ca411a4ab9dc5fb03a0fe01fa1b3013038eb2ba2d26a061fdb4206e57",
+        "gai_ref_bc_bbfmulti.slf": "f47e4d9d1f102f27aebc6b37975266308afa5278daef43d855bcb6c25da53e24",
+        "gai_ref_flume_bc.slf": "10bb54aec92700dc1c56b8cb0f54ddc2faac786489339c48badad77b75fdb576",
+        "gai_ref_flume_bc_bbf.slf": "d5d875a9c8b184abcf4f6ca6bec94c9d1bffec1c744266a069a8c8a78f8b77fb",
+        "gai_ref_flume_bc_coh.slf": "863131dcfc416af8570329236a604f103192f0a28f23bb29b2b0147b1cb4cae2",
+        "gai_ref_flume_bc_multi.slf": "00ae37c393bccf8e650da455f1f6479c0fe00d6222f8535f18d4821c80563cdd",
+        "gai_ref_flume_bc_multi_dist.slf": "90571b5e7d695b4f85f5f474df5984c9abe27553c855e0655a8113fbd12a6cae",
+        "geo_flume_bc.cli": "8c140c208916a841e7f71880d2f63848d24f40126eb02579573e74d34563385c",
+        "geo_flume_bc.slf": "edc6e52f3f7aff5cabe8b2f87cd56207fe10d80aeff9a025cecc5b035df7882d",
+        "t2d_flume_bc.cas": "ff07a7434e7d9770713ef20646ece272a100a9315b8cfd9f0ed345d4f13c193d",
+        "user_fortran/user_condin_h.f": "47452ba7948f95055aa20a332dc4eda33d520903938d5b5d5e55cc0bf19c9592",
+        "user_fortran/user_corfon.f": "2388167929ce46e39bbbc38af97d42fb3d8230d2df22a7919342d2360082fc74",
+        "vnv_flume_bc.py": "26afce990fb85774a432f87d04fd74125aed229fed0347833cd1ab41e15175de"
+      },
+      "duration_s": 1800.0
+    },
+    {
+      "id": "nestor_dig",
+      "status": "prepared_not_executed",
+      "source_example": "nestor/nestor1_Dig",
+      "telemac_cas": "t2d_nestor1_gai.cas",
+      "gaia_cas": "gai_nestor1.cas",
+      "overrides": {},
+      "expected_results": [
+        "r2d_nestor1.slf",
+        "gai_nestor1.slf"
+      ],
+      "input_sha256": {
+        "_DigActions.dat": "45f4ae1b435c4365a824765ffa7e77a4efe9160fc079724e719ef9bfaf8a1940",
+        "_DigPolys.dat": "85c6cb4f10df134b2663061d0152a229b20ff238f0c7e17d8a7e26edd7aa865c",
+        "_DigRestart.dat": "ff46b8cadad957a5a9fea74389eaa693aecbfba99be5b3d776a075103d8bf706",
+        "_DigWsp_Prof_09.dat": "2aa25a59fd37cea5d4b47322cb4f39ac7b85e4ea7afad223e269114ed10d8b65",
+        "gai_init_nestor1.slf": "12169413d738f025912b5a397290987c4bfe1ee921547e5cc7bb69b6112fb9b3",
+        "gai_nestor1.cas": "abd3c9ae25c3aac1ed343114da66155547a8f5199eb59bd212e14768ea623a79",
+        "gai_ref_nestor1.slf": "18b8e12181e1f7e9b3c499069aa7d79d687556914f1ff46bdebb6e13f0931cea",
+        "geo_nestor1.slf": "01eb1c3e8e955f9f4aa1115e383628109f844d9c1ea32cfc2e8d37679564ef37",
+        "geo_nestor1_hyd.cli": "23d1b354a55e1f3087bd1120530e2a17dcaf4b0853973ea94465810164bdb712",
+        "geo_nestor1_mor.cli": "f24f67a6706c8be03758cc5c72984e30a2125d8e9d2b8d319d8677ed9073d924",
+        "t2d_init_nestor1.slf": "d70090fd3965f56d181823fb16e47b06c2e017d84dd02bc32e5287871028618f",
+        "t2d_nestor1_gai.cas": "029cfa4e8ce57f5bfd136c20c0df2f403bc3ad5eb9c5ef058ee5610d39c1bdee",
+        "t2d_ref_nestor1.slf": "b980467ab183ce8a27142c688a79a545ca73179009067f06553455a7a0c17245",
+        "user_fortran_gai/user_bed_init.f": "a7197d33b0c729d13c852cd2917c78f2f5f264dbb8b54570cc596a2e62b2e571",
+        "vnv_nestor1_Dig.py": "efe353977dd312ddebd8f12bacf71e3c3a4af4d42e9501f74b0331b2a944629b"
+      },
+      "duration_s": 250.0
+    },
+    {
+      "id": "nestor_dump",
+      "status": "prepared_not_executed",
+      "source_example": "nestor/nestor2_Dump",
+      "telemac_cas": "t2d_nestor2_gai.cas",
+      "gaia_cas": "gai_nestor2.cas",
+      "overrides": {},
+      "expected_results": [
+        "r2d_nestor2.slf",
+        "gai_nestor2.slf"
+      ],
+      "input_sha256": {
+        "_DigActions.dat": "fc87560937933ec7923aa1c41ce325c86cb8abf1c7c7fa9929375cef1d9174b4",
+        "_DigPolys.dat": "3c6bb92d422b55f9f8bcbb2837110baa5e3bf8bf013fd4bc79ad407069463ca5",
+        "_DigRefLevel.dat": "c8de91d04408db0605bc9e63995e62f191103d96099cc3f2fac4dfd22ed0a5be",
+        "gai_nestor2.cas": "a43d167a6c7717c777adfbe78aad52ea3088e75244dcf6058747c1e51662cee8",
+        "gai_ref_nestor2.slf": "d6da2efab8e3038ca75ecf9f63b307adc663325522517b88c77633aafaa4c24d",
+        "geo_nestor2.slf": "568f7a3b0d6d2ef4575699b730514b26b6b5b425d9cc04593e0c663f36e230b5",
+        "geo_nestor2_hyd.cli": "23d1b354a55e1f3087bd1120530e2a17dcaf4b0853973ea94465810164bdb712",
+        "geo_nestor2_mor.cli": "5dbf44870b53f70bc8e5242819afd7c5d6c3249e4cde62ec7d8c161aec4b355a",
+        "t2d_init_nestor2.slf": "d671578beaf4a8d1583a83ee00277f770fb84b105c5b6ef60634e40e25f05280",
+        "t2d_nestor2_gai.cas": "5b4e36c4851190dc55071b827ecd3c3dfd15180436b3ea03d485ed3b71ff42c3",
+        "t2d_ref_nestor2.slf": "506b65d93559ec7cd6b379459ea2220c1bbb44857099cab0afdb0ba4a9628252",
+        "user_fortran_gai/user_bed_init.f": "0c07b5fcbe28d7b623e8d540c67a3615f13b5ee0b83985494247cc482e27e60f",
+        "vnv_nestor2_Dump.py": "a064d3f08f7296e96be38e370bbabd988b4ef5437efc44fd16185b9e7712f574"
+      },
+      "duration_s": 150.0
+    },
+    {
+      "id": "nestor_dig_dump",
+      "status": "prepared_not_executed",
+      "source_example": "nestor/nestor3_critDigDump",
+      "telemac_cas": "t2d_nestor3_gai.cas",
+      "gaia_cas": "gai_nestor3.cas",
+      "overrides": {},
+      "expected_results": [
+        "r2d_nestor3.slf",
+        "gai_nestor3.slf"
+      ],
+      "input_sha256": {
+        "_DigActions.dat": "5fd1690520541f84e2d5c87ca75fccd561347a00262d3df97d51e5284c6427ca",
+        "_DigPolys.dat": "83f02e36e21d53d881497acdc5821f14610d2104daed22d45741618c21eca386",
+        "_DigRefLev.dat": "ebd24fd2558de59b7c31f6df7c2536b74369659e2024a1dafdf611966ab105b2",
+        "gai_init_nestor3.slf": "b5a66af21328529a079f76f6fe5736515eb2569bdec5c9d66dc520ada9f8f2b0",
+        "gai_nestor3.cas": "51f846e1bee05e0c5bc2e531df70376daefcd7ed14a884326552eb84d722ea3b",
+        "gai_ref_nestor3.slf": "edb6041454f2617314faabb1eca1836d892d93c7a3c726ade7ed65c0d03de0ca",
+        "geo_nestor3.slf": "10e92104f73ce31166115c4710a7c7b7eea02abc82deecd95980f15eb8d54080",
+        "geo_nestor3_hyd.cli": "ee1cf2a309603b50fc36fb9762be472760d868e50bf4929fbe33f8ca8f10d90a",
+        "geo_nestor3_mor.cli": "22d9de7fc8408895853b5f61a04e9e6844fd7d33f2fef198ff4479cf5b07054d",
+        "t2d_init_nestor3.slf": "6b481f7fa664193e871af6b266696177ead3e9be51ab571c39cacbcc64f31108",
+        "t2d_nestor3_gai.cas": "9e8858ef1a0402c9eaf1e3ae6e6c82ca0ca8db7948911938f944fd9135536bbb",
+        "t2d_ref_nestor3_gai.slf": "76fc370c043dfc6815b882eb2b257d2227d9b0f073ed2afdf26fde5b6fc9c153",
+        "user_fortran_gai/user_bed_init.f": "a1a122c12217cb2fe44cd2ffe05a7a5aa5374a2684a2bef67ab5452fbf990f5f",
+        "vnv_nestor3_critDigDump.py": "e2e3f9370e5185829fece784adbe09214eff16dd96076bef1e8ff347dd2582c8"
+      },
+      "duration_s": 120000.0
+    }
+  ]
+}

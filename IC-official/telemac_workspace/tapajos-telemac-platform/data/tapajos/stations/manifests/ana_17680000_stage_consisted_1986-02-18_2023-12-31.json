@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "dataset": "ANA station 17680000 stage",
+  "source": {
+    "institution": "Agência Nacional de Águas e Saneamento Básico (ANA)",
+    "url": "https://telemetriaws1.ana.gov.br/ServiceANA.asmx/HidroSerieHistorica",
+    "retrieved_on": "2026-10-01",
+    "service": "HidroSerieHistorica (legacy read-only service)"
+  },
+  "transformation": {
+    "parser": "scripts.tapajos_data.parse_legacy_xml",
+    "gap_policy": "No interpolation; absent dates remain absent",
+    "duplicate_policy": "Highest consistency record retained per date"
+  },
+  "artifacts": {
+    "raw": {
+      "path": "data/tapajos/stations/raw/ana_17680000_stage_consisted_1986-02-18_2023-12-31.xml",
+      "sha256": "a7a8c9ccffff2d2bb19bb48f1560a7b2aa3d8f399cf92ad90fd7b9fee2670f31"
+    },
+    "canonical": {
+      "path": "data/tapajos/stations/processed/ana_17680000_stage_consisted_1986-02-18_2023-12-31.csv",
+      "sha256": "5819bff7585f4441908c58c7741b07d74d6eca74f7a88930f43a8f83a9a0fd8f"
+    }
+  },
+  "quality": {
+    "records": 7319,
+    "start": "1986-02-18",
+    "end": "2023-12-31",
+    "expected_days": 13831,
+    "missing_days": 6512,
+    "completeness_percent": 52.92,
+    "gap_count": 19,
+    "maximum_gap_days": 4653,
+    "gaps": [
+      {
+        "start": "1986-08-05",
+        "end": "1986-08-26",
+        "days": 22
+      },
+      {
+        "start": "1986-08-29",
+        "end": "1987-07-09",
+        "days": 315
+      },
+      {
+        "start": "1987-09-30",
+        "end": "1987-09-30",
+        "days": 1
+      },
+      {
+        "start": "1988-10-01",
+        "end": "1990-10-29",
+        "days": 759
+      },
+      {
+        "start": "1991-07-16",
+        "end": "1991-07-16",
+        "days": 1
+      },
+      {
+        "start": "1991-08-14",
+        "end": "1992-09-30",
+        "days": 414
+      },
+      {
+        "start": "1992-11-01",
+        "end": "2005-07-28",
+        "days": 4653
+      },
+      {
+        "start": "2010-05-01",
+        "end": "2010-05-03",
+        "days": 3
+      },
+      {
+        "start": "2010-05-20",
+        "end": "2010-05-20",
+        "days": 1
+      },
+      {
+        "start": "2010-08-01",
+        "end": "2010-08-31",
+        "days": 31
+      },
+      {
+        "start": "2010-10-24",
+        "end": "2010-10-25",
+        "days": 2
+      },
+      {
+        "start": "2011-06-30",
+        "end": "2011-06-30",
+        "days": 1
+      },
+      {
+        "start": "2013-03-01",
+        "end": "2013-04-30",
+        "days": 61
+      },
+      {
+        "start": "2013-12-30",
+        "end": "2013-12-31",
+        "days": 2
+      },
+      {
+        "start": "2014-02-19",
+        "end": "2014-03-05",
+        "days": 15
+      },
+      {
+        "start": "2014-06-21",
+        "end": "2014-12-31",
+        "days": 194
+      },
+      {
+        "start": "2021-06-01",
+        "end": "2021-06-23",
+        "days": 23
+      },
+      {
+        "start": "2021-07-20",
+        "end": "2021-07-31",
+        "days": 12
+      },
+      {
+        "start": "2021-09-01",
+        "end": "2021-09-02",
+        "days": 2
+      }
+    ],
+    "unit": "cm",
+    "minimum": 179.0,
+    "maximum": 1188.0,
+    "consistency_counts": {
+      "2": 7319
+    }
+  }
+}

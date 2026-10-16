@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "dataset": "ANA station 17500000 stage",
+  "source": {
+    "institution": "Agência Nacional de Águas e Saneamento Básico (ANA)",
+    "url": "https://telemetriaws1.ana.gov.br/ServiceANA.asmx/HidroSerieHistorica",
+    "retrieved_on": "2026-10-01",
+    "service": "HidroSerieHistorica (legacy read-only service)"
+  },
+  "transformation": {
+    "parser": "scripts.tapajos_data.parse_legacy_xml",
+    "gap_policy": "No interpolation; absent dates remain absent",
+    "duplicate_policy": "Highest consistency record retained per date"
+  },
+  "artifacts": {
+    "raw": {
+      "path": "data/tapajos/stations/raw/ana_17500000_stage_consisted_1982-07-23_2014-12-31.xml",
+      "sha256": "99a0328a771303dea6d3150890e4e6ede1d7fdaa17e618c41b4c8e155d86ad78"
+    },
+    "canonical": {
+      "path": "data/tapajos/stations/processed/ana_17500000_stage_consisted_1982-07-23_2014-12-31.csv",
+      "sha256": "f776b33af9cccaada18b5faac6bd930ed259dab8d5600cc660b0a802ac348af9"
+    }
+  },
+  "quality": {
+    "records": 11346,
+    "start": "1982-07-23",
+    "end": "2014-12-31",
+    "expected_days": 11850,
+    "missing_days": 504,
+    "completeness_percent": 95.75,
+    "gap_count": 5,
+    "maximum_gap_days": 152,
+    "gaps": [
+      {
+        "start": "1982-12-01",
+        "end": "1983-01-20",
+        "days": 51
+      },
+      {
+        "start": "1983-01-22",
+        "end": "1983-02-28",
+        "days": 38
+      },
+      {
+        "start": "1991-07-14",
+        "end": "1991-11-30",
+        "days": 140
+      },
+      {
+        "start": "1992-05-01",
+        "end": "1992-08-31",
+        "days": 123
+      },
+      {
+        "start": "2003-10-01",
+        "end": "2004-02-29",
+        "days": 152
+      }
+    ],
+    "unit": "cm",
+    "minimum": 304.0,
+    "maximum": 893.0,
+    "consistency_counts": {
+      "2": 11346
+    }
+  }
+}
