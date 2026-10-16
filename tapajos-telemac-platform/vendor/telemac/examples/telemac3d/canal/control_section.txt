@@ -1,0 +1,8 @@
+# Control sections definition
+3 0
+Section_1
+200. 105. 200. -5.
+Section_1a
+200. 105. 200. 25.
+Section_1b
+200.  25. 200. -5.

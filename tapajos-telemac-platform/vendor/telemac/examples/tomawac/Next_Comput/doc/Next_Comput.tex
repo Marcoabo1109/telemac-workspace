@@ -1,0 +1,75 @@
+\chapter{Next\_Comput}
+
+\section{Purpose}
+%
+The aim of this case is to test a computation that follows another one. We
+start from a calculated state at a time and we simulate some new time step.
+%
+\section{Description of the problem}
+%
+The simulation is the same as the shoal test case so one will read that test
+case for physical description. We start here from a shoal simulation until time
+600s. The result of this previous simulation is inside the file indicated by
+the keyword {\it PREVIOUS COMPUTATION FILE} ({\it FICHIER DU CALCUL PRECEDENT}
+in french). This file has been created by adding the keyword  {\it GLOBAL
+  RESULT FILE} ({\it FICHIER DES RESULTATS GLOBAUX} in french) in the shoal
+steering case.
+We simulate for 600 other seconds. We can compare the result to the one
+obtained by shoal test case with 1200 seconds of simulation.
+\begin{figure} [!h]
+\centering
+\includegraphicsmaybe{[width=0.85\textwidth]}{../img/mesh.png}
+ \caption{Mesh of the domain.}
+\label{meshnextcomp}
+\end{figure}
+
+\section{Results}
+After 600 s, the difference with the full shoal simulation is null. The
+reference file is the result of shoal with 12000s.
+\begin{figure} [!h]
+\centering
+\includegraphicsmaybe{[width=0.85\textwidth]}{../img/results.png}
+%\includegraphics{bathy.png}
+ \caption{Wave heigth hm0.}
+\label{resnextcomp}
+\end{figure}
+
+\section{Hot start while reading a tide}
+A second test is made to verify that when reading a tidal file with
+water depth and currents varying in time, those variables are still
+interpolated after the hot start see Figures \ref{interpcurrent} and
+\ref{interpwaterdepth}.
+\begin{figure} [!h]
+\centering
+\includegraphicsmaybe{[width=0.85\textwidth]}{../img/normcurr.png}
+ \caption{Current norm interpolated after the hot start}
+\label{interpcurrent}
+\end{figure}
+
+\begin{figure} [!h]
+\centering
+\includegraphicsmaybe{[width=0.85\textwidth]}{../img/waterdepth.png}
+ \caption{Water depth interpolated after the hot start}
+\label{interpwaterdepth}
+\end{figure}
+
+\section{Hot start while reading a wind varying in time}
+A third test is made to verify that when reading a wind varying in time in a
+file the wind is still interpolated between two points read see Figure
+\ref{interpwind}, we can see the effect on the wave height on Figure
+\ref{hotstartwindwaveheight} where the solution after a hot start is the same
+as the one of a calculation for the full time.
+\begin{figure} [!h]
+\centering
+\includegraphicsmaybe{[width=0.85\textwidth]}{../img/wind.png}
+ \caption{Wind norm interpolated after the hot start}
+\label{interpwind}
+\end{figure}
+
+\begin{figure} [!h]
+\centering
+\includegraphicsmaybe{[width=0.85\textwidth]}{../img/waveheight.png}
+\caption{Wave height compared between a hot start and a reference calculated
+  from the real start.}
+\label{hotstartwindwaveheight}
+\end{figure}

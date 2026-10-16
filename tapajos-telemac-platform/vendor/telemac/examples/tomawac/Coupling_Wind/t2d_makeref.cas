@@ -1,0 +1,76 @@
+/----------------------------------------------------------------------
+/
+/           STEERING FILE
+/
+/           TELEMAC
+/----------------------------------------------------------------------
+/                    SETTINGS
+/----------------------------------------------------------------------
+/
+COUPLING WITH : 'TOMAWAC'
+/
+WAVE DRIVEN CURRENTS      = YES
+TOMAWAC STEERING FILE     = 'tom_makeref.cas'
+COUPLING PERIOD FOR TOMAWAC = 1
+/
+FORTRAN FILE              = 'T2D_user_fortran'
+BOUNDARY CONDITIONS FILE  = 'geo_t2d_littoral.cli'
+GEOMETRY FILE             = 'geo_littoral.slf'
+RESULTS FILE              = 't2d_makeref.slf'
+RESULTS FILE FORMAT='SERAFIND'
+ASCII ATMOSPHERIC DATA FILE     = 'fo2_wind'
+/----------------------------------------------------------------------
+/
+WIND                                         = YES
+OPTION FOR WIND                              = 2
+COEFFICIENT OF WIND INFLUENCE                = 1.2615E-3
+/----------------------------------------------------------------------
+/ INITIAL CONDITIONS
+/----------------------------------------------------------------------
+INITIAL CONDITIONS = 'ZERO ELEVATION'
+/
+/----------------------------------------------------------------------
+/                         GENERAL OPTIONS
+/----------------------------------------------------------------------
+/
+TITLE = 'LITTORAL'
+/
+VARIABLES FOR GRAPHIC PRINTOUTS = 'H,S,B,U,V,X,Y'
+/
+TIME STEP               = 10.
+NUMBER OF TIME STEPS    = 100
+GRAPHIC PRINTOUT PERIOD = 2
+LISTING PRINTOUT PERIOD = 10
+/----------------------------------------------------------------------
+TURBULENCE MODEL                   = 4
+/
+/------------------------------------------------
+/         BOUNDARY CONDITIONS
+/------------------------------------------------
+/
+LAW OF BOTTOM FRICTION       = 5
+FRICTION COEFFICIENT         = 0.05
+/
+PRESCRIBED ELEVATIONS        = 0.
+/-------------------------------------------
+/          NUMERICAL OPTIONS
+/-------------------------------------------
+/To be able to make a hostart with a RESTART FILE we need to have triangles
+DISCRETIZATIONS IN SPACE = 11;11
+/
+TIDAL FLATS   = NO
+/
+MASS-BALANCE  = YES
+/
+SOLVER ACCURACY                         = 1e-05
+/
+TYPE OF ADVECTION                            = 1;5
+/
+IMPLICITATION FOR DEPTH       = 0.6
+IMPLICITATION FOR VELOCITY    = 0.6
+/
+SOLVER                     = 7
+SOLVER OPTION              = 4
+MASS-LUMPING ON H          = 1.
+MASS-LUMPING ON VELOCITY   = 0.9
+/

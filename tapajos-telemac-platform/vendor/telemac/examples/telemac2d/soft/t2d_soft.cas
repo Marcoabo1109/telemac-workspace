@@ -1,0 +1,21 @@
+FORTRAN FILE                : 'user_fortran'
+GEOMETRY FILE               : geo_soft.slf
+BOUNDARY CONDITIONS FILE    : geo_soft.cli
+RESULTS FILE                : r2d_soft.slf
+/----------------------------------------------------------------------/
+TITLE : 'TELEMAC 2D: SOFT BOUNDARY'
+VARIABLES FOR GRAPHIC PRINTOUTS : 'U,V,S'
+TIME STEP = 10.
+NUMBER OF TIME STEPS = 2160
+GRAPHIC PRINTOUT PERIOD = 120
+LISTING PRINTOUT PERIOD = 240
+/----------------------------------------------------------------------/
+INITIAL CONDITIONS : 'CONSTANT ELEVATION'
+INITIAL ELEVATION = 0.
+LAW OF BOTTOM FRICTION : 5
+FRICTION COEFFICIENT = 1.
+PRESCRIBED ELEVATIONS =  0.; 0.
+PRESCRIBED VELOCITIES = -1.; 0.
+/----------------------------------------------------------------------/
+OPTION FOR SOFT BOUNDARIES : 0; 1
+COEFFICIENT FOR SOFT BOUNDARIES = 0.; 0.1
