@@ -1,0 +1,157 @@
+\chapter{Streeter and Phelps experiment using Benson and Krause formula
+(waq2d\_eutro\_streeter\_phelps)}
+
+\section{Purpose}
+
+This case is an example of the use of the EUTRO module of \waqtel coupled with
+\telemac{2D} with Benson and Krause formula to compute oxygen saturation
+concentration $C_s$.
+
+\section{Description}
+
+In 1925, Streeter and Phelps published a work on the dissolved oxygen "sag curve"
+representative of the oxygen decrease with downstream distance in the Ohio River
+due to the degradation of soluble organic biochemical oxygen demand (BOD).
+They proposed a mathematical equation to describe this observation, which has
+since become widely known as the Streeter-Phelps equation.
+
+A channel is considered (30~000~m long, 400~m wide, flat horizontal bottom
+= -10~m).\\
+
+\section{Computational options}
+
+\subsection{Mesh}
+
+The triangular mesh is composed of 3,200 triangular elements and 1,809 nodes
+(see Figure \ref{fig:waq2d_eutro_streeter_phelps:mesh}).
+
+\begin{figure}[H]
+ \centering
+ \includegraphicsmaybe{[width=0.9\textwidth]}{../img/res_mesh.png}
+\caption{Mesh}
+ \label{fig:waq2d_eutro_streeter_phelps:mesh}
+\end{figure}
+
+\subsection{Physical parameters}
+
+Horizontal constant viscosity for velocity: with default value
+(10$^{-6}$~m$^2$/s)\\
+No diffusion for tracers\\
+Bottom friction: no friction on the bottom\\
+
+The EUTRO module is activated by setting \telkey{WATER QUALITY PROCESS} = 5
+in the \telemac{2D} \telkey{STEERING FILE}.\\
+
+8 tracers are considered:
+\begin{itemize}
+\item phytoplanktonic biomass (PHY),
+\item dissolved mineral phosphorus (PO$_4$),
+\item degradable phosphorus non assimilated by phytoplankton (POR),
+\item dissolved mineral nitrogen assimilated by phytoplankton (NO$_3$),
+\item degradable nitrogen assimilated by phyto phytoplankton (NOR),
+\item ammoniacal load (NH$_4$),
+\item organic load (L),
+\item dissolved oxygen (O$_2$).
+\end{itemize}
+
+Only the following water quality parameters have been changed
+in the \waqtel \telkey{STEERING FILE} compared to the default values:
+\begin{itemize}
+\item \telkey{FORMULA FOR COMPUTING CS} = 3 (i.e. Benson and Krause),
+\item \telkey{CONSTANT OF DEGRADATION OF ORGANIC LOAD K120} = 0.36~d$^{-1}$,
+\item \telkey{BENTHIC DEMAND} = 0~gO$_2$/m$^2$/d,
+\item \telkey{FORMULA FOR COMPUTING K2} = 0 (i.e. $k_2$ is constant),
+\item \telkey{WATER TEMPERATURE} = 20$^\circ$C (which is the mean water
+temperature).
+\item \telkey{WATER SALINITY} = 0~g/l (which is the mean water salinity).
+\end{itemize}
+
+Water temperature is 20$^\circ$C. Salinity is 0~mg/l.
+
+\subsection{Initial and Boundary Conditions}
+
+The initial water elevation is 0~m (= 10~m water depth).\\
+A flow rate of 200~m$^3$/s is prescribed upstream.\\
+An elevation of 0~m is prescribed downstream.\\
+
+The initial values, upstream and downstream conditions for tracers
+[PHY],[PO4],[POR],[NO3],[NOR],[NH$_4$]
+are homogeneous and nil.
+
+The initial conditions are 0~mg/l for [L] and 9.0921~mgO$_2$/l for [O$_2$],
+which is the saturation concentration.
+
+The upstream boundary conditions are 10~mg/l for [L] and 9.0921~mgO$_2$/l for
+[O$_2$].
+
+The downstream boundary conditions are 0~mg/l for [L] and 9.0921~mgO$_2$/l for
+[O$_2$].
+
+\subsection{General parameters}
+
+The time step is 10~s for a simulated period of 691,200~s = 8~days.
+This is the duration needed to reach equilibrium state.
+
+The first 24 hours are the initialisation with the discharge rate increasing
+from zero to 200~m$^3$/s.
+
+\subsection{Numerical parameters}
+
+The PSI scheme is chosen to solve the advection for the last 2 tracers
+(L and O$_2$) whereas for the other tracers no advection scheme nor diffusion
+scheme are used. It means that only tracers L and O$_2$ are activated.
+Water temperature and salinity are constant parameters of the simulation.
+Moreover, the method of characteristics is chosen to solve the advection for
+the velocities.
+
+\section{Analytical solution}
+\label{Analytical}
+An analytical solution for the longitudinal distribution of the DO concentration
+can be calculated in the case of steady hydrodynamic conditions:
+
+$$ DO(x)=C_s-(C_s-DO_o) e^{-k_a x/u} 
+- \frac{k_d L_0}{k_a - k_d}
+(e^{-k_d x/u} - e^{-k_a x/u})$$
+
+Where $L_0$ is the upstream concentration of the organic load $L$,
+$u$ is the stream velocity (m/s), $x$ is the distance from the upstream boundary
+(m), $k_a$ is the coefficient of reaeration (s$^{-1}$), $k_d$ is the kinetic
+degradation of organic load (s$^{-1}$),
+$C_s$ is the saturation concentration (mgO$_2$/l) and $DO_o$ is the DO upstream
+concentration (mgO$_2$/l).
+
+Other representative values of the DO sag curve can be evaluated:
+
+\begin{itemize}
+\item The minimum dissolved oxygen $DO_{\textrm{min}}$ concentration occurring
+along the river stretch:
+ 
+$$DO_{\textrm{min}} = C_s + \frac{k_d L_0}{k_a} e^{-k_d x /u }$$
+ 
+\item The Critical distance $x_c$ where the minimum dissolved oxygen
+concentration occurs:
+ $$x_c = \frac{u}{k_a - k_d} \log \left[ \frac{k_a} {k_d}
+ \left( 1-\frac{k_a - k_d}{k_d} \frac{DO - C_s} {L_0} \right)\right] $$
+\end{itemize}
+
+The results with the parameters chosen are $DO_{\textrm{min}}$ = 6.92~mg/l and
+$x_c$ = 7~330.33~m.
+
+\section{Results}
+
+Figure \ref{fig:waq2d_eutro_streeter_phelps:res} shows the longitudinal profile
+of the modelled dissolved oxygen concentration compared to the analytical
+solution at the last time step of the simulation.
+
+\begin{figure} [H]
+\centering
+\includegraphicsmaybe{[width=\textwidth]}{../img/res_O2.png}
+ \caption{Dissolved oxygen}
+ \label{fig:waq2d_eutro_streeter_phelps:res}
+\end{figure}
+
+\section{Conclusion}
+
+The submodule EUTRO of \waqtel can be coupled with \telemac{2D} to model
+unsteady flows and is validated against the analytical solution of the
+Streeter-Phelps dissolved oxygen sag curve.

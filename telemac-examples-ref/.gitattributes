@@ -1,0 +1,3 @@
+# Original rules preserved in .gitattributes.upstream.
+# Snapshot stores actual bytes without Git LFS filters.
+* -filter -diff -merge -text

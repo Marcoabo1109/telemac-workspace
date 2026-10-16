@@ -1,0 +1,71 @@
+
+/*            TOMAWAC STEERING FILE                                 */
+/********************************************************************/
+/*------------------------------------------------------------------*/
+/* PROBLEM FILE                                                     */
+/*------------------------------------------------------------------*/
+GEOMETRY FILE = 'smallmesh.med'
+GEOMETRY FILE FORMAT = 'MED'
+BOUNDARY CONDITIONS FILE = 'bc_small.bnd'
+2D RESULTS FILE = './tom_small.slf'
+/PUNCTUAL RESULTS FILE = small.spe
+/1D SPECTRA RESULTS FILE = dunk.txt
+/ABSCISSAE OF SPECTRUM PRINTOUT POINTS = 4.79360249580795e+05;4.83290603348549e+05
+/ORDINATES OF SPECTRUM PRINTOUT POINTS = 5.67315393411874e+06;5.66919533828799e+06
+/*------------------------------------------------------------------*/
+/* INPUT-OUTPUT PARAMETERS DIVERS ENTREES-SORTIES
+/*------------------------------------------------------------------*/
+TITLE = 'Test Make_spectrum'
+PERIOD FOR GRAPHIC PRINTOUTS = 100
+PERIOD FOR LISTING PRINTOUTS = 100
+VARIABLES FOR 2D GRAPHIC PRINTOUTS =
+'HM0,DMOY,TMOY,TM01,TM02,TPR5,TPR8,FMOY,FM01,FM02,FPD,FPR5,FPR8,SPD,WD'
+/,UX,UY,VX,VY'
+TAKING INTO ACCOUNT SOURCE TERMS ON IMPOSED BOUNDARIES = FALSE
+/*------------------------------------------------------------------*/
+/* DISCRETISATION                                                   */
+/*------------------------------------------------------------------*/
+TIME STEP = 30
+NUMBER OF TIME STEP = 1000
+NUMBER OF DIRECTIONS = 36
+MINIMAL FREQUENCY = 0.0345
+FREQUENTIAL RATIO = 1.1
+NUMBER OF FREQUENCIES = 32
+/*------------------------------------------------------------------*/
+/* COMPUTATIONAL OPTIONS                                            */
+/*------------------------------------------------------------------*/
+INFINITE DEPTH = NON
+CONSIDERATION OF PROPAGATION = OUI
+/*------------------------------------------------------------------*/
+/* INITIAL CONDITIONS
+/*------------------------------------------------------------------*/
+INITIAL STILL WATER LEVEL=0.
+TYPE OF INITIAL DIRECTIONAL SPECTRUM = 0
+MINIMUM WATER DEPTH = 0.5
+/*------------------------------------------------------------------*/
+/* BOUNDARY CONDITIONS                                              */
+/*------------------------------------------------------------------*/
+/TYPE OF BOUNDARY DIRECTIONAL SPECTRUM = 0
+/*------------------------------------------------------------------*/
+/* SOURCE TERMS                                                     */
+/*------------------------------------------------------------------*/
+
+CONSIDERATION OF SOURCE TERMS = OUI
+NUMBER OF ITERATIONS FOR THE SOURCE TERMS = 1
+
+BAJ MODELING = 1
+WIND GENERATION = 1
+CHARNOCK CONSTANT = 0.0095
+WIND GENERATION COEFFICIENT = 1.1
+WAVE GROWTH LIMITER = 3
+WHITE CAPPING DISSIPATION = 1
+WHITE CAPPING DISSIPATION COEFFICIENT = 2.1
+WHITE CAPPING WEIGHTING COEFFICIENT = 0.4
+BOTTOM FRICTION DISSIPATION = 1
+NON-LINEAR TRANSFERS BETWEEN FREQUENCIES = 1
+DEPTH-INDUCED BREAKING DISSIPATION = 2
+NUMBER OF BREAKING TIME STEPS = 3
+
+IMPOSED SPECTRA FILE = './spectrum.spe'
+FILE WITH COORDINATES OF SPECTRA TO IMPOSE =
+'./coor.txt'

@@ -1,0 +1,8 @@
+#
+#  FLOWRATE AT THE ENTRANCE AND FREE SURFACE AT THE EXIT
+#
+T         Q(2)   SL(1)
+s         m3/s   m
+0.          0.   0.
+43200.    200.   0.
+1000000.  200.   0.

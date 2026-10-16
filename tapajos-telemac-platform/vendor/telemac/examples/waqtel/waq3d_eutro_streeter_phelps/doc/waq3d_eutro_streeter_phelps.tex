@@ -1,0 +1,123 @@
+\chapter{Streeter and Phelps experiment using Benson and Krause formula
+(waq3d\_eutro\_streeter\_phelps)}
+
+\section{Purpose}
+
+This case is an example of the use of the EUTRO module of \waqtel coupled with
+\telemac{3D} with Benson and Krause formula to compute oxygen saturation
+concentration $C_s$.
+
+\section{Description}
+
+A channel is considered (30~000~m long, 400~m wide, flat horizontal bottom
+= -10~m).\\
+
+\section{Computational options}
+
+\subsection{Mesh}
+
+The triangular mesh is composed of 3,200 triangular elements and 1,809 nodes
+(see Figure \ref{fig:waq3d_eutro_streeter_phelps:mesh}).
+
+\begin{figure}[H]
+ \centering
+ \includegraphicsmaybe{[width=0.9\textwidth]}{../img/res_mesh.png}
+\caption{Mesh}
+ \label{fig:waq3d_eutro_streeter_phelps:mesh}
+\end{figure}
+
+To build the 3D mesh of prisms, 10 planes are regularly spaced over the vertical.
+The vertical mesh between nodes of coordinates (0 ; 200) to (30,000 ; 200) can be
+seen on Figure \ref{fig:waq3d_eutro_streeter_phelps:mesh_section}.
+
+\begin{figure}[H]
+ \centering
+ \includegraphicsmaybe{[width=0.95\textwidth]}{../img/res_mesh_section.png}
+\caption{Vertical mesh}
+ \label{fig:waq3d_eutro_streeter_phelps:mesh_section}
+\end{figure}
+
+\subsection{Physical parameters}
+
+Horizontal constant viscosity: with default value (10$^{-6}$~m$^2$/s)\\
+Vertical turbulence model: Prandtl mixing length model (default)\\
+Bottom friction: no friction on the bottom\\
+
+The EUTRO module is activated by setting \telkey{WATER QUALITY PROCESS} = 5
+in the \telemac{3D} \telkey{STEERING FILE}.\\
+
+8 tracers are considered:
+\begin{itemize}
+\item phytoplanktonic biomass (PHY),
+\item dissolved mineral phosphorus (PO$_4$),
+\item degradable phosphorus non assimilated by phytoplankton (POR),
+\item dissolved mineral nitrogen assimilated by phytoplankton (NO$_3$),
+\item degradable nitrogen assimilated by phyto phytoplankton (NOR),
+\item ammoniacal load (NH$_4$),
+\item organic load (L),
+\item dissolved oxygen (O$_2$).
+\end{itemize}
+
+Only the following water quality parameters have been changed
+in the \waqtel \telkey{STEERING FILE} compared to the default values:
+\begin{itemize}
+\item \telkey{FORMULA FOR COMPUTING CS} = 3 (i.e. Benson and Krause),
+\item \telkey{CONSTANT OF DEGRADATION OF ORGANIC LOAD K120} = 0.36~d$^{-1}$,
+\item \telkey{BENTHIC DEMAND} = 0~gO$_2$/m$^2$/d,
+\item \telkey{FORMULA FOR COMPUTING K2} = 0 (i.e. $k_2$ is constant),
+\item \telkey{SECCHI DEPTH} = 0.1~m,
+\item \telkey{VEGETAL TURBIDITY COEFFICIENT WITHOUT PHYTO} = 0.01~m$^{-1}$,
+\item \telkey{SUNSHINE FLUX DENSITY ON WATER SURFACE} = 0.01~W/m$^2$,
+\item \telkey{WATER TEMPERATURE} = 20$^\circ$C (which is the mean temperature of water).
+\end{itemize}
+
+\subsection{Initial and Boundary Conditions}
+
+The initial water elevation is 0~m (= 10~m water depth).\\
+
+The initial values for tracers are homogeneous
+with the same values as prescribed values for upstream except the penultimate
+one ([L] which is equal to 0~mgO$_2$/l for initial conditions and
+10~mgO$_2$/l for upstream boundary condition):\\
+(salinity,temperature,[PHY],[PO4],[POR],[NO3],[NOR],[NH$_4$],[L],[O$_2$]) =
+(35~g/l, 20~$^\circ$C,0~$\mu$gChlA/l, 0~mg/l, 0~mg/l, 0~mg/l, 0~mg/l, 0~mgNH$_4$/l, 0~mgO$_2$/l, 7.39~mgO$_2$/l).\\
+%
+A flow rate of 200~m$^3$/s is prescribed upstream.\\
+An elevation of 0~m is prescribed downstream.\\
+Constant concentrations of tracers are prescribed at the inlet boundary,
+the same as the initial conditions for each tracer
+except the penultimate one ([L] which is equal to 0~mgO$_2$/l for initial
+conditions and 10~mgO$_2$/l for upstream boundary condition).
+
+\subsection{General parameters}
+
+The time step is 10~s for a simulated period of 172,800~s = 48~h.
+
+\subsection{Numerical parameters}
+
+The hydrostatic version of \telemac{3D} is used.
+The PSI scheme is chosen to solve the advection for the last 2 tracers
+(L and O$_2$) whereas for the other tracers no advection scheme nor diffusion
+scheme are used.
+Moreover, the method of characteristics is chosen to solve the advection for
+the velocities.
+
+The \telkey{ACCURACY FOR DIFFUSION OF TRACERS} is let to default value =
+10$^{-8}$.
+
+\section{Results}
+
+Figure \ref{fig:waq3d_eutro_streeter_phelps:res} shows the last 2 tracers
+evolution along time.
+
+\begin{figure} [H]
+\centering
+\includegraphicsmaybe{[width=\textwidth]}{../img/res_tracers.png}
+ \caption{Tracers evolution for 2 tracers of the EUTRO module}
+ \label{fig:waq3d_eutro_streeter_phelps:res}
+\end{figure}
+
+\section{Conclusion}
+
+The EUTRO module of \waqtel can be coupled with \telemac{3D} to model
+unsteady flows.
