@@ -1,0 +1,377 @@
+\chapter{Breach}
+%
+
+% - Purpose & Problem description:
+%     These first two parts give reader short details about the test case,
+%     the physical phenomena involved and specify how the numerical solution will be validated
+
+\section{Purpose}
+The aim of this test is to model dykes breaching using different empirical laws
+and different options for breaching initiation.
+The following criteria for breaching initiations (or failure) are tested:
+\begin{itemize}
+ \item the breach starts at a given time,
+ \item the breach starts when the water level above the dyke reaches a given
+       value,
+ \item the breach starts when the water level at a given point reaches a
+       certain value,
+ \item the breach starts when the water level at a given point reaches a
+       certain value and the difference of hydraulic load between the channel
+       and the floodplain reaches a threshold value.
+\end{itemize}
+The following laws for breach widening are tested:
+\begin{itemize}
+\item Linear widening,
+\item User-defined breach expansion formulations (linear widening in two steps),
+\item USBR formula (1988),
+\item Von Thun and Gillette formulas (1990),
+\item Verheij formula (2002): for sand and clay levees,
+\item Verheij and Van der Knaap (2003) formula: for sand and clay levees,
+\item Froehlich (2008) formula.
+\end{itemize}
+In order to test the initiation criteria which are also based on the difference
+of hydraulic load between the channel and the floodplain
+(\telkey{OPTION FOR BREACHING} = 4 or 5), two different cases are studied:
+\begin{itemize}
+ \item the floodplain is dry and the breaches open,
+ \item the floodplain is already flooded and the breaches do not open since a
+       threshold value for the hydraulic load is not reached, even if the
+       overtopping flow depth above the dyke reaches a threshold value.
+\end{itemize}
+\section{Description}
+\subsection{Geometry and mesh}
+The channel is 5,000~m long and 26~m wide. In the central part of the channel
+(2000 < $x$ < 3000) the domain is laterally extended in order to represent a
+dyke and a floodplain (which is 500~m wide). The computational domain is
+composed by 26,449 triangular elements and 13,648 nodes. Triangles are regular
+and stretched in the flow direction for 0 < $x$ < 2000 and 3000 < $x$ < 5000,
+while a completely unstructured mesh is used in the central part of the channel
+and for the floodplain where the average size is 3~m (in the zone where the
+dyke is located) and it progressively increases in the floodplain until 45~m.
+The domain and a sketch of the mesh for 1500 < $x$ < 2500 is shown in Figure
+\ref{fig:breach:mesh}.
+\begin{figure}[H]
+  \centering
+  \includegraphicsmaybe{[width=\textwidth]}{../img/t2d_breach_geo.png}
+  \includegraphicsmaybe{[width=\textwidth]}{../img/t2d_breach_mesh2.png}
+  \caption{Mesh of breach test case.}\label{fig:breach:mesh}
+\end{figure}
+
+\subsection{Bathymetry}
+The channel has a constant slope of 10$^{-3}$ m/m and a trapezoidal section
+with a lateral slope of 1 m/m. The bathymetry and the channel section are shown
+in Figure \ref{fig:breach:bottom}.
+\begin{figure}[H]
+  \centering
+  \includegraphicsmaybe{[width=\textwidth]}{../img/t2d_breach_bathy.png}
+  \includegraphicsmaybe{[width=\textwidth]}{../img/t2d_breach_channel_section.png}
+  \caption{Bathymetry of breach test case and channel cross section at $x$ = 10~m.}
+  \label{fig:breach:bottom}
+\end{figure}
+
+The dyke is 2~m higher than the bank of the channel (cf. Figure
+\ref{fig:breach:dyke:sect}) and it has the same slope of the channel along the
+longitudinal direction.
+\begin{figure}[H]
+  \centering
+  \includegraphicsmaybe{[width=\textwidth]}{../img/t2d_breach_dyke_section.png}
+  \caption{Cross section at $x$ = 2050~m.}\label{fig:breach:dyke:sect}
+\end{figure}
+
+\subsection{Initial condition}\label{subs:breach:IC}
+For most of the cases, as initial condition, a fully developed flow in the
+channel and a dry floodplain are read from the restart file. \\
+A case where the floodplain is already flooded is also represented: a constant
+free surface equal to 6.8~m is imposed in this area. In order to have a fully
+developed flow in the channel a free surface with constant slope of 0.00112 and
+velocity equal to (0.85, 0.) is set as initial conditions in the channel, for
+this case.
+
+\subsection{Boundary conditions}
+At the channel inlet, an increasing discharge
+(from 50~$\text{m}^{3}.\text{s}^{-1}$ to 406.25~$\text{m}^{3}.\text{s}^{-1}$) is
+imposed across the full cross section and the corresponding free surface at
+the outlet is imposed through a liquid boundaries file. On the lateral walls,
+slip boundary conditions are imposed.
+
+\subsection{Physical parameters}
+A constant friction coefficient is used everywhere on the bottom, equal to
+15~$\text{m}^{1/3}.\text{s}^{-1}$ according to the Strickler law.
+The fluid considered presents a kinematic viscosity $\nu$ = 0.005~m$^2$.s$^{-1}$.
+
+\subsection{Numerical parameters}
+The simulation time is set to 2,700~s with a time step equal to 0.5~s. The
+treatment of the linear system is set to wave equation and the solver precision
+is set to 10$^{-5}$. The advection scheme for velocities is the method of
+characteristics. To ensure positivity of water depth and mass conservation,
+\telkey{TREATMENT OF NEGATIVE DEPTHS} is set to 2.
+
+\subsection{Breaches}
+The model presents three different breaches.
+The first breach is located in the upstream part of the dyke and is described
+by the following physical parameters:
+\begin{itemize}
+ \item Width of the breach: 18~m,
+ \item Duration of the breaching process: 300~s,
+ \item Final bottom altitude of the breach: 5.9~m,
+ \item Width of the breach: 100~m (represented by the polyline),
+ \item Number of points of the polyline defining the breach: 34
+      (cf. the corresponding ASCII file to check the points of the polyline).
+\end{itemize}
+For most of the cases (cf. Table \ref{tab:breach:cases}) we consider that this
+part of the dyke will fail when $E_s$ = 7.2~m along the dyke.
+For the case F, the criterion is also based on the difference of hydraulic load
+at given points. In this case the nodes considered are: 13352, 13352 (for the
+channel side), 6534 (for the floodplain side) and the threshold value for the
+hydraulic load is 1~m. Note that in this particular case the same node (13352)
+has been chosen to control the free surface and to compute the hydraulic load
+in the channel side. \\
+Figure \ref{fig:breach:points_br1} shows a sketch of the first breach (black
+points are the first and last points of the polyline which represents the breach)
+and the location of the nodes used to check the failure criterion.
+\begin{figure}[H]
+  \centering
+  \includegraphicsmaybe{[width=\textwidth]}{../img/points_br1.png}
+  \caption{First breach and relative main parameters.}\label{fig:breach:points_br1}
+\end{figure}
+
+The second breach is located in the central part of the dyke and is described by
+the following physical parameters:
+\begin{itemize}
+ \item Width of the breach: 18~m,
+ \item Duration of the breaching process: 900~s,
+ \item Dyke crest: 7.5~m,
+ \item Final bottom altitude of the breach: 5.5~m,
+ \item Width of the breach: 100~m (represented by the polyline),
+ \item Number of points of the polyline defining the breach: 34 (cf. the
+       corresponding ASCII file to check the points of the polyline).
+\end{itemize}
+For this part of the dyke we will consider most of the time (cf. Table
+\ref{tab:breach:cases}) a failure criterion based on the water level in a weak
+point located at (2500, 35.5) for which the mesh node 9406 is chosen as control
+node. The criterion considered is $E_s$ = $z_{dyke}$-1.1, the dyke crest
+($z_{dyke}$) is equal to 7.5~m. \\
+For the case F, the criterion is also based on the difference of hydraulic load
+at given points. In this case the threshold value for the hydraulic load is 1 m. \\
+Figure \ref{fig:breach:points_br2} shows a sketch of the second breach (black
+points are the first and last points of the polyline which represents the breach)
+and the location of the weak point as well as the control node used to check
+the failure criterion.
+\begin{figure}[H]
+  \centering
+  \includegraphicsmaybe{[width=\textwidth]}{../img/points_br2.png}
+  \caption{Second breach and relative main parameters.}\label{fig:breach:points_br2}
+\end{figure}
+The third breach is located in the downstream part of the dyke and is described
+by the following physical parameters:
+\begin{itemize}
+ \item Width of the breach: 18~m,
+ \item Duration of the breaching process: 600~s,
+ \item Final bottom altitude of the breach: 5~m,
+ \item Width of the breach: 100~m (represented by the polyline),
+ \item Number of points of the polyline defining the breach: 34 (cf. the
+       corresponding ASCII file to check the points of the polyline).
+\end{itemize}
+For this dyke the failure will start at a given time equal to 500 s.
+
+\subsection{Cases}
+The parameters specific to each case are summed up in
+Table~\ref{tab:breach:cases}.
+
+\begin{table}[H]
+  \resizebox{\textwidth}{!}{
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+      \hline
+      \multicolumn{2}{|c|}{Cases} & A & B & C & D & E & F \\
+      \hline
+      \multirow{3}{*}{Breach 1} & Option for initiation &
+       \multicolumn{5}{c|}{Water level above the dyke (2)} &
+       Water level and difference of hydraulic load at given points (4) \\\cline{2-8}
+       & Failure values & \multicolumn{5}{c|}{E$_s$ = 7.2~m} & E$_s$ = 7.2~m
+       \& $\Delta E$ = 1~m \\\cline{2-8}
+       & Option for lateral growth & Linear & Two steps & USBR & Verheij 2002
+        (NCO) & Froehlich & Linear \\
+      \hline
+      \multirow{3}{*}{Breach 2} & Option for initiation &
+       \multicolumn{5}{c|}{Water level at given point (3)} &
+       Water level at given point and difference of hydraulic load (5) \\\cline{2-8}
+       & Failure values & \multicolumn{5}{c|}{E$_s$ = 6.4~m} & E$_s$ = 6.4~m
+       \& $\Delta E$ = 1~m  \\\cline{2-8}
+       & Option for lateral growth & Linear & Two steps & Von Thun (NCO) &
+        Verheij 2003 & Froehlich  & Linear \\
+      \hline
+      \multirow{3}{*}{Breach 3} & Option for initiation &
+       \multicolumn{6}{c|}{At given time (1)} \\\cline{2-8}
+       & Starting time & \multicolumn{6}{c|}{500 s}  \\\cline{2-8}
+       & Option for lateral growth & Linear & Two steps & Von Thun (CO) &
+       Verheij 2002 (CO) & Froehlich & Linear \\
+      \hline
+    \end{tabular}
+  }
+  \caption{List of the breach parameters used for the 6 cases tested in the
+   breach example.}
+  \label{tab:breach:cases}
+\end{table}
+For the case F, two different situations are considered to check the initiation
+criteria:
+\begin{itemize}
+ \item \textbf{F1}: the floodplain is dry,
+ \item \textbf{F2}: the floodplain is wet with a constant free surface equal to
+ 6.8 m (cf. Section \ref{subs:breach:IC}). For this case, the dyke is assumed
+ to be stronger so the threshold value ($\Delta E$) for
+ the first breach is changed from 1 to 2 m and the one for the second breach is
+ changed from 1 to 1.5. The third breach is not represented to simplify the analysis.
+\end{itemize}
+\section{Results}
+\subsection{Case F: first observations}
+The figure \ref{fig:breach:WDF1_floodplain} shows the progression of the flooding
+in the plain through the differents breaches for the case F1.
+\begin{figure}[H]
+\begin{minipage}[t]{0.5\textwidth}
+  \centering
+  \includegraphicsmaybe{[width=0.95\textwidth]}
+  {../img/WD_F1_0_crit4+5_firstobs.png}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+  \centering
+  \includegraphicsmaybe{[width=0.95\textwidth]}
+  {../img/WD_F1_1440_crit4+5_firstobs.png}\\
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+  \centering
+  \includegraphicsmaybe{[width=0.95\textwidth]}
+  {../img/WD_F1_1560_crit4+5_firstobs.png}\\
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+  \centering
+  \includegraphicsmaybe{[width=0.95\textwidth]}
+  {../img/WD_F1_1680_crit4+5_firstobs.png}\\
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+  \centering
+  \includegraphicsmaybe{[width=0.95\textwidth]}
+  {../img/WD_F1_2040_crit4+5_firstobs.png}\\
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+  \centering
+  \includegraphicsmaybe{[width=0.95\textwidth]}
+  {../img/WD_F1_2700_crit4+5_firstobs.png}
+\end{minipage}
+  \caption{Evolution of the water depth in the floodplain for the case F1.}
+  \label{fig:breach:WDF1_floodplain}
+\end{figure}
+In case F2, breaches do not open as even if there is overtopping
+(see Figures \ref{fig:breach:WDF2_floodplain}, \ref{fig:breach:crit4:F2},
+\ref{fig:breach:crit5:F2}) the criterion on energy balance is not reached.
+\begin{figure}[H]
+\begin{minipage}[t]{0.5\textwidth}
+  \centering
+  \includegraphicsmaybe{[width=0.95\textwidth]}
+  {../img/WD_F2_0_crit4+5_firstobs.png}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+  \centering
+  \includegraphicsmaybe{[width=0.95\textwidth]}
+  {../img/WD_F2_1440_crit4+5_firstobs.png}\\
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+  \centering
+  \includegraphicsmaybe{[width=0.95\textwidth]}
+  {../img/WD_F2_2040_crit4+5_firstobs.png}\\
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+  \centering
+  \includegraphicsmaybe{[width=0.95\textwidth]}
+  {../img/WD_F2_2700_crit4+5_firstobs.png}\\
+\end{minipage}
+  \caption{Evolution of the water depth in the floodplain for the case F2.}
+  \label{fig:breach:WDF2_floodplain}
+\end{figure}
+
+%To check the initiation criterion based on the overtopping flow depth above
+%the dyke and the energy balance (criterion number 4 and 5),
+\subsection{Case F: analysis of the failure criterion}
+Figure \ref{fig:breach:crit4:F1} shows the evolution of the free surface
+on the node chosen to control overtopping and the energy balance between
+the channel and the floodplain in user defined nodes for breach 1 and case
+F1. The first breach is created at time 1,677~s.
+\begin{figure}[H]
+ \centering
+ \includegraphicsmaybe{[width=0.7\textwidth]}
+ {../img/t2d_breach_threshold_evolutions_vnv_crit4_5_seq_br1.png}
+ \includegraphicsmaybe{[width=0.7\textwidth]}
+ {../img/t2d_breach_threshold_evolutions_DeltaH_vnv_crit4_5_seq_br1.png}
+ \caption{Free surface and energy balance evolution for the first breach
+ (failure criterion 4).}
+ \label{fig:breach:crit4:F1}
+\end{figure}
+Figure \ref{fig:breach:crit5:F1} shows the evolution of the free surface on the
+node chosen to control overtopping for breach 2 and case F1. The second breach
+is created at time 1815.5 s.
+%The energy balance is automatically computed by \telemac{2D} via local variables
+%in the source code, here is computed through graphic printouts but the method
+%is not exactly the same (computations at nodes closest to the border of the
+%polygon in TELEMAC while computation at the border of the polygon, via
+%interpolation, through graphic printouts).
+\begin{figure}[H]
+ \centering
+ \includegraphicsmaybe{[width=0.7\textwidth]}
+ {../img/t2d_breach_threshold_evolutions_vnv_crit4_5_seq_br2.png}
+ \includegraphicsmaybe{[width=0.7\textwidth]}
+ {../img/t2d_breach_threshold_evolutions_DeltaH_vnv_crit4_5_seq_br2.png}
+ \caption{Free surface and energy balance evolution for the second breach
+ (failure criterion 5).}
+ \label{fig:breach:crit5:F1}
+\end{figure}
+The figures below illustrate that the criteria is not reached for case F2.
+\begin{figure}[H]
+ \centering
+ \includegraphicsmaybe{[width=0.7\textwidth]}
+ {../img/t2d_breach_threshold_evolutions_vnv_crit4_5_no_breaching_br1.png}
+ \includegraphicsmaybe{[width=0.7\textwidth]}
+ {../img/t2d_breach_threshold_evolutions_DeltaH_vnv_crit4_5_no_breaching_br1.png}
+ \caption{Free surface and energy balance evolution for the first breach
+ (failure criterion 4).}
+ \label{fig:breach:crit4:F2}
+\end{figure}
+\begin{figure}[H]
+ \centering
+ \includegraphicsmaybe{[width=0.7\textwidth]}
+ {../img/t2d_breach_threshold_evolutions_vnv_crit4_5_no_breaching_br2.png}
+ \includegraphicsmaybe{[width=0.7\textwidth]}
+ {../img/t2d_breach_threshold_evolutions_DeltaH_vnv_crit4_5_no_breaching_br2.png}
+ \caption{Free surface and energy balance evolution for the second breach
+  (failure criterion 5).}
+ \label{fig:breach:crit5:F2}
+\end{figure}
+\subsection{Case F: breaches evolutions}
+The figures below illustrate the time evolution of the bathymetry in the middle
+section ($y$ = 37~m) of various breaches, for case F1.
+\begin{figure}[H]
+ \centering
+ \includegraphicsmaybe{[width=\textwidth]}
+ {../img/t2d_breach_evolution_section_br1.png}
+ \caption{Bathymetry evolution for the first breach.}
+ \label{fig:breach:br1:evol}
+\end{figure}
+
+\begin{figure}[H]
+ \centering
+ \includegraphicsmaybe{[width=\textwidth]}
+ {../img/t2d_breach_evolution_section_br2.png}
+ \caption{Bathymetry evolution for the second breach.}
+ \label{fig:breach:br2:evol}
+\end{figure}
+
+\begin{figure}[H]
+ \centering
+ \includegraphicsmaybe{[width=\textwidth]}
+ {../img/t2d_breach_evolution_section_br3.png}
+ \caption{Bathymetry evolution for the third breach.}
+ \label{fig:breach:br3:evol}
+\end{figure}
+%theoretically we should verify that the breach opens following linear law etc...
+\section{Conclusion}
+\telemac{2D} is able to model dyke breaching according to different initiation criteria and using different formulations for lateral breaching.
+%--------------------------------------------------------------------------------------------------
+
