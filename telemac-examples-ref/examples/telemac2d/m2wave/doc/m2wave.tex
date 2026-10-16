@@ -1,0 +1,82 @@
+\chapter{m2wave: Transformation of the M2 tide constituent along the western European Continental shelf}
+
+\section{Purpose}
+This test case computes the transformation of the main tide constituent
+(M$_2$ - semi-diurnal moon generated wave) occurring along the western Europe continental margin.
+
+\section{Description}
+\subsection{Approach}
+The model extends from the Iberian Peninsula up to South England. The
+whole continental margin of the Atlantic coasts of France is represented
+as well as the Southern part of the North Sea. The model is forced by
+the M2 tide component. 4 tide cycles are simulated.
+
+\subsection{Geometry and mesh}
+Size of the model: domain = 520000~m$\times$950000~m
+
+The mesh is denser near the coastline than along the open Atlantic boundaries.
+However, the mesh is not refined along the slope of the continental shelf in
+the present model (following studies have shown that this refinement was
+important for the overall quality of results).
+
+\begin{itemize}
+\item 9414 triangular elements
+\item 5007 nodes
+\item Maximum size range: from 10 to 50 kilometres
+\end{itemize}
+
+\subsection{Boundaries}
+
+\begin{itemize}
+\item Ocean open boundaries: H imposed with the tide
+\item Coastline: solid walls with slip condition
+\end{itemize}
+
+\subsection{Bottom}
+Chezy formula with friction coefficient = 40
+
+Mesh and topography are shown on Figure \ref{fig:m2wave:Mesh} and \ref{fig:m2wave:Bathy}
+
+\begin{figure}[H]
+ \centering
+ \includegraphicsmaybe{[width=.7\textwidth]}{../img/Mesh.png}
+  \caption{2D-mesh of the vasque case.}\label{fig:m2wave:Mesh}
+\end{figure}
+\begin{figure}[H]
+ \centering
+ \includegraphicsmaybe{[width=.7\textwidth]}{../img/Bathy.png}
+  \caption{bathymetry of the vasque case.}\label{fig:m2wave:Bathy}
+\end{figure}
+
+\subsection{Numerical parameters}
+\begin{itemize}
+\item No advection of U and V, Conservative + modified SUPG on depth (mandatory scheme)
+\item Elements : Quasi-bubble triangle for velocities, Linear triangle (P1) for H
+\item Implicitation for depth and for velocity = 0.55
+\item GMRES Solver, with  Solver accuracy = 10$^{-3}$
+\item  Initial guess for U = 2
+\item  SUPG option: Upwinding equal to 1 for velocity and depth
+\item Coriolis and spherical coordinates
+\item Time step = 150~s
+\item Simulation duration = 178800~s.
+\end{itemize}
+
+\section{Results}
+The resulting amplitude and phase of the M2 tide component are shown in Figures \ref{fig:m2wave:Ampli} and \ref{fig:m2wave:Phase}. 
+
+More accurate results were found in a subsequent model with a finer mesh along the
+continental shelf and along the coastline. More tidal constituents were also taken
+into account. Inclusion of the tide generating potential in basic equations of TELEMAC-2D
+further improved the results.
+
+\begin{figure}[H]
+ \centering
+ \includegraphicsmaybe{[width=.7\textwidth]}{../img/ampli.png}
+  \caption{M2 Amplitude at t=178800s}\label{fig:m2wave:Ampli}
+\end{figure}
+
+\begin{figure}[H]
+ \centering
+ \includegraphicsmaybe{[width=.7\textwidth]}{../img/phase.png}
+  \caption{M2 Phase at t=178800s }\label{fig:m2wave:Phase}
+\end{figure}

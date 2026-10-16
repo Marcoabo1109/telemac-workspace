@@ -1,0 +1,108 @@
+\chapter{Mersey: Tidal flow in the Mersey estuary}
+\section{Purpose}
+To illustrate that TELEMAC-2D is capable of simulating the hydrodynamics
+(tidal currents and water elevations) in an estuarial zone due to long
+period tidal wave forcing, with the covering/uncovering of tidal flats.
+
+\subsection{Approach}
+This case simulates the flow in the Mersey estuary on the west coast of
+England. Tide hydrodynamics in this area is complex, with large tidal
+range (up to 9~m on spring tide), extensive intertidal areas and an unusual
+tide curve: in the upper reaches of the estuary, the tide ebbs for a large
+proportion of the tidal period, and then floods very rapidly.
+A sinusoidal water elevation is prescribed at the maritime open boundary
+to simulate a mean spring tide wave.
+The river discharge is neglected at the upstream end of the model.
+
+\section{Description}
+
+\subsection{Geometry and mesh}
+The size of the domain is 356000$\times$ 409500~m
+Water depth at rest = 9.2~m
+
+The mesh is dense in the river and at the mouth.
+\begin{itemize}
+\item 4490 triangular elements
+\item 2429 nodes
+\item Maximum size range: from 200 to 1500 metres
+\end{itemize}
+
+\subsection{Boundaries}
+\begin{itemize}
+\item Domain entrance $\dsp H=5.15+4.05\cos(\frac{\pi}{2}\frac{t}{44700}) $
+\item Latteral boundaries: solid walls with slip condition.
+\end{itemize}
+
+\subsection{Bottom}
+Strickler formula with friction coefficient = 50~m$^{1/3}/s$.
+
+The mesh and the topography are shown on Figure \ref{fig:mersey:Mesh} and \ref{fig:mersey:Bathy}
+
+\begin{figure}[H]
+ \centering
+ \includegraphicsmaybe{[width=.7\textwidth]}{../img/Mesh.png}
+  \caption{2D-mesh of the mersey case.}\label{fig:mersey:Mesh}
+\end{figure}
+
+
+\begin{figure}[H]
+ \centering
+ \includegraphicsmaybe{[width=.7\textwidth]}{../img/Bathy.png}
+  \caption{bathymetry of the mersey case.}\label{fig:mersey:Bathy}
+\end{figure}
+
+\subsection{Physical parameters}
+The model of turbulence is constant viscosity
+with velocity diffusivity  equal to 0.2~m$^2$/s
+
+\subsection{Numerical parameters}
+Type of advection:
+\begin{itemize}
+\item Methods of characteristics on velocities (scheme \#1),
+\item Conservative + modified SUPG on depth (mandatory scheme)
+\end{itemize}
+The type of element is linear triangle (P1) for $h$ and quasi bubble triangle
+for velocities.
+\begin{itemize}
+\item Implicitation for depth and velocities = 0.6,
+\item Solver: Conjugate gradienton a normal equation with solver accuracy = 10$^{-3}$.
+\item Bottom smoothing = 1
+\item Time step = 50~s,
+\item Simulation duration = 44700~s.
+\end{itemize}
+
+\section{Results}
+The total volume lost is 0.2x10$^{-2}$~m$^3$ , in comparison to the initial volume in the domain (0.289417x10$^{10}$~m$^3$ ). The
+error represents 7x10$^{-13}$ which is the machine precision. The final balance of water volume is excellent.
+Figure 3.20.2 shows the water depths at high tide and low tide in the domain. Tidal flats are represented. On
+the same figure are shown (bottom) the evolutions of the free surface elevation at four different points:
+\begin{itemize}
+\item at the open boundary (1), where the tide is regular and symmetric,
+\item at the mouth of the Mersey river (2), where a small asymmetry of the curve and a drift in time is observed,
+\item in the estuary (3 and 4), where the tide is very asymmetric and a significant drift in time occurs.
+\end{itemize}
+
+
+\begin{figure}[H]
+ \centering
+ \includegraphicsmaybe{[width=.7\textwidth]}{../img/Water_depth22.png}
+  \caption{Water depth at t=22350s}\label{fig:mersey:WD22}
+\end{figure}
+
+\begin{figure}[H]
+ \centering
+ \includegraphicsmaybe{[width=.7\textwidth]}{../img/Water_depth44.png}
+  \caption{Water depth at t=44700s}\label{fig:mersey:WD44}
+\end{figure}
+
+\begin{figure}[H]
+ \centering
+ \includegraphicsmaybe{[width=.7\textwidth]}{../img/timeserie.png}
+  \caption{Free surface at points (318021,400340) (331444,395025) (337922,383132) and (348256,380434)}\label{fig:mersey:WDTS}
+\end{figure}
+
+\begin{figure}[H]
+ \centering
+ \includegraphicsmaybe{[width=.7\textwidth]}{../img/Velocity_arrows.png}
+  \caption{Velocity at t=11200~s}\label{fig:mersey:Velocity}
+\end{figure}

@@ -1,0 +1,84 @@
+\chapter{Pluie}\label{chapter:pluie}
+
+\section{Purpose}
+
+The aim of this test case is to check the implementation of the SCS-Curve Number infiltration model.
+
+\section{Theoretical background}
+
+This test case is extracted from \cite{Ligier2016}. The method described below is directly taken from this paper.
+
+Curve Number runoff model, also known as the SCS Method of Abstractions, has been developed from 1954 by USA’s Soil Conservation Service (SCS). This method, which is widely used in the world, aims at computing abstractions from storm rainfall using a spatially and temporally lumped infiltration loss model. It gives best results in agricultural watersheds with negligible baseflow \cite{soil1972national}.
+
+The aim of runoff modelling is to assess the hydrologic abstractions F which are composed of (i) interception storage (vegetation foliage...), (ii) surface storage, (iii) infiltration, (iv) evaporation and (v) evapotranspiration. For short-term storm modelling, which is the Curve Number runoff model's field of application, abstractions due to infiltration are largely predominant over other forms which are then disregarded.
+
+The total rain $R_t$ can be divided in the following terms $R_t=R_n+I_i+I_h$, with $R_n$ the net rainfall contibuting to the runoff, $I_i$ the initial abstraction and $I_h$ the hydrological abstraction. The aim of this model is to estimate the total infiltration $I_t=I_i+I_h$, to deduce the net rainfall contributing to the runoff with $R_n=R_t-I_t$.
+
+$R_n$ can be written as:
+
+\begin{equation}
+  R_n=\left\{\begin{array}{l}
+    \frac{(R_t-I_i)^2}{R_t-I_i+S} \text{ if } R_t>I_i\\
+    0 \text{ else}
+  \end{array} \right.
+\end{equation}
+
+where:
+
+\begin{equation}
+  I_i=\lambda S
+\end{equation}
+
+with $\lambda$ the initial abstraction ratio, set to 0.2, and:
+
+\begin{equation}
+  S=25.4\left(\frac{1000}{CN}-10\right)
+\end{equation}
+
+the potential maximal retention. $CN$ is the Curve Numbre representing the calibration variable of the model. Its value can be spatially distributed and has been defined for different types of land use classes and for four different hydrological soil groups: Group A (deep sands, deep loess and aggregated silts), Group B (shallow loess, sandy loams), Group C (clay loams, shallow sandy loams, soils low in organic content and soils usually high in clay) and Group D (soils that swell significantly when wet, heavy plastic clays and certain saline soils) and for three type of hydrologic surface condition of native pasture (poor, fair, and good).
+
+\section{Description}
+
+Three examples are provided with (i) a classic rainfall defined by a constant rainfall intensity without runoff model, (ii) a classic rainfall defined by a constant rainfall intensity with Curve Number runoff model using $CN$ values interpolated from a set of points provided in a formatted data file and (iii) a rainfall defined by a hyetograph read from a formatted data file with Curve Number runoff model using $CN$ values stocked in the geometry file as an additional variable.
+
+\subsection{Geometry and mesh}
+
+The model geometry is a square with a side length of 100 meters composed of 5412 triangular elements. The computational domain is divided in four parts with $CN$ values of 80, 85, 90 and 95. Figure \ref{pluie:fig:mesh} presents the mesh.
+
+\begin{figure}[!htbp]
+ \centering
+ \includegraphicsmaybe{[width=0.5\textwidth]}{../img/mesh.png}
+ \caption{Mesh of the channel.}
+ \label{pluie:fig:mesh}
+\end{figure}
+
+\subsection{Bathymetry}
+
+The bottom is flat in this test case.
+
+\subsection{Initial and boundary conditions}
+
+The initial condition is a zero water depth, and there is no open boundary.
+
+\subsection{Physical parameters}
+
+The classic rainfall is defined using the existing keyword \telkey{RAIN OR EVAPORATION IN MM PER DAY} = 100.0 and for a duration of 6 hours (\telkey{DURATION OF RAIN OR EVAPORATION IN HOURS} = 6.0) so that the total rainfall depth is 25 mm. The hyetograph defined in the last example has an irregular time distribution but has the same total rainfall depth. All the examples are run over a simulation period of 8 hours with a time-step of 200 seconds.
+
+The Curve Number runoff model is used with default settings (\telkey{ANTECEDENT MOISTURE CONDITIONS} = 2 and \telkey{OPTION FOR INITIAL ABSTRACTION RATIO} = 1).
+
+\section{Results}
+
+Figure \ref{pluie:fig:res} shows the results at the final time step for the 3 simulations.
+
+\begin{figure}[!htbp]
+ \centering
+ \includegraphicsmaybe{[width=0.5\textwidth]}{../img/water-depth1.png}\\
+ \includegraphicsmaybe{[width=0.5\textwidth]}{../img/water-depth2.png}\\
+ \includegraphicsmaybe{[width=0.5\textwidth]}{../img/water-depth3.png}
+ \caption{Water depth at the final time step and volume balance for all test cases.}
+ \label{pluie:fig:res}
+\end{figure}
+
+\section{Conclusion}
+
+\telemac{2D} is able to simulate the infiltration with the SCS-Curve Number runoff model.
