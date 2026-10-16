@@ -1,0 +1,30 @@
+{
+  "combined_sha256": "a0591cbdbb20b7ed9493b980ec3d4dd94e7ae55c58135266b4adf34add42eaed",
+  "description": "Culm reference case shortened to 20 steps of 2 seconds",
+  "files": [
+    {
+      "path": "data/culm/t2d_culm.cas",
+      "sha256": "757f4bd32f43fe18aa98cbbc014f36e33e32c31a54d02f7b7ce743d6cec2b262"
+    },
+    {
+      "path": "data/culm/geo_culm.slf",
+      "sha256": "b63ed1ef1533a7fd657136cb6047da7b25e4cc528325a0eef7b1ffea445092f4"
+    },
+    {
+      "path": "data/culm/geo_culm.cli",
+      "sha256": "90de21909252f44aa458a08b1209b7b1ac2c39e57042438e42c55b52ce87c255"
+    },
+    {
+      "path": "data/culm/ini_culm.slf",
+      "sha256": "108d194dc375b41cc59cbed6df042e846fede15a5c7a7b17bde991ad8de61592"
+    },
+    {
+      "path": "data/culm/t2d_culm.qsl",
+      "sha256": "98bcb2ebe858da6a1ed6a2ea37adbf42a723216a10d1f5cd11d755c85034d4fa"
+    }
+  ],
+  "final_time_seconds": 40.0,
+  "id": "culm-20x2s-v1",
+  "steps": 20,
+  "time_step_seconds": 2.0
+}

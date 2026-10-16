@@ -1,0 +1,768 @@
+{
+  "source": "https://gitlab.pam-retd.fr/otm/telemac-mascaret",
+  "commit": "d1bff193746fd76425d7715a6e4d20d42eb8877e",
+  "path": "sources/gaia/gaia.dico",
+  "sha256": "7e17f77865fbe6225cb52b34a79397cae2e74453812116e19d31e62b8da6e804",
+  "keywords": {
+    "TITLE": {
+      "type": "STRING",
+      "default": "''",
+      "help": "Title of the case being considered."
+    },
+    "RELEASE": {
+      "type": "STRING",
+      "default": "'TRUNK'",
+      "help": "Release of the libraries used by GAIA."
+    },
+    "DICTIONARY": {
+      "type": "STRING",
+      "default": "'gaia.dico'",
+      "help": "Key word dictionary."
+    },
+    "PARALLEL PROCESSORS": {
+      "type": "INTEGER",
+      "default": "0",
+      "help": "NUMBER OF PROCESSORS FOR PARALLEL PROCESSING\n0 : 1 machine, compiling without parallel library\n1 : 1 machine, compiling with a parallel library\n2 : 2 processors or machines in parallel\netc...."
+    },
+    "VALIDATION": {
+      "type": "LOGICAL",
+      "default": "NO",
+      "help": "This option is primarily used for the validation\ndocuments. If this keyword is equal to YES, the REFERENCE FILE\nis then considered as a reference which the computation is\ngoing to be compared with.\nThe comparison is made by the subroutine VALIDA, which can be\nmodified so as to include,for example,a comparison with an\nexact solution."
+    },
+    "NUMBER OF PRIVATE ARRAYS": {
+      "type": "INTEGER",
+      "default": "1",
+      "help": "Number of arrays for own user programming"
+    },
+    "ORIGIN COORDINATES": {
+      "type": "INTEGER",
+      "default": "0;0",
+      "help": "Value in metres, used to avoid large real numbers,\nadded in Selafin format, but so far no other treatment"
+    },
+    "DEBUGGER": {
+      "type": "INTEGER",
+      "default": "0",
+      "help": "If 1, calls of subroutines will be printed in the listing"
+    },
+    "OPTION FOR THE TREATMENT OF TIDAL FLATS": {
+      "type": "INTEGER",
+      "default": "1",
+      "help": "Used if ''TIDAL FLATS'' is true\n   1 : EQUATIONS SOLVED EVERYWHERE WITH CORRECTION ON TIDAL FLATS\n   2 : DRY ELEMENTS FROZEN\nIt is recommended to choose 1 since it ensures mass conservation."
+    },
+    "NESTOR": {
+      "type": "LOGICAL",
+      "default": "NO",
+      "help": "For coupling with NESTOR"
+    },
+    "NESTOR ACTION FILE": {
+      "type": "STRING",
+      "default": "''",
+      "help": "Name of the Nestor steering file"
+    },
+    "NESTOR POLYGON FILE": {
+      "type": "STRING",
+      "default": "''",
+      "help": "Name of the Nestor polygon file"
+    },
+    "NESTOR RESTART FILE": {
+      "type": "STRING",
+      "default": "''",
+      "help": "Name of the Nestor file phydef-cf.cfg.ds"
+    },
+    "NESTOR SURFACE REFERENCE FILE": {
+      "type": "STRING",
+      "default": "''",
+      "help": "Name of the Nestor file which contains the reference\n         water surface"
+    },
+    "CHECKING THE MESH": {
+      "type": "LOGICAL",
+      "default": "NO",
+      "help": "if this key word is equal to yes, a call to subroutine\ncheckmesh will look for errors in the mesh, superimposed points, etc."
+    },
+    "MAXIMUM NUMBER OF BOUNDARIES": {
+      "type": "INTEGER",
+      "default": "30",
+      "help": "maximal number of boundaries in the mesh.\nUsed for dimensioning arrays. Can be increased if needed"
+    },
+    "FLUXLINE INPUT FILE": {
+      "type": "STRING",
+      "default": "''",
+      "help": "Name of the Fluxline file"
+    },
+    "FLUXLINE": {
+      "type": "LOGICAL",
+      "default": "NO",
+      "help": "Use Fluxline to compute flux over lines"
+    },
+    "CONTROL SECTIONS": {
+      "type": "INTEGER",
+      "default": "",
+      "help": "Couples of points (global numbers in the mesh) defining sections\n where the instantaneous and cumulated discharges will be given"
+    },
+    "CLASSES SHIELDS PARAMETERS": {
+      "type": "REAL",
+      "default": "-9.;-9.",
+      "help": "Used to determine the critical bed shear stress value\n(non-cohesive sediments).\nFor multi grain size,\nthe shields parameter needs to be specified for each class.\nIt is necessary to give a negative value\nin the parameter file for cohesive sediments."
+    },
+    "MINIMAL VALUE OF THE WATER HEIGHT": {
+      "type": "REAL",
+      "default": "1.E-3",
+      "help": "Sets the minimum value of the water depth.\nIs used when the keyword TIDAL FLATS is equal to yes."
+    },
+    "TIDAL FLATS": {
+      "type": "LOGICAL",
+      "default": "YES",
+      "help": "When no, the specific treatments for tidal flats\nare by-passed.\nThis spares time, but of course you must be sure that you\nhave no tidal flats"
+    },
+    "SECONDARY CURRENTS": {
+      "type": "LOGICAL",
+      "default": "NO",
+      "help": "using the parametrisation for secondary currents"
+    },
+    "SECONDARY CURRENTS FILE": {
+      "type": "LOGICAL",
+      "default": "NO",
+      "help": "The radii needed for the parametrisation of secondary currents\nare read from SELAFIN file"
+    },
+    "NUMBER OF LAYERS FOR INITIAL STRATIFICATION": {
+      "type": "INTEGER",
+      "default": "1",
+      "help": "Number of layers for initial stratification, default NUMSTRAT=1"
+    },
+    "EFFECT OF WAVES": {
+      "type": "LOGICAL",
+      "default": "NO",
+      "help": "Takes into account the effect of waves"
+    },
+    "TYPE OF WAVES": {
+      "type": "INTEGER",
+      "default": "2",
+      "help": "is used to calculate Uw\n if Uw is calculated with Tomawac, choose 2 (default)\n 1= regular (monochromatic) waves\n 2= irregular (spectral) waves"
+    },
+    "TRIGONOMETRICAL CONVENTION IN WAVE FILE": {
+      "type": "LOGICAL",
+      "default": "NO",
+      "help": "True if the wave directions in the wave file are\nmeasured counterclockwise from the positive x-axis, false if\nthey are measured clockwise fron geographic North"
+    },
+    "VECTOR LENGTH": {
+      "type": "INTEGER",
+      "default": "1",
+      "help": "vector length on vector machines."
+    },
+    "STEERING FILE": {
+      "type": "STRING",
+      "default": "''",
+      "help": "Name of the file containing the parameters\nof the computation. Could be written by the user with EDAMOX."
+    },
+    "GEOMETRY FILE FORMAT": {
+      "type": "STRING",
+      "default": "'SERAFIN '",
+      "help": "Geometry file format.\nPossible values are:\n- SERAFIN : classical single precision format in Telemac;\n- SERAFIND: classical double precision format in Telemac;\n- MED     : MED format based on HDF5"
+    },
+    "GEOMETRY FILE": {
+      "type": "STRING",
+      "default": "",
+      "help": "Name of the file containing the mesh. This file may also\ncontain the topography and the friction coefficients."
+    },
+    "NAMES OF PRIVATE VARIABLES": {
+      "type": "STRING",
+      "default": "",
+      "help": "Name of private variables in 32 characters, 16 for the name,\n         16 for the unit. They are stored in the block PRIVE and\n         can be read in the geometry file if they are here with their\n         name"
+    },
+    "BEDLOAD BOUNDARIES FILE": {
+      "type": "STRING",
+      "default": "''",
+      "help": "Variations in time of boundary conditions in bedload. Data of this file\nare read on channel GAI\\_FILES(GAILIQ)%LU."
+    },
+    "RESULTS FILE FORMAT": {
+      "type": "STRING",
+      "default": "'SERAFIN '",
+      "help": "Results file format. Possible values are:\n- SERAFIN : classical single precision format in Telemac;\n- SERAFIND: classical double precision format in Telemac;\n- MED     : MED format based on HDF5"
+    },
+    "RESULTS FILE": {
+      "type": "STRING",
+      "default": "",
+      "help": "Name of the file into wich the computation results shall be\nwritten, the periodicity being given by the keyword\nGRAPHIC PRINTOUT PERIOD in telemac2d or telemac3d."
+    },
+    "VARIABLES TO BE PRINTED": {
+      "type": "STRING",
+      "default": "''",
+      "help": "Names of variables the user wants to write on the listing.\nEach variable is represented by a letter in the same manner as\nit is done in the graphic results file."
+    },
+    "LISTING PRINTOUT PERIOD": {
+      "type": "INTEGER",
+      "default": "1",
+      "help": "Determines, in number of time steps, the printout period of\nthe ''VARIABLES TO BE PRINTED''.\nThe results are printed out on the listing file\n(file cas\\_numerodeprocessus.sortie on a workstation)."
+    },
+    "MASS-BALANCE": {
+      "type": "LOGICAL",
+      "default": "NO",
+      "help": "Determines whether a check of the mass-balance over the domain\nis made or not"
+    },
+    "SECTIONS OUTPUT FILE": {
+      "type": "STRING",
+      "default": "''",
+      "help": "sections output file, written by the master"
+    },
+    "C-VSM RESULTS FILE": {
+      "type": "STRING",
+      "default": "''",
+      "help": "Name of the file into which the C-VSM results of the computation\nare written, the periodicity being given by the keyword:\n\\telkey{C-VSM FULL PRINTOUT PERIOD}."
+    },
+    "C-VSM RESULTS FILE FORMAT": {
+      "type": "STRING",
+      "default": "'SERAFIN'",
+      "help": "Format of the \\telkey{C-VSM RESULT FILE}. Possible choices are:\n\\begin{itemize}\n\\item SERAFIN : classical single precision format in \\tel,\n\\item SERAFIND: classical double precision format in \\tel,\n\\item MED     : MED double precision format based on HDF5.\n\\end{itemize}"
+    },
+    "TIME SERIES FILE": {
+      "type": "STRING",
+      "default": "''",
+      "help": "Name of the file into which 2D time series are written at the points\ndefined in the \\telkey{TIME SERIES COORDINATES FILE}."
+    },
+    "TIME SERIES FILE FORMAT": {
+      "type": "STRING",
+      "default": "'SERAFIN'",
+      "help": "Format of the \\telkey{TIME SERIES FILE}. Possible choices are:\n\\begin{itemize}\n\\item SERAFIN : classical single precision format in \\tel,\n\\item SERAFIND: classical double precision format in \\tel,\n\\item MED     : MED double precision format based on HDF5.\n\\end{itemize}"
+    },
+    "REFERENCE FILE FORMAT": {
+      "type": "STRING",
+      "default": "'SERAFIN '",
+      "help": "Previous computation results file format.\nPossible values are:\n- SERAFIN : classical single precision format in Telemac;\n- SERAFIND: classical double precision format in Telemac;\n- MED     : MED format based on HDF5"
+    },
+    "WAVE FILE FORMAT": {
+      "type": "STRING",
+      "default": "'SERAFIN '",
+      "help": "Wave file format.\nPossible values are:\n- SERAFIN : classical single precision format in Telemac;\n- SERAFIND: classical double precision format in Telemac;\n- MED     : MED format based on HDF5"
+    },
+    "FORTRAN FILE": {
+      "type": "STRING",
+      "default": "''",
+      "help": "Name of FORTRAN file to be submitted."
+    },
+    "BOUNDARY CONDITIONS FILE": {
+      "type": "STRING",
+      "default": "",
+      "help": "Name of the file containing the types of boundary conditions.\nThis file is filled automatically by the mesh generator through\ncolours that are assigned to the computation domain boundary nodes."
+    },
+    "WAVE FILE": {
+      "type": "STRING",
+      "default": "''",
+      "help": "Name of a file containing the results a previous\nTOMAWAC computation  made on the same mesh. The wave data (wave height,\n wave period, wave angle ) will\nbe given by the last record of the file.\nThe user has to verify that both informations (wave and current data)\nare consistent.\nRemark :The wave data can also be specified in\n the hydrodynamic file. the user has also\n the possibility to give the values\nof the wave data in the subroutine USER\\_FORCING\\_GAIA.\nThis is recommended for non-steady flow simulation."
+    },
+    "REFERENCE FILE": {
+      "type": "STRING",
+      "default": "''",
+      "help": "Name of the file used to validate the computation.\nIf VALIDATION = YES, the results of the computation will be\ncompared with the values of this file. The comparison is\nmade by the subroutine VALIDA."
+    },
+    "BOTTOM TOPOGRAPHY FILE": {
+      "type": "STRING",
+      "default": "''",
+      "help": "Name of the possible file containing the bathymetric data."
+    },
+    "SECTIONS INPUT FILE": {
+      "type": "STRING",
+      "default": "''",
+      "help": "sections input file, partitioned"
+    },
+    "TIME SERIES COORDINATES FILE": {
+      "type": "STRING",
+      "default": "''",
+      "help": "Name of the file containing points coordinates and periods of time\nwhere time series are extracted in the \\telkey{TIME SERIES FILE}."
+    },
+    "PREVIOUS SEDIMENTOLOGICAL COMPUTATION FILE FORMAT": {
+      "type": "STRING",
+      "default": "'SERAFIN '",
+      "help": "Previous computation results file format.\nPossible values are:\n- SERAFIN : classical single precision format in Telemac;\n- SERAFIND: classical double precision format in Telemac;\n- MED     : MED format based on HDF5"
+    },
+    "PREVIOUS SEDIMENTOLOGICAL COMPUTATION FILE": {
+      "type": "STRING",
+      "default": "''",
+      "help": "Name of a file containing the results of an\nearlier  sedimentological computation which was made\non the same mesh. The last recorded time step will provide\nthe initial conditions for the new computation."
+    },
+    "COMPUTATION CONTINUED": {
+      "type": "LOGICAL",
+      "default": "NO",
+      "help": "Determines whether the computation under way is an independent\nresult or is following an earlier result.\nNO: It is the first run for this computation and a whole set of\ninitial conditions should be defined.\nYES: It follows a former computation:\nthe initial conditions consist in the last time step of the\n\\telkey{PREVIOUS SEDIMENTOLOGICAL COMPUTATION FILE}\nin the steering file used for submitting the computation.\nAll the data from the steering file may be defined once again, which\nprovides an opportunity to change, for example, the time step.\nIt is also possible to define new boundary conditions."
+    },
+    "SPINUP TIME FOR BED UPDATING": {
+      "type": "REAL",
+      "default": "0.",
+      "help": "Time in seconds after which bed updates are taken into account"
+    },
+    "RECORD NUMBER FOR RESTART": {
+      "type": "INTEGER",
+      "default": "-1",
+      "help": "In case of \\telkey{COMPUTATION CONTINUED} = YES, record number\nto start from in the\n\\telkey{PREVIOUS SEDIMENTOLOGICAL COMPUTATION FILE}.\n-1 means the last record is taken."
+    },
+    "RESTART MODE": {
+      "type": "LOGICAL",
+      "default": "NO",
+      "help": "Triggers the filling of the \\telkey{RESTART FILE},\nwhich ensures a perfect restart of a computation,\nunlike using the \\telkey{RESULTS FILE}."
+    },
+    "RESTART FILE": {
+      "type": "STRING",
+      "default": "''",
+      "help": "Name of the file into which the computation results shall\nbe written in order to get a perfect continued computation.\nIt is then an output file for the current computation,\nwhich will be used as an input file when a continued computation\nis expected to be perfect (the keyword\n\\telkey{PREVIOUS SEDIMENTOLOGICAL COMPUTATION FILE} is then used).\nThe \\telkey{RESTART FILE FORMAT} and the\n\\telkey{PREVIOUS SEDIMENTOLOGICAL COMPUTATION FILE FORMAT} have to be\nset with ''SERAFIND'' or ''MED''."
+    },
+    "RESTART FILE FORMAT": {
+      "type": "STRING",
+      "default": "'SERAFIND'",
+      "help": "Format of the \\telkey{RESTART FILE}.\nPossible choices are:\n\\begin{itemize}\n\\item SERAFIN : classical single precision format in \\tel,\n\\item SERAFIND: classical double precision format in \\tel,\n\\item MED     : MED double precision format based on HDF5.\n\\end{itemize}\nOnly double precision formats ensure a perfect restart."
+    },
+    "RESTART FILE PRINTOUT PERIOD": {
+      "type": "INTEGER",
+      "default": "0",
+      "help": "Determines, in number of time steps, the printout period for the\nvariables to be saved for a perfect restart in the\n\\telkey{RESTART FILE}.\nDefault = 0 means the \\telkey{RESTART FILE} is only written at the last\ntime step or at the \\telkey{RECORD NUMBER IN RESTART FILE}."
+    },
+    "RECORD NUMBER IN RESTART FILE": {
+      "type": "INTEGER",
+      "default": "-1",
+      "help": "Determines the number of time step when printing the variables to be\nsaved for a perfect restart in the \\telkey{RESTART FILE}.\nDefault = -1 means the \\telkey{RESTART FILE} is only written at the last\ntime step and/or periodically at the period\n\\telkey{RESTART FILE PRINTOUT PERIOD}."
+    },
+    "VARIABLES FOR GRAPHIC PRINTOUTS": {
+      "type": "STRING",
+      "default": "'U;V;H;S;B;R;E'",
+      "help": "Names of variables the user wants to write\ninto the graphic results file.\nEach variable is represented by a letter. See CHOIX1 above.\n One can use *, *A* means all fractions"
+    },
+    "PRESCRIBED SOLID DISCHARGES": {
+      "type": "REAL",
+      "default": "",
+      "help": "Values of prescribed solid discharges\nat the inflow boundaries (kg/s).\nOne value per liquid boundary"
+    },
+    "CLASSES IMPOSED SOLID DISCHARGES DISTRIBUTION": {
+      "type": "REAL",
+      "default": "",
+      "help": "Gives the proportion of the imposed solid discharge for each class.\nGive one numbre for each non-cohesive class"
+    },
+    "INITIAL SUSPENDED SEDIMENTS CONCENTRATION VALUES": {
+      "type": "REAL",
+      "default": "0.;0.",
+      "help": "Sets the initial values of suspended sediment concentration."
+    },
+    "PRESCRIBED SUSPENDED SEDIMENTS CONCENTRATION VALUES": {
+      "type": "REAL",
+      "default": "",
+      "help": "Suspended sediment concentration values prescribed at the inflow\nboundaries. Determines the imposed value of sediments at the first\nboundary, then at the second and so on, with the same logic as tracers."
+    },
+    "VERTICAL PROFILES OF SUSPENDED SEDIMENTS": {
+      "type": "INTEGER",
+      "default": "",
+      "help": "Specifies the type of profiles of sediment concentration on the\nvertical (only for 3D simulations). Possible choices are:\n\\begin{itemize}\n\\item 0: user defined,\n\\item 1: constant,\n\\item 2: Rouse equilibrium, constant (diluted sediment)\nor Rouse (sediment),\n\\item 3: Rouse (normalized) and imposed concentration.\n\\item 4: Rouse modified with molecular viscosity.\n\\end{itemize}"
+    },
+    "SUSPENDED SEDIMENTS CONCENTRATION VALUES AT THE SOURCES": {
+      "type": "REAL",
+      "default": "",
+      "help": "Values of the suspended sediments at the sources.\nAll sources for the first suspended sediment, then\nall sources for the second suspended sediment, etc.\nFor example, if there are 3 suspended sediments (SED1, SED2 and SED3)\nand 2 sources (S1 and S2), the following syntax is used:\\\\\nS1\\_SED1;S1\\_SED2;S1\\_SED3;S2\\_SED1;S2\\_SED2;S2\\_SED3\\\\\n10.0; 10.0; 0.0;  0.0; 10.0; 10.0"
+    },
+    "SCHEME FOR ADVECTION OF SUSPENDED SEDIMENTS": {
+      "type": "INTEGER",
+      "default": "5;5",
+      "help": "Choice of the advection scheme for the suspended sediments,\nERIA works only in 2D. The order of the chosen scheme must follow\nthe order of the suspended sediments."
+    },
+    "SCHEME OPTION FOR ADVECTION OF SUSPENDED SEDIMENTS": {
+      "type": "INTEGER",
+      "default": "4;4",
+      "help": "If N or PSI SCHEME: 1=explicit 2=predictor-corrector\n3= predictor-corrector second-order in time 4= implicit"
+    },
+    "SCHEME FOR DIFFUSION OF SUSPENDED SEDIMENTS IN 3D": {
+      "type": "INTEGER",
+      "default": "1",
+      "help": "Monitors the choice of the diffusion scheme\nfor sediments in 3D simulations.\nPossible choices are:\n\\begin{itemize}\n\\item 0: no diffusion,\n\\item 1: implicit.\n\\end{itemize}"
+    },
+    "SOLVER FOR DIFFUSION OF SUSPENSION": {
+      "type": "INTEGER",
+      "default": "1;1",
+      "help": "Choice of the solver for suspension resolution.\nPossible choices are:\n\\begin{itemize}\n\\item 1: conjugate gradient,\n\\item 2: conjugate residual,\n\\item 3: conjugate gradient on a normal equation,\n\\item 4: minimum error,\n\\item 5: squared conjugate gradient,\n\\item 6: CGSTAB,\n\\item 7: GMRES,\n\\item 8: direct solver.\n\\end{itemize}"
+    },
+    "SOLVER OPTION FOR DIFFUSION OF SUSPENSION": {
+      "type": "INTEGER",
+      "default": "5",
+      "help": "Dimension of Krylov space for the GMRES method (7)."
+    },
+    "MAXIMUM NUMBER OF ITERATIONS FOR SOLVER FOR SUSPENSION": {
+      "type": "INTEGER",
+      "default": "60",
+      "help": "Limits the number of solver iterations for the diffusion of\nsediments."
+    },
+    "ACCURACY FOR DIFFUSION OF SUSPENSION": {
+      "type": "REAL",
+      "default": "1.E-8",
+      "help": "Sets the accuracy needed for the computation of\nthe diffusion of suspension. It is not possible to set different\nvalues for different solvers, only one is accepted."
+    },
+    "PRECONDITIONING FOR DIFFUSION OF SUSPENSION": {
+      "type": "INTEGER",
+      "default": "2",
+      "help": "Choice of preconditioning for the diffusion of sediments.\nPossible choices are:\n\\begin{itemize}\n\\item 0: no preconditioning,\n\\item 2: diagonal,\n\\item 3: diagonal with the condensed matrix in 3D,\n\\item 5: diagonal with absolute values in 3D,\n\\item 7: Crout,\n\\item 11: Gauss-Seidel EBE in 3D,\n\\item 13: matrix defined by the user in 3D,\n\\item 14: diagonal and Crout,\n\\item 17: direct solver on the vertical in 3D,\n\\item 21: diagonal condensed and Crout in 3D,\n\\item 34: diagonal and direct solver on the vertical in 3D.\n\\end{itemize}"
+    },
+    "FINITE VOLUME SCHEME FOR SUSPENDED SEDIMENTS DIFFUSION": {
+      "type": "INTEGER",
+      "default": "1;1",
+      "help": "Choice of the finite volume diffusion model:\n\\begin{itemize}\n\\item 1: explicit P1 finite element,\n\\item 2: two points flux,\n\\item 3: reconstructed two points flux.\n\\end{itemize}"
+    },
+    "ADVECTION-DIFFUSION SCHEME WITH SETTLING VELOCITY": {
+      "type": "INTEGER",
+      "default": "0",
+      "help": "Choice of the vertical scheme for diffusion and settling of\nsediment (only in 3D):\n\\begin{itemize}\n\\item 0: Implicit-diffusion scheme,\n\\item 1: Implicit-convection scheme (Tridiagonal matrix solver),\n\\item 2: \\telfile{set\\_fall.f}\n\\end{itemize}"
+    },
+    "HINDERED SETTLING": {
+      "type": "LOGICAL",
+      "default": "NO",
+      "help": "Decides if hindered formulation is to be used to\ncompute settling velocity for mud."
+    },
+    "HINDERED SETTLING FORMULA": {
+      "type": "INTEGER",
+      "default": "1",
+      "help": "Type of hindered settling:\n\\begin{itemize}\n\\item 0 : User defined formula\n\\item 1 : Whitehouse et al. (2000)\n\\item 2 : Winterwerp (1999)\n\\end{itemize}"
+    },
+    "WEAK SOIL CONCENTRATION FOR MUD": {
+      "type": "REAL",
+      "default": "0.0",
+      "help": "The sediment concentration at which sediment\nforms a weak soil in kg/m$^3$. These values are needed when\n\\telkey{HINDERED SETTLING} = YES."
+    },
+    "THRESHOLD CONCENTRATION FOR HINDERED SETTLING": {
+      "type": "REAL",
+      "default": "0.0",
+      "help": "The sediment concentration at which hindered settling is\ninitiated. These values are needed when\n\\telkey{HINDERED SETTLING} = YES."
+    },
+    "FLOCCULATION": {
+      "type": "LOGICAL",
+      "default": "NO",
+      "help": "Decides if hindered formulation is to be used to\ncompute settling velocity for mud. Only in 3D."
+    },
+    "FLOCCULATION FORMULA": {
+      "type": "INTEGER",
+      "default": "1",
+      "help": "Type of flocculation formula:\n\\begin{itemize}\n\\item 0: User defined formula ;\n\\item 1: Van Leussen ;\n\\item 2: Soulsby et al. (2013).\n\n\\end{itemize}"
+    },
+    "FLOCCULATION COEFFICIENT": {
+      "type": "REAL",
+      "default": "0.3",
+      "help": "When the influence of turbulence on the settling velocity\nis modelled, this coefficient traduces the formation of flocs by\nturbulence (coefficient $a$ of Van Leussen formula).\nValue to be imposed if\n\\telkey{INFLUENCE OF TURBULENCE ON SETTLING VELOCITY} = YES."
+    },
+    "COEFFICIENT RELATIVE TO FLOC DESTRUCTION": {
+      "type": "REAL",
+      "default": "0.09",
+      "help": "When the influence of turbulence on the settling velocity\nis modelled, this coefficient traduces the breaking of flocs by\nturbulence (coefficient $b$ of Van Leussen formula).\nValue to be imposed if\n\\telkey{INFLUENCE OF TURBULENCE ON SETTLING VELOCITY} = YES."
+    },
+    "ZERO": {
+      "type": "REAL",
+      "default": "1.E-10",
+      "help": "Sets the zero of GAIA used for clipping values."
+    },
+    "FINITE VOLUMES": {
+      "type": "LOGICAL",
+      "default": "NO",
+      "help": "Set finite volumes method or not"
+    },
+    "MATRIX-VECTOR PRODUCT": {
+      "type": "INTEGER",
+      "default": "1",
+      "help": "Possible choices are:\n\\begin{itemize}\n\\item 1: classic,\n\\item 2: frontal.\nBeware, with option 2, a special numbering of points is required.\n\\end{itemize}"
+    },
+    "MATRIX STORAGE": {
+      "type": "INTEGER",
+      "default": "1",
+      "help": "Defines the method to store matrices. The possible choices are:\n\\begin{itemize}\n\\item 1: classical EBE,\n\\item 3: edge-based storage.\n\\end{itemize}"
+    },
+    "UPWINDING FOR BEDLOAD": {
+      "type": "REEL",
+      "default": "0.5E0",
+      "help": "Parameter for FV solving the Exner equation,\n0.5 = Centered (precise), 1 = Upwind (stable because diffusive)"
+    },
+    "MAXIMUM NUMBER OF ITERATIONS FOR POSITIVE THICKNESS": {
+      "type": "INTEGER",
+      "default": "50",
+      "help": "Only for bedload in finite elements.\nParameter for positive\\_depths.\nOld default value = 10 until release 8.1."
+    },
+    "BED ROUGHNESS PREDICTOR OPTION": {
+      "type": "INTEGER",
+      "default": "1",
+      "help": "1: Flat bed, 2: Rippled bed,\n3: Dunes and mega ripples (Method of Van Rijn)"
+    },
+    "AD NUMBER OF DERIVATIVES": {
+      "type": "INTEGER",
+      "default": "0",
+      "help": "Defines the number of user derivatives, within the framework\nof the algorithmic differentiation."
+    },
+    "AD NAMES OF DERIVATIVES": {
+      "type": "STRING",
+      "default": "",
+      "help": "Name of user derivatives in 32 characters,\n         16 for the name, 16 for the unit."
+    },
+    "AD NUMBER OF DIRECTIONS": {
+      "type": "INTEGER",
+      "default": "1",
+      "help": "Defines the number of directions for the differentiators"
+    },
+    "AD SYMBOLIC LINEAR SOLVER": {
+      "type": "LOGICAL",
+      "default": "NO",
+      "help": "Enables the symbolic linear solver for AD."
+    },
+    "AD LINEAR SOLVER RESET DERIVATIVES": {
+      "type": "LOGICAL",
+      "default": "YES",
+      "help": "Resets the derivatives for AD."
+    },
+    "AD LINEAR SOLVER DERIVATIVE CONVERGENCE": {
+      "type": "LOGICAL",
+      "default": "YES",
+      "help": "Iterative linear solvers: derivative convergence test for AD."
+    },
+    "CLASSES SEDIMENT DENSITY": {
+      "type": "REAL",
+      "default": "2650.;2650.",
+      "help": "Sets the value of the sediment density for each class en Kg/m3"
+    },
+    "LAYERS NON COHESIVE BED POROSITY": {
+      "type": "REAL",
+      "default": "0.4;0.4",
+      "help": "The bed volume concentration CSF=(1-porosity) is used to\ncalculate the bed evolution of non-cohesive sand transport."
+    },
+    "WATER VISCOSITY": {
+      "type": "REAL",
+      "default": "1.E-6",
+      "help": "Specifies the water kinematic viscosity.\n         M/S2"
+    },
+    "SETTLING LAG": {
+      "type": "LOGICAL",
+      "default": "NO",
+      "help": "Uses the velocity profile based on the Miles approximation"
+    },
+    "CLASSES SETTLING VELOCITIES": {
+      "type": "REAL",
+      "default": "-9;-9.",
+      "help": "Sets the value of settling velocity for every sediment. Give a\nnegative value to use the Stokes, Zanke or Van Rijn formulae\n(depending on the grain size)"
+    },
+    "SUSPENSION FOR ALL SANDS": {
+      "type": "LOGICAL",
+      "default": "NO",
+      "help": "Activate suspension for all the sands in the simulation. It is not\npossible to have a different behaviour between sand classes. Mud\nis always considered in suspension."
+    },
+    "EQUILIBRIUM INFLOW CONCENTRATION": {
+      "type": "LOGICAL",
+      "default": "NO",
+      "help": "Imposes the equilibrium concentration at the inlet boundaries in 2D\ncases.\nFor non cohesive sediments, the equilibrium near bed concentration is\ncomputed with respect to the suspension transport formula for all\nsands."
+    },
+    "SUSPENSION TRANSPORT FORMULA FOR ALL SANDS": {
+      "type": "INTEGER",
+      "default": "1",
+      "help": "Different choice to compute the equilibrium near-bed concentration\n1 : Zysderman and Fredsoe, equilibrium formula\n2: Bijker method. The near bed concentration\nis related to the bedload . This option cannot be used\nwithout bedload transport\n3: Van Rijn formula\n4: Soulsby\\_van Rijn formula"
+    },
+    "CORRECTION ON CONVECTION VELOCITY": {
+      "type": "LOGICAL",
+      "default": "NO",
+      "help": "Modification of 2D convection velocities to account for\nvelocity and concentration profiles"
+    },
+    "CLASSES CRITICAL SHEAR STRESS FOR MUD DEPOSITION": {
+      "type": "REAL",
+      "default": "1000.;1000.",
+      "help": "Critical shear stress for deposition (Pa)"
+    },
+    "LAYERS PARTHENIADES CONSTANT": {
+      "type": "REAL",
+      "default": "1.E-3;1.E-3",
+      "help": "constant of the Krone and Partheniades erosion law (Kg/m2/s)"
+    },
+    "COEFFICIENT FOR DIFFUSION OF SUSPENDED SEDIMENTS": {
+      "type": "REAL",
+      "default": "1.E-6",
+      "help": "Sets the value of the suspended sediments diffusivity in 2D.\nThis value may have a significant effect on the evolution of\nsediments in time. It is a scalar (one value for all sediments)."
+    },
+    "COEFFICIENT FOR HORIZONTAL DIFFUSION OF SUSPENDED SEDIMENTS": {
+      "type": "REAL",
+      "default": "",
+      "help": "Sets the values of the horizontal diffusion of sediments in 3D.\nThese values may have a significant effect on the evolution of\nsediments in time.\nIt is an array, with one value per suspended sediment, separated by\n semicolons."
+    },
+    "COEFFICIENT FOR VERTICAL DIFFUSION OF SUSPENDED SEDIMENTS": {
+      "type": "REAL",
+      "default": "",
+      "help": "Sets the values of the vertical diffusion of sediments in 3D.\nThese values may have a significant effect on the evolution of\nsediments in time.\nIt is an array, with one value per suspended sediment, separated by\n semicolons."
+    },
+    "CLASSES SEDIMENT DIAMETERS": {
+      "type": "REAL",
+      "default": ".01;.01",
+      "help": "Sets value of diameter dm for particular size class."
+    },
+    "CLASSES HIDING FACTOR": {
+      "type": "REAL",
+      "default": "1.;1.",
+      "help": "Sets value of hiding factor for particular size class."
+    },
+    "CLASSES INITIAL FRACTION": {
+      "type": "REAL",
+      "default": "1.;0.",
+      "help": "Sets the value of the initial fraction of each sediment class.\nBeware that the sum over all classes must be equal to 1."
+    },
+    "ACTIVE LAYER THICKNESS": {
+      "type": "REAL",
+      "default": "10000.",
+      "help": "Thickness for bed stratification. Composition of first\nlayer is used to compute bed load transport rate. If you do not want\na stratification, use a large value"
+    },
+    "HIDING FACTOR FORMULA": {
+      "type": "INTEGER",
+      "default": "0",
+      "help": "4 hiding factor formulas are implemented in GAIA\n     0: const => need to give CLASSES HIDING FACTOR\n     1: Egiazaroff\n     2: Ashida \\& Michiue\n      :\n     4: Karim, Holly \\& Yang"
+    },
+    "CONSTANT ACTIVE LAYER THICKNESS": {
+      "type": "LOGICAL",
+      "default": "YES",
+      "help": "constant active layer thickness or not"
+    },
+    "LAYERS INITIAL THICKNESS": {
+      "type": "REAL",
+      "default": "",
+      "help": "Sediment layers thickness (m) for initialisation."
+    },
+    "D90 SAND DIAMETER FOR ONLY ONE CLASS": {
+      "type": "REAL",
+      "default": ".01",
+      "help": "Sets the value of diameter d90 for simulations with one sand class.\n With multiple sand classes, D90 is computed by GAIA."
+    },
+    "RATIO BETWEEN SKIN FRICTION AND MEAN DIAMETER": {
+      "type": "REAL",
+      "default": "3.0",
+      "help": " Ratio for the computation of skin friction.\nskin roughness = ratio * mean diameter\n(for the mixture of sand, the mean diameter used is a value per node\nwhich is computed thanks to the fraction and the mean diameter of each\nsediment for each node of the mesh)\nif KSPRATIO =0 : use skin friction prediction from Van Rijn (2007)\nfor currents and the Wiberg and Harris method for waves"
+    },
+    "SKIN FRICTION CORRECTION": {
+      "type": "INTEGER",
+      "default": "1",
+      "help": "Formula to modify the shear stress in sediment flow rate formulae\nso they use the skin bed roughness (see also KSPRATIO)\n       0 : No correction (TAUP= TOB), valid if the roughness provided\n           to TELEMAC is physical - close to the skin roughness, usually\n           estimated to 3d50\n       1 : Correction for a flat bed (KSP= KSPRATIO * D50)\n       2 : Ripple correction factor"
+    },
+    "FORMULA FOR SLOPE EFFECT": {
+      "type": "INTEGER",
+      "default": "1",
+      "help": "Possible choices:\n\\begin{itemize}\n\\item 1: formula of Koch et Flokstra, modification of bed load\nlinked keyword : \\telkey{BETA}.\n\\item 2 : formula of Soulsby, modification critical shear stress,\ncan only be used with a threshold fomula.\nLinked keyword : \\telkey{FRICTION ANGLE OF THE SEDIMENT}\n\\item 3 : formula of Apsley and Stansby, modification of critical\nshear stress and the bed load.\nLinked keyword: \\telkey{FRICTION ANGLE OF THE SEDIMENT}\n\\item 4 : formula of Apsley and Stansby, modification of critical\nshear stress and the bed load and additionally avalanching.\nLinked keyword: ANGLE DE FROTTEMENT DU SEDIMENT\n\\end{itemize}"
+    },
+    "FRICTION ANGLE OF THE SEDIMENT": {
+      "type": "REAL",
+      "default": "40.",
+      "help": "Angle of repose of the sediment. Used in the Soulsby formula to\ntake into account the influence of bed slope on critical shear stress.\nUse if ...=2"
+    },
+    "FORMULA FOR DEVIATION": {
+      "type": "INTEGER",
+      "default": "1",
+      "help": "1: Koch and Flokstra\n\t 2: formula of Talmon et al. 1995, JHR 33(4) formulas (1) and\n(17) linked keyword : BETA2"
+    },
+    "PARAMETER FOR DEVIATION": {
+      "type": "REAL",
+      "default": "0.85",
+      "help": "Parameter pour la deviation pour la formule de Talmon et al."
+    },
+    "SEDIMENT SLIDE": {
+      "type": "INTEGER",
+      "default": "0",
+      "help": "Two choices of formulas, both take \\telkey{FRICTION ANGLE OF THE\nSEDIMENT} into account:\n\\begin{itemize}\n\\item 0: No sliding\n\\item 1: Sliding classic\n\\item 2: Avalanching according Apsley and Stansby\n\\end{itemize}"
+    },
+    "SLOPE EFFECT": {
+      "type": "LOGICAL",
+      "default": "YES",
+      "help": "If yes, slope effect taken into account:\ndeviation + modification of critical shear stress.\nNO will cancel the key-words\nFORMULA FOR SLOPE EFFECT and FORMULA FOR DEVIATION"
+    },
+    "BETA": {
+      "type": "REAL",
+      "default": "1.3",
+      "help": "Specifies the value of the beta coefficient used in the Koch\nand Flokstra slope effect formulation."
+    },
+    "COMPUTE BED ROUGHNESS AT SEDIMENT SCALE": {
+      "type": "LOGICAL",
+      "default": "NO",
+      "help": "Compute a bed roughness at the sediment scale - see\nBED ROUGHNESS PREDICTOR OPTION -. It can be different from\nthe hydrodynamics roughness due to the action of waves or to\na space-time varying grain size distribution. This roughness\ncould be sent to Telemac but it is not supported yet."
+    },
+    "SECONDARY CURRENTS ALPHA COEFFICIENT": {
+      "type": "REAL",
+      "default": "1.0E-00",
+      "help": "Alpha coefficient of secondary current(-),\nShould be chosen between 0.75 (rough bottom) and 1 (smooth bottom)"
+    },
+    "MORPHOLOGICAL FACTOR": {
+      "type": "REAL",
+      "default": "1.",
+      "help": "Amplification coefficient for bed evolution"
+    },
+    "OUTPUT TIME ACCORDING TO MORPHOLOGICAL FACTOR": {
+      "type": "LOGICAL",
+      "default": "NO",
+      "help": "If yes the output time in the \\gaia result file will be equal\nto the hydrodynamic time multiplied by the morphological factor."
+    },
+    "MINIMUM DEPTH FOR BEDLOAD": {
+      "type": "REAL",
+      "default": "1.E-2",
+      "help": "To cancel sediment fluxes to and from dry points"
+    },
+    "BED LOAD FOR ALL SANDS": {
+      "type": "LOGICAL",
+      "default": "NO",
+      "help": "Enables bedload for all sands"
+    },
+    "BED-LOAD TRANSPORT FORMULA FOR ALL SANDS": {
+      "type": "INTEGER",
+      "default": "1",
+      "help": "10 bed-load or total load transport formulas are implemented in\nGAIA.\nThe formula Ne3, Ne30 and Ne9 should not be used in the case of coupling\nwith the suspension.\nThe formula Ne4, Ne5, Ne8 and Ne9  model the transport under the\ncombined action of currents and waves :\n                 1 : MEYER-PETER (bed load)\n                 2 : EINSTEIN-BROWN (bed load)\n                 3 : ENGELUND-HANSEN + CHOLLET AND CUNGE (VERSION 5.3)\n                 30: ENGELUND-HANSEN (total)\n                 4 : BIJKER (bed load + suspension)\n                 5 : SOULSBY - VAN RIJN (bed load + suspension)\n                 6 : HUNZIKER (only for sand grading)\n                     IN THIS CASE HIDING FACTOR KEYWORD DISCARDED\n                     And Hunziker formula used\n                 7 : VAN RIJN (bed load)\n                 8  : BAILARD (bed load + suspension)\n                 9 : DIBAJNIA ET WATANABE (total)\n            \t\t10 : WILCOCK AND CROWE (graded sediment)\nUsers can also program other formulas (subroutine bedload\\_qb\\_user.f)\nsetting this key word to zero :\n                 0 : FORMULA PROGRAMMED BY USER\nWarning : it is not then possible to choose the option\nVARIABLE TIME-STEP"
+    },
+    "B VALUE FOR THE BIJKER FORMULA": {
+      "type": "REAL",
+      "default": "2.E0",
+      "help": "b value for the Bijker formula"
+    },
+    "MPM COEFFICIENT": {
+      "type": "REAL",
+      "default": "8.0E-00",
+      "help": "Alpha coefficient for Meyer-Peter and Muller formula"
+    },
+    "BED MODEL": {
+      "type": "INTEGER",
+      "default": "1",
+      "help": "3 kinds of bed model are available:\n1 : multilayers (automatic active layer if several classes)\n2 : multilayer with consolidation\n3 : consolidation model based on Gibson theory"
+    },
+    "CLASSES TYPE OF SEDIMENT": {
+      "type": "STRING",
+      "default": "",
+      "help": " Liste of types of sediment: cohesive (CO) ou non cohesive (NCO)."
+    },
+    "NUMBER OF LAYERS OF THE CONSOLIDATION MODEL": {
+      "type": "INTEGER",
+      "default": "1",
+      "help": "Vertical bed structure - The number of layers should be less\n       than 10"
+    },
+    "LAYERS MASS TRANSFER": {
+      "type": "REAL",
+      "default": "",
+      "help": "Mass transfert coefficients of\nthe multilayer consolidation model in s-1"
+    },
+    "LAYERS MUD CONCENTRATION": {
+      "type": "REAL",
+      "default": "",
+      "help": "Concentrations of the mud-bed in g per l (per layer)"
+    },
+    "LAYERS CRITICAL EROSION SHEAR STRESS OF THE MUD": {
+      "type": "REAL",
+      "default": "0.5;1.",
+      "help": "Critical erosion shear stress of the mud per layer (N per m2)"
+    },
+    "VERTICAL GRAIN SORTING MODEL": {
+      "type": "INTEGER",
+      "default": "0",
+      "help": "Defines the model of the vertical grain sorting:\n        0 = HR-VSM = Layer Model (Classic Hirano / Ribberink approach)\n        1 = C-VSM (Continous Vertical Grain Sorting Model)"
+    },
+    "C-VSM MAXIMUM SECTIONS": {
+      "type": "INTEGER",
+      "default": "200",
+      "help": "Defines the maximum discretisation of the\n         Continous Vertical Sorting Model:\n         Should be bigger than 8xNumber of Fractions.\n         The bigger the higher the RAM requirements,\n         but the faster and accurater the\n         bookkeeping of the sediments."
+    },
+    "C-VSM FULL PRINTOUT PERIOD": {
+      "type": "INTEGER",
+      "default": "0",
+      "help": "Number of Timesteps to next printout\n         of the full C-VSM. These printouts are highly\n         time and disc consuming.\n         0 = Coupled to GRAPHIC PRINTOUT PERIOD\n         >0 = Own printout period for the C-VSM"
+    },
+    "C-VSM PRINTOUT SELECTION": {
+      "type": "STRING",
+      "default": "'0;0;0;0;0;0;0;0;0;0;0;0;0'",
+      "help": "Printout the C-VSM for the whole model as 3D\n         \\telkey{C-VSM RESULTS FILE}\n         or / and for some nodes as\n         \\telkey{C-VSM NODE FILE}\n         Give Up to 100 INTEGER numbers separated by \";\"\n         0 = Full model .-> VSPRES\n         N = 1,2...NPOINT; 2D-ID of a SELFIN MESH POINT ->*\\_VSP.CSV"
+    },
+    "ACTIVE LAYER THICKNESS FORMULA": {
+      "type": "INTEGER",
+      "default": "0",
+      "help": "MODEL FOR ACTIVE LAYER THICKNESS\n         0 = ELAY0 (Keyword: ACTIVE LAYER THICKNESS)\n         1 = Hunziker \\& G$\\ddot{u}$nther\n         2 = Fredsoe \\& Deigaard (1992)\n         3 = van RIJN (1993)\n         4 = Wong (2006)\n         5 = Malcherek (2003)\n         6 = $3*d50$ within last time steps ALT"
+    }
+  }
+}

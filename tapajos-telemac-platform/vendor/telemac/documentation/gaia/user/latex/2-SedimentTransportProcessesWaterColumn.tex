@@ -1,0 +1,427 @@
+%-------------------------------------------------------------------------------
+\chapter[Sediment Transport Processes in the Water Column]{Sediment Transport Processes in the Water Column}
+\label{chap:SuspendedSedimentTransport}
+%-------------------------------------------------------------------------------
+
+Suspended sediment particles being transported by the flow at a given time and maintained in temporary suspension above the bottom by the action of upward-moving turbulent eddies are commonly called \textit{suspended load}. The equation describing mass conservation of suspended sediment is the advection-diffusion equation (ADE), that is valid only for dilute suspensions of particles that are not too coarse (i.e.,~$\leq$ 0.5 mm).
+
+Within this new sediment transport framework, the solution of the ADE, completed with appropriate boundary and initial conditions, is computed by \telemac{2D} or \telemac{3D} for 2D and 3D cases respectively, assuming the suspended sediment as a tracer (passive tracer in 2D and active tracer in 3D). The solution procedure remains almost invisible to the user since the physical parameters are provided by the \gaia{} steering file. Even though, we suggest to readers to refer to the tracer transport chapters of \telemac{2D} and \telemac{3D} user guides for a complete overview of advection-diffusion problems. Two advantages of this procedure are evident: ($i$) to stay up-to-date with the numerical schemes and algorithm developments in the hydrodynamics modules for the solution of the advection terms and ($ii$) for a clearer distinction between sediment transport processes happening in the water column, in the near-bed, and in the bed structure (for example in cases where exchanges with the bottom are not required such as suspended sediment transport over a rigid bed).
+
+The chapter describes the keywords and further user's settings relative to the
+suspended sediment transport. The user guides are described without
+distinguishing between 2D or 3D where possible. When differences arise between
+the 2D and the 3D sediment treatment, a clear distinction is done. No distinction
+is done between cohesive and non-cohesive sediments, except when options are
+different according to the kind of sediment.
+
+%-------------------------------------------------------------------------------
+\section{Advection-diffusion equation for suspended sediment transport}
+\label{sec:ADE:suspended}
+%-------------------------------------------------------------------------------
+%2D suspended transport
+In 2D cases, the suspended sediment transport is accounted by solving the two-dimensional advection-diffusion equation, expressed by:
+\begin{equation}\label{eq:2DADE}
+\frac{\partial hC}{\partial t} + \frac{\partial hUC}{\partial x} + \frac{\partial hVC}{\partial y} =
+\frac{\partial}{\partial x}\left(h\epsilon_s\frac{\partial C}{\partial x}\right) +
+\frac{\partial}{\partial y}\left(h\epsilon_s\frac{\partial C}{\partial y}\right) + E-D
+\end{equation}
+where $C=C(x,y,t)$ is the depth-averaged concentration \textcolor{black}{\bf expressed in g/l}, $(U,V)$ are the depth-averaged components of the velocity in the $x$ and $y$ directions, respectively, $\epsilon_s$ is the turbulent diffusivity of the sediment, often related to the eddy viscosity $\epsilon_s=\nu_t/\sigma_c$, with $\sigma_c$ the Schmidt number. In our case, $\sigma_c=1.0$.
+$E$ and $D$ are respectively the erosion and deposition fluxes which will be defined in chapter \ref{sec:ExcNCOH} for non-cohesive sediments and in chapter \ref{Chap:Sed:Ex:cohesive} for cohesive sediments.
+
+The value of $\epsilon_s$ can be set through the keyword \telkey{COEFFICIENT FOR
+ DIFFUSION OF SUSPENDED SEDIMENTS} (real type value, {\ttfamily = 1.E-6} by
+default).
+
+%3D suspended transport
+In 3D cases, the suspended sediment transport is accounted by solving the three-dimensional advection-diffusion equation, expressed by:
+\begin{equation}\label{eq:3DADE}
+\frac{\partial C}{\partial t} + \frac{\partial uC}{\partial x} + \frac{\partial vC}{\partial y} + \frac{\partial wC}{\partial z} -\frac{\partial w_sC}{\partial z} =
+\frac{\partial}{\partial x}\left(\epsilon_{sh}\frac{\partial C}{\partial x}\right) +
+\frac{\partial}{\partial y}\left(\epsilon_{sh}\frac{\partial C}{\partial y}\right) +
+\frac{\partial}{\partial z}\left(\epsilon_{sv}\frac{\partial C}{\partial z}\right) + S
+\end{equation}
+where $C=C(x,y,z,t)$ is the concentration \textcolor{black}{\bf expressed in g/l}, $(u,v,w)$ are the components of the velocity in the $x$, $y$ and $z$ directions, respectively. $w_s$ is the sediment settling velocity. $(\epsilon_{sh}, \epsilon_{sv})$ are the diffusion coefficients in the horizontal and vertical directions, respectively.
+$S$ is sources or sinks term.
+$z$ ranges from $-H(x,y,t)$, the lowest limit where the water is undisturbed,
+ to $WSE(x,y,t)$, the water surface elevation.
+\begin{equation*}\label{eq:at_mH}
+At ~~~ z=-H(x,y,t)~, w_sC + \epsilon_{sv}\frac{\partial C}{\partial z} = D-E
+\end{equation*}
+where $D$, $E$ are the deposition and erosion fluxes respectively.
+They will be defined and detailed in chapter \ref{sec:ExcNCOH} for non cohesive
+sediments and in chapter \ref{Chap:Sed:Ex:cohesive} for cohesive sediments.
+
+The value of $\epsilon_{sh}$ can be set through the keyword \telkey{COEFFICIENT FOR
+ HORIZONTAL DIFFUSION OF SUSPENDED SEDIMENTS} (real type list, {\ttfamily = 1.E-6}
+by default). The value for $\epsilon_{sv}$ can be set through the keyword
+\telkey{COEFFICIENT FOR VERTICAL DIFFUSION OF SUSPENDED SEDIMENTS}
+(real type list, {\ttfamily = 1.E-6} by default)
+
+It is worth to notice that concentration must always be expressed in g/l
+(e.g. for the initial concentration of sediments and so on) since some parts
+of the equations like source terms
+in 2D are coded considering g/l as unit. If user wishes to refer to volume
+concentration he needs to do this in a post-processing step. We recall that
+$C_v=C_m/\rho_s$ where $C_m$ is tha mass concentration (g/l) and $\rho_s$ is the
+sediment density (kg/m$^3$) while $C_v$ is the
+volume concentration (/), which express the ratio between the solid volume and
+the total volume (solid volume + water volume). The mass concentration express
+the ratio between the mass of suspended sediment (dry weight of solids) and the
+total volume.
+
+The suspended load can be activated through the keyword \telkey{SUSPENSION FOR ALL
+SANDS} (logical type , {\ttfamily = NO} by default) in case of non-cohesive
+sediments while is automatically activated for cohesive sediments.
+
+%...............................................................................
+\section{Initial conditions for suspended sediment transport}
+%...............................................................................
+The initial condition value of the concentration can be specified through the keyword \telkey{INITIAL SUSPENDED SEDIMENTS CONCENTRATION VALUES} (real type list, {\ttfamily = 0.0} by default), following the order given in \telkey{CLASSES TYPE OF SEDIMENT}.
+These values must be \textcolor{black}{\bf expressed in g/l}. In 2D, this keyword is not considered on boundary nodes if \texttt{EQUILIBRIUM INFLOW CONCENTRATION = YES}.\\
+
+\begin{lstlisting}[frame=trBL]
+INITIAL SUSPENDED SEDIMENTS CONCENTRATION VALUES :0.D0;1.D0;...
+\end{lstlisting}
+
+\section{Boundary conditions for suspended sediment transport}
+
+The specification of boundary conditions is done in a boundary condition file, usually named with extension \texttt{*.cli}. The reader is referred to \S\ref{sec:flags} for the definition of the different flags used in the boundary condition file.
+
+\subsection{Wall boundary conditions}
+At banks and islands, the no-flux boundary condition is imposed: the suspended load concentration gradients are set to zero.
+\begin{equation}
+\label{eq:BC-noflux}
+\epsilon_s\frac{\partial C}{\partial n}=\epsilon_s \Grad C \cdot \vec{n}=0
+\end{equation}
+For this case, the flag \texttt{LIEBOR} is set \texttt{= 2} as shown in the example below:
+
+\begin{lstlisting}[frame=trBL]
+2 2 2 0.0 0.0 0.0 0.0 (*@\color{PantoneRed}2@*) 0.0 0.0 0.0 565 1
+\end{lstlisting}
+
+\subsection{Inflow boundary conditions}
+Several ways to impose the concentration at inflow boundary conditions are proposed in \gaia. For this case, the flag \texttt{LICBOR} is set \texttt{= 5}, with the following options for the concentration values:
+\begin{itemize}
+\item Specified in the column \texttt{CBOR}. In the example below, a concentration value {\ttfamily = 1.0} g/l is provided:
+\begin{lstlisting}[frame=trBL]
+4 5 5 0.0 0.0 0.0 0.0 (*@\color{PantoneRed}5@*) (*@\color{PantoneRed}1.0@*) 0.0 0.0 565 1
+\end{lstlisting}
+\item Specified by the concentration values at the boundary through the keyword \telkey{PRESCRIBED SUSPENDED SEDIMENTS CONCENTRATION VALUES} (real type list of size equal to the number of boundaries $\times$ the number of sediment classes), expressed in g/l:
+\begin{lstlisting}[frame=trBL]
+4 5 5 0.0 0.0 0.0 0.0 (*@\color{PantoneRed}5@*) 0.0 0.0 0.0 565 1
+\end{lstlisting}
+\begin{lstlisting}[frame=trBL]
+  PRESCRIBED SUSPENDED SEDIMENTS CONCENTRATION VALUES =
+  0.0; 0.0; 1.0; ...
+\end{lstlisting}
+The order is the following: boundary 1 (class 1, class2, etc.), then boundary 2, etc.
+\item Computed by \gaia{} in 2D cases through the keyword \telkey{EQUILIBRIUM INFLOW CONCENTRATION} (logical type variable, {\ttfamily = NO} by default).
+For non-choesive sediments, the equilibrium inflow concentration will be computed also according to the choice of the formula of equilibrium near-bed concentration (\telkey{SUSPENSION TRANSPORT FORMULA FOR ALL SANDS = 1} by default).
+
+\begin{lstlisting}[frame=trBL]
+4 5 5 0.0 0.0 0.0 0.0 (*@\color{PantoneRed}5@*) 0.0 0.0 0.0 565 1
+\end{lstlisting}
+\begin{lstlisting}[frame=trBL]
+EQUILIBRIUM INFLOW CONCENTRATION = YES
+SUSPENSION TRANSPORT FORMULA FOR ALL SANDS = 1
+\end{lstlisting}
+\item Time-varying concentration values (in g/l) must be provided in an external \texttt{ASCII} file. In this case the keyword \telkey{LIQUID BOUNDARIES FILE} has to be used in the hydrodynamic steering file of \telemac{2D} or \telemac{3D} according to the case. Suspended sediment concentrations are treated like tracers, the reader is thus referred to the user manual of modules \telemac{2D} or \telemac{3D}.
+If tracers and sediments are declared at the same time, sediments will be allocated after tracers. For example if we have 3 tracers and 2 suspended sediments, the first sediments will be the fourth tracer.
+\begin{lstlisting}[frame=trBL]
+4 5 5 0.0 0.0 0.0 0.0 (*@\color{PantoneRed}5@*) 0.0 0.0 0.0 565 1
+\end{lstlisting}
+\begin{lstlisting}[frame=trBL]
+LIQUID BOUNDARIES FILE = '<file name>'
+\end{lstlisting}
+\item Vertical profile provided in 3D cases through the keyword \telkey{VERTICAL PROFILES OF SUSPENDED SEDIMENTS}, which can be equal to:
+\begin{itemize}
+\item 0 if the profile is programmed by users,
+\item 1 if constant profile,
+\item 2 if Rouse profile,
+\item 3 if normalised Rouse profile and assigned concentration,
+\item 4 if modified Rouse profile with molecular viscosity.
+\end{itemize}
+\end{itemize}
+
+According to the hydrodynamic forcing, the use of the keyword \telkey{EQUILIBRIUM INFLOW CONCENTRATION} can be used to prevent the excessive erosion and deposition on the inflow boundary (for 2D cases).
+
+Stability issues at inflow boundaries can be solved by activating the keyword \telkey{TREATMENT OF FLUXES AT THE BOUNDARIES} (integer type variable, {\ttfamily = 1}, default option) in the steering file of \telemac{2D} or \telemac{3D}. The choice {\ttfamily = 1} can be activated when prescribed values are provided. The choice {\ttfamily = 2} is used when fluxes are imposed, allowing a correct mass balance.
+The latter is strongly reccomended for mass-conservation reasons.
+
+\subsection{Outflow boundary conditions}
+At the outflow boundary, the suspended load concentration gradient in the flow direction is set to zero. For this case, the flag \texttt{LICBOR} is set \texttt{= 4} as shown in the example below:
+
+\begin{lstlisting}[frame=trBL]
+5 4 4 0.0 0.0 0.0 0.0 (*@\color{PantoneRed}4@*) 0.0 0.0 0.0 565 1
+\end{lstlisting}
+
+%...............................................................................
+%\subsection{Diffusion and dispersion} -> what about this part now?
+%%...............................................................................
+%The diffusion term in the ADE for the depth-averaged suspended concentration is taken into account with the keyword \telkey{ DIFFUSION} (logical type, set {\ttfamily = YES} by default). The values of the diffusion coefficients can be specified with the keyword \telkey{ OPTION FOR THE DISPERSION} (integer type, set {\ttfamily = 1} by default), with the following options:
+%\begin{itemize}
+%\item {\ttfamily = 1}: values of the longitudinal and transversal dispersion coefficients are provided with the keywords \texttt{DISPERSION ALONG THE FLOW} and \texttt{DISPERSION ACROSS THE FLOW}, respectively:
+%\begin{itemize}
+%\item \telkey{DISPERSION ALONG THE FLOW} (real type, set {\ttfamily = $1.0 \times 10^{-2}$ m$^2/$s} by default)
+%\item \telkey{DISPERSION ACROSS THE FLOW} (real type, set {\ttfamily = $1.0 \times 10^{-2}$ m$^2/$s} by default)
+%\end{itemize}
+%
+%\item {\ttfamily = 2}: values of the longitudinal and transversal dispersion coefficients are computed with the Elder model $T_l=\alpha_l u_* h$ and $T_t=\alpha_t u_* h$, where the coefficients $\alpha_l$ and $\alpha_t$ can be provided with the keywords \texttt{DISPERSION ALONG THE FLOW} and \texttt{DISPERSION ACROSS THE FLOW}.
+%\item {\ttfamily = 3}: values of the dispersion coefficients are provided by the hydrodynamics module (e.g. \telemac{2D})
+%\end{itemize}
+
+%...............................................................................
+\section{Numerical treatment of the advection terms}
+%...............................................................................
+The choice for the scheme for the treatment of the advection terms can be done with the keyword \texttt{SCHEME FOR ADVECTION OF SUSPENDED SEDIMENTS} (integer type, set {\ttfamily = 5} by default):
+\begin{lstlisting}[frame=trBL]
+1="CHARACTERISTICS"
+2="SUPG"
+4="N SCHEME"
+5="PSI SCHEME"
+13="EDGE-BASED N SCHEME"
+14="EDGE-BASED N SCHEME"
+15="ERIA SCHEME" (only for 2D)
+\end{lstlisting}
+
+The keyword \texttt{SCHEME OPTION FOR ADVECTION OF SUSPENDED SEDIMENTS} can be used to choose futher options for some of the advection schemes. In particular, if characteristics are used (i.e. \texttt{SCHEME FOR ADVECTION OF SUSPENDED SEDIMENTS = 1}), the following options are possible :
+\begin{itemize}
+\item \texttt{1}: strong form;
+\item \texttt{2}: weak form.
+\end{itemize}
+If advection is solved by the N or PSI scheme (i.e. \texttt{SCHEME FOR ADVECTION OF SUSPENDED SEDIMENTS = 4 or 5}), options are:
+\begin{itemize}
+\item \texttt{1}: explicit scheme;
+\item \texttt{2}: first order predictor-corrector scheme;
+\item \texttt{3}: second order predictor-corrector scheme;
+\item \texttt{4}: local semi-implicit scheme.
+\end{itemize}
+The keyword \texttt{SCHEME OPTION FOR ADVECTION OF SUSPENDED SEDIMENTS} is not
+useful when using \texttt{SCHEME FOR ADVECTION OF SUSPENDED SEDIMENTS}
+{\ttfamily = 2,13,14,15} since these schemes haven't further options.
+
+To have more details about these keywords, readers can refer to the \telemac{2D} or \telemac{3D} user guide (cf. chapters about tracer advection). In fact, the advection scheme used by sediments is exactly the same used by tracers, implemented in hydrodynamics modules. Keywords \texttt{SCHEME FOR ADVECTION OF SUSPENDED SEDIMENTS} and \texttt{SCHEME OPTION FOR ADVECTION OF SUSPENDED SEDIMENTS} have been added from V8P2 in \gaia{} in order to have proper steering files.
+
+\begin{WarningBlock}{Note:}
+  For completely wet cases it is recommended to use the schemes {\ttfamily 5} or
+ {\ttfamily 14} for a good compromise between accuracy and computational time
+ (i.e. first order schemes in time and low CPU time). If more accuracy is needed
+ then
+ it is suggested to use the scheme {\ttfamily 4} with option {\ttfamily 3}:
+ second order scheme but higher CPU time.
+ When tidal flats are present, it is recommended to use scheme {\ttfamily 14}
+ for a good compromise between accuracy and computational time. If more accuracy
+ is needed it is suggested to use scheme {\ttfamily 4} with option {\ttfamily 4}
+ or scheme {\ttfamily 15}.
+ For 2D simulations is also suggested to activate the keyword \telkey{CONTINUITY
+ CORRECTION = YES} in the steering file of \telemac{2D}.
+\end{WarningBlock}
+
+A brief description of the numerical schemes implemented in \gaia{} is given below:
+\begin{itemize}
+\item \textbf{Method of characteristics} (\texttt{1})
+\begin{itemize}
+\item Unconditionally stable and monotonous
+\item Diffusive for small time steps
+\item Not conservative
+\end{itemize}
+\item \textbf{Method Streamline Upwind Petrov Galerkin SUPG} (\texttt{2})
+\begin{itemize}
+\item Based on the Courant number criteria
+\item Less diffusive for small time steps,
+\item Not conservative
+\end{itemize}
+\item \textbf{N-scheme (similar to finite volumes)} (\texttt{4})
+\begin{itemize}
+\item Conservative: solves the continuity equation under its conservative form
+\item Recommended for correction on convection velocity
+\item Courant number limitation (sub-iterations to reduce time step)
+\end{itemize}
+\item \textbf{Edge-based N-scheme NERD} (\texttt{13, 14})
+\begin{itemize}
+\item Same as \texttt{4} but adapted to tidal flats
+\item Based on positive-depth algorithm
+\end{itemize}
+\item \textbf{Distributive schemes PSI} (\texttt{5})
+\begin{itemize}
+\item Fluxes corrected according to the tracer value: relaxation of Courant number criteria, less diffusive than
+schemes \texttt{4, 14} (since second order in space) but larger CPU time
+\item Should not be applied for tidal flats
+\end{itemize}
+\item \textbf{Eria scheme} (\texttt{15})
+\begin{itemize}
+\item Works for tidal flats
+\item Less diffusive than \texttt{14}
+\end{itemize}
+\end{itemize}
+For further information about these schemes, refer to \telemac{2D} user manual.
+
+%...............................................................................
+\section{Numerical treatment of the diffusion terms}
+%...............................................................................
+\subsection{Bidimensional case}
+The keyword \telkey{OPTION FOR THE DIFFUSION OF TRACER} (integer type, set {\ttfamily = 1} by default) allows to choose the treatment of the diffusion terms in the advection-diffusion equation \ref{eq:2DADE} for the depth-averaged suspended concentration:
+\begin{itemize}
+\item \texttt{= 1}: the diffusion term is solved in the form $\nabla\cdot(\varepsilon_s\nabla C)$
+\item \texttt{= 2}: the diffusion term is solved in the form $\frac{1}{h}\nabla\cdot(h\varepsilon_s\nabla C)$
+\end{itemize}
+This keyword must be activated in the steering file of \telemac{2D}; user can refer to the corresponding user manual for further details.
+The scheme used to solve the diffusion term is a completely implicit scheme.
+\subsection{Tridimensional case}
+The keyword \telkey{SCHEME FOR DIFFUSION OF SUSPENDED SEDIMENTS IN 3D} (integer type, set {\ttfamily = 1} by default) allows to choose the treatment of the diffusion terms. Choices are:
+\begin{itemize}
+\item \texttt{= 0}: the diffusion terms are not taken into account
+\item \texttt{= 1}: the diffusion terms are solved by a scheme with a variable implicitation coefficient
+\end{itemize}
+The implicitation coefficient used for option {\ttfamily = 1} can be set through
+the keyword \telkey{IMPLICITATION FOR DIFFUSION} (real type, set {\ttfamily = 1.}
+by default). This last keyword must be activated in the steering file of
+\telemac{3D}.
+% copy the keyword in GAIA?
+\subsection{Solution of the linear system}
+As for the tracers in \telemac{2D} and in \telemac{3D}, the following
+keywords can be used to set the numerical parameters related to the solution
+ of the linear system:
+\begin{itemize}
+\item \telkey{SOLVER FOR DIFFUSION OF SUSPENSION} (integer type list, set
+{\ttfamily = 1} by default). For each suspended sediments, the following
+options are possible:
+%from T3D user doc
+ \begin{itemize}
+\item 1: conjugate gradient method (when the matrix of the system to solve
+is symmetric),
+
+\item 2: conjugate residual method,
+
+\item 3: conjugate gradient on a normal equation method,
+
+\item 4: minimum error method,
+
+\item 5: square conjugate gradient method,
+
+\item 6: CGSTAB (stabilized conjugate gradient) method,
+
+\item 7: GMRES (Generalised Minimum RESidual) method,
+
+\item 8: direct solver (YSMP, solver of the Yale university),
+does not work in parallel mode.
+ \end{itemize}
+\item \telkey{SOLVER OPTION FOR DIFFUSION OF SUSPENSION} (integer type, set
+ {\ttfamily = 5} by default). This option is useful only for the GMRES solver
+and states the dimension of the Krylov space used by the solver.
+\item \telkey{MAXIMUM NUMBER OF ITERATIONS FOR SOLVER FOR SUSPENSION} (integer
+type list, set {\ttfamily = 60} by default). It states the maximum number of
+iterations used to solve the linear system at every time step.
+\item \telkey{ACCURACY FOR DIFFUSION OF SUSPENSION} (real type, set to {\ttfamily
+ = 1.E-8}) by default.
+\item \telkey{PRECONDITIONING FOR DIFFUSION OF SUSPENSION} (integer type list, set
+{\ttfamily = 2} by default). The solution of the linear system can be facilitate
+by the preconditioning of matrices. For each solver used for suspended sediments,
+the following options are available:
+%from T3D user doc
+\begin{itemize}
+\item 0:  no preconditioning,
+
+\item 2:  diagonal preconditioning,
+
+\item 3:  diagonal preconditioning with the condensed matrix,
+
+\item 5:  diagonal preconditioning with absolute values,
+
+\item 7:  Crout preconditioning per elementCrout (downgraded in parallel),
+
+\item 11: Gauss-Seidel preconditioning per element (downgraded in parallel),
+
+\item 13: preconditioning matrix is provided by the user,
+
+\item 14: cumulated diagonal preconditioning and Crout preconditioning per
+element,
+
+\item 17:  preconditioning through direct solution along each vertical
+direction,
+
+\item 21:  cumulated diagonal preconditioning with the condensed matrix and
+Crout preconditioning per element,
+
+\item 34:  cumulated diagonal preconditioning with direct solution along each
+vertical direction.
+\end{itemize}
+Options {\ttfamily = 17,21,34} are only for 3D simulations.
+\end{itemize}
+Information about the solvers are printed in the listing printout of a
+run. If the maximum number of iterations is reached, this number can be increased
+but it is suggested to not exceed high values (like 150/200). It is rather
+recommended to reduce the time step in order to improve the convergence.
+
+The user is invited to look to the \telemac{2D} and \telemac{3D} user
+documentation for more details about these numerical settings for solvers.
+%...............................................................................
+\section{Correction of the convection velocity (in 2D)}
+%...............................................................................
+As most of the sediment transport processes occur near the bed, it often exhibits an over-estimation of suspended sand transport.
+A correction method accounting for the vertical velocity and concentration profiles is therefore proposed {\bf for 2D simulations}. A straightforward treatment of the advection terms would imply the
+definition of an advection velocity and replacement of the depth-averaged
+velocity $U$ along the $x-$axis in Eq.~(\ref{eq:2DADE}) by:
+\begin{equation*}
+U_{conv} = \overline{UC}/C.
+\end{equation*}
+A correction factor is introduced in \gaia, defined by:
+\begin{equation*}
+F_{conv} =\frac{U_{conv}}{U}.
+\end{equation*}
+A similar treatment is done for the depth-averaged velocity $V$ along the $y-$axis. For further details, see~\cite{Huybrechts}.
+The convection velocity should be smaller than the mean flow velocity ($F_{conv} \leq 1$) since sediment concentrations are mostly transported in the lower part of the water column where velocities are smaller. We further
+assume an exponential concentration profile which is a reasonable
+approximation of the Rouse profile, and a logarithmic velocity profile, in
+order to establish the following analytical expression for $F_{conv}$:
+\begin{equation*}
+F_{conv} =-\frac{I_2 - \ln\left(\frac{B}{30}\right) I_1}{I_1 \ln\left(
+\frac{eB}{30}\right)},
+\end{equation*}
+with $B=k_s/h = Z_{ref}/h$ and
+\begin{equation*}
+I_1 =\int_B^1\left(\frac{(1-u)}{u}\right)^R du,\quad I_2 = \int_B^1 \ln u \left(\frac{(1-u)}{u} \right)^R du.
+\end{equation*}
+
+The keyword \texttt{CORRECTION ON CONVECTION VELOCITY = YES} (logical type, set {\ttfamily = NO} by default) modifies the depth-averaged convection velocity to account for the vertical gradients of velocities and concentration.
+
+%...............................................................................
+\section{Settling lag correction (for non-cohesive sediments, in 2D)}
+%...............................................................................
+Sediment transport exhibits temporal lags with flow due to flow and sediment velocity difference and bed development~\cite{wu2007computational, Miles96}. A scaling factor that accounts for both the settling velocity and the lag time is therefore required for the saturation concentration profile to adjust to changes in the flow {\bf in case of non-cohesive sediments}.
+The keyword \telkey{SETTLING LAG} (logical type, set to \texttt{NON} by default) allows to compute the bed exchange factor beta based on Miles~\cite{Miles96} {\bf in 2D simulations}. This keyword must be used with the Nikuradse friction law, prescribed in the \telemac{2D} steering file as \telkey{LAW OF BOTTOM FRICTION = 5}.
+
+%...............................................................................
+\section{Flocculation models (for cohesive sediments, in 3D)}
+%...............................................................................
+If the keyword \telkey{FLOCCULATION} (logical type variable, set to {\ttfamily = NO} by default) is activated, flocculation processes can be accounted in \gaia only for coupling with \telemac{3D}. The choice of the available models can be done through the keyword \telkey{FLOCCULATION FORMULA} {\ttfamily = 1} by default).
+\subsection{Van Leussen's model (1994)}
+The fall velocity is modified as follows:
+\begin{equation*}
+w_{s}^{modif} = w_s \times \frac{1+A \times G}{1 + B\times G^{2}},
+\end{equation*}
+where $A$ [s] and $B$ [s] are the Van Leussen relative coefficients to floc formation and destruction respectively, and $G$ [s$^{-1}$] represents the shear rate, defined as a function of the velocity gradient $\partial U/\partial z$~\cite{Camp1943}:
+\begin{equation*}
+G = \sqrt{\frac{\epsilon}{\nu}}=\sqrt{\frac{\frac{\tau}{\rho}\frac{\partial U}{\partial z}}{\nu}}=\sqrt{\frac{u^{*2}\frac{\partial U}{\partial z}}{\nu}}
+\end{equation*}
+
+The coefficient for floc formation $A$ can be set via the keyword \telkey{FLOCCULATION COEFFICIENT} (real value, equal to 0.3 s$^{-1}$ by default). The coefficient for floc destruction $B$ can be set via the keyword \telkey{COEFFICIENT RELATIVE TO FLOC DESTRUCTION} (real value, equal to 0.09 s$^{-2}$ by default).
+This formula is activated as follows: \telkey{FLOCCULATION FORMULA = 1}.
+\subsection{Soulsby et al's model (2013)}
+This model computes the fall velocity of mud flocs based on Soulsby \texttt{et al.}~\cite{SOULSBY20131}, derived from Manning's floc database.
+This formula is activated as follows: \telkey{FLOCCULATION FORMULA = 2}.
+\subsection{User defined model}
+By using the keyword \telkey{FLOCCULATION FORMULA = 0}, a user's defined flocculation model can be implemented by the user. To this goal, subroutines \texttt{user\_compute\_settling\_vel.f} is available in the folder \texttt{sources/telemac3d}.
+
+%...............................................................................
+\section{Hindered formulations (for cohesive sediments, in 3D)}
+%...............................................................................
+If the keyword \telkey{HINDERED SETTLING} (logical type variable, set to {\ttfamily = NO} by default) is activated, the hindered formulation is used to compute the settling velocities in \gaia only for coupling with \telemac{3D}. The choice of the available formulations can be done through the keyword \telkey{HINDERED SETTLING FORMULA} {\ttfamily = 1} by default). \\
+The different formulations are:
+\begin{itemize}
+\item User defined formula, set by \telkey{HINDERED SETTLING FORMULA} {\ttfamily = 0};
+\item Whitehouse et al. (2000), set by \telkey{HINDERED SETTLING FORMULA} {\ttfamily = 1};
+\item Winterwerp (1999), set by \telkey{HINDERED SETTLING FORMULA} {\ttfamily = 2}.
+\end{itemize}
+To use the user's defined formula, the subroutine \texttt{user\_hindering\_formula.f} needs to be modified. The subroutine is available in the folder \texttt{sources/telemac3d}.
+

@@ -1,0 +1,45 @@
+# Builds directory
+builds/
+
+# Python byte-code files
+*.pyc
+
+# Compiled object files and libraries
+*.o
+*.a
+*.so
+*.obj
+*.lib
+*.dll
+
+# Backup files
+*~
+*.bak
+
+# Makefiles
+configs/makefile*
+!configs/makefile.template
+
+# pysource files
+configs/pysource*
+!configs/pysource.template.*
+
+# Validation directories and generated images
+examples/*/*/vnv_*/
+examples/*/*/img/*.png
+
+# LaTeX generated files 
+documentation/*/*/*.aux
+documentation/*/*/*.bbl
+documentation/*/*/*.blg
+documentation/*/*/*.idx
+documentation/*/*/*.log
+documentation/*/*/*.out
+documentation/*/*/*.ptc
+documentation/*/*/*.toc
+
+# Visual Studio Code workspace settings
+.vscode/*
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/

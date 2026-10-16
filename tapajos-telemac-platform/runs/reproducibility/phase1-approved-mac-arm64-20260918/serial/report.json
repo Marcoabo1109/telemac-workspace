@@ -1,0 +1,153 @@
+{
+  "environment": {
+    "host": {
+      "cpu_count": 12,
+      "hostname": "4d32d2deff15",
+      "machine": "aarch64",
+      "release": "6.12.76-linuxkit",
+      "system": "Linux"
+    },
+    "project": {
+      "git_branch": "main",
+      "git_commit": "f9045c5b21ed404f7cbcd7b2bacf6a273bd3af4c",
+      "git_dirty": false
+    },
+    "recorded_at": "2026-09-18T19:00:27.255501+00:00",
+    "reference_case": {
+      "combined_sha256": "a0591cbdbb20b7ed9493b980ec3d4dd94e7ae55c58135266b4adf34add42eaed",
+      "description": "Culm reference case shortened to 20 steps of 2 seconds",
+      "files": [
+        {
+          "path": "data/culm/t2d_culm.cas",
+          "sha256": "757f4bd32f43fe18aa98cbbc014f36e33e32c31a54d02f7b7ce743d6cec2b262"
+        },
+        {
+          "path": "data/culm/geo_culm.slf",
+          "sha256": "b63ed1ef1533a7fd657136cb6047da7b25e4cc528325a0eef7b1ffea445092f4"
+        },
+        {
+          "path": "data/culm/geo_culm.cli",
+          "sha256": "90de21909252f44aa458a08b1209b7b1ac2c39e57042438e42c55b52ce87c255"
+        },
+        {
+          "path": "data/culm/ini_culm.slf",
+          "sha256": "108d194dc375b41cc59cbed6df042e846fede15a5c7a7b17bde991ad8de61592"
+        },
+        {
+          "path": "data/culm/t2d_culm.qsl",
+          "sha256": "98bcb2ebe858da6a1ed6a2ea37adbf42a723216a10d1f5cd11d755c85034d4fa"
+        }
+      ],
+      "final_time_seconds": 40.0,
+      "id": "culm-20x2s-v1",
+      "steps": 20,
+      "time_step_seconds": 2.0
+    },
+    "runtime": {
+      "gfortran": "GNU Fortran (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0",
+      "mpiexec": "mpiexec (OpenRTE) 4.1.2",
+      "node": null,
+      "npm": null,
+      "packages": {
+        "fastapi": "0.141.1",
+        "gmsh": null,
+        "numpy": "1.26.4",
+        "pandas": "3.0.5",
+        "scipy": "1.17.1"
+      },
+      "python": "3.11.14",
+      "python_executable": "/usr/local/bin/python3.11"
+    },
+    "schema_version": 1,
+    "telemac": {
+      "configuration": "gnu",
+      "configuration_file": "/opt/telemac/configs/systel-platform.cfg",
+      "executable": "/app/docker/run-telemac",
+      "git_commit": null,
+      "root": "/opt/telemac"
+    }
+  },
+  "ncores": 1,
+  "reference_case": {
+    "combined_sha256": "a0591cbdbb20b7ed9493b980ec3d4dd94e7ae55c58135266b4adf34add42eaed",
+    "description": "Culm reference case shortened to 20 steps of 2 seconds",
+    "files": [
+      {
+        "path": "data/culm/t2d_culm.cas",
+        "sha256": "757f4bd32f43fe18aa98cbbc014f36e33e32c31a54d02f7b7ce743d6cec2b262"
+      },
+      {
+        "path": "data/culm/geo_culm.slf",
+        "sha256": "b63ed1ef1533a7fd657136cb6047da7b25e4cc528325a0eef7b1ffea445092f4"
+      },
+      {
+        "path": "data/culm/geo_culm.cli",
+        "sha256": "90de21909252f44aa458a08b1209b7b1ac2c39e57042438e42c55b52ce87c255"
+      },
+      {
+        "path": "data/culm/ini_culm.slf",
+        "sha256": "108d194dc375b41cc59cbed6df042e846fede15a5c7a7b17bde991ad8de61592"
+      },
+      {
+        "path": "data/culm/t2d_culm.qsl",
+        "sha256": "98bcb2ebe858da6a1ed6a2ea37adbf42a723216a10d1f5cd11d755c85034d4fa"
+      }
+    ],
+    "final_time_seconds": 40.0,
+    "id": "culm-20x2s-v1",
+    "steps": 20,
+    "time_step_seconds": 2.0
+  },
+  "result": {
+    "nodes": 1130,
+    "path": "result.slf",
+    "sha256": "69376e69d40de44e52a44ea49c424ab5ff7ce77446d0132f8be8a3ccd9fa5deb",
+    "times": [
+      0.0,
+      10.0,
+      20.0,
+      30.0,
+      40.0
+    ],
+    "triangles": 2019,
+    "variables": {
+      "BOTTOM": {
+        "maximum": 46.024993896484375,
+        "mean": 32.629853118626414,
+        "minimum": 21.90899658203125,
+        "rms": 33.39763550580452,
+        "unit": "M"
+      },
+      "FREE SURFACE": {
+        "maximum": 46.328758239746094,
+        "mean": 33.43353580576129,
+        "minimum": 23.79896354675293,
+        "rms": 34.1891637508556,
+        "unit": "M"
+      },
+      "VELOCITY U": {
+        "maximum": 1.1991815567016602,
+        "mean": 0.2487137578074552,
+        "minimum": -0.25398385524749756,
+        "rms": 0.3414668854433406,
+        "unit": "M/S"
+      },
+      "VELOCITY V": {
+        "maximum": 1.529862403869629,
+        "mean": 0.21863722060432023,
+        "minimum": -0.8983391523361206,
+        "rms": 0.3475794191097875,
+        "unit": "M/S"
+      },
+      "WATER DEPTH": {
+        "maximum": 3.370697498321533,
+        "mean": 0.8036826889269381,
+        "minimum": -0.006729703862220049,
+        "rms": 1.2244617294658893,
+        "unit": "M"
+      }
+    }
+  },
+  "schema_version": 1,
+  "status": "completed"
+}

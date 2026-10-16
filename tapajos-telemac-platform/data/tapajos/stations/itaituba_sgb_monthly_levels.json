@@ -1,0 +1,156 @@
+{
+  "station_code": "17730000",
+  "station_name": "Itaituba",
+  "river": "Tapajós",
+  "source": {
+    "institution": "Serviço Geológico do Brasil",
+    "title": "Prognóstico de níveis do rio Tapajós para o período de vazante de 2025",
+    "publication_date": "2025-09-11",
+    "url": "https://www.sgb.gov.br/sace/boletins/monitoramento_especial/20250916_10-20250930%20-%20105555.pdf",
+    "pdf_sha256": "28d2f744afe596ce4e14b9d8bce03b59913dbfe1bec327931a969d5acc93a437",
+    "table": "3.2",
+    "printed_page": 10,
+    "retrieved_on": "2026-09-09"
+  },
+  "kind": "published_monthly_statistics_not_daily_observations",
+  "unit": "cm",
+  "vertical_reference": "local station gauge zero; geodetic offset unknown",
+  "period_as_described": "1974–2024; source also mentions 1974–2025 in figure narrative, exact table period not explicit",
+  "method": "manual transcription of numerical table; no interpolation",
+  "columns": [
+    "month",
+    "mean",
+    "median",
+    "std",
+    "min",
+    "max",
+    "q1",
+    "q3"
+  ],
+  "rows": [
+    [
+      1,
+      549,
+      551,
+      110,
+      224,
+      832,
+      470,
+      628
+    ],
+    [
+      2,
+      669,
+      676,
+      107,
+      366,
+      960,
+      598,
+      748
+    ],
+    [
+      3,
+      794,
+      807,
+      99,
+      401,
+      1016,
+      736,
+      864
+    ],
+    [
+      4,
+      814,
+      820,
+      82,
+      507,
+      1010,
+      755,
+      878
+    ],
+    [
+      5,
+      749,
+      754,
+      93,
+      527,
+      968,
+      689,
+      813
+    ],
+    [
+      6,
+      656,
+      660,
+      66,
+      488,
+      861,
+      616,
+      703
+    ],
+    [
+      7,
+      592,
+      596,
+      63,
+      395,
+      755,
+      553,
+      634
+    ],
+    [
+      8,
+      497,
+      503,
+      74,
+      227,
+      668,
+      450,
+      551
+    ],
+    [
+      9,
+      364,
+      371,
+      93,
+      83,
+      568,
+      305,
+      432
+    ],
+    [
+      10,
+      253,
+      250,
+      68,
+      84,
+      441,
+      202,
+      299
+    ],
+    [
+      11,
+      262,
+      255,
+      59,
+      116,
+      467,
+      221,
+      303
+    ],
+    [
+      12,
+      367,
+      360,
+      94,
+      153,
+      693,
+      298,
+      430
+    ]
+  ],
+  "notes": [
+    "Do not treat monthly statistics as an observed hydrograph.",
+    "Gauge stage is neither water depth nor geodetic elevation."
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "description": "Cross-platform ARM64/x86_64 regression gates for the deterministic 40 s Culm serial reference. They are not scientific validation tolerances.",
+  "default_max_abs": 1e-05,
+  "variables": {
+    "BOTTOM": 1e-06,
+    "FREE SURFACE": 0.01,
+    "VELOCITY U": 0.03,
+    "VELOCITY V": 0.05,
+    "WATER DEPTH": 0.01
+  }
+}

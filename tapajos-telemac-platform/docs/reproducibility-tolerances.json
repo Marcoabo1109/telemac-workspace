@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "description": "Regression gates for the deterministic 40 s Culm software reference. Limits cover the recorded v8p5r0 serial/MPI differences on ARM64 and x86_64 with a small margin. They are not scientific validation tolerances.",
+  "default_max_abs": 1e-05,
+  "variables": {
+    "BOTTOM": 1e-06,
+    "FREE SURFACE": 0.01,
+    "VELOCITY U": 0.02,
+    "VELOCITY V": 0.05,
+    "WATER DEPTH": 0.01
+  }
+}

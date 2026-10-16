@@ -1,0 +1,86 @@
+{
+  "status": "exploratory_uncalibrated",
+  "collected": {
+    "axis": {
+      "url": "https://api.openstreetmap.org/api/0.6/map?bbox=-55.995,-4.315,-55.955,-4.275",
+      "retrieved_on": "2026-09-09",
+      "raw_sha256": "f50cd92bfc84a4bc95bbf169e3d8a00792e16dabd4fed189c3b3870e561eaf78",
+      "way_id": 26158344,
+      "version": "24",
+      "timestamp": "2026-01-09T17:30:25Z",
+      "tags": {
+        "boat": "yes",
+        "est_width": "800",
+        "name": "Rio Tapajós",
+        "source": "aerial yahoo",
+        "waterway": "river",
+        "width": "3000"
+      },
+      "attribution": "© OpenStreetMap contributors",
+      "license": "ODbL 1.0",
+      "license_url": "https://www.openstreetmap.org/copyright"
+    },
+    "stage_statistics": "data/tapajos/stations/itaituba_sgb_monthly_levels.json"
+  },
+  "assumed": {
+    "width_m": 1200.0,
+    "depth_center_m": 8,
+    "depth_bank_m": 4,
+    "bed_slope": 5e-05,
+    "flow_m3_s": 6000,
+    "strickler_m_1_3_s": 30,
+    "velocity_diffusivity_m2_s": 2,
+    "tracer_diffusivity_m2_s": 5,
+    "gauge_to_model_offset_m": 0,
+    "initial_velocity_m_s": 0,
+    "inlet_normalized_tracer": 1,
+    "initial_normalized_tracer": 0,
+    "tributaries_wind_rain": "omitted",
+    "sediment_reactions_sorption": "omitted"
+  },
+  "derived": {
+    "stage_m": 3.71,
+    "stage_basis": "September climatological median 371 cm / 100; held constant",
+    "bed_formula": "stage - (8 - 4*(distance/(width/2))^2) + slope*(L-s)",
+    "crs": "EPSG:32721",
+    "reach_length_m": 3474.6070251035885,
+    "nodes": 228,
+    "triangles": 397,
+    "liquid_boundary_ids": {
+      "outlet": 1,
+      "inlet": 2
+    },
+    "inlet_nodes": [
+      10,
+      50,
+      49,
+      48,
+      47,
+      46,
+      45,
+      9
+    ],
+    "outlet_nodes": [
+      5,
+      24,
+      23,
+      22,
+      21,
+      20,
+      19,
+      4
+    ]
+  },
+  "numerics": {
+    "dt_s": 2,
+    "duration_s": 3600,
+    "initialization": "still water at constant elevation; startup transient retained"
+  },
+  "limitations": [
+    "No surveyed bank polygon or bathymetry. Width tags in OSM conflict and were not used as measurements.",
+    "No acquired daily flow hydrograph. Flow 6000 m3/s is a scenario assumption.",
+    "Gauge zero has not been tied to a geodetic datum.",
+    "Normalized conservative tracer is not a measured metal concentration.",
+    "One hour demonstrates startup transport; no steady state, convergence or calibration claim."
+  ]
+}

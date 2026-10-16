@@ -1,0 +1,46 @@
+{
+  "first": {
+    "path": "runs/reproducibility/phase1-final-mac-arm64-20260918/serial/result.slf",
+    "sha256": "69376e69d40de44e52a44ea49c424ab5ff7ce77446d0132f8be8a3ccd9fa5deb"
+  },
+  "problems": [],
+  "schema_version": 1,
+  "second": {
+    "path": "runs/reproducibility/phase1-final-cross-20260918/lmacc07-serial/result.slf",
+    "sha256": "ff0d218c283fe7f166af2cf8af5408a9f860101ca242e5eeb97835bc357d5e86"
+  },
+  "status": "passed",
+  "tolerances": "docs/reproducibility-cross-platform-tolerances.json",
+  "variables": {
+    "BOTTOM": {
+      "max_abs_difference": 0.0,
+      "max_abs_tolerance": 1e-06,
+      "passed": true,
+      "rmse": 0.0
+    },
+    "FREE SURFACE": {
+      "max_abs_difference": 0.007232666015625,
+      "max_abs_tolerance": 0.01,
+      "passed": true,
+      "rmse": 0.00015806983198925868
+    },
+    "VELOCITY U": {
+      "max_abs_difference": 0.026005089282989502,
+      "max_abs_tolerance": 0.03,
+      "passed": true,
+      "rmse": 0.000649509598544925
+    },
+    "VELOCITY V": {
+      "max_abs_difference": 0.03731942176818848,
+      "max_abs_tolerance": 0.05,
+      "passed": true,
+      "rmse": 0.0007898731309850427
+    },
+    "WATER DEPTH": {
+      "max_abs_difference": 0.007233977317810059,
+      "max_abs_tolerance": 0.01,
+      "passed": true,
+      "rmse": 0.00015808271609901568
+    }
+  }
+}

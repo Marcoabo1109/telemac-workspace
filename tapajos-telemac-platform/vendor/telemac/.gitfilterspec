@@ -1,0 +1,13 @@
+configs
+documentation
+notebooks
+optionals
+scripts
+sources
+.gitattributes
+.gitignore
+.gitfilterspec
+LICENSE.txt
+NEWS.txt
+README.txt
+REQUIREMENTS.txt

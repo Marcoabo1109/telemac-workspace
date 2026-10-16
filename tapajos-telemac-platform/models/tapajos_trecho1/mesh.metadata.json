@@ -1,0 +1,12 @@
+{
+  "crs": "EPSG:32721",
+  "horizontal_unit": "m",
+  "vertical_datum": "assumed local gauge zero",
+  "bathymetry": "assumed analytical section; see assumptions.json",
+  "boundary": "inlet flow, outlet stage, wall banks",
+  "refinement": "approximate medial axis, not surveyed thalweg",
+  "nodes": 228,
+  "triangles": 397,
+  "calibrated": false,
+  "precision": "SERAFIND 64 bit"
+}

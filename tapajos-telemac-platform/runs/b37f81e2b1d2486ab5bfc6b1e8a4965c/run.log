@@ -1,0 +1,381 @@
+
+
+Loading Options and Configurations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+          ___          _____
+         / _ \        | ____|
+ __   __| (_) | _ __  | |__
+ \ \ / / > _ < | '_ \ |___ \
+  \ V / | (_) || |_) | ___) |
+   \_/   \___/ | .__/ |____/
+               | |
+               |_|
+
+
+Running your CAS file(s) for:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+gnu:
+
+
+    +> Portable GNU/OpenMPI TELEMAC2D build, no architecture-specific patch
+
+    +> root:    /opt/telemac
+    +> module: ad / api / artemis / bief
+               damocles  / gaia  / gretel  / hermes
+               identify_liq_bnd  / khione  / mascaret  / nestor
+               parallel  / partel  / postel3d  / special
+               stbtel  / telemac2d  / telemac3d  / tomawac
+               waqtel
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+... processing the steering file
+  ~> Checking keyword/rubrique coherence
+
+... checking parallelisation
+
+... handling temporary directories
+         copying: case.cas -> /app/runs/b37f81e2b1d2486ab5bfc6b1e8a4965c/case.cas_2026-09-09-12h02min17s/T2DCAS
+         copying: telemac2d.dico -> /app/runs/b37f81e2b1d2486ab5bfc6b1e8a4965c/case.cas_2026-09-09-12h02min17s/T2DDICO
+         copying: mesh.cli -> /app/runs/b37f81e2b1d2486ab5bfc6b1e8a4965c/case.cas_2026-09-09-12h02min17s/T2DCLI
+         copying: mesh.slf -> /app/runs/b37f81e2b1d2486ab5bfc6b1e8a4965c/case.cas_2026-09-09-12h02min17s/T2DGEO
+         copying: tapajos.qsl -> /app/runs/b37f81e2b1d2486ab5bfc6b1e8a4965c/case.cas_2026-09-09-12h02min17s/T2DIMP
+
+... checking the executable
+
+
+Running your simulation(s) :
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+In /app/runs/b37f81e2b1d2486ab5bfc6b1e8a4965c/case.cas_2026-09-09-12h02min17s:
+mpirun -np 1 /app/runs/b37f81e2b1d2486ab5bfc6b1e8a4965c/case.cas_2026-09-09-12h02min17s/out_telemac2d
+
+
+ MASTER PROCESSOR NUMBER            0  OF THE GROUP OF            1
+ EXECUTABLE FILE: /app/runs/b37f81e2b1d2486ab5bfc6b1e8a4965c/case.cas_2026-09-09-12h02min17s/A.EXE
+ LISTING OF TELEMAC2D------------------------------------------------------------------------------
+
+                TTTTT  EEEEE  L      EEEEE  M   M  AAAAA  CCCCC
+                  T    E      L      E      MM MM  A   A  C
+                  T    EEE    L      EEE    M M M  AAAAA  C
+                  T    E      L      E      M   M  A   A  C
+                  T    EEEEE  LLLLL  EEEEE  M   M  A   A  CCCCC
+
+                        2D    VERSION V8P5   FORTRAN 2003
+
+                        ~^~^~^~^~^~^~^~^~^~^~^^~^~^~^~^~^~
+                          ~                            ~
+                               \   '    o      '
+                               /\ o       \  o
+                             >=)'>    '   /\ '
+                               \/   \   >=)'>        ~
+                               /    /\    \/
+                        ~         >=)'>   /     .
+                                    \/                   )
+                                    /                   (
+                                          ~          )   )
+                          }     ~              (    (   (
+                         {                      )    )   )
+                          }  }         .       (    (   (
+                         {  {               /^^^^^^^^^^^^
+                        ^^^^^^^^^\         /
+                                  ^^^^^^^^^
+
+ DIFFERENT NUMBER OF PARALLEL PROCESSORS:
+ DECLARED BEFORE (CASE OF COUPLING ?):           1
+ TELEMAC-2D :           0
+ VALUE            1  IS KEPT
+
+                   ********************************************
+                   *               LECDON:                    *
+                   *        AFTER CALLING DAMOCLES            *
+                   *        CHECKING OF DATA  READ            *
+                   *         IN THE STEERING FILE             *
+                   ********************************************
+
+ EXITING LECDON. NAME OF THE STUDY:
+ TAPAJOS EXPLORATORY ASSUMPTIONS
+
+ OPENING FILES FOR TELEMAC2D
+ OPENING: T2DGEO-mesh.slf
+ OPENING: T2DCLI-mesh.cli
+ OPENING: T2DRES-r2d_tapajos.slf
+ OPENING: T2DIMP-tapajos.qsl
+
+                          *****************************
+                          *    MEMORY ORGANIZATION    *
+                          *****************************
+
+ READ_MESH_INFO: TITLE= TAPAJOS OSM AXIS - ASSUMED BED FLOW DATUM
+            NUMBER OF ELEMENTS:      397
+            NUMBER OF POINTS:      228
+
+            TYPE OF ELEMENT: TRIANGLE
+            TYPE OF BND ELEMENT: POINT
+
+            DOUBLE PRECISION FORMAT (R8)
+
+ MXPTEL (BIEF) : MAXIMUM NUMBER OF ELEMENTS AROUND A POINT:   7
+                 MAXIMUM NUMBER OF POINTS AROUND A POINT:   7
+ USER_CORRXY (BIEF):NO MODIFICATION OF COORDINATES
+
+ MESH: MESH   ALLOCATED
+
+                     *************************************
+                     *    END OF MEMORY ORGANIZATION:    *
+                     *************************************
+
+ INITIALIZING TELEMAC2D FOR
+ INBIEF (BIEF): NOT A VECTOR MACHINE (ACCORDING TO YOUR DATA)
+ STRCHE (BIEF): NO MODIFICATION OF FRICTION
+
+ THERE IS     2 LIQUID BOUNDARIES:
+
+ BOUNDARY    1 :
+  BEGINS AT BOUNDARY POINT:       33 , WITH GLOBAL NUMBER:         5
+  AND COORDINATES:     615033.2           9526953.
+  ENDS AT BOUNDARY POINT:       40 , WITH GLOBAL NUMBER:         4
+  AND COORDINATES:     614228.9           9527844.
+
+ BOUNDARY    2 :
+  BEGINS AT BOUNDARY POINT:        2 , WITH GLOBAL NUMBER:        10
+  AND COORDINATES:     611438.2           9526677.
+  ENDS AT BOUNDARY POINT:        9 , WITH GLOBAL NUMBER:         9
+  AND COORDINATES:     611614.2           9525490.
+
+ THERE IS     2 SOLID BOUNDARIES:
+
+ BOUNDARY    1 :
+  BEGINS AT BOUNDARY POINT:        9 , WITH GLOBAL NUMBER:         9
+  AND COORDINATES:     611614.2           9525490.
+  ENDS AT BOUNDARY POINT:       33 , WITH GLOBAL NUMBER:         5
+  AND COORDINATES:     615033.2           9526953.
+
+ BOUNDARY    2 :
+  BEGINS AT BOUNDARY POINT:       40 , WITH GLOBAL NUMBER:         4
+  AND COORDINATES:     614228.9           9527844.
+  ENDS AT BOUNDARY POINT:        2 , WITH GLOBAL NUMBER:        10
+  AND COORDINATES:     611438.2           9526677.
+
+ USER_CORFON (TELEMAC2D): NO MODIFICATION OF BOTTOM
+
+ CORFON (TELEMAC2D): NO BOTTOM SMOOTHINGS
+
+================================================================================
+ ITERATION        0    TIME:   0.0000 S
+
+                            BALANCE OF PASSIVE TRACER (UNIT:  * M3)
+     INITIAL QUANTITY OF TRACER   :    0.000000
+ TELEMAC2D INITIALIZED
+ THE LIQUID BOUNDARIES FILE CONTAINS
+           2  LINES WITH:
+ Q(1)     SL(2)
+ USING STREAMLINE VERSION V8P5 FOR CHARACTERISTICS
+
+================================================================================
+ ITERATION      300    TIME: 10 MN   0.0000 S   (      600.0000 S)
+--------------------------------------------------------------------------------
+                          ADVECTION STEP
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+ GRACJG (BIEF) :        1 ITERATIONS, RELATIVE PRECISION:   0.7995694E-04
+--------------------------------------------------------------------------------
+                     DIFFUSION OF TRACERS STEP
+ GRACJG (BIEF) :  SOLUTION X=0 BECAUSE L2-NORM OF B VERY SMALL:    0.000000
+
+                            BALANCE OF PASSIVE TRACER (UNIT:  * M3)
+
+     INITIAL QUANTITY                  :     0.000000
+     FINAL QUANTITY                    :     0.000000
+     BOUNDARY   1 FLUX:            -0.000000     ( >0 : ENTERING  <0 : EXITING )
+     BOUNDARY   2 FLUX:            -0.000000     ( >0 : ENTERING  <0 : EXITING )
+     TOTAL QUANTITY LOST               :     0.000000
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :   0.1837990E+08 M3
+     FLUX BOUNDARY    1:    -12064.29     M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    -0.000000     M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        600.0     S :   -0.3364188E-07
+
+================================================================================
+ ITERATION      600    TIME: 20 MN   0.0000 S   (     1200.0000 S)
+--------------------------------------------------------------------------------
+                          ADVECTION STEP
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+ GRACJG (BIEF) :        1 ITERATIONS, RELATIVE PRECISION:   0.4380928E-04
+--------------------------------------------------------------------------------
+                     DIFFUSION OF TRACERS STEP
+ GRACJG (BIEF) :  SOLUTION X=0 BECAUSE L2-NORM OF B VERY SMALL:    0.000000
+
+                            BALANCE OF PASSIVE TRACER (UNIT:  * M3)
+
+     INITIAL QUANTITY                  :     0.000000
+     FINAL QUANTITY                    :     0.000000
+     BOUNDARY   1 FLUX:            -0.000000     ( >0 : ENTERING  <0 : EXITING )
+     BOUNDARY   2 FLUX:            -0.000000     ( >0 : ENTERING  <0 : EXITING )
+     TOTAL QUANTITY LOST               :     0.000000
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :   0.1313465E+08 M3
+     FLUX BOUNDARY    1:    -4858.760     M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    -0.000000     M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        1200.     S :    0.7479095E-08
+
+================================================================================
+ ITERATION      900    TIME: 30 MN   0.0000 S   (     1800.0000 S)
+ ILL-POSED PROBLEM, ENTERING FREE VELOCITY
+ FOR EXAMPLE AT BOUNDARY POINT NUMBER           40
+--------------------------------------------------------------------------------
+                          ADVECTION STEP
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+ GRACJG (BIEF) :        1 ITERATIONS, RELATIVE PRECISION:   0.6534666E-04
+--------------------------------------------------------------------------------
+                     DIFFUSION OF TRACERS STEP
+ GRACJG (BIEF) :  SOLUTION X=0 BECAUSE L2-NORM OF B VERY SMALL:    0.000000
+
+                            BALANCE OF PASSIVE TRACER (UNIT:  * M3)
+
+     INITIAL QUANTITY                  :     0.000000
+     FINAL QUANTITY                    :     0.000000
+     BOUNDARY   1 FLUX:            -0.000000     ( >0 : ENTERING  <0 : EXITING )
+     BOUNDARY   2 FLUX:            -0.000000     ( >0 : ENTERING  <0 : EXITING )
+     TOTAL QUANTITY LOST               :     0.000000
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :   0.1130908E+08 M3
+     FLUX BOUNDARY    1:    -1569.090     M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    -0.000000     M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        1800.     S :    0.7254757E-08
+
+================================================================================
+ ITERATION     1200    TIME: 40 MN   0.0000 S   (     2400.0000 S)
+ ILL-POSED PROBLEM, ENTERING FREE VELOCITY
+ FOR EXAMPLE AT BOUNDARY POINT NUMBER           40
+--------------------------------------------------------------------------------
+                          ADVECTION STEP
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+ GRACJG (BIEF) :        1 ITERATIONS, ABSOLUTE PRECISION:   0.6112498E-04
+--------------------------------------------------------------------------------
+                     DIFFUSION OF TRACERS STEP
+ GRACJG (BIEF) :  SOLUTION X=0 BECAUSE L2-NORM OF B VERY SMALL:    0.000000
+
+                            BALANCE OF PASSIVE TRACER (UNIT:  * M3)
+
+     INITIAL QUANTITY                  :     0.000000
+     FINAL QUANTITY                    :     0.000000
+     BOUNDARY   1 FLUX:            -0.000000     ( >0 : ENTERING  <0 : EXITING )
+     BOUNDARY   2 FLUX:            -0.000000     ( >0 : ENTERING  <0 : EXITING )
+     TOTAL QUANTITY LOST               :     0.000000
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :   0.1114601E+08 M3
+     FLUX BOUNDARY    1:     902.5471     M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    -0.000000     M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        2400.     S :    0.6515059E-08
+
+================================================================================
+ ITERATION     1500    TIME: 50 MN   0.0000 S   (     3000.0000 S)
+ ILL-POSED PROBLEM, ENTERING FREE VELOCITY
+ FOR EXAMPLE AT BOUNDARY POINT NUMBER           40
+--------------------------------------------------------------------------------
+                          ADVECTION STEP
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+ GRACJG (BIEF) :        1 ITERATIONS, ABSOLUTE PRECISION:   0.4794302E-04
+--------------------------------------------------------------------------------
+                     DIFFUSION OF TRACERS STEP
+ GRACJG (BIEF) :  SOLUTION X=0 BECAUSE L2-NORM OF B VERY SMALL:    0.000000
+
+                            BALANCE OF PASSIVE TRACER (UNIT:  * M3)
+
+     INITIAL QUANTITY                  :     0.000000
+     FINAL QUANTITY                    :     0.000000
+     BOUNDARY   1 FLUX:            -0.000000     ( >0 : ENTERING  <0 : EXITING )
+     BOUNDARY   2 FLUX:            -0.000000     ( >0 : ENTERING  <0 : EXITING )
+     TOTAL QUANTITY LOST               :     0.000000
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :   0.1192750E+08 M3
+     FLUX BOUNDARY    1:     1287.366     M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    -0.000000     M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        3000.     S :   -0.3810972E-08
+
+================================================================================
+ ITERATION     1800    TIME:  1 H  0 MIN   0.0000 S   (     3600.0000 S)
+--------------------------------------------------------------------------------
+                          ADVECTION STEP
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+ GRACJG (BIEF) :        1 ITERATIONS, ABSOLUTE PRECISION:   0.4917915E-04
+--------------------------------------------------------------------------------
+                     DIFFUSION OF TRACERS STEP
+ GRACJG (BIEF) :  SOLUTION X=0 BECAUSE L2-NORM OF B VERY SMALL:    0.000000
+
+                            BALANCE OF PASSIVE TRACER (UNIT:  * M3)
+
+     INITIAL QUANTITY                  :     0.000000
+     FINAL QUANTITY                    :     0.000000
+     BOUNDARY   1 FLUX:            -0.000000     ( >0 : ENTERING  <0 : EXITING )
+     BOUNDARY   2 FLUX:            -0.000000     ( >0 : ENTERING  <0 : EXITING )
+     TOTAL QUANTITY LOST               :     0.000000
+
+                      FINAL BALANCE OF PASSIVE TRACER (UNIT:  * M3)
+
+     INITIAL QUANTITY                  :     0.000000
+     FINAL QUANTITY                    :     0.000000
+     TOTAL QUANTITY LOST               :     0.000000
+
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :   0.1231107E+08 M3
+     FLUX BOUNDARY    1:    -217.4769     M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    -0.000000     M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        3600.     S :   -0.2688810E-08
+--------------------------------------------------------------------------------
+                   FINAL BALANCE OF WATER VOLUME
+
+     RELATIVE ERROR CUMULATED ON VOLUME:    0.2952667E-06
+
+     INITIAL VOLUME              :    0.2728726E+08 M3
+     FINAL VOLUME                :    0.1231107E+08 M3
+     VOLUME THAT ENTERED THE DOMAIN:   -0.1497618E+08 M3  ( IF <0 EXIT )
+     TOTAL VOLUME LOST             :     8.057019     M3
+
+ END OF TIME LOOP
+
+ EXITING MPI
+
+STOP 0
+                     *************************************
+                     *    END OF MEMORY ORGANIZATION:    *
+                     *************************************
+
+ CORRECT END OF RUN
+
+ ELAPSE TIME :
+                              0  SECONDS
+... merging separated result files
+
+... handling result files
+
+        moving: r2d_tapajos.slf
+... deleting working dir
+
+
+
+My work is done
+
+

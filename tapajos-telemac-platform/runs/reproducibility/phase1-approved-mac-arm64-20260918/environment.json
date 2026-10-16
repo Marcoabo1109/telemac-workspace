@@ -1,0 +1,68 @@
+{
+  "host": {
+    "cpu_count": 12,
+    "hostname": "0c48ef5c48b7",
+    "machine": "aarch64",
+    "release": "6.12.76-linuxkit",
+    "system": "Linux"
+  },
+  "project": {
+    "git_branch": "main",
+    "git_commit": "f9045c5b21ed404f7cbcd7b2bacf6a273bd3af4c",
+    "git_dirty": false
+  },
+  "recorded_at": "2026-09-18T19:00:23.779461+00:00",
+  "reference_case": {
+    "combined_sha256": "a0591cbdbb20b7ed9493b980ec3d4dd94e7ae55c58135266b4adf34add42eaed",
+    "description": "Culm reference case shortened to 20 steps of 2 seconds",
+    "files": [
+      {
+        "path": "data/culm/t2d_culm.cas",
+        "sha256": "757f4bd32f43fe18aa98cbbc014f36e33e32c31a54d02f7b7ce743d6cec2b262"
+      },
+      {
+        "path": "data/culm/geo_culm.slf",
+        "sha256": "b63ed1ef1533a7fd657136cb6047da7b25e4cc528325a0eef7b1ffea445092f4"
+      },
+      {
+        "path": "data/culm/geo_culm.cli",
+        "sha256": "90de21909252f44aa458a08b1209b7b1ac2c39e57042438e42c55b52ce87c255"
+      },
+      {
+        "path": "data/culm/ini_culm.slf",
+        "sha256": "108d194dc375b41cc59cbed6df042e846fede15a5c7a7b17bde991ad8de61592"
+      },
+      {
+        "path": "data/culm/t2d_culm.qsl",
+        "sha256": "98bcb2ebe858da6a1ed6a2ea37adbf42a723216a10d1f5cd11d755c85034d4fa"
+      }
+    ],
+    "final_time_seconds": 40.0,
+    "id": "culm-20x2s-v1",
+    "steps": 20,
+    "time_step_seconds": 2.0
+  },
+  "runtime": {
+    "gfortran": "GNU Fortran (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0",
+    "mpiexec": "mpiexec (OpenRTE) 4.1.2",
+    "node": null,
+    "npm": null,
+    "packages": {
+      "fastapi": "0.141.1",
+      "gmsh": null,
+      "numpy": "1.26.4",
+      "pandas": "3.0.5",
+      "scipy": "1.17.1"
+    },
+    "python": "3.11.14",
+    "python_executable": "/usr/local/bin/python3.11"
+  },
+  "schema_version": 1,
+  "telemac": {
+    "configuration": "gnu",
+    "configuration_file": "/opt/telemac/configs/systel-platform.cfg",
+    "executable": "/app/docker/run-telemac",
+    "git_commit": null,
+    "root": "/opt/telemac"
+  }
+}

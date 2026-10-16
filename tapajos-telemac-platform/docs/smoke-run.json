@@ -1,0 +1,15 @@
+{
+  "id": "c04dbfe01c3f4e6aaa4ba044301bd18f",
+  "status": "completed",
+  "times": [
+    0.0,
+    10.0,
+    20.0,
+    30.0,
+    40.0
+  ],
+  "nodes": 1130,
+  "triangles": 2019,
+  "solver": "source-built TELEMAC v8p5r0 (Docker compose)",
+  "test": "HTTP API + WebSocket + real solver + binary result"
+}

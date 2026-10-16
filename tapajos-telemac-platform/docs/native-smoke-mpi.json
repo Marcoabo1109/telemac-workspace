@@ -1,0 +1,15 @@
+{
+  "ncores": 2,
+  "status": "completed",
+  "job": "cfc5446c0bd94e4aaf23a5249de3f58c",
+  "nodes": 1130,
+  "triangles": 2019,
+  "times": [
+    0.0,
+    10.0,
+    20.0,
+    30.0,
+    40.0
+  ],
+  "test": "Ubuntu 22.04 ARM64 source-built v8p5r0 Python 3.11"
+}

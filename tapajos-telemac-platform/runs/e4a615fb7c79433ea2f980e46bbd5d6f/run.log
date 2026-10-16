@@ -1,0 +1,78 @@
+/bin/sh: 1: /opt/telemac/builds/gnu/bin/partel: not found
+
+
+Loading Options and Configurations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+          ___          _____
+         / _ \        | ____|
+ __   __| (_) | _ __  | |__
+ \ \ / / > _ < | '_ \ |___ \
+  \ V / | (_) || |_) | ___) |
+   \_/   \___/ | .__/ |____/
+               | |
+               |_|
+
+
+Running your CAS file(s) for:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+gnu:
+
+
+    +> Portable GNU/OpenMPI TELEMAC2D build, no architecture-specific patch
+
+    +> root:    /opt/telemac
+    +> module: ad / api / artemis / bief
+               damocles  / gaia  / gretel  / hermes
+               identify_liq_bnd  / khione  / mascaret  / nestor
+               parallel  / partel  / postel3d  / special
+               stbtel  / telemac2d  / telemac3d  / tomawac
+               waqtel
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+... processing the steering file
+  ~> Checking keyword/rubrique coherence
+
+... checking parallelisation
+
+... handling temporary directories
+         copying: case.cas -> /work/runs/e4a615fb7c79433ea2f980e46bbd5d6f/case.cas_2026-09-08-22h29min38s/T2DCAS
+         copying: telemac2d.dico -> /work/runs/e4a615fb7c79433ea2f980e46bbd5d6f/case.cas_2026-09-08-22h29min38s/T2DDICO
+         copying: geo_culm.cli -> /work/runs/e4a615fb7c79433ea2f980e46bbd5d6f/case.cas_2026-09-08-22h29min38s/T2DCLI
+         copying: geo_culm.slf -> /work/runs/e4a615fb7c79433ea2f980e46bbd5d6f/case.cas_2026-09-08-22h29min38s/T2DGEO
+         copying: ini_culm.slf -> /work/runs/e4a615fb7c79433ea2f980e46bbd5d6f/case.cas_2026-09-08-22h29min38s/T2DPRE
+         copying: t2d_culm.qsl -> /work/runs/e4a615fb7c79433ea2f980e46bbd5d6f/case.cas_2026-09-08-22h29min38s/T2DIMP
+
+... partitioning base files (geo, conlim, sections, zones and weirs)
+     +> /opt/telemac/builds/gnu/bin/partel < partel_T2DGEO.par >> partel_T2DGEO.log
+Traceback (most recent call last):
+  File "/opt/telemac/scripts/python3/telemac2d.py", line 7, in <module>
+    main('telemac2d')
+  File "/opt/telemac/scripts/python3/runcode.py", line 288, in main
+    run_study(cas_file, code_name, options)
+  File "/opt/telemac/scripts/python3/execution/run_cas.py", line 169, in run_study
+    run_local_cas(my_study, options)
+  File "/opt/telemac/scripts/python3/execution/run_cas.py", line 31, in run_local_cas
+    my_study.partionning(options.use_link)
+  File "/opt/telemac/scripts/python3/execution/study.py", line 444, in partionning
+    run_partition(parcmd, self.cas, g_geo, g_fmt_geo, g_conlim,
+  File "/opt/telemac/scripts/python3/execution/run.py", line 51, in run_partition
+    run_partel(partel, geom, fmtgeom, conlim, ncsize, False,
+  File "/opt/telemac/scripts/python3/execution/run.py", line 133, in run_partel
+    raise TelemacException(
+utils.exceptions.TelemacException: Could not split your file T2DGEO with the error as follows:
+
+... The following command failed for the reason in the listing
+/opt/telemac/builds/gnu/bin/partel < partel_T2DGEO.par >> partel_T2DGEO.log
+
+
+Here is the log:
+

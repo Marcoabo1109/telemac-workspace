@@ -1,0 +1,306 @@
+
+
+Loading Options and Configurations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+          ___          _____
+         / _ \        | ____|
+ __   __| (_) | _ __  | |__
+ \ \ / / > _ < | '_ \ |___ \
+  \ V / | (_) || |_) | ___) |
+   \_/   \___/ | .__/ |____/
+               | |
+               |_|
+
+
+Running your CAS file(s) for:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+gnu:
+
+
+    +> Portable GNU/OpenMPI TELEMAC2D build, no architecture-specific patch
+
+    +> root:    /opt/telemac
+    +> module: ad / api / artemis / bief
+               damocles  / gaia  / gretel  / hermes
+               identify_liq_bnd  / khione  / mascaret  / nestor
+               parallel  / partel  / postel3d  / special
+               stbtel  / telemac2d  / telemac3d  / tomawac
+               waqtel
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+... processing the steering file
+  ~> Checking keyword/rubrique coherence
+
+... checking parallelisation
+
+... handling temporary directories
+         copying: case.cas -> /workspace/runs/reproducibility/phase1-final-mac-arm64-20260918/serial/jobs/e4050dbdcb6b44839f89a075e3af9a59/case.cas_2026-09-18-18h56min55s/T2DCAS
+         copying: telemac2d.dico -> /workspace/runs/reproducibility/phase1-final-mac-arm64-20260918/serial/jobs/e4050dbdcb6b44839f89a075e3af9a59/case.cas_2026-09-18-18h56min55s/T2DDICO
+         copying: geo_culm.cli -> /workspace/runs/reproducibility/phase1-final-mac-arm64-20260918/serial/jobs/e4050dbdcb6b44839f89a075e3af9a59/case.cas_2026-09-18-18h56min55s/T2DCLI
+         copying: geo_culm.slf -> /workspace/runs/reproducibility/phase1-final-mac-arm64-20260918/serial/jobs/e4050dbdcb6b44839f89a075e3af9a59/case.cas_2026-09-18-18h56min55s/T2DGEO
+         copying: ini_culm.slf -> /workspace/runs/reproducibility/phase1-final-mac-arm64-20260918/serial/jobs/e4050dbdcb6b44839f89a075e3af9a59/case.cas_2026-09-18-18h56min55s/T2DPRE
+         copying: t2d_culm.qsl -> /workspace/runs/reproducibility/phase1-final-mac-arm64-20260918/serial/jobs/e4050dbdcb6b44839f89a075e3af9a59/case.cas_2026-09-18-18h56min55s/T2DIMP
+
+... checking the executable
+
+
+Running your simulation(s) :
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+In /workspace/runs/reproducibility/phase1-final-mac-arm64-20260918/serial/jobs/e4050dbdcb6b44839f89a075e3af9a59/case.cas_2026-09-18-18h56min55s:
+mpirun -np 1 /workspace/runs/reproducibility/phase1-final-mac-arm64-20260918/serial/jobs/e4050dbdcb6b44839f89a075e3af9a59/case.cas_2026-09-18-18h56min55s/out_telemac2d
+
+
+ MASTER PROCESSOR NUMBER            0  OF THE GROUP OF            1
+ EXECUTABLE FILE: /workspace/runs/reproducibility/phase1-final-mac-arm64-20260918/serial/jobs/e4050dbdcb6b44839f89a075e3af9a59/case.cas_2026-09-18-18h56min55s/A.EXE
+ LISTING OF TELEMAC2D------------------------------------------------------------------------------
+
+                TTTTT  EEEEE  L      EEEEE  M   M  AAAAA  CCCCC
+                  T    E      L      E      MM MM  A   A  C
+                  T    EEE    L      EEE    M M M  AAAAA  C
+                  T    E      L      E      M   M  A   A  C
+                  T    EEEEE  LLLLL  EEEEE  M   M  A   A  CCCCC
+
+                        2D    VERSION V8P5   FORTRAN 2003
+
+                        ~^~^~^~^~^~^~^~^~^~^~^^~^~^~^~^~^~
+                          ~                            ~
+                               \   '    o      '
+                               /\ o       \  o
+                             >=)'>    '   /\ '
+                               \/   \   >=)'>        ~
+                               /    /\    \/
+                        ~         >=)'>   /     .
+                                    \/                   )
+                                    /                   (
+                                          ~          )   )
+                          }     ~              (    (   (
+                         {                      )    )   )
+                          }  }         .       (    (   (
+                         {  {               /^^^^^^^^^^^^
+                        ^^^^^^^^^\         /
+                                  ^^^^^^^^^
+
+ DIFFERENT NUMBER OF PARALLEL PROCESSORS:
+ DECLARED BEFORE (CASE OF COUPLING ?):           1
+ TELEMAC-2D :           0
+ VALUE            1  IS KEPT
+
+                   ********************************************
+                   *               LECDON:                    *
+                   *        AFTER CALLING DAMOCLES            *
+                   *        CHECKING OF DATA  READ            *
+                   *         IN THE STEERING FILE             *
+                   ********************************************
+
+ EXITING LECDON. NAME OF THE STUDY:
+ TELEMAC 2D : RIVER CULM
+
+ OPENING FILES FOR TELEMAC2D
+ OPENING: T2DGEO-geo_culm.slf
+ OPENING: T2DCLI-geo_culm.cli
+ OPENING: T2DPRE-ini_culm.slf
+ OPENING: T2DRES-r2d_culm.slf
+ OPENING: T2DIMP-t2d_culm.qsl
+
+                          *****************************
+                          *    MEMORY ORGANIZATION    *
+                          *****************************
+
+ READ_MESH_INFO: TITLE= River culm
+            NUMBER OF ELEMENTS:     2019
+            NUMBER OF POINTS:     1130
+
+            TYPE OF ELEMENT: TRIANGLE
+            TYPE OF BND ELEMENT: POINT
+
+            SINGLE PRECISION FORMAT (R4)
+
+ MXPTEL (BIEF) : MAXIMUM NUMBER OF ELEMENTS AROUND A POINT:  10
+                 MAXIMUM NUMBER OF POINTS AROUND A POINT:  10
+ USER_CORRXY (BIEF):NO MODIFICATION OF COORDINATES
+
+ MESH: MESH   ALLOCATED
+
+                     *************************************
+                     *    END OF MEMORY ORGANIZATION:    *
+                     *************************************
+
+ INITIALIZING TELEMAC2D FOR
+ INBIEF (BIEF): NOT A VECTOR MACHINE (ACCORDING TO YOUR DATA)
+ STRCHE (BIEF): NO MODIFICATION OF FRICTION
+
+ THERE IS     1 ISLAND(S) IN THE DOMAIN
+
+ THERE IS     2 LIQUID BOUNDARIES:
+
+ BOUNDARY    1 :
+  BEGINS AT BOUNDARY POINT:        1 , WITH GLOBAL NUMBER:        20
+  AND COORDINATES:     155.9330          -22.27599
+  ENDS AT BOUNDARY POINT:        4 , WITH GLOBAL NUMBER:        21
+  AND COORDINATES:     219.4210          -22.27599
+
+ BOUNDARY    2 :
+  BEGINS AT BOUNDARY POINT:      121 , WITH GLOBAL NUMBER:        23
+  AND COORDINATES:     7884.660           6785.328
+  ENDS AT BOUNDARY POINT:      129 , WITH GLOBAL NUMBER:        24
+  AND COORDINATES:     7691.969           7089.398
+
+ THERE IS     3 SOLID BOUNDARIES:
+
+ BOUNDARY    1 :
+  BEGINS AT BOUNDARY POINT:        4 , WITH GLOBAL NUMBER:        21
+  AND COORDINATES:     219.4210          -22.27599
+  ENDS AT BOUNDARY POINT:      121 , WITH GLOBAL NUMBER:        23
+  AND COORDINATES:     7884.660           6785.328
+
+ BOUNDARY    2 :
+  BEGINS AT BOUNDARY POINT:      129 , WITH GLOBAL NUMBER:        24
+  AND COORDINATES:     7691.969           7089.398
+  ENDS AT BOUNDARY POINT:        1 , WITH GLOBAL NUMBER:        20
+  AND COORDINATES:     155.9330          -22.27599
+
+ BOUNDARY    3 :
+  BEGINS AT BOUNDARY POINT:      241 , WITH GLOBAL NUMBER:       245
+  AND COORDINATES:     2841.329           3305.788
+  ENDS AT BOUNDARY POINT:      241 , WITH GLOBAL NUMBER:       245
+  AND COORDINATES:     2841.329           3305.788
+
+ USER_CORFON (TELEMAC2D): NO MODIFICATION OF BOTTOM
+
+ CORFON (TELEMAC2D): NO BOTTOM SMOOTHINGS
+
+ TITLE OF PREVIOUS COMPUTATION: TELEMAC 2D : RIVER CULM
+
+ NAME: VELOCITY U        UNIT: M/S
+ NAME: VELOCITY V        UNIT: M/S
+ NAME: WATER DEPTH       UNIT: M
+ NAME: FREE SURFACE      UNIT: M
+ NAME: BOTTOM            UNIT: M
+
+ READ_DATASET : READ OF RECORD    28
+
+ TIME OF RECORD:     162000.0     S
+ ELAPSED TIME RESET TO ZERO
+
+================================================================================
+ ITERATION        0    TIME:   0.0000 S
+ TELEMAC2D INITIALIZED
+ THE LIQUID BOUNDARIES FILE CONTAINS
+       30601  LINES WITH:
+ Q(1)     SL(2)
+ USING STREAMLINE VERSION V8P5 FOR CHARACTERISTICS
+
+================================================================================
+ ITERATION        5    TIME:  10.0000 S
+ LIQUID BOUNDARY: SL(2)    =   23.798999999999999
+ LIQUID BOUNDARY: Q(1)     =   28.719700000000000
+ LIQUID BOUNDARY: Q(1)     =   28.721299999999999
+--------------------------------------------------------------------------------
+                          ADVECTION STEP
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+ GRACJG (BIEF) :       12 ITERATIONS, RELATIVE PRECISION:   0.8669956E-04
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    809738.2     M3
+     FLUX BOUNDARY    1:     28.72050     M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    -21.30172     M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        10.00     S :    0.1591264E-04
+
+================================================================================
+ ITERATION       10    TIME:  20.0000 S
+ LIQUID BOUNDARY: SL(2)    =   23.798999999999999
+ LIQUID BOUNDARY: Q(1)     =   28.727699999999999
+ LIQUID BOUNDARY: Q(1)     =   28.729299999999999
+--------------------------------------------------------------------------------
+                          ADVECTION STEP
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+ GRACJG (BIEF) :       11 ITERATIONS, ABSOLUTE PRECISION:   0.9369542E-04
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    809748.7     M3
+     FLUX BOUNDARY    1:     28.72850     M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    -21.24266     M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        20.00     S :    0.1582863E-04
+
+================================================================================
+ ITERATION       15    TIME:  30.0000 S
+ LIQUID BOUNDARY: SL(2)    =   23.798999999999999
+ LIQUID BOUNDARY: Q(1)     =   28.735700000000001
+ LIQUID BOUNDARY: Q(1)     =   28.737400000000001
+--------------------------------------------------------------------------------
+                          ADVECTION STEP
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+ GRACJG (BIEF) :       10 ITERATIONS, ABSOLUTE PRECISION:   0.9881137E-04
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    809759.6     M3
+     FLUX BOUNDARY    1:     28.73655     M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    -21.25127     M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        30.00     S :    0.1577266E-04
+
+================================================================================
+ ITERATION       20    TIME:  40.0000 S
+ LIQUID BOUNDARY: SL(2)    =   23.798999999999999
+ LIQUID BOUNDARY: Q(1)     =   28.743800000000000
+ LIQUID BOUNDARY: Q(1)     =   28.745400000000000
+--------------------------------------------------------------------------------
+                          ADVECTION STEP
+--------------------------------------------------------------------------------
+                    DIFFUSION-PROPAGATION STEP
+ GRACJG (BIEF) :       10 ITERATIONS, ABSOLUTE PRECISION:   0.9764896E-04
+--------------------------------------------------------------------------------
+                       BALANCE OF WATER VOLUME
+     VOLUME IN THE DOMAIN :    809770.7     M3
+     FLUX BOUNDARY    1:     28.74460     M3/S  ( >0 : ENTERING  <0 : EXITING )
+     FLUX BOUNDARY    2:    -21.26950     M3/S  ( >0 : ENTERING  <0 : EXITING )
+     RELATIVE ERROR IN VOLUME AT T =        40.00     S :    0.1573122E-04
+--------------------------------------------------------------------------------
+                   FINAL BALANCE OF WATER VOLUME
+
+     RELATIVE ERROR CUMULATED ON VOLUME:    0.3167360E-03
+
+     INITIAL VOLUME              :     809729.3     M3
+     FINAL VOLUME                :     809770.7     M3
+     VOLUME THAT ENTERED THE DOMAIN:     297.8323     M3  ( IF <0 EXIT )
+     TOTAL VOLUME LOST             :     256.4836     M3
+
+ END OF TIME LOOP
+
+ EXITING MPI
+
+                     *************************************
+                     *    END OF MEMORY ORGANIZATION:    *
+                     *************************************
+
+ CORRECT END OF RUN
+
+ ELAPSE TIME :
+                              0  SECONDS
+STOP 0
+... merging separated result files
+
+... handling result files
+
+        moving: r2d_culm.slf
+... deleting working dir
+
+
+
+My work is done
+
+

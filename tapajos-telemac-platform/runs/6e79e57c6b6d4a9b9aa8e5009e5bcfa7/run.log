@@ -1,0 +1,169 @@
+
+
+Loading Options and Configurations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+          ___          _____
+         / _ \        | ____|
+ __   __| (_) | _ __  | |__
+ \ \ / / > _ < | '_ \ |___ \
+  \ V / | (_) || |_) | ___) |
+   \_/   \___/ | .__/ |____/
+               | |
+               |_|
+
+
+Running your CAS file(s) for:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+gnu:
+
+
+    +> Portable GNU/OpenMPI TELEMAC2D build, no architecture-specific patch
+
+    +> root:    /opt/telemac
+    +> module: ad / api / artemis / bief
+               damocles  / gaia  / gretel  / hermes
+               identify_liq_bnd  / khione  / mascaret  / nestor
+               parallel  / partel  / postel3d  / special
+               stbtel  / telemac2d  / telemac3d  / tomawac
+               waqtel
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+... processing the steering file
+  ~> Checking keyword/rubrique coherence
+
+... checking parallelisation
+
+... handling temporary directories
+         copying: case.cas -> /app/runs/6e79e57c6b6d4a9b9aa8e5009e5bcfa7/case.cas_2026-09-09-12h01min15s/T2DCAS
+         copying: telemac2d.dico -> /app/runs/6e79e57c6b6d4a9b9aa8e5009e5bcfa7/case.cas_2026-09-09-12h01min15s/T2DDICO
+         copying: mesh.cli -> /app/runs/6e79e57c6b6d4a9b9aa8e5009e5bcfa7/case.cas_2026-09-09-12h01min15s/T2DCLI
+         copying: mesh.slf -> /app/runs/6e79e57c6b6d4a9b9aa8e5009e5bcfa7/case.cas_2026-09-09-12h01min15s/T2DGEO
+         copying: tapajos.qsl -> /app/runs/6e79e57c6b6d4a9b9aa8e5009e5bcfa7/case.cas_2026-09-09-12h01min15s/T2DIMP
+
+... checking the executable
+
+
+Running your simulation(s) :
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+In /app/runs/6e79e57c6b6d4a9b9aa8e5009e5bcfa7/case.cas_2026-09-09-12h01min15s:
+mpirun -np 1 /app/runs/6e79e57c6b6d4a9b9aa8e5009e5bcfa7/case.cas_2026-09-09-12h01min15s/out_telemac2d
+
+
+ MASTER PROCESSOR NUMBER            0  OF THE GROUP OF            1
+ EXECUTABLE FILE: /app/runs/6e79e57c6b6d4a9b9aa8e5009e5bcfa7/case.cas_2026-09-09-12h01min15s/A.EXE
+ LISTING OF TELEMAC2D------------------------------------------------------------------------------
+
+                TTTTT  EEEEE  L      EEEEE  M   M  AAAAA  CCCCC
+                  T    E      L      E      MM MM  A   A  C
+                  T    EEE    L      EEE    M M M  AAAAA  C
+                  T    E      L      E      M   M  A   A  C
+                  T    EEEEE  LLLLL  EEEEE  M   M  A   A  CCCCC
+
+                        2D    VERSION V8P5   FORTRAN 2003
+
+                        ~^~^~^~^~^~^~^~^~^~^~^^~^~^~^~^~^~
+                          ~                            ~
+                               \   '    o      '
+                               /\ o       \  o
+                             >=)'>    '   /\ '
+                               \/   \   >=)'>        ~
+                               /    /\    \/
+                        ~         >=)'>   /     .
+                                    \/                   )
+                                    /                   (
+                                          ~          )   )
+                          }     ~              (    (   (
+                         {                      )    )   )
+                          }  }         .       (    (   (
+                         {  {               /^^^^^^^^^^^^
+                        ^^^^^^^^^\         /
+                                  ^^^^^^^^^
+
+ DIFFERENT NUMBER OF PARALLEL PROCESSORS:
+ DECLARED BEFORE (CASE OF COUPLING ?):           1
+ TELEMAC-2D :           0
+ VALUE            1  IS KEPT
+
+                   ********************************************
+                   *               LECDON:                    *
+                   *        AFTER CALLING DAMOCLES            *
+                   *        CHECKING OF DATA  READ            *
+                   *         IN THE STEERING FILE             *
+                   ********************************************
+
+ EXITING LECDON. NAME OF THE STUDY:
+ TAPAJOS EXPLORATORY ASSUMPTIONS
+
+ OPENING FILES FOR TELEMAC2D
+ OPENING: T2DGEO-mesh.slf
+ OPENING: T2DCLI-mesh.cli
+ OPENING: T2DRES-r2d_tapajos.slf
+ OPENING: T2DIMP-tapajos.qsl
+
+                          *****************************
+                          *    MEMORY ORGANIZATION    *
+                          *****************************
+
+ READ_MESH_INFO: TITLE= TAPAJOS OSM AXIS - ASSUMED BED FLOW DATUM
+            NUMBER OF ELEMENTS:      397
+            NUMBER OF POINTS:      228
+
+            TYPE OF ELEMENT: TRIANGLE
+            TYPE OF BND ELEMENT: POINT
+
+            DOUBLE PRECISION FORMAT (R8)
+
+ MXPTEL (BIEF) : MAXIMUM NUMBER OF ELEMENTS AROUND A POINT:   7
+                 MAXIMUM NUMBER OF POINTS AROUND A POINT:   7
+ USER_CORRXY (BIEF):NO MODIFICATION OF COORDINATES
+
+ MESH: MESH   ALLOCATED
+
+                     *************************************
+                     *    END OF MEMORY ORGANIZATION:    *
+                     *************************************
+
+ INITIALIZING TELEMAC2D FOR
+ INBIEF (BIEF): NOT A VECTOR MACHINE (ACCORDING TO YOUR DATA)
+ FROPRO: FRONTAL PRODUCT REQUIRES A
+ RENUMBERING OF POINTS WITH STBTEL
+
+ PLANTE: PROGRAM STOPPED AFTER AN ERROR
+ RETURNING EXIT CODE:            2
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 0 in communicator MPI_COMM_WORLD
+with errorcode 2.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/opt/telemac/scripts/python3/telemac2d.py", line 7, in <module>
+    main('telemac2d')
+  File "/opt/telemac/scripts/python3/runcode.py", line 288, in main
+    run_study(cas_file, code_name, options)
+  File "/opt/telemac/scripts/python3/execution/run_cas.py", line 169, in run_study
+    run_local_cas(my_study, options)
+  File "/opt/telemac/scripts/python3/execution/run_cas.py", line 65, in run_local_cas
+    my_study.run(options)
+  File "/opt/telemac/scripts/python3/execution/study.py", line 659, in run
+    self.run_local()
+  File "/opt/telemac/scripts/python3/execution/study.py", line 480, in run_local
+    run_code(self.run_cmd, self.sortie_file)
+  File "/opt/telemac/scripts/python3/execution/run.py", line 182, in run_code
+    raise TelemacException('Fail to run\n'+exe)
+utils.exceptions.TelemacException: Fail to run
+mpirun -np 1 /app/runs/6e79e57c6b6d4a9b9aa8e5009e5bcfa7/case.cas_2026-09-09-12h01min15s/out_telemac2d

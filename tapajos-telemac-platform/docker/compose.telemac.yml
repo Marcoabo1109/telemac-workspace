@@ -1,0 +1,10 @@
+# Compile solver from source: docker compose -f docker/docker-compose.yml -f docker/compose.telemac.yml up --build
+services:
+  backend:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    environment:
+      TELEMAC_NCORES: ${TELEMAC_NCORES:-1}
+      OMPI_ALLOW_RUN_AS_ROOT: "1"
+      OMPI_ALLOW_RUN_AS_ROOT_CONFIRM: "1"
