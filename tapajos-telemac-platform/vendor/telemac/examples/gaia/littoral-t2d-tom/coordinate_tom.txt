@@ -1,0 +1,23 @@
+1 9
+0 1000 100
+250    25        11 tom_01
+250    50        12 tom_02
+250    75        13 tom_03
+250   100        14 tom_04
+250   125        15 tom_05
+250   150        16 tom_06
+250   175        17 tom_07
+250   200        18 tom_08
+250   225        19 outside
+   
+   Description of the file
+1st line: number of periods and number of points
+2nd line: period 1: start time, end time and interval (in seconds)
+3rd-11th line: output points; x coordinate, y coordinate, station number, and station name
+
+The x and y coordinate are used for linear interpolation.
+The station number is an index, which is written to IKLE. (So you can easily know which station is in the output file)
+The station name is not used by TELEMAC, but is to increase the readibility of this file.
+The rest of the file are comments
+
+This file is specially made to test whether a warning is given for coordinates outside mesh

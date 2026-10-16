@@ -1,0 +1,80 @@
+////////////////////////////////////////////////////////////////////////
+/// 1-computation environment
+/// 1.1-input
+/// 1.1.1-data
+BOUNDARY CONDITIONS FILE = 'geo_reservoir.cli'
+GEOMETRY FILE = 'geo_reservoir.slf'
+/// 1.2-output
+/// 1.2.1-results
+RESULTS FILE = 'ice_reservoir_multiclass.slf'
+VARIABLES FOR GRAPHIC PRINTOUTS = 'CTOT,F*,TEMP'
+GRAPHIC PRINTOUT PERIOD = 60
+////////////////////////////////////////////////////////////////////////
+/// 2-frazil
+/// 2.1-numerical parameters
+SCHEME FOR ADVECTION OF TRACERS = 4
+SCHEME OPTION FOR ADVECTION OF TRACERS = 1
+/// 2.2-physical parameters
+NUMBER OF CLASSES FOR SUSPENDED FRAZIL ICE = 10
+/// 2.3-turbulence
+MODEL FOR THE NUSSELT NUMBER = 2
+/// 2.4-physical parameters
+FRAZIL CRYSTALS RADIUS = 
+0.0001;
+0.00012915;
+0.00016681;
+0.00021544;
+0.00027826;
+0.00035938;
+0.00046416;
+0.00059948;
+0.00077426;
+0.001
+FRAZIL CRYSTALS DIAMETER THICKNESS RATIO = 10.0
+MODEL FOR THE BUOYANCY VELOCITY = 2
+/// 2.5-initial condition
+INITIAL FRAZIL CONCENTRATION VALUES = 
+0.0;
+0.0;
+0.0;
+0.0;
+0.0;
+0.0;
+0.0;
+0.0;
+0.0;
+0.0
+/// 2.6-diffusion
+COEFFICIENT FOR DIFFUSION OF FRAZIL = 
+0.0;
+0.0;
+0.0;
+0.0;
+0.0;
+0.0;
+0.0;
+0.0;
+0.0;
+0.0
+////////////////////////////////////////////////////////////////////////
+/// 3-general
+SALINITY = False
+////////////////////////////////////////////////////////////////////////
+/// 4-frazil
+SCHEME OPTION FOR THERMAL GROWTH = 1
+MODEL FOR THE SECONDARY NUCLEATION = 2
+SECONDARY NUCLEATION NMAX PARAMETER = 8000000.0
+MODEL FOR THE FLOCCULATION AND BREAKUP = 1
+FLOCCULATION AFLOC PARAMETER = 0.0001
+MODEL FOR FRAZIL SEEDING = 1
+/// 4.1-physical parameters
+MINIMUM NUMBER OF FRAZIL CRYSTALS = 588717.0
+////////////////////////////////////////////////////////////////////////
+/// 5-thermal budget
+/// 5.1-meteorological processes
+ATMOSPHERE-WATER EXCHANGE MODEL = 0
+////////////////////////////////////////////////////////////////////////
+/// 6-frazil
+/// 6.1-turbulence
+MODEL FOR ESTIMATION OF TURBULENCE PARAMETERS = 0
+CONSTANT TURBULENCE PARAMETERS = 0.00096;0.0012;0.0876

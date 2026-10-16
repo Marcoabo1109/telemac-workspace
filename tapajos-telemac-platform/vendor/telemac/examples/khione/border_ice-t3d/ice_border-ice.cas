@@ -1,0 +1,65 @@
+/----------------------------------------------------------------------
+/
+/ Steering file for the hydrodynamics: KHIONE
+/
+/----------------------------------------------------------------------
+/  FILES
+/----------------------------------------------------------------------
+/
+GEOMETRY FILE                = 'geo_sineflume.slf'
+BOUNDARY CONDITIONS FILE     = 'geo_sineflume.cli'
+RESULTS FILE                 = 'ice_border-ice.slf'
+/
+/----------------------------------------------------------------------
+/  GENERAL INFORMATIONS - OUTPUTS
+/----------------------------------------------------------------------
+/
+VARIABLES FOR GRAPHIC PRINTOUTS  =
+'ICETYPE,COV_THT,COV_THS,COV_FC,F1'
+/
+GRAPHIC PRINTOUT PERIOD          = 60
+LISTING PRINTOUT PERIOD          = 60
+/
+/----------------------------------------------------------------------
+/  METEOROLOGY PARAMETERS
+/----------------------------------------------------------------------
+/
+DEWPOINT TEMPERATURE =   0.0
+VISIBILITY           =   1.E9
+RELATIVE MODEL ELEVATION FROM MEAN SEA LEVEL = 0.
+/
+/----------------------------------------------------------------------
+/  HEAT EXCHANGES
+/----------------------------------------------------------------------
+/
+ATMOSPHERE-WATER EXCHANGE MODEL = 0
+SOLAR CONSTANT = 0.
+WATER-AIR HEAT EXCHANGE CONSTANT = -50.
+WATER-AIR HEAT EXCHANGE COEFFICIENT = 20.
+ICE-AIR HEAT EXCHANGE CONSTANT = -32.547
+ICE-AIR HEAT EXCHANGE COEFFICIENT = 12.189
+/
+/----------------------------------------------------------------------
+/  FRAZIL THERMAL GROWTH
+/----------------------------------------------------------------------
+/
+PRESCRIBED FRAZIL CONCENTRATION VALUES  = 0.;0.
+INITIAL FRAZIL CONCENTRATION VALUES = 0.
+/
+/----------------------------------------------------------------------
+/  STATIC BORDER ICE
+/----------------------------------------------------------------------
+/
+BORDER ICE COVER = YES
+CRITICAL VELOCITY FOR STATIC BORDER ICE = 0.07
+CRITICAL WATER TEMPERATURE FOR STATIC BORDER ICE = -0.1
+/
+/----------------------------------------------------------------------
+/  INTERACTIONS BETWEEN WATER AND SURFACE ICE
+/----------------------------------------------------------------------
+/
+ICE COVER IMPACT ON HYDRODYNAMIC = NO
+MODEL FOR THE ICE COVER PRESSURE GRADIENT = 0
+/
+/----------------------------------------------------------------------
+/

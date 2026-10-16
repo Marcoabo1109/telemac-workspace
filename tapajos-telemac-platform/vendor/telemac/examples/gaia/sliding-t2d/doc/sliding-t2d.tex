@@ -1,0 +1,111 @@
+\chapter{Sliding}
+%
+
+% - Purpose & Problem description:
+%     These first two parts give reader short details about the test case,
+%     the physical phenomena involved and specify how the numerical solution
+%     will be validated
+%
+\section{Purpose}
+%
+The purpose of this test is to show the effect of the two sliding formulations
+available in \gaia{}.
+
+%
+\section{Problem setup}
+%
+The 160 m long and 11 m wide flume is taken from the sandpit test case.
+The bottom was scaled by factor 10 in order to get higher slopes (see Figure
+~\ref{slide:bottom}). All boundaries are closed set and the initial 
+water levels are set constant in order to prevent a flow.
+
+One sediment class with a diameter of 0.1 mm is used. Normal sediment transport
+is avoided by using Meyer-Peter and Müller formula with a MPM factor of zero.
+Therefore the bottom evolution origins only from the sliding formulations.
+
+
+\begin{figure}[!h]
+\centering
+\includegraphicsmaybe{[width=.96\textwidth]}{../img/sliding_bathy.png}
+ \caption{Longitudinal section at initial topography.}\label{slide:bottom}
+\end{figure}
+
+\section{Numerical setup}
+%
+Numerical simulations were conducted on an unstructured, triangular finite
+element mesh with $1600$ elements and $819$ nodes (Figure~\ref{slide:mesh}).
+The simulation started with a constant water level of 2.55 m.
+The initial water levels are set to 2.55 m.
+The two sliding formulations  (\telkey{SEDIMENT SLIDE = 1 or 2}) are compared
+using different slope effects
+ (\telkey{FORMULA FOR SLOPE EFFECT = 1 to 3} and \telkey{FORMULA FOR DEVIATION
+= 1 to 3}).
+The angle of repose is set to \telkey{FRICTION ANGLE OF SEDIMENTS = 20 }.
+
+\begin{figure} [!h]
+\centering
+\includegraphicsmaybe{[width=.96\textwidth]}{../img/sliding_mesh.png}
+ \caption{Discretization of the flume.}\label{slide:mesh}
+\end{figure}
+
+The time step is set to $1$ s and the simulation runs for 1000 s in order to
+reach steady conditions with bottom slopes equals $\leq 20^\circ$.
+
+
+\section{Results}
+%
+Numerical results of the final bottom using the two sliding formulas
+\textit{slope smoothing} or \textit{avalanching} are shown in Figure
+~\ref{slide:results1}. The avalanching formula calculates no significant
+differences in the cross sections as expected. The slope smoothing seems to be
+influenced by the mesh and creates bottom differences in y-direction.
+
+The comparison between both sliding formulas and the given angle of repose is
+presented in Figure~\ref{slide:results2} using a longitudinal flume section.
+It can be
+seen that with the avalanching formula the angle of repose is reached. With the
+bottom smoothing formula the final angle is lower than the prescribed angle of
+repose.
+Furthermore, as expected different slope and deviation formulas show no
+influence for none of the sliding formulas.
+
+Figure~\ref{slide:results3} and \ref{slide:results4} present the bottom
+evolutions at different time steps for both sliding formulations and Koch and
+Flokstra slope and deviation formulas. The bottom smoothing sliding formula
+reaches the
+steady state much later than the avalanching formula.
+
+With the help of the avalanching formula a fast and grid independent solution
+to avoid steep slopes can be achieved.
+
+\begin{figure} [!h]
+  \centering
+\includegraphicsmaybe{[width=.96\textwidth]}{../img/final_evol.png}
+\includegraphicsmaybe{[width=.96\textwidth]}{../img/final_evol2.png}
+\caption{Simulated final bottom using slope and deviation effect of Koch and
+Flokstra with \textit{slope smoothing} sliding formula 1 (top) and with
+\textit{avalanching} sliding formula 2 (bottom).}
+\label{slide:results1}
+\end{figure}
+
+\begin{figure} [!h]
+\centering
+\includegraphicsmaybe{[width=.96\textwidth]}{../img/sliding_bottom.png}
+ \caption{Comparison of simulated bottom elevation at a longitudinal flume
+section for all sliding and slope formulations.}\label{slide:results2}
+\end{figure}
+
+\begin{figure} [!h]
+\centering
+\includegraphicsmaybe{[width=.96\textwidth]}{../img/sliding1_bottom_time.png}
+ \caption{Simulated bottom elevation at a longitudinal flume section for the
+ sliding formula 1, slope 1 and different time steps}.\label{slide:results3}
+\end{figure}
+
+\begin{figure} [!h]
+\centering
+\includegraphicsmaybe{[width=.96\textwidth]}{../img/sliding2_bottom_time.png}
+ \caption{Simulated bottom elevation at a longitudinal flume section for the
+sliding formula 2 and slope 1 and different time steps}.\label{slide:results4}
+\end{figure}
+

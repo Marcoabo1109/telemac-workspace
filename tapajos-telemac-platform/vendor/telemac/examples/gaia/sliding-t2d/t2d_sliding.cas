@@ -1,0 +1,62 @@
+/****************************************************************
+/                      STEERING FILE
+/                       TELEMAC-2D
+/****************************************************************
+/
+/----------------------------------------------------------------
+/	INPUTS-OUTPUTS, FILES (1)
+/----------------------------------------------------------------
+TITLE = 'Sliding'
+/
+GEOMETRY FILE                                  =  geo_sliding.slf
+BOUNDARY CONDITIONS FILE                       =  geo_sliding.cli
+BINARY DATA FILE 1 FORMAT                      =  SERAFIN
+GAIA STEERING FILE                             =  gai_sliding.cas
+RESULTS FILE                                   =  r2d_sliding.slf
+/ uniform grain
+/
+/
+/----------------------------------------------------------------
+/	DUREE DU CALCUL (2)
+/----------------------------------------------------------------
+TIME STEP                                      =  1.0
+NUMBER OF TIME STEPS                           =  10000
+GRAPHIC PRINTOUT PERIOD                        =  1000
+LISTING PRINTOUT PERIOD                        =  1000
+/
+/----------------------------------------------------------------
+/	INPUT-OUTPUT, GRAPHICS AND LISTINGS (3)
+/----------------------------------------------------------------
+VARIABLES FOR GRAPHIC PRINTOUTS                =
+'U,V,S,B,Q,F,H'
+/----------------------------------------------------------------
+/	INITIAL CONDITIONS (4)
+/----------------------------------------------------------------
+INITIAL CONDITIONS                         = 'CONSTANT ELEVATION'
+INITIAL ELEVATION                          =  2.55
+/----------------------------------------------------------------
+/	BOUNDARY CONDITIONS (5)
+/----------------------------------------------------------------
+/
+PRESCRIBED FLOWRATES                           = 0.D0;0.D0
+PRESCRIBED ELEVATIONS                           = 2.55;2.55
+/
+/----------------------------------------------------------------
+/	NUMERICAL PARAMETERS (7)
+/----------------------------------------------------------------
+SOLVER                                         =  1
+SOLVER ACCURACY                                =  1.E-5
+INFORMATION ABOUT SOLVER                       =  YES
+MASS-BALANCE                                   =  YES
+FREE SURFACE GRADIENT COMPATIBILITY            = 0.D0
+TIDAL FLATS                                    = NO
+/----------------------------------------------------------------
+/	PHYSICAL PARAMETERS (8)
+/----------------------------------------------------------------
+LAW OF BOTTOM FRICTION                         =  5
+FRICTION COEFFICIENT                           =  0.015
+TURBULENCE MODEL                               =  1
+/----------------------------------------------------------------
+/	COUPLING AND PARALLELISM (9)
+/----------------------------------------------------------------
+COUPLING WITH                                 =  'GAIA'

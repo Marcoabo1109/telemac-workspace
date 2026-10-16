@@ -1,0 +1,18 @@
+2 1
+0 100 10
+500 1000 20
+250  175     21 gai_01
+
+
+Description of the file
+1st line: number of periods and number of points
+2nd line: period 1: start time, end time and interval (in seconds)
+3rd line: period 2: start time, end time and interval (in seconds)
+4th line: output points; x coordinate, y coordinate, station number, and station name
+
+The x and y coordinate are used for linear interpolation.
+The station number is an index, which is written to IKLE. (So you can easily know which station is in the output file)
+The station name is not used by TELEMAC, but is to increase the readibility of this file.
+The rest of the file are comments
+
+This file is specially made to test the use of two different output periods
