@@ -1,0 +1,165 @@
+\chapter{Monochromatic swell breaking on beach.}
+
+\section{Summary}
+
+The aim of this test case is to analyze the behavior of Artemis during wave
+breaking on a beach with a constant gentle slope. It also enables us to test
+the two breaking model introduced in Artemis.
+
+The results are compared with experimental results obtained on a physical model
+by Delft Hydraulics Laboratory \cite{Stive1984}. They enable us to verify that
+the Artemis code takes well into account wave breaking
+
+\section{Description of the test case}
+The modeled case is the one described in \cite{Stive1984}, i.e. a beach on the
+opposite side to the swell generation. Two breaking formulas are compared. In
+the first case we use the formula of Battjes \& Janssen \cite{Battjes1978} and
+in the second case we use that of Dally et al \cite{Dally1984}. For the latter
+case we set K=0.25 and $\Gamma=0.4$. These choices were based on the values
+proposed by Dally et al \cite{Dally1984}, and after tests carried out on the
+Artemis code for several values of K and $\Gamma$.
+
+\subsection{Geometry}
+
+Domain: 42.5mx1m
+
+maximum depth: 0.7m
+
+beach slope:1/40
+
+\begin{figure}[h]
+\begin{center}
+  \includegraphicsmaybe{[width=0.7\textwidth]}{../img/Bathy.png}
+\end{center}
+\caption{Bathymetry of the case}
+\label{fig:breaking_Bathy}
+\end{figure}
+
+\subsection{Mesh}
+Number of triangular elements: 1421
+
+size of mesh: 40 cm (inlet) 10 cm (outlet)
+
+Nodes: 863
+
+number of mesh per wavelength: 11.7 (for h=0.7m)
+
+\begin{figure}[h]
+\begin{center}
+  \includegraphicsmaybe{[width=0.7\textwidth]}{../img/Mesh.png}
+\end{center}
+\caption{Mesh of the case}
+\label{fig:breaking_Mesh}
+\end{figure}
+
+\subsection{Boundary conditions}
+\begin{figure}[h]
+\begin{center}
+  \includegraphicsmaybe{[width=\textwidth]}{boundary.png}
+\end{center}
+\caption{Boundary Conditions}
+\label{fig:breaking_bc}
+\end{figure}
+
+Incident swell:
+\begin{itemize}
+\item Period: 1.79 s
+\item Swell height: 0.145 m
+\item Phase (ALFAP): 0 on all the boundary
+\item propagation direction: 0 $^\circ$
+\end{itemize}
+
+Solid wall:
+\begin{itemize}
+\item Reflection Coefficient: 1
+\item Dephasing: 0
+\item attack angle: 0 $^\circ$
+\end{itemize}
+liquid wall (beach): 
+\begin{itemize}
+\item Reflection Coefficient: 0
+ \item Dephasing: 0
+\item attack angle: 0 $^\circ$
+\end{itemize}
+
+\subsection{solver}
+For both cases, the direct solver (solver = 8) was used with
+accuracy of $10^{-4}$. Calculation time is less than 1 second.
+For the dissipation coefficient calculation, the relaxation coefficient between two sub
+iterations is 0.25.
+
+
+
+\section{Results}
+The experimental results obtained in \cite{Stive1984} are the reference values.
+The points are on a section for x from 34 to 42m and y =0.5m. We compare wave height experimentally and
+numerically.
+
+The wave height of swell obtained for the two models are compared on figures
+\ref{fig:breaking_WH_Dally} and \ref{fig:breaking_WH_Janssen}, the breaking
+rate on figures \ref{fig:breaking_QB_Dally} and \ref{fig:breaking_QB_Janssen}.
+Figure \ref{fig:breaking_WH_Profile} compares the result obtained with Artemis
+with the 2 models and the experimental results. The measurements used to make
+the Figure, have been approximated with the reading of an old Figure
+A comparison (Figure \ref{fig:breaking_WH_Profile}) between the results
+obtained by Artemis and those obtained in \cite{} shows good correspondence.
+It shows that Artemis has adequately taken into account breaking phenomena.
+Nevertheless, the results produced by
+Artemis are overestimated compared to the measurements. However, Dally's
+formula seems to slightly less overestimate.
+
+There is a simple explanation for the discrepancy between numerical and
+experimental results. The shallow slope leads to a spilling breaking which
+means that the dissipation occurs on a long distance and not in a restricted
+area. In the case of a monochromatic swell the breaking rate is 0 or 1 which
+gives breaking or not at all. This binary description is not suitable to that
+type of breaking, which explain the overestimation in the surfing area. The
+differences will be less important for a random swell.  
+
+\begin{figure}[h]
+\begin{center}
+  \includegraphicsmaybe{[width=0.9\textwidth]}{../img/WaveHeightDally.png}
+\end{center}
+\caption{Wave height with Dally model}
+\label{fig:breaking_WH_Dally}
+\end{figure}
+
+\begin{figure}[h]
+\begin{center}
+  \includegraphicsmaybe{[width=0.9\textwidth]}{../img/WaveHeightJanssen.png}
+\end{center}
+\caption{Wave height with Janssen model}
+\label{fig:breaking_WH_Janssen}
+\end{figure}
+
+\begin{figure}[h]
+\begin{center}
+  \includegraphicsmaybe{[width=0.9\textwidth]}{../img/BreakingDally.png}
+\end{center}
+\caption{Breaking rate with Dally model}
+\label{fig:breaking_QB_Dally}
+\end{figure}
+
+\begin{figure}[h]
+\begin{center}
+  \includegraphicsmaybe{[width=0.9\textwidth]}{../img/BreakingJanssen.png}
+\end{center}
+\caption{breaking rate with Janssen model}
+\label{fig:breaking_QB_Janssen}
+\end{figure}
+
+\begin{figure}[h]
+  \begin{center}
+  \includegraphicsmaybe{[width=0.9\textwidth]}{../img/profile.png}
+\end{center}
+\caption{Comparison of wave height with measurements on a profile}
+\label{fig:breaking_WH_Profile}
+\end{figure}
+
+\section{Conclusion}
+This test case compares the results produced by Artemis with experimental
+results on a physical model. It validates Artemis' ability to take into account
+wave breaking for a monochromatic swell. However, this type of swell is not
+suitable for modeling of all breaking modes, especially for sliding waves. It
+is therefore recommended to use Artemis with a random swell, especially when
+breaking plays an important role in wave propagation.

@@ -1,0 +1,59 @@
+/-------------------------------------------------------------------/
+/                        TELEMAC-2D                                 /
+/-------------------------------------------------------------------/
+/
+/----------------------------------------------
+/  COMPUTER INFORMATIONS
+/----------------------------------------------
+/
+GEOMETRY FILE                   = geo_channel.slf
+BOUNDARY CONDITIONS FILE        = geo_channel.cli
+RESULTS FILE                    = r2d_depot_diff.slf
+GAIA STEERING FILE : gai_depot_diff.cas
+FORTRAN FILE = user_fortran
+/----------------------------------------------
+/  GENERAL INFORMATIONS - OUTPUTS
+/----------------------------------------------
+/
+VARIABLES FOR GRAPHIC PRINTOUTS = 'U,V,S,B,Q,F,H,T1'
+/
+GRAPHIC PRINTOUT PERIOD         = 13800
+LISTING PRINTOUT PERIOD         = 5400
+/
+DURATION                        = 80000
+TIME STEP                       = 1
+MASS-BALANCE                    = YES
+
+TITLE: 'COHESIVE CHANNEL'
+COUPLING WITH: 'GAIA'
+
+INFORMATION ABOUT SOLVER : YES
+/
+/----------------------------------------------
+/  INITIAL CONDITIONS
+/----------------------------------------------
+/
+INITIAL CONDITIONS              = 'CONSTANT ELEVATION'
+INITIAL ELEVATION               = 4.5
+/
+/----------------------------------------------
+/  BOUNDARY CONDITIONS
+/----------------------------------------------
+/
+PRESCRIBED FLOWRATES            = 0.;10.
+PRESCRIBED ELEVATIONS           = 4.5;0.
+PRESCRIBED TRACERS VALUES       = 0.;1.
+/
+/----------------------------------------------
+/  PHYSICAL PARAMETERS
+/----------------------------------------------
+/
+LAW OF BOTTOM FRICTION          = 0
+VELOCITY DIFFUSIVITY            = 0.
+/
+/----------------------------------------------
+/  NUMERICAL PARAMETERS
+/----------------------------------------------
+/SCHEMES
+/
+

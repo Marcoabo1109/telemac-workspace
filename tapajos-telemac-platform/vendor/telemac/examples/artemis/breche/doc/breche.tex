@@ -1,0 +1,100 @@
+\chapter{Breach}
+\section{Summary}
+The aim of this test case is to compare the results produced by Artemis with
+experimental results on a known application: the diffraction of a swell
+entering a harbor through a gap twice its wavelength. The results are
+compared with those given by the Shore Protection Manual of the Coastal
+Engineering Research Center, USA (CERC, \cite{CERC84}, page 2-93).
+\section{Description of the test case}
+The modelled case represents a narrow entrance to a square port with a constant flat bottom.
+\subsection{Geometry}
+Port Entrance: 550m
+
+Domain: 1830mx1830m
+
+Water depth: 64 m
+
+\subsection{Mesh}
+Number of triangular elements: 14304
+
+Nodes: 7313
+
+Mesh per wavelenth: 14
+
+\begin{figure}[h]
+\begin{center}
+  \includegraphicsmaybe{[width=0.6\textwidth]}{../img/Mesh.png}
+\end{center}
+\caption{Mesh of the case}
+\label{fig:breach_Mesh}
+\end{figure}
+
+\subsection{Boundary conditions}
+\begin{figure}[h]
+\begin{center}
+  \includegraphicsmaybe{[width=0.7\textwidth]}{boundary.png}
+\end{center}
+\caption{Boundary Conditions}
+\label{fig:breach_bc}
+\end{figure}
+
+Incident swell:
+\begin{itemize}
+\item Period: 14 s
+\item Wave height: 1 m
+\item Phase (ALFAP): 0 on all the boundary
+\item Propagation direction: $0^\circ$
+\end{itemize}
+Solid wall:
+\begin{itemize}
+\item Reflection coefficient: 1
+\item Dephasing: 0
+\item Attack angle: $0^\circ$
+\end{itemize}
+Paroi liquide :
+\begin{itemize}
+\item Attack angle: $0^\circ$
+\end{itemize}
+\subsection{Solver}
+Two solver have been tested with a precision of $10^{-4}$
+\begin{itemize}
+\item Direct solver (solver=8) time of calculation less than 1s. 
+\item Conjugate gradient on a normal equation (solver=3) time of calculation of 2s.
+  \end{itemize}
+\section{Results}
+The experimental results obtained in \cite{CERC1984} constitute the reference values, distributed over a section shown in
+section shown in Fig \ref{fig:breach_CERCResult}. A comparison is made between the wave heights obtained
+numerically and experimentally.
+
+The results obtained by Artemis (Solver 8) are shown figure \ref{fig:breach_results}, the ones obtained by the CERC is on Figure
+\ref{fig:breach_CERCResult} and the comparison between both are shown in Figure \ref{fig:breach_section}. 
+\begin{figure}[h]
+\begin{center}
+\includegraphicsmaybe{[width=0.45\textwidth]}{../img/WaveHeight.png}
+\includegraphicsmaybe{[width=0.45\textwidth]}{../img/Free_Surface.png}
+\end{center}
+\caption{Breach: Wave height on left and free surface on right}
+\label{fig:breach_results}
+\end{figure}
+
+
+\begin{figure}[h]
+\begin{center}
+\includegraphicsmaybe{[width=\textwidth]}{CERC.png}
+\end{center}
+\caption{Breach: }
+\label{fig:breach_CERCResult}
+\end{figure}
+
+\begin{figure}[h]
+\begin{center}
+\includegraphicsmaybe{[width=\textwidth]}{../img/Section.png}
+\end{center}
+\caption{Breach: Comparison of wave heigth between measurements and Artemis }
+\label{fig:breach_section}
+\end{figure}
+
+\section{Conclusions}
+This test case compares results acquired with Artemis with experimental results.
+It validates the wave diffraction model. The agreement between
+numerical predictions and experiment is satisfactory.

@@ -1,0 +1,114 @@
+\chapter{Wave field around a floating body}
+\section{Summary}
+The aim of this test case is to validate the functionality of imposing an
+incident potential on a boundary. This feature appeared in version 6.2.
+We compare Artemis with analytical results.
+
+We consider the case of a circular domain with flat bathymetry. At the center
+of the domain (x=0 and y=0), a floating body submitted to an incident swell
+generates a disturbance of the wave field, whose potential $\Phi_P$  can be
+expressed. The center of the simulation is not considered in the simulation.
+The floating body is taken into account by imposing an incident potential on
+the inner circle of the fluid domain. This incident potential can be calculated
+analytically at any distance from the body, providing an analytical reference.
+The outer circle of the domain is a free output. The results are highly
+satisfactory.
+
+\section{Description of the test case}
+\subsection{Geometry}
+
+\begin{figure}[h]
+\begin{center}
+  \includegraphicsmaybe{[width=0.7\textwidth]}{../img/Mesh.png}
+\end{center}
+\caption{Domain of the case}
+\label{fig:kochin_Mesh}
+\end{figure}
+The general configuration is described on Figure \ref{fig:kochin_Mesh} which
+shows the fluid meshed and its dimension. The bathymetry is flat and the
+waterdepth is 100m. The inner ray is 50m and the outter ray is 283m
+No breaking and no friction is taken into account. 
+
+The mesh is made with 6912 triangular elements and the nodes are evenly spaced
+by 5 degrees, with refinement according to the distance to the center.
+
+\subsection{Boundary conditions}
+Boundary conditions are given on Figure \ref{fig:kochin_bc}
+\begin{figure}[h]
+\begin{center}
+  \includegraphicsmaybe{[width=\textwidth]}{boundary.png}
+\end{center}
+\caption{Boundary Conditions and orientation}
+\label{fig:kochin_bc}
+\end{figure}
+
+Houle incidente:
+\begin{itemize}
+\item Définie par le potentiel et son gradient :
+\begin{itemize}
+\item PRBT: Incident potential, real part
+\item PIBT: Incident potential, imaginary part 
+\item DDXPRBT: x-derivative of the incident potential, real part
+\item DDYPRBT: y-derivative of the incident potential, real part
+\item DDXPIBT: x-derivative of the incident potential, imaginary part
+\item DDYPIBT: y-derivative of the incident potential, imaginary part
+\end{itemize}
+\item output direction: $0^\circ$
+\item Incident swell period: 8s
+\end{itemize}
+
+The expression for the incident potential is given by \cite{Babarit2011}
+
+\begin{equation}
+  Phi_P = \sqrt{\frac{k}{2\pi R}}.e^{ikR\frac{\pi}{4}}H(\Theta)
+  \end{equation}
+The z-dependency is given, in accordance with ARTEMIS assumptions, by:
+$\frac{ch(k(z+d))}{ch(kz)}$
+
+Where
+\begin{itemize}
+\item $R$ is the distance to the centre O (ray in meters).
+\item $\Theta$ is the angle to x-axe.
+\item $k$ is the wave number.
+\item $d$ is the water depth
+\end{itemize}
+The function $H(\Theta)$ is called Kochin function. In the test case it is written under exponential form:
+$$
+H(\Theta) = Z(\Theta) e^{i\phi(\Theta)}
+$$
+Where $Z$ and $\Phi$ are real function read each $5^\circ$
+Gradiants are calculated by finite difference on functions $Z$ and $\Phi$
+
+Free output with an attack angle of $0^\circ$
+
+\section{Reference solution}
+$\Phi_P$ can be calculated at any distance of the centre. This is the reference
+result.  ARTEMIS, for its part, propagates the incident potential entered at
+R=50m to the free exit at R=283m. In this area, the result of the Berkhoff
+equation can be compared with the analytical reference.
+
+
+\section{Results}
+The results obtained with ARTEMIS are shown in Figure\ref{fig:kochin_resu}, left-hand column.
+In the right column, we present the result of the analytical solution. We compare directly
+The imaginary and real part of the potential from which all other quantities (wave height,
+free surface, phase ..) depend. 
+The comparison is very satisfactory. An incident potential of any shape is taken into
+account and its propagation is validated.
+
+\begin{figure}[h]
+\begin{center}
+  \includegraphicsmaybe{[width=\textwidth]}{resuKochin.png}
+\end{center}
+\caption{Real and imaginary parts of the potential. Comparison between the analytical
+  solution (right) and the ARTEMIS calculation (left) over the entire domain.}
+\label{fig:kochin_resu}
+\end{figure}
+
+
+\section{Conclusions}
+This test case validate that a user can enter an incident swell data other than the
+"Wave height" and "Propagation direction" data. Any potential can be used. 
+
+Radial swell propagation due to the presence of a floating body is also well modelled by
+ARTEMIS, which is consistent with the analytical solution used for the test case.

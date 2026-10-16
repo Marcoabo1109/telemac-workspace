@@ -1,0 +1,172 @@
+\chapter{Canal equilibre}\label{chapter:Canal equilibre}
+
+\section{Purpose}
+
+This test computes the bedload for an equilibrium channel.
+
+\section{Description}
+
+\subsection{Physical parameters}
+
+The steady state is obtained from the equilibrium between the slope
+and the friction term,
+\begin{equation}
+\label{EqSlopeFriction}
+  g R_h \partial_x z_b = \dfrac{\tau}{\rho},
+\end{equation}
+with the shear stress $\tau$ defined by,
+\[
+  \tau = \rho g R_h \dfrac{u |u|}{K_s^2 R_h^{4/3}}.
+\]
+The idea is to evaluate the transport capacity $Q_{s,in}$ to be 
+injected in the channel to maintain a fixed bottom. To do this, we
+simply calculate the dimensionless shear stress $\tau^{\star}$
+to be introduced in the transport capacity formula $Q_s$ 
+corresponding to the equilibrium \eqref{EqSlopeFriction}.
+Since,
+\begin{equation}
+  \tau^{\star} = \dfrac{\tau}{g(\rho_s-\rho)d} = 
+  \dfrac{\rho R_h \partial_x z_b}{(\rho_s-\rho)d} = 
+  \dfrac{R_h \partial_x z_b}{R\,d},
+\end{equation}
+where
+\[
+  R = \dfrac{\rho_s-\rho}{\rho},
+\]
+by focusing on Meyer-Peter's formula \& M\"uller and using the 
+effective shear stress, 
+\begin{equation}
+  \tau_{eff} = \left( \dfrac{K_s}{K_p} \right)^{3/2} \tau^{star},
+\end{equation}
+the equilibrium transport capacity is rewritten,
+\begin{equation}
+  Q_s^{MPM} = 
+  8 \sqrt{Rgd^3}\left( \left( \dfrac{K_s}{K_p} \right)^{3/2} 
+  \dfrac{R_h \partial_x z_b}{R\,d} - 0.047 \right)_+^{3/2}.
+\end{equation}
+As it stands in the Courlis code, the ``quantity of sediment'' injected
+is done through an injected concentration that can be determined as 
+follows,
+\begin{equation}
+  Q_s = \dfrac{C_s \, Q}{\rho_s} \quad \Longleftrightarrow \quad C_s =
+  \dfrac{\rho_s Q_s}{Q}.
+\end{equation}
+
+The geometric and parametric data of the case are summarized in the table \ref{paramCanEq}.
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{l r l l}
+  \hline
+  Channel width             & $l=$               &$0.2$                &m \\
+  Channel length            & $L=$               &$30$                 &m \\
+  Channel slope               & $I=$               &$0.00427$            &(-) \\
+  \hline
+  Gravity constant  & $g=$             &$9.8$                &m.s$^{-2}$ \\
+  Water density             & $\rho_w=$          &$10^3$               &kg.m$^{-3}$ \\
+  Sediment density          & $\rho_s=$          &$2.65\times10^3$     &kg.m$^{-3}$ \\
+  Sediment mean diameter            & $d=$               &$0.32\times10^{-3}$  &m \\
+  \hline
+  \hline
+  Hydraulic discharge            &$Q=$               &$0.0071$              &m$^3$.s$^{-1}$ \\
+  water depth                &$h\approx$         &$0.072$               &m  \\
+  \hline
+  \hline
+  Strickler coefficient & $K_h=$  & $62$  & m$^{1/3}$.s$^{-1}$ \\
+                           & $K_s=$  & $62$  & m$^{1/3}$.s$^{-1}$ \\
+  Grain roughness      & $K_p=$  & $62$  & m$^{1/3}$.s$^{-1}$ \\
+  \hline
+  \\
+\end{tabular}
+\caption{\label{paramCanEq}Parameters for the equilibrium channel test case.}
+\end{center}
+\end{table}
+
+The simulated time is 100 s.
+
+\subsection{Numerical parameters}
+
+The three mascaret kernel are tested. A time step of 0.05 s is fixed
+for both Sarap and Rezo kernel, and a variable time step with a 
+Courant number fixed to 0.8 is set with mascaret.
+
+\section{Results}
+
+Figure \ref{fig:profile_sarap} shows the initial and final profile of 
+the bottom obtained with the Sarap kernel.
+
+\begin{figure}[h]
+ \centering
+ \includegraphicsmaybe{[width=0.49\textwidth]}{../img/profile_init_sarap.png}
+ \includegraphicsmaybe{[width=0.49\textwidth]}{../img/profile_final_sarap.png}
+ \caption{Sarap results and the initial and final time.}
+ \label{fig:profile_sarap}
+\end{figure}
+
+Figure \ref{fig:tauqs_sarap} shows the longitudinal distribution of the
+bed shear stress and the solid discharge at the final time of the Sarap
+kernel simulation.
+
+\begin{figure}[h]
+ \centering
+ \includegraphicsmaybe{[width=0.49\textwidth]}{../img/profile_tau_sarap.png}
+ \includegraphicsmaybe{[width=0.49\textwidth]}{../img/profile_flux_sarap.png}
+ \caption{Sarap shear stress and solid discharge at the final time.}
+ \label{fig:tauqs_sarap}
+\end{figure}
+
+Figure \ref{fig:profile_rezo} shows the initial and final profile of 
+the bottom obtained with the Rezo kernel.
+
+\begin{figure}[h]
+ \centering
+ \includegraphicsmaybe{[width=0.49\textwidth]}{../img/profile_init_rezo.png}
+ \includegraphicsmaybe{[width=0.49\textwidth]}{../img/profile_final_rezo.png}
+ \caption{Rezo results and the initial and final time.}
+ \label{fig:profile_rezo}
+\end{figure}
+
+Figure \ref{fig:tauqs_rezo} shows the longitudinal distribution of the
+bed shear stress and the solid discharge at the final time of the Rezo
+kernel simulation.
+
+\begin{figure}[h]
+ \centering
+ \includegraphicsmaybe{[width=0.49\textwidth]}{../img/profile_tau_rezo.png}
+ \includegraphicsmaybe{[width=0.49\textwidth]}{../img/profile_flux_rezo.png}
+ \caption{Rezo shear stress and solid discharge at the final time.}
+ \label{fig:tauqs_rezo}
+\end{figure}
+
+Figure \ref{fig:profile_mascaret} shows the initial and final profile of 
+the bottom obtained with the Mascaret kernel.
+
+\begin{figure}[h]
+ \centering
+ \includegraphicsmaybe{[width=0.49\textwidth]}{../img/profile_init_masc.png}
+ \includegraphicsmaybe{[width=0.49\textwidth]}{../img/profile_final_masc.png}
+ \caption{Mascaret results and the initial and final time.}
+ \label{fig:profile_mascaret}
+\end{figure}
+
+Figure \ref{fig:tauqs_mascaret} shows the longitudinal distribution of the
+bed shear stress and the solid discharge at the final time of the Mascaret
+kernel simulation.
+
+\begin{figure}[h]
+ \centering
+ \includegraphicsmaybe{[width=0.49\textwidth]}{../img/profile_tau_masc.png}
+ \includegraphicsmaybe{[width=0.49\textwidth]}{../img/profile_flux_masc.png}
+ \caption{Mascaret shear stress and solid discharge at the final time.}
+ \label{fig:tauqs_mascaret}
+\end{figure}
+
+The three kernels give very similar results. Despite the non uniform
+longitudinal distribution of the shear stress and the associated 
+solid discharge, the bed evolution is negligible and the initial and
+final profile are very similar after a 100 s simulation.
+
+\section{Conclusion}
+
+\courlis is able to keep the sedimentary equilibrium on a channel.
+

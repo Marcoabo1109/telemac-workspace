@@ -1,0 +1,113 @@
+\chapter{Soni}\label{chapter:Newton}
+
+\section{Purpose}
+
+The laboratory experiment of \cite{soni1981laboratory} 
+reports the phenomenon of deposition
+following a sudden increase in the supply of sediments in a channel.
+
+\section{Description}
+
+The experiment is carried out in a rectangular channel covered with
+an erodible bed of uniform sandy sediment. It is carried out in two
+stages. The first one consists in reaching a dynamic equilibrium 
+state under a fixed constant flow. After having obtained a stable 
+equilibrium slope, an addition of sediments superior to the transport 
+capacity is injected at the entrance of the channel. This addition 
+results in a deposit in the system and the measurements of the 
+evolution of the funds begin. It is this second step that is modeled.
+
+During the experiment, the presence of ripples and dunes was observed
+and more particularly in the part where the deposit is not pronounced. 
+The measurements presented are averaged. 
+
+Figure \ref{soni:fig:initial} shows the initial longitudinal
+profile of the flume.
+
+\begin{figure}[h]
+ \centering
+ \includegraphicsmaybe{[width=0.7\textwidth]}{../img/profile_init.png}
+ \caption{Initial longitudinal profile of the flume.}
+ \label{soni:fig:initial}
+\end{figure}
+
+\section{Physical parameters}
+
+\begin{table}[H] %create a central table
+   \begin{center}
+   \caption{Geometric, hydraulic and sedimentary characteristics of Newton's experiment} %legende
+       \begin{tabular}{|c|c|} %beginning of the table
+       \hline %horizontal line
+   Length of the channel& $L=30$ m \\%the & symbolizes a horizontal line
+   Width of the channel&$ B=0.2$ m \\
+   Slope of the channel& $I=0.00427$ \\
+   \hline
+  Upstream discharge &$Q=0.00571$ m$^{3}$.s$^{-1}$\\
+  Downstream water depth &$ H=0.072$ m \\
+  Mean velocity &$V=0.49$ m.s$^{-1}$ \\  
+    \hline
+   Concentration initially injected& $C_s=4.88$ kg.m$^{-3}$ \\
+   Concentration of the sand layer& $C=1650$ kg.m$^{-3}$ \\
+   Median diameter of the sand& $d_{50}=0.32$ mm \\   
+   Mass density of the sediment& $\rho_s = 2650$ kg.m$^{-3}$\\
+   Settling velocity of the sand& $w_s=0.042$ m.s$^{-1}$\\
+  \hline
+        \end{tabular}
+     \end{center}
+\end{table}
+
+The Strickler coefficient is determined by a calibration on the
+initial water line: $K_h = 62$ m$^{1/3}$.s$^{-1}$. 
+The bedload transport formula chosen is Meyer-Peter and Muller
+formula.
+The friction 
+coefficient for the transport formula has been set to 62 
+m$^{1/3}$.s$^{-1}$ and the skin friction coefficient to 62
+m$^{1/3}$.s$^{-1}$.
+
+\section{Numerical parameters}
+
+The mesh size is refined at the beginning of the channel (5cm mesh). 
+For the rest of the domain, the meshes are every 25cm.
+
+The model is run with the 3 kernels. The time step is set to 0.5 s with 
+Sarap, 0.15 s with Rezo and it is variable with mascaret, respecting 
+a Courant number of 0.8.
+
+\section{Results}
+
+Figure \ref{soni:fig:sarap} shows the results with the Sarap kernel
+in comparison with experimental data.
+
+\begin{figure}[h]
+ \centering
+ \includegraphicsmaybe{[width=0.7\textwidth]}{../img/profile_T_sarap.png}
+ \caption{Sarap results and diffenrent times.}
+ \label{soni:fig:sarap}
+\end{figure}
+
+Figure \ref{soni:fig:rezo} shows the results with the Rezo kernel
+in comparison with experimental data.
+
+\begin{figure}[h]
+ \centering
+ \includegraphicsmaybe{[width=0.7\textwidth]}{../img/profile_T_rezodt.png}
+ \caption{Rezo results and diffenrent times.}
+ \label{soni:fig:rezo}
+\end{figure}
+
+Figure \ref{soni:fig:mascaret} shows the results with the Rezo kernel
+in comparison with experimental data.
+
+\begin{figure}[h]
+ \centering
+ \includegraphicsmaybe{[width=0.7\textwidth]}{../img/profile_T_mascaret.png}
+ \caption{Mascaret results and diffenrent times.}
+ \label{soni:fig:mascaret}
+\end{figure}
+
+\section{Conclusion}
+
+Courlis is able to represent the deposition process 
+of a laboratory channel 
+experimental data, with every hydraulic kernels.

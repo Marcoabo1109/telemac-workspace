@@ -1,0 +1,110 @@
+\chapter{Newton trapeze}\label{chapter:Newton_trapeze}
+
+\section{Purpose}
+
+This test case aims at validating the closure {\em uniform erosion -- uniform deposition}
+imposed on the evolution of cross-section in erosion context, see the Courlis' user document.
+For this purpose, we have reused the same configuration as in the Newton's test case
+and just replaced the geometry of rectangular channel by a trapezoidal one.
+
+\section{Description}
+
+\subsection{Construction of a trapezoidal channel}
+
+Given a rectangular cross-section of width $L$ and a water height $Y$, we first
+design a simple {\em symetric trapezoidal} cross-section defining by 6 points $P_1,..,P_6$
+as sketched in Fig. \ref{newton_trapeze:fig:rectangle_to_trapeze}.
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphicsmaybe{[width=0.9\textwidth]}{rectangle_to_trapeze.pdf}
+ \caption{Construction a trapezoidal cross-section from a rectangular one.}
+ \label{newton_trapeze:fig:rectangle_to_trapeze}
+\end{figure}
+
+Notice that we have fixed the larger base $P_2P_5 = L$ and imposed the same water
+height $Y$ on the trapezoidal cross-section. In order to define the small base
+$P_3P_4=\ell$, the height of the small base $H$ and the channel width $P_1P_6 = B$ at free surface,
+we impose the trapezoidal cross-section to have the same wetted area and wetted
+perimeter than the given rectangular cross-section. It means that
+\begin{gather}
+  S_1 + S_2 = YL, \label{newton_trapeze:wetted-area}\\
+  2(P_1P_2 + P_2P_3) + \ell = 2Y + L. \label{newton_trapeze:wetted-perimeter}
+\end{gather}
+where $S_1, ~ S_2$ are the areas of the upper et lower trapezoid as sketched in Fig. \ref{newton_trapeze:fig:rectangle_to_trapeze}.
+
+Introducing the following dimensionless parameters
+\begin{equation*}
+ \alpha = \frac{H}{Y}, \quad \beta = \frac{\ell}{L} \quad (0 < \alpha, \beta < 1),
+\end{equation*}
+and for a given value of $\alpha$, the condition \eqref{newton_trapeze:wetted-area} leads to
+\begin{equation*}
+\frac{B}{L} = 1 + \frac{\alpha(1-\beta)}{1-\alpha}
+\end{equation*}
+where $\beta$ can be computed from condition \eqref{newton_trapeze:wetted-perimeter}.
+Indeed, by defining
+\begin{equation*}
+  \varepsilon = \frac{Y}{L}
+\end{equation*}
+which is determinated from the rectangular channel, and using
+the parameter change
+\begin{equation*}
+2\varepsilon x = 1-\beta,
+\end{equation*}
+$x$ is solution of equation
+\begin{equation}\label{newton_trapeze:x-equation}
+\sqrt{\alpha^2 + x^2} + \sqrt{(1-\alpha)^2 + \left(\frac{\alpha}{1-\alpha}\right)^2x^2} = 1+x.
+\end{equation}
+This later equation can be solved numerically. For the Newton test case ($L = 0.3048, ~ Y = 0.041, ~ \varepsilon = 0.134$), the solution $x$ of \eqref{newton_trapeze:x-equation}, and the ratios $\ell/L, B/L$ in function of $\alpha$ are plotted in Fig. \ref{newton_trapeze:fig:x-solution}.
+\begin{figure}[!ht]
+ \centering
+ \includegraphicsmaybe{[width=0.6\textwidth]}{eqbeta_plot.pdf}
+ \caption{Solution of equation \eqref{newton_trapeze:x-equation} for the Newton test case.}
+ \label{newton_trapeze:fig:x-solution}
+\end{figure}
+
+\subsection{Parameters}
+
+Now, applying these equations for the Newton test case and by fixing $\alpha = 0.2$,
+one can find $\beta = 0.3697$ and $B/L = 1.1576$. The resulting trapezoidal cross-section
+is sketched in the left plot of Fig. \ref{newton_trapeze:fig:profile_init}.
+
+Next, for the chosen closure {\em uniform erosion -- uniform deposition}, we have imposed the width of erosion parameter being the larger base $P_2P_5 = L$. Recall that according to this closure, the trapezoid $P_2P_3P_4P_5$ will be deplaced downward with some distance $\delta z$ in case of erosion as sketched in the right plot of Fig. \ref{newton_trapeze:fig:profile_init}.
+\begin{figure}[!ht]
+  \centering
+  \begin{minipage}{0.49\textwidth}
+  \includegraphicsmaybe{[width=\textwidth]}{profile_init.pdf}
+  \end{minipage}
+  \begin{minipage}{0.49\textwidth}
+  \includegraphicsmaybe{[width=\textwidth]}{profile_erosion.pdf}
+  \end{minipage}
+ \caption{Left: initial cross-section. Right: expected cross-section for erosion case (dotted line is the correcponding rectangular profile).}
+ \label{newton_trapeze:fig:profile_init}
+\end{figure}
+
+\section{Results}
+
+Figure \ref{newton_trapeze:fig:sarap} shows the results with the Sarap kernel.
+Figure \ref{newton_trapeze:fig:rezo} shows the results with the Rezo kernel.
+One can note that the feature has not yet been implemented in the mascaret kernel.
+In particular,
+the number of call on the planimetrage routine is shown in the left plots. One can
+find that re-planimetrage was only carried out where the river bottom is erroded.
+\begin{figure}[!ht]
+ \centering
+ \includegraphicsmaybe{[width=0.9\textwidth]}{../img/sarap_plong.png}\\
+ \includegraphicsmaybe{[width=0.9\textwidth]}{../img/sarap_ptravers.png}
+ \caption{Longitudinal and tranversal profiles given by the Sarap kenel.}
+ \label{newton_trapeze:fig:sarap}
+\end{figure}
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphicsmaybe{[width=0.9\textwidth]}{../img/rezodt_plong.png}\\
+ \includegraphicsmaybe{[width=0.9\textwidth]}{../img/rezodt_ptravers.png}
+ \caption{Longitudinal and tranversal profiles given by the Rezo kenel.}
+ \label{newton_trapeze:fig:rezo}
+\end{figure}
+
+\section{Conclusion}
+The evolution of cross-sections is correctly reproduced.

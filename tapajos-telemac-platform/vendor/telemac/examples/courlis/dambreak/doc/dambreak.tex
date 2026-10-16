@@ -1,0 +1,75 @@
+\chapter{Dambreak}\label{chapter:dambreak}
+
+\section{Purpose}
+
+This test simulates the erosion after a dambreak.
+
+\section{Description}
+
+\subsection{Physical parameters}
+
+The test case of dam failure induces the presence of shock. 
+It allows, among other things, to verify the capacity of the numerical
+scheme to manage regime changes and to capture shocks.
+As a general rule, the method using a splitting resolution of the 
+Saint-Venant-Exner system does not allow to ensure the stability of 
+the solution for this type of test case.
+Considering that this case involves regime changes, the river kernel 
+does not allow to manage this type of configuration and therefore, 
+it will not be tested.
+The parameters are given in the table \ref{paramDambreak}.
+The final time is T=1.4 s.
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{l r l l}
+  \hline
+  Channel width             & $l=$               &$0.25$              &m \\
+  Channel length            & $L=$               &$6$                 &m \\
+  \hline
+  Gravity constant  & $g=$             &$9.8$               &m.s$^{-2}$ \\
+  Water density             & $\rho_w=$          &$10^3$              &kg.m$^{-3}$ \\
+  Sediment density          & $\rho_s=$          &$2.65\times10^3$    &kg.m$^{-3}$ \\
+  Grain diameter            & $d=$               &$3.9\times10^{-3}$  &m \\
+  \hline
+  \hline
+  Inflow            &$q=$                &$0$                 & m$^2$.s$^{-1}$ \\
+  Water depth                &$h(x \leqslant 3)=$ &$0.35$              & m  \\
+                               &$h(x>3)=$           &$0.01$              & m  \\
+  \hline
+  \hline
+  Strickler coefficient & $K_h=$  & $60$  & m$^{1/3}$.s$^{-1}$ \\
+                           & $K_s=$  & $88$  & m$^{1/3}$.s$^{-1}$ \\
+  Skin friction Strickler      & $K_p=$  & $20$  & m$^{1/3}$.s$^{-1}$ \\
+  \hline
+\end{tabular}
+\caption{\label{paramDambreak} Parameters for the test case of dam failure.}
+\end{center}
+\end{table}
+
+\subsection{Numerical parameters}
+
+The mascaret kernel is used to perform this simulation. The time step 
+is variable respecting a Courant number of 0.8. The mesh size is 0.02 
+m.
+
+\section{Results}
+
+Figure \ref{fig:dambreak:results} shows the bottom evolution at the
+beginning and the end of the simulation. Despite some small
+instabilities, the behavior of the solution corresponds to what 
+is expected.
+
+\begin{figure}[h]
+ \centering
+ \includegraphicsmaybe{[width=0.7\textwidth]}{../img/profile.png}
+ \caption{Bottom elevation at the initial and final time step.}
+ \label{fig:dambreak:results}
+\end{figure}
+
+\section{Conclusion}
+
+\courlis is able to simulate a dambreak.
+
+
+

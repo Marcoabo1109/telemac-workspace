@@ -1,0 +1,111 @@
+\chapter{Bedload formulae test}\label{chapter:Bedload formulae test}
+
+\section{Purpose}
+
+This test case tests the 4 bedload transport formulae in 6 tests each.
+
+\section{Description}
+
+\subsection{Physical parameters}
+
+For each bedload formula a case number is associated
+(Meyer-Peter and Muller \cite{meyer1948formulas}: 0, Lefort: 1,
+Recking 2013 \cite{recking2013simple}: 2, Recking 2015: 3).
+
+The base configuration is an inflow slope of 1\% with an imposed
+upstream discharge of 100 m$^3$/s. Its sediment distribution, noted D$_1$ is
+d$_{84}$=0.0573 m, d$_m$=0.03 m, d$_{16}$=0.00573 m,
+d$_{50}$=0.27285714 m.
+The influence of the slope is studied with cases with 2\% slope and
+0.5\% slope.
+Then the inflow vary from 20 m$^3$/s to 300 m$^3$/s.
+A second distribution (D$_2$) of the sediment size is also tested:
+d$_{84}$=0.09545455 m, d$_m$=0.05 m, d$_{16}$=0.00954545 m,
+d$_{50}$=0.4545455 m.
+
+Table \ref{tab:formulea:config} summarize all the tested configuration:
+
+\begin{table}[h] %create a central table
+\begin{center}
+\caption{Configurations tested.\label{tab:formulea:config}} %legende
+\begin{tabular}{|c|c|c|c|c|} %beginning of the table
+
+\hline %horizontal line
+Case number & Formula & Slope (\%) & Inflow (m$^3$/s) & Sediment distribution\\
+\hline
+000 & Meyer-Peter and Muller & 1 & 100 & D$_1$\\
+\hline
+011 & Meyer-Peter and Muller & 0.5 & 100 & D$_1$\\
+\hline
+012 & Meyer-Peter and Muller & 2 & 100 & D$_1$\\
+\hline
+021 & Meyer-Peter and Muller & 1 & 300 & D$_1$\\
+\hline
+022 & Meyer-Peter and Muller & 1 & 20 & D$_1$\\
+\hline
+031 & Meyer-Peter and Muller & 1 & 100 & D$_2$\\
+\hline
+100 & Lefort & 1 & 100 & D$_1$\\
+\hline
+111 & Lefort & 0.5 & 100 & D$_1$\\
+\hline
+112 & Lefort & 2 & 100 & D$_1$\\
+\hline
+121 & Lefort & 1 & 300 & D$_1$\\
+\hline
+122 & Lefort & 1 & 20 & D$_1$\\
+\hline
+131 & Lefort & 1 & 100 & D$_2$\\
+\hline
+200 & Recking 2013 & 1 & 100 & D$_1$\\
+\hline
+211 & Recking 2013 & 0.5 & 100 & D$_1$\\
+\hline
+212 & Recking 2013 & 2 & 100 & D$_1$\\
+\hline
+221 & Recking 2013 & 1 & 300 & D$_1$\\
+\hline
+222 & Recking 2013 & 1 & 20 & D$_1$\\
+\hline
+231 & Recking 2013 & 1 & 100 & D$_2$\\
+\hline
+300 & Recking 2015 & 1 & 100 & D$_1$\\
+\hline
+311 & Recking 2015 & 0.5 & 100 & D$_1$\\
+\hline
+312 & Recking 2015 & 2 & 100 & D$_1$\\
+\hline
+321 & Recking 2015 & 1 & 300 & D$_1$\\
+\hline
+322 & Recking 2015 & 1 & 20 & D$_1$\\
+\hline
+331 & Recking 2015 & 1 & 100 & D$_2$\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\subsection{Numerical parameters}
+
+The mascaret kernel used is Sarap, with a duration of 2 s and a time step of 1 s.
+
+\section{Results}
+
+Figure \ref{fig:bedload} compares the numerical solution given by the
+code to a reference solution for each test case. It shows a very good
+agreement between simulated and expected results.
+
+\begin{figure}[h]
+ \centering
+ \includegraphicsmaybe{[width=0.7\textwidth]}{../img/flux_error.png}
+ \caption{Comparison between simulated and expected bedload fluxes.}
+ \label{fig:bedload}
+\end{figure}
+
+\section{Conclusion}
+
+Courlis is able to reproduce the accurate bedload fluxes for different
+transport formulae, slope conditions, input discharges and grain size
+distribution.
+
+

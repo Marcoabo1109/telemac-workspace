@@ -1,0 +1,84 @@
+\chapter{Van Rijn}\label{chapter:VR}
+
+\section{Purpose}
+
+This test case tests the non-cohesive sediment transport in suspension.
+
+\section{Description}
+
+This experiment, conducted by Van Rijn at the Delft Hydraulics 
+Laboratory, consists in studying the phenomenon of progressive erosion
+associated with the trapping of sediments in a pit in the presence of a
+stationary and uniform flow with a dominant mode of transport which is 
+suspension. The local excavations are too short for the water level to 
+drop at the deepened part, it remains imposed by the downstream reach, 
+preventing acceleration upstream. In the area of the excavation, the 
+water level increases and the flow velocity decreases. The transport 
+capacity of the flow decreases, the sediments coming from upstream are
+trapped in the pit. Downstream, the head decreases and the velocity 
+increases, the transport capacity increases and the flow must therefore
+take material to restore the solid flow to its initial level
+(Figure 1). Thus, progressive deposition in the pit and progressive 
+erosion in the downstream portion of the channel are expected. 
+Overall, the pit moves downstream and deforms. 
+
+\section{Physical parameters}
+
+The physical parameters of the model are:
+
+\begin{table}[h!]
+   \begin{center}
+   \caption{Geometric, hydraulic and sedimentary characteristics}
+       \begin{tabular}{|c|c|}
+       \hline
+   Channel length& $L=30$ m \\ 
+   Channel width&$ B=0.5$ m \\
+   Channel slope& $I=0.001517$ \\  
+   Pit length& $L_f=3$ m \\
+   Pit slope& $p_f=0.1$ \\
+   Pit depth& $h_f=0.15$ m \\
+       \hline
+  Upstream inflow &$Q=0.09945$ m$^{3}$.s$^{-1}$ \\
+  Downstream water depth &$ H=0.39$ m \\
+  Strickler coefficient& $K=43$ m$^{1/3}$.s$^{-1}$\\
+       \hline  
+   Initial concentration& $C_s=0.21$ kg.m$^{-3}$ \\ 
+   Soil sand concentration& $C=1590 $ kg.m$^{-3}$\\
+   Mean diameter& $d_{50}=0.16$ mm \\
+   Settling velocity&$w_s=0.013$ m.s$^{-1}$ \\
+  \hline 
+     \end{tabular}
+     \end{center}
+\end{table}
+
+Figure \ref{fig:VR:init} shows the initial water depth and bottom 
+elevation.
+
+\begin{figure}[h]
+ \centering
+ \includegraphicsmaybe{[width=0.7\textwidth]}{../img/profile_init.png}
+ \caption{Initial configuration.}
+ \label{fig:VR:init}
+\end{figure}
+
+\section{Numerical parameters}
+
+The longitudinal space step is 50 m. The mascaret kernel is used 
+with a variable time step and a Courant number of 0.8.
+
+\section{Results}
+
+Figure \ref{fig:VR:final} shows the computed water depth and bottom
+elevation with a comparison with experimental data.
+
+\begin{figure}[h]
+ \centering
+ \includegraphicsmaybe{[width=0.7\textwidth]}{../img/profile_final.png}
+ \caption{Final results.}
+ \label{fig:VR:final}
+\end{figure}
+
+\section{Conclusion}
+
+\courlis is able to model the non-cohesive suspended sediment
+of the Van Rijn experiment.

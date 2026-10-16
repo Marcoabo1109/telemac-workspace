@@ -1,0 +1,121 @@
+\chapter{Newton}\label{chapter:Newton}
+
+\section{Purpose}
+
+The \cite{newton1951experimental}'s laboratory experiment presents the phenomenon of 
+progressive erosion in a channel with an erodible bottom:
+in a rectangular channel, fed by an upstream solid flow, 
+initially at equilibrium, the solid input is completely stopped. 
+Measurements of the evolution of the bottom are made up to 24 hours.
+
+\section{Description}
+
+The experiment takes place in two steps. In a rectangular channel,
+a state of dynamic equilibrium is obtained with the help of
+a sediment supply. The channel is assumed to be in equilibrium
+when the amount of sediment injected upstream is completely 
+transported downstream but also when the slope of the bottom and 
+that of the free surface become uniform. At the downstream end, 
+a weir was placed to maintain a constant water level during the 
+experiment. Once equilibrium is reached, the upstream supply of 
+sediment is stopped, which leads to a change in the bottom. The 
+solid concentration at the inlet becomes zero and thus lower than 
+the equilibrium concentration. To reach the latter, the system 
+erodes the sediments of the domain and tends to find a new equilibrium 
+state. The measurements are made during this second step, it is this 
+part of the experiment that is modeled.
+
+Total transport with dominant bedload was observed. This observation 
+may give an indication of the most suitable transport formula. 
+In addition, the presence of dunes on the bed was identified during 
+the experiment.
+
+Figure \ref{newton:fig:initial} shows the initial longitudinal
+profile of the flume.
+
+\begin{figure}[h]
+ \centering
+ \includegraphicsmaybe{[width=0.7\textwidth]}{../img/profile_init.png}
+ \caption{Initial longitudinal profile of the flume.}
+ \label{newton:fig:initial}
+\end{figure}
+
+\section{Physical parameters}
+
+\begin{table}[H] %create a central table
+   \begin{center}
+   \caption{Geometric, hydraulic and sedimentary characteristics of Newton's experiment} %legende
+       \begin{tabular}{|c|c|} %beginning of the table
+       \hline %horizontal line
+   Length of the channel& $L=9.14$ m \\%the & symbolizes a horizontal line
+   Width of the channel&$ B=0.3048$ m \\
+   Slope of the channel& $I=0.00416$ \\
+   \hline
+  Upstream discharge &$Q=0.00566$ m$^{3}$.s$^{-1}$\\
+  Downstream water depth &$ H=0.041$ m \\
+  Mean velocity &$V=0.45$ m.s$^{-1}$ \\  
+    \hline
+   Concentration initially injected& $C_s=0.88$ kg.m$^{-3}$ \\
+   Concentration of the sand layer& $C=1610$ kg.m$^{-3}$ \\
+   Median diameter of the sand& $d_{50}=0.68$ mm \\   
+   Mass density of the sediment& $\rho_s = 2650$ kg.m$^{-3}$\\
+   Settling velocity of the sand& $w_s=0.09$ m.s$^{-1}$\\
+  \hline
+        \end{tabular}
+     \end{center}
+\end{table}
+
+The Strickler coefficient is determined by a calibration on the
+initial water line: $K_h = 69$ m$^{1/3}$.s$^{-1}$. 
+The bedload transport formula chosen is Meyer-Peter and Muller
+formula.
+The friction 
+coefficient for the transport formula has been set to 69 
+m$^{1/3}$.s$^{-1}$ and the skin friction coefficient to 88
+m$^{1/3}$.s$^{-1}$.
+
+\section{Numerical parameters}
+
+The mesh size is refined at the beginning of the channel (5cm mesh). 
+For the rest of the domain, the meshes are every 25cm.
+
+The model is run with the 3 kernels. The time step is set to 1 s with 
+Sarap, 0.1 s with Rezo and it is variable with mascaret, respecting 
+a Courant number of 0.8.
+
+\section{Results}
+
+Figure \ref{newton:fig:sarap} shows the results with the Sarap kernel
+in comparison with experimental data.
+
+\begin{figure}[h]
+ \centering
+ \includegraphicsmaybe{[width=0.7\textwidth]}{../img/profile_T_sarap.png}
+ \caption{Sarap results and diffenrent times.}
+ \label{newton:fig:sarap}
+\end{figure}
+
+Figure \ref{newton:fig:rezo} shows the results with the Rezo kernel
+in comparison with experimental data.
+
+\begin{figure}[h]
+ \centering
+ \includegraphicsmaybe{[width=0.7\textwidth]}{../img/profile_T_rezodt.png}
+ \caption{Rezo results and diffenrent times.}
+ \label{newton:fig:rezo}
+\end{figure}
+
+Figure \ref{newton:fig:mascaret} shows the results with the Rezo kernel
+in comparison with experimental data.
+
+\begin{figure}[h]
+ \centering
+ \includegraphicsmaybe{[width=0.7\textwidth]}{../img/profile_T_mascaret.png}
+ \caption{Mascaret results and diffenrent times.}
+ \label{newton:fig:mascaret}
+\end{figure}
+
+\section{Conclusion}
+
+Courlis is able to represent the erosion of a laboratory channel 
+experimental data, with every hydraulic kernels.

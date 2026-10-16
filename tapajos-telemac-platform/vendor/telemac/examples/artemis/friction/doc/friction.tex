@@ -1,0 +1,189 @@
+\chapter{Friction on sandy bottom.}
+\section{Summary}
+The aim of this test case is to analyze the behavior of Artemis when damping
+swell heigh due to bottom friction forces.
+The results are compared with experimental results obtained on a physical
+model by Inman \& Bowen \cite{Inman1962}. They are used to verify that the
+Artemis code correctly take into account bottom friction.
+
+\section{description of the test case}
+The case modeled is the one described in \cite{Inman1962}. Wave damping is
+simulated using the bottom friction calculated by Artemis on the basis of
+sediment characteristics (grain diameters $d_{50}$ and $d_{90}$). Artemis automatically
+calculates the overall roughness which takes into account both skin friction
+and shape friction.
+
+This roughness, together with the type of flow (laminar or turbulent),
+then determines the friction factor used in formulating the dissipation
+coefficient. The friction formulation used here is the one of Putnam \&
+Johnson \cite{Putman1949}. The results considering only skin roughness are
+also presented.
+
+
+\subsection{Formulas}
+The general roughness formula used is as follows:
+$$
+k = k_p + k_f
+$$
+$k_p$ is the skin roughness, which depends on the size of grain and on
+the type of flow:
+\begin{equation}
+\begin{array}{ll} 
+k_p = 3 d_{90} & \mbox{ for } \Theta < 1 \\[6pt]
+k_p = 3 \Theta d_{90}  & \mbox{ for } \Theta \ge  1
+\end{array}
+\end{equation}
+$\Theta$ is the Shields mobility parameter, relative to the flow, which
+expresses the ratio between the force resulting from the shear stress on
+the grain and the immersed weight of the grain calculated as a function of
+$d_{50}$ (Van Rijn \cite{VanRijn1993}).
+
+
+$k_f$ represents the shape roughness, i.e. the roughness due to the formation of wrinkles, we use the formula proposed by Van Rijn \cite{VanRijn1993}:
+$$
+k_f = 20 \Gamma_r \Delta_r (\frac{\Delta_r}{\lambda_r})
+$$
+\begin{itemize}
+\item $\Delta_r$ Wrinkles height
+\item $\lambda_r$ Wrinkles wavelength
+\item $\Gamma_r$ Wrinkle presence factor (equal to 1 for wrinkles alone, equal to 0.7 for wrinkles
+  superposed on sand waves). Here, it is equal to 0.7.
+  \end{itemize}
+
+Once the roughness has been calculated, we can obtain the friction factor $f_w$,
+whose formula depends on the type of flow. For rough turbulent flow, we use the
+expression given by Van Rijn \cite{VanRijn1993}. Finally, we get the expression
+for the shear stress due to the Putnam \& Johnson formula \cite{Putnam1949}.
+
+\subsection{Geometry}
+Domain: 20 m x 2 m
+
+Water depth: 0.5 m
+\subsection{Mesh}
+Triangular elements: 1896
+
+Taille des mailles: 0.13 m (longitudinal max)
+
+Nodes: 1169
+
+\begin{figure}[h]
+\begin{center}
+  \includegraphicsmaybe{[width=0.6\textwidth]}{../img/Mesh.png}
+\end{center}
+\caption{Mesh of the case}
+\label{fig:friction_Mesh}
+\end{figure}
+
+\subsection{Sediments}
+Caracteristical diameters:
+\begin{itemize}
+\item $D_{50}$ = 0.2 mm
+\item $D_{90}$ = 0.3 mm
+\end{itemize}
+
+\subsection{Boundary conditions}
+\begin{figure}[h]
+\begin{center}
+  \includegraphicsmaybe{[width=0.6\textwidth]}{boundary.png}
+\end{center}
+\caption{boundary conditions}
+\label{fig:friction_boundary}
+\end{figure}
+
+
+Houle incidente :
+\begin{itemize}
+\item Period: 2 s
+\item swell height: 0.175 m
+\item Phase (ALFAP): 0 (on all the liquid boundary)
+\item Propagation direction de propagation: $0^\circ$
+\end{itemize}
+Solid Wall:
+\begin{itemize}
+\item Reflection Coefficient: 1
+\item Dephasing: 0
+\item Attack angle: $0^\circ$
+\end{itemize}
+Liquid wall:
+\begin{itemize}
+  \item Reflexion coefficient: 0
+\item Dephasing: 0
+\item Attack angle: $0^\circ$
+\end{itemize}
+  
+\subsection{Solver}
+The direct solver (solver = 8) was used with
+accuracy of $10^{-4}$. Calculation time is less than 1 second.
+
+\section{Results}
+The experimental results obtained in \cite{CERC1984} constitute the reference
+values, distributed over a section at y=1m. 
+
+The measurements were taken once ripple formation and sediment transport had reached a stable state.
+ripple formation and sediment transport have reached a steady state. We compare the wave heights1
+obtained numerically and experimentally. We also compare the
+ripple characteristics.
+
+The comparison (figure \ref{fig:friction_comparison}) between wave height calculated by artemis and
+the ones obtained in  \cite{CERC1984} show good behavior. It highlights how well Artemis takes into
+account by Artemis of the frictional stresses exerted by the seabed and the reduction in swell height
+due to this friction.
+
+In addition, Table \ref{tab:friction_ripples} shows the results obtained for ripple characteristics
+with a friction factor
+$f_w$ = 0.17 (calculated by Artemis). The correlation with the results of Inman \& Bowen [1] is
+satisfactory. Artemis is therefore able to determine whether or not wrinkles are formed, and thus
+to deduce their characteristics.
+
+The height and wavelength of the ripples are much greater than the size of the sediment, which
+explains the poor results: the height and wavelength of the ripples are much greater than the size
+of the sediment, which explains the poor results obtained by considering only the skin roughness.
+
+\begin{figure}[h]
+\begin{center}
+  \includegraphicsmaybe{[width=0.9\textwidth]}{../img/Wave_height.png}
+\end{center}
+\caption{Wave height}
+\label{fig:friction_WH}
+\end{figure}
+
+\begin{figure}[h]
+\begin{center}
+  \includegraphicsmaybe{[width=0.9\textwidth]}{comparison.png}
+\end{center}
+\caption{Wave height Comparison with measure}
+\label{fig:friction_comparison}
+\end{figure}
+
+\begin{figure}[h]
+\begin{center}
+  \includegraphicsmaybe{[width=0.9\textwidth]}{../img/profile.png}
+\end{center}
+\caption{Wave height of last calculation on the profile}
+\label{fig:friction_profile}
+\end{figure}
+
+\begin{table}
+  \begin{center}
+\begin{tabular*}{0.5\linewidth}{@{\extracolsep{\fill}}ccc}
+\toprule
+\toprule
+& $\Delta_r(cm)$&$\lambda_r$(cm) \\
+Artemis&1.5&8.6\\
+Berkhoff&1.5&10.8\\
+\bottomrule
+\bottomrule
+\end{tabular*}
+\caption{Heigth and wavelength of the ripples}
+\label{tab:friction_ripples}
+\end{center}
+\end{table}
+\section{Conclusions}
+This test case compares the results produced by Artemis with experimental results. It
+validates the inclusion of bottom friction and the calculation of ripple characteristics by Artemis.
+
+In this case, Artemis calculates the friction factor from the size of the sediments.
+sediments. However, it is possible to impose it if the user wishes or if the bottom
+is not sandy. However, the values imposed are often taken from classic tables which
+generally determined for stationary flows. Here, however, the flow is
+oscillating because it is subject to wave action.
