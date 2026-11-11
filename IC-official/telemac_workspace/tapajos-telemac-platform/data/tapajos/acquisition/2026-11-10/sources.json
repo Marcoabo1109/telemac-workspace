@@ -1,0 +1,44 @@
+[
+  {
+    "id": "chm_stations",
+    "url": "https://www.marinha.mil.br/chm/estacoes-fluviometricas?page=1",
+    "status": "retrieval_failed",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "id": "dnit_pmh",
+    "url": "https://www.gov.br/dnit/pt-br/assuntos/aquaviario/programa-de-monitoramento-hidroviario-pmh",
+    "resolved_url": "https://www.gov.br/dnit/pt-br/assuntos/aquaviario/programa-de-monitoramento-hidroviario-pmh",
+    "retrieved_on": "2026-11-10",
+    "sha256": "c5351524527bf2434297a181980053a64f511db05227933c8bc0bcbec7caffc1",
+    "bytes": 153353,
+    "path": "raw/dnit_pmh.html",
+    "status": "downloaded_documentation",
+    "fitness": "context_only",
+    "license": "Review source terms before redistribution"
+  },
+  {
+    "id": "dnit_tapajos",
+    "url": "https://www.gov.br/dnit/pt-br/assuntos/aquaviario/intervencao-em-hidrovias/hidrovias-1/hidrovia-do-tapajos-teles-pires",
+    "resolved_url": "https://www.gov.br/dnit/pt-br/assuntos/aquaviario/intervencao-em-hidrovias/hidrovias-1/hidrovia-do-tapajos-teles-pires",
+    "retrieved_on": "2026-11-10",
+    "sha256": "d0ce65d7559700498443beaed3b99911844010e6a6e2ffd1fbe567c46c4b1bc0",
+    "bytes": 157201,
+    "path": "raw/dnit_tapajos.html",
+    "status": "downloaded_documentation",
+    "fitness": "context_only",
+    "license": "Review source terms before redistribution"
+  },
+  {
+    "id": "dnit_act0012025_plan",
+    "url": "https://www.gov.br/dnit/pt-br/acesso-a-informacao/convenios/acordos-de-cooperacao-tecnica/2025/acordo-de-cooperacao-tecnica-no-001-2025-daq/act0012025daqPT.pdf",
+    "retrieved_on": "2026-11-10",
+    "path": "raw/dnit_act0012025_plano.pdf",
+    "sha256": "6904618c10e4a1da9654c1d3ebcaeb4a282a680f6f37c6ff3e8c11f8818fdf82",
+    "bytes": 400638,
+    "status": "downloaded_documentation",
+    "fitness": "context_only_not_bathymetric_points",
+    "license": "Public access; redistribution terms not established; keep raw local",
+    "sei_process": "50600.027534/2024-78"
+  }
+]

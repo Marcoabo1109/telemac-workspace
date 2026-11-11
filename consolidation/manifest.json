@@ -4718,8 +4718,8 @@
   {
     "source": "IC-official/telemac_workspace/tapajos-telemac-platform/docs/STATUS.md",
     "published": "IC-official/telemac_workspace/tapajos-telemac-platform/docs/STATUS.md",
-    "bytes": 9601,
-    "sha256": "57536821d774229340356bcdd4d62a3242b67a82205ec85011c975bad1d95d70",
+    "bytes": 9885,
+    "sha256": "486f064b4814fff5460572a94f29d627f1f918956f60654f63f2e2efbc700582",
     "gzip": false
   },
   {
@@ -5033,8 +5033,8 @@
   {
     "source": "IC-official/telemac_workspace/tapajos-telemac-platform/data/tapajos/catalog.json",
     "published": "IC-official/telemac_workspace/tapajos-telemac-platform/data/tapajos/catalog.json",
-    "bytes": 17035,
-    "sha256": "cfdaaac453d5c19347a2d4460860143612fbeb63ba26a0359c37631360c3b0ad",
+    "bytes": 19739,
+    "sha256": "2ede6960cda038d013063412a4358505344fc573d12bf350dfffd5b517533934",
     "gzip": false
   },
   {
@@ -80803,6 +80803,48 @@
     "published": "tapajos-telemac-platform/reports/culm_smoke/results.vtk",
     "bytes": 177628,
     "sha256": "8d42fca79df37602b3dd724e8a8228478a627a96c8d86d080e694d5623069c8d",
+    "gzip": false
+  },
+  {
+    "source": "IC-official/telemac_workspace/tapajos-telemac-platform/docs/DATA_ACQUISITION_2026-11-10.md",
+    "published": "IC-official/telemac_workspace/tapajos-telemac-platform/docs/DATA_ACQUISITION_2026-11-10.md",
+    "bytes": 4309,
+    "sha256": "e37dacada022c9284fd9b911e1da0cd9fa497a800e78e60891b13cc025d5ed22",
+    "gzip": false
+  },
+  {
+    "source": "IC-official/telemac_workspace/tapajos-telemac-platform/scripts/audit_validation_windows.py",
+    "published": "IC-official/telemac_workspace/tapajos-telemac-platform/scripts/audit_validation_windows.py",
+    "bytes": 3826,
+    "sha256": "528ac82e449e9e7e0e228ed83106c10310a00dd9d159d6b8ed15ca9df17c3539",
+    "gzip": false
+  },
+  {
+    "source": "IC-official/telemac_workspace/tapajos-telemac-platform/data/tapajos/acquisition/2026-11-10/sources.json",
+    "published": "IC-official/telemac_workspace/tapajos-telemac-platform/data/tapajos/acquisition/2026-11-10/sources.json",
+    "bytes": 1982,
+    "sha256": "4b2efb8038b8e04e421cd4636f1b64cc4841d4f99599a32963dc9c80b1279e32",
+    "gzip": false
+  },
+  {
+    "source": "IC-official/telemac_workspace/tapajos-telemac-platform/data/tapajos/acquisition/2026-11-10/validation_2008_daily.csv",
+    "published": "IC-official/telemac_workspace/tapajos-telemac-platform/data/tapajos/acquisition/2026-11-10/validation_2008_daily.csv",
+    "bytes": 14671,
+    "sha256": "09e7f540107d389b5670567a59cb87a1a1f01591caeb9c047af82dab82cedade",
+    "gzip": false
+  },
+  {
+    "source": "IC-official/telemac_workspace/tapajos-telemac-platform/data/tapajos/acquisition/2026-11-10/.gitignore",
+    "published": "IC-official/telemac_workspace/tapajos-telemac-platform/data/tapajos/acquisition/2026-11-10/.gitignore",
+    "bytes": 5,
+    "sha256": "e138ca829d938927384c82d7f176eaa6c61a82bd28ba28320ddd736a505c3b4f",
+    "gzip": false
+  },
+  {
+    "source": "IC-official/telemac_workspace/tapajos-telemac-platform/data/tapajos/acquisition/2026-11-10/validation_windows.json",
+    "published": "IC-official/telemac_workspace/tapajos-telemac-platform/data/tapajos/acquisition/2026-11-10/validation_windows.json",
+    "bytes": 3039,
+    "sha256": "133f6b2044e37361c9c97152f4cfd2e5745a78d8d4f8aca9168ac7dc937eda49",
     "gzip": false
   }
 ]

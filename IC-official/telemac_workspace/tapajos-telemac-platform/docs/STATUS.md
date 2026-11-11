@@ -87,3 +87,7 @@ Para encerrar apenas a plataforma criada: o mesmo comando Compose seguido de `st
 - Corrigida associação de fronteiras após inspecionar o log do solver: saída 1, entrada 2. Execução sem profundidades negativas e com transporte ativo. A primeira tentativa inconsistente foi rejeitada; seus artefatos temporários não integram o relatório publicado.
 - 22 testes Python aprovados; frontend compilado. O aplicativo inicia no cenário Tapajós e mantém Culm disponível.
 - Cenário sem calibração, convergência de malha ou química de metais; limites científicos preservados.
+
+## Coleta em 10/11/2026
+
+Auditoria confirmou 2008 com 366 dias comuns nas quatro séries de controle, sem interpolação. Candidato de validação alinhado, fontes DNIT registradas e bloqueios de datum/batimetria mantidos. Ver [relatório da rodada](DATA_ACQUISITION_2026-11-10.md).

@@ -1,0 +1,93 @@
+{
+  "date": "2026-11-10",
+  "calibration_year": 2007,
+  "sources": {
+    "q_acara_m3_s": {
+      "path": "data/tapajos/stations/processed/ana_17650002_discharge_consisted_1996-01-01_2011-01-31.csv",
+      "sha256": "af13c3c7a9416783437ca77205933125b88ada5369e79640f13c217e41e5a8d9",
+      "unit": "m3/s"
+    },
+    "h_itaituba_cm": {
+      "path": "data/tapajos/stations/processed/ana_17730000_stage_consisted_1974-01-01_2014-05-31.csv",
+      "sha256": "711a190aa6add6026407b1bbebbe3094fc96153a2cc54b4f5706f330eaf1831f",
+      "unit": "cm"
+    },
+    "q_bubure_m3_s": {
+      "path": "data/tapajos/stations/processed/ana_17710000_discharge_consisted_2004-10-21_2025-10-29.csv",
+      "sha256": "8e003fcd9273703a7c1806a2e8db197f3235ab8b998b6e8f7c52766cdd3d0777",
+      "unit": "m3/s"
+    },
+    "h_bubure_cm": {
+      "path": "data/tapajos/stations/processed/ana_17710000_stage_consisted_1995-06-16_2023-12-31.csv",
+      "sha256": "ce6039728cc6bd504f99bfe0b4bbc83ae0086dcc1b089cc226c1428d5d212e20",
+      "unit": "cm"
+    }
+  },
+  "years": {
+    "2005": {
+      "expected_days": 365,
+      "common_valid_days": 365,
+      "coverage_percent": 100.0,
+      "missing_by_series": {
+        "q_acara_m3_s": [],
+        "h_itaituba_cm": [],
+        "q_bubure_m3_s": [],
+        "h_bubure_cm": []
+      },
+      "complete": true,
+      "role": "validation_candidate"
+    },
+    "2006": {
+      "expected_days": 365,
+      "common_valid_days": 365,
+      "coverage_percent": 100.0,
+      "missing_by_series": {
+        "q_acara_m3_s": [],
+        "h_itaituba_cm": [],
+        "q_bubure_m3_s": [],
+        "h_bubure_cm": []
+      },
+      "complete": true,
+      "role": "validation_candidate"
+    },
+    "2007": {
+      "expected_days": 365,
+      "common_valid_days": 365,
+      "coverage_percent": 100.0,
+      "missing_by_series": {
+        "q_acara_m3_s": [],
+        "h_itaituba_cm": [],
+        "q_bubure_m3_s": [],
+        "h_bubure_cm": []
+      },
+      "complete": true,
+      "role": "calibration_candidate"
+    },
+    "2008": {
+      "expected_days": 366,
+      "common_valid_days": 366,
+      "coverage_percent": 100.0,
+      "missing_by_series": {
+        "q_acara_m3_s": [],
+        "h_itaituba_cm": [],
+        "q_bubure_m3_s": [],
+        "h_bubure_cm": []
+      },
+      "complete": true,
+      "role": "validation_candidate"
+    }
+  },
+  "status": "coverage_audited_not_physically_validated",
+  "reserved_validation_year": 2008,
+  "limitations": [
+    "Coverage does not validate station representativeness or observation accuracy.",
+    "Itaituba is a boundary condition, not an independent internal validation gauge.",
+    "Bubure and Acara require spatial and routing checks.",
+    "Vertical datum, surveyed bathymetry and surveyed banks remain unresolved.",
+    "No interpolation, vertical correction or model execution performed."
+  ],
+  "derived_output": {
+    "path": "data/tapajos/acquisition/2026-11-10/validation_2008_daily.csv",
+    "sha256": "09e7f540107d389b5670567a59cb87a1a1f01591caeb9c047af82dab82cedade"
+  }
+}

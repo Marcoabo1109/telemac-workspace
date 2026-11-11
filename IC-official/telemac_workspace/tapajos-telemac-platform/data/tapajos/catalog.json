@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "project": "Tapajós TELEMAC research platform",
-  "updated_on": "2026-10-01",
+  "updated_on": "2026-11-10",
   "datasets": [
     {
       "id": "osm-river-axis",
@@ -186,8 +186,14 @@
         "end": "2007-12-31"
       },
       "variables": [
-        { "name": "upstream discharge", "unit": "m3/s" },
-        { "name": "downstream local-gauge stage", "unit": "m" }
+        {
+          "name": "upstream discharge",
+          "unit": "m3/s"
+        },
+        {
+          "name": "downstream local-gauge stage",
+          "unit": "m"
+        }
       ],
       "limitations": [
         "Template de forçante, não cenário calibrado ou pronto para execução científica.",
@@ -212,8 +218,15 @@
       "category": "bathymetry",
       "status": "missing",
       "fitness": "required",
-      "variables": [{ "name": "bed elevation", "unit": "m" }],
-      "limitations": ["DEM terrestre não substitui profundidade submersa."]
+      "variables": [
+        {
+          "name": "bed elevation",
+          "unit": "m"
+        }
+      ],
+      "limitations": [
+        "DEM terrestre não substitui profundidade submersa."
+      ]
     },
     {
       "id": "daily-discharge",
@@ -259,7 +272,12 @@
         "completeness_percent": 98.37,
         "consistency_level": 2
       },
-      "variables": [{ "name": "discharge", "unit": "m3/s" }],
+      "variables": [
+        {
+          "name": "discharge",
+          "unit": "m3/s"
+        }
+      ],
       "limitations": [
         "A janela comum com a cota de Itaituba é 1996-01-01 a 2011-01-31.",
         "A estação fica a montante do trecho de Itaituba; validar propagação e aportes laterais antes de aplicá-la ao contorno da malha.",
@@ -314,7 +332,12 @@
         "completeness_percent": 97.29,
         "consistency_level": 2
       },
-      "variables": [{ "name": "stage", "unit": "cm" }],
+      "variables": [
+        {
+          "name": "stage",
+          "unit": "cm"
+        }
+      ],
       "limitations": [
         "A série termina em 2014-05-31 apesar da consulta até 2024.",
         "Há 400 dias ausentes; nenhuma lacuna foi interpolada.",
@@ -328,7 +351,12 @@
       "category": "vertical_datum",
       "status": "missing",
       "fitness": "required",
-      "variables": [{ "name": "gauge offset", "unit": "m" }],
+      "variables": [
+        {
+          "name": "gauge offset",
+          "unit": "m"
+        }
+      ],
       "limitations": [
         "Obrigatório antes de converter cota da régua em elevação de contorno."
       ]
@@ -339,8 +367,15 @@
       "category": "sediment",
       "status": "missing",
       "fitness": "required",
-      "variables": [{ "name": "grain-size fractions", "unit": "fraction" }],
-      "limitations": ["Necessária para parametrização GAIA defensável."]
+      "variables": [
+        {
+          "name": "grain-size fractions",
+          "unit": "fraction"
+        }
+      ],
+      "limitations": [
+        "Necessária para parametrização GAIA defensável."
+      ]
     },
     {
       "id": "suspended-sediment",
@@ -349,7 +384,10 @@
       "status": "missing",
       "fitness": "required",
       "variables": [
-        { "name": "suspended sediment concentration", "unit": "kg/m3" }
+        {
+          "name": "suspended sediment concentration",
+          "unit": "kg/m3"
+        }
       ],
       "limitations": [
         "Deve possuir método de amostragem, datas e limites de detecção."
@@ -361,7 +399,12 @@
       "category": "metals",
       "status": "missing",
       "fitness": "required",
-      "variables": [{ "name": "metal concentration", "unit": "ug/L or mg/kg" }],
+      "variables": [
+        {
+          "name": "metal concentration",
+          "unit": "ug/L or mg/kg"
+        }
+      ],
       "limitations": [
         "Separar fase dissolvida, particulada e sedimento; registrar limites de detecção."
       ]
@@ -373,10 +416,60 @@
       "status": "missing",
       "fitness": "required",
       "variables": [
-        { "name": "partition/reaction parameters", "unit": "method-specific" }
+        {
+          "name": "partition/reaction parameters",
+          "unit": "method-specific"
+        }
       ],
       "limitations": [
         "Não assumir proporcionalidade linear sem base experimental ou bibliográfica revisada."
+      ]
+    },
+    {
+      "id": "validation-2008-forcing-candidate",
+      "title": "Forçantes observadas alinhadas de 2008 — candidato reservado à validação",
+      "category": "boundary_series",
+      "status": "derived",
+      "fitness": "exploration_only",
+      "local_path": "data/tapajos/acquisition/2026-11-10/validation_2008_daily.csv",
+      "sha256": "09e7f540107d389b5670567a59cb87a1a1f01591caeb9c047af82dab82cedade",
+      "source": {
+        "institution": "ANA; alinhamento local das séries consistidas preservadas",
+        "url": "https://www.snirh.gov.br/hidroweb/",
+        "retrieved_on": "2026-11-10",
+        "license": "Dados derivados de séries ANA já preservadas; proveniência individual em validation_windows.json"
+      },
+      "spatial_reference": {
+        "horizontal_crs": null,
+        "vertical_datum": "Zeros locais das réguas de Itaituba e Buburé; sem transformação geodésica"
+      },
+      "temporal": {
+        "kind": "daily",
+        "start": "2008-01-01",
+        "end": "2008-12-31"
+      },
+      "variables": [
+        {
+          "name": "q_acara_m3_s",
+          "unit": "m3/s"
+        },
+        {
+          "name": "h_itaituba_cm",
+          "unit": "cm"
+        },
+        {
+          "name": "q_bubure_m3_s",
+          "unit": "m3/s"
+        },
+        {
+          "name": "h_bubure_cm",
+          "unit": "cm"
+        }
+      ],
+      "limitations": [
+        "366 dias comuns sem interpolação; cobertura não comprova calibração.",
+        "Datum, geometria levantada e observações internas independentes ainda ausentes.",
+        "Itaituba é contorno; Buburé e Acará exigem avaliação espacial."
       ]
     }
   ],
@@ -385,22 +478,35 @@
       "id": "exploratory-demo",
       "title": "Demonstração exploratória",
       "requirements": [
-        { "dataset_id": "osm-river-axis", "accepted_statuses": ["available"] },
+        {
+          "dataset_id": "osm-river-axis",
+          "accepted_statuses": [
+            "available"
+          ]
+        },
         {
           "dataset_id": "sgb-itaituba-monthly-stage-statistics",
-          "accepted_statuses": ["available"]
+          "accepted_statuses": [
+            "available"
+          ]
         },
         {
           "dataset_id": "exploratory-domain",
-          "accepted_statuses": ["derived"]
+          "accepted_statuses": [
+            "derived"
+          ]
         },
         {
           "dataset_id": "exploratory-bathymetry",
-          "accepted_statuses": ["derived"]
+          "accepted_statuses": [
+            "derived"
+          ]
         },
         {
           "dataset_id": "exploratory-boundary-series",
-          "accepted_statuses": ["derived"]
+          "accepted_statuses": [
+            "derived"
+          ]
         }
       ]
     },
@@ -410,17 +516,33 @@
       "requirements": [
         {
           "dataset_id": "surveyed-bank-polygon",
-          "accepted_statuses": ["available"]
+          "accepted_statuses": [
+            "available"
+          ]
         },
         {
           "dataset_id": "surveyed-bathymetry",
-          "accepted_statuses": ["available"]
+          "accepted_statuses": [
+            "available"
+          ]
         },
-        { "dataset_id": "daily-discharge", "accepted_statuses": ["available"] },
-        { "dataset_id": "daily-stage", "accepted_statuses": ["available"] },
+        {
+          "dataset_id": "daily-discharge",
+          "accepted_statuses": [
+            "available"
+          ]
+        },
+        {
+          "dataset_id": "daily-stage",
+          "accepted_statuses": [
+            "available"
+          ]
+        },
         {
           "dataset_id": "vertical-datum-tie",
-          "accepted_statuses": ["available"]
+          "accepted_statuses": [
+            "available"
+          ]
         }
       ]
     },
@@ -430,21 +552,39 @@
       "requirements": [
         {
           "dataset_id": "surveyed-bathymetry",
-          "accepted_statuses": ["available"]
+          "accepted_statuses": [
+            "available"
+          ]
         },
-        { "dataset_id": "daily-discharge", "accepted_statuses": ["available"] },
-        { "dataset_id": "daily-stage", "accepted_statuses": ["available"] },
+        {
+          "dataset_id": "daily-discharge",
+          "accepted_statuses": [
+            "available"
+          ]
+        },
+        {
+          "dataset_id": "daily-stage",
+          "accepted_statuses": [
+            "available"
+          ]
+        },
         {
           "dataset_id": "vertical-datum-tie",
-          "accepted_statuses": ["available"]
+          "accepted_statuses": [
+            "available"
+          ]
         },
         {
           "dataset_id": "bed-granulometry",
-          "accepted_statuses": ["available"]
+          "accepted_statuses": [
+            "available"
+          ]
         },
         {
           "dataset_id": "suspended-sediment",
-          "accepted_statuses": ["available"]
+          "accepted_statuses": [
+            "available"
+          ]
         }
       ]
     },
@@ -454,19 +594,27 @@
       "requirements": [
         {
           "dataset_id": "bed-granulometry",
-          "accepted_statuses": ["available"]
+          "accepted_statuses": [
+            "available"
+          ]
         },
         {
           "dataset_id": "suspended-sediment",
-          "accepted_statuses": ["available"]
+          "accepted_statuses": [
+            "available"
+          ]
         },
         {
           "dataset_id": "metal-concentrations",
-          "accepted_statuses": ["available"]
+          "accepted_statuses": [
+            "available"
+          ]
         },
         {
           "dataset_id": "metal-partition-parameters",
-          "accepted_statuses": ["available"]
+          "accepted_statuses": [
+            "available"
+          ]
         }
       ]
     }

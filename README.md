@@ -34,3 +34,7 @@ Os cenários exploratórios e sintéticos não equivalem a modelos calibrados do
 ## Licenças e créditos
 
 As licenças existentes de cada componente foram preservadas. A plataforma possui sua própria licença e o TELEMAC mantém suas licenças e créditos de origem. Este agrupamento não altera a titularidade nem aplica uma licença única a dados e componentes de terceiros.
+
+## Atualização de dados — 10/11/2026
+
+[Relatório da coleta e auditoria](IC-official/telemac_workspace/tapajos-telemac-platform/docs/DATA_ACQUISITION_2026-11-10.md): candidato de validação de 2008 com 366 dias completos, inventário das fontes consultadas e pendências de batimetria/datum. Documentos brutos externos permanecem locais; o repositório inclui referências e hashes.
