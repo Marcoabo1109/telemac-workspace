@@ -73,6 +73,30 @@ CLASSES SHIELDS PARAMETERS = 0.047
 SKIN FRICTION CORRECTION = 1
 LAYERS NON COHESIVE BED POROSITY = 0.4
 """)
+    if cut:
+        # Mesma condição hidráulica e mesmo polígono nos dois braços.
+        mesh = read(RUN/"control.slf")
+        x, y, r = 170., 507., P["cut_radius_m"]
+        (RUN/"polygon.dat").write_text("NAME:201_Culm\n"+"".join(
+            f"{x+dx*r} {y+dy*r}\n" for dx,dy in [(-1,-1),(1,-1),(1,1),(-1,1)])+"ENDFILE\n")
+        inside = (abs(mesh.x-x)<r) & (abs(mesh.y-y)<r)
+        tri = mesh.ikle
+        area = abs((mesh.x[tri[:,1]]-mesh.x[tri[:,0]])*(mesh.y[tri[:,2]]-mesh.y[tri[:,0]]) -
+                   (mesh.y[tri[:,1]]-mesh.y[tri[:,0]])*(mesh.x[tri[:,2]]-mesh.x[tri[:,0]]))/2
+        volume = np.sum(area*inside[tri].mean(axis=1))*P["cut_depth_m"]
+        (RUN/"actions.dat").write_text(f"""RESTART = FALSE
+ACTION
+ActionType = Dig_by_time
+FieldDig = 201_Culm
+DigVolume = {volume:.6f}
+TimeStart = 1900.01.01-00:02:00
+TimeEnd = 1900.01.01-00:12:00
+ENDACTION
+ENDFILE
+""")
+        (RUN/"sections.dat").write_text("-1000 10000 0 -1000 -1000 0 0\n10000 10000 0 10000 -1000 0 11000\nEND\n")
+        with (RUN/f"{name}_gai.cas").open("a") as file:
+            file.write("NESTOR = YES\nNESTOR ACTION FILE = actions.dat\nNESTOR POLYGON FILE = polygon.dat\nNESTOR SURFACE REFERENCE FILE = sections.dat\n")
     solve(name,cas)
 
 
@@ -91,3 +115,6 @@ if __name__ == "__main__":
     elif stage=="bed":
         scenario("bed","control.slf",bed=True)
         scenario("bed_dye","tracer.slf",True,True)
+    elif stage=="cut":
+        scenario("cut","control.slf",bed=True,cut=True)
+        scenario("cut_dye","tracer.slf",True,True,True)
