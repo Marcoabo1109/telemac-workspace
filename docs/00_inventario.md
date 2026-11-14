@@ -24,3 +24,5 @@ O Dockerfile em tapajos-telemac-platform/docker fixa v8p5r0 e compila com compil
 - tapajos-telemac-platform .cas: 735, .cli: 305, .slf: 1169, .geo: 33, .f: 2089, .f90: 621, .py: 627, .sh: 13, .ipynb: 74
 - telemac-examples-ref .cas: 137, .cli: 70, .slf: 254, .f: 140, .py: 84
 - telemac2d_custom .py: 2
+
+O índice por arquivo está em consolidation/manifest.json. Exemplos de entradas da cadeia são data/culm/geo_culm.slf (BOTTOM e conectividade), geo_culm.cli (fronteiras), ini_culm.slf (continuação) e t2d_culm.qsl (cheia variável). Todos esses caminhos têm prefixo tapajos-telemac-platform. O caso-base usa a lei de Strickler no CAS. As rotinas Fortran de exemplos ficam em vendor/telemac/examples/*/*/user_fortran sob o mesmo prefixo. A nova cadeia dispensa subrotina de usuário. A configuração de referência alternativa do editor está em frontend/src/components/NestorEditor.jsx.

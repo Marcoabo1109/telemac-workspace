@@ -38,3 +38,32 @@ As licenças existentes de cada componente foram preservadas. A plataforma possu
 ## Atualização de dados — 10/11/2026
 
 [Relatório da coleta e auditoria](IC-official/telemac_workspace/tapajos-telemac-platform/docs/DATA_ACQUISITION_2026-11-10.md): candidato de validação de 2008 com 366 dias completos, inventário das fontes consultadas e pendências de batimetria/datum. Documentos brutos externos permanecem locais; o repositório inclui referências e hashes.
+
+## PoC do rio Culm
+
+O caso usa a malha integral distribuída do trecho do Culm. Os dados, o inventário e os critérios de seleção estão em docs/00_inventario.md e docs/01_selecao_caso.md. Requer Docker com acesso ao diretório do clone, Python 3.14 para o pós-processamento e LaTeX com latexmk para o relatório. A configuração GNU/OpenMPI do solver usa Python 3.11 dentro da imagem. Execute na raiz:
+
+```bash
+python3.14 -m venv .venv-poc
+source .venv-poc/bin/activate
+pip install -r poc/requirements.txt
+docker build -f tapajos-telemac-platform/docker/Dockerfile -t tapajos-telemac:source tapajos-telemac-platform
+export PYTHONPATH="$PWD:$PWD/tapajos-telemac-platform"
+python -m unittest discover -s tests
+python poc/run.py steady
+python poc/run.py tracer
+python poc/run.py bed
+python poc/run.py cut
+python poc/analyse.py
+(cd report && latexmk -pdf main.tex)
+```
+
+O notebook notebooks/PoC_telemac.ipynb executa a mesma sequência. Use o kernel do ambiente instalado. Cada cenário grava CAS, listagem e Selafin em poc/work. A última saída de r2d_culm.slf é o estado de continuação. As figuras e métricas ficam em poc/results. O JSON poc/parameters.json controla as comparações e tolerâncias. O CAS poc/steady.cas fixa a configuração hidrodinâmica do caso-base.
+
+Se Docker informar que não consegue abrir o socket, inicie o daemon. Em Linux, dê ao UID 1000 do contêiner acesso de escrita a poc/work. Se o solver não encontrar um arquivo, confira a etapa anterior e o primeiro erro em poc/work/*.log. A ausência de T1 na seleção de saídas omite o campo do traçador. O CLI sedimentológico precisa de código livre nas fronteiras abertas. A falta da seção de referência do Nestor interrompe sua saída de diagnóstico.
+
+Para executar o notebook sem interface gráfica no ambiente instalado:
+
+```bash
+jupyter nbconvert --to notebook --execute notebooks/PoC_telemac.ipynb --ExecutePreprocessor.timeout=300 --output=/tmp/PoC_executada.ipynb
+```

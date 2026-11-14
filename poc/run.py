@@ -22,6 +22,17 @@ def solve(name, cas):
                         P["image"],"/app/docker/run-telemac",f"{name}.cas"], stdout=log, stderr=subprocess.STDOUT,check=True)
 
 
+def steady_cas():
+    cas = (ROOT/"poc/steady.cas").read_text()
+    for key,value in {
+        "NUMBER OF TIME STEPS": P["steady_steps"], "TIME STEP": P["time_step_s"],
+        "GRAPHIC PRINTOUT PERIOD": P["steady_print_period"], "FRICTION COEFFICIENT": P["strickler"],
+        "PRESCRIBED FLOWRATES": f'{P["flow_m3_s"]};0.', "PRESCRIBED ELEVATIONS": f'0.;{P["outlet_m"]}'
+    }.items():
+        cas = re.sub(rf"^{key}\s*[:=].*$",f"{key} = {value}",cas,flags=re.M)
+    return cas
+
+
 def steady_test():
     m = read(RUN/"r2d_culm.slf")
     dt = m.times[-1]-m.times[-2]
@@ -33,8 +44,8 @@ def steady_test():
 
 
 def scenario(name, previous, tracer=False, bed=False, cut=False):
-    cas = (ROOT/"poc/steady.cas").read_text().replace("r2d_culm.slf",name+".slf").replace("ini_culm.slf",previous)
-    cas = cas.replace("= 27000",f'= {P["steps"]}').replace(": 1000",f': {P["print_period"]}').replace("=  250",f'= {P["print_period"]}')
+    cas = steady_cas().replace("r2d_culm.slf",name+".slf").replace("ini_culm.slf",previous)
+    cas = cas.replace(f'NUMBER OF TIME STEPS = {P["steady_steps"]}',f'NUMBER OF TIME STEPS = {P["steps"]}').replace(f'GRAPHIC PRINTOUT PERIOD = {P["steady_print_period"]}',f'GRAPHIC PRINTOUT PERIOD = {P["print_period"]}').replace("=  250",f'= {P["print_period"]}')
     if tracer:
         cas = cas.replace("geo_culm.cli","tracer.cli").replace("U,V,S,B,H","U,V,S,B,H,T1")
         cas += f"""
@@ -63,20 +74,21 @@ RESULTS FILE = {name}_gai.slf
 VARIABLES FOR GRAPHIC PRINTOUTS = 'B,E,TOB,QSBL'
 MASS-BALANCE = YES
 CLASSES TYPE OF SEDIMENT = 'NCO'
-CLASSES SEDIMENT DENSITY = 2650.
+CLASSES SEDIMENT DENSITY = {P["density_sediment"]}
 CLASSES SEDIMENT DIAMETERS = {P['diameter_m']}
 BED LOAD FOR ALL SANDS = YES
 SUSPENSION FOR ALL SANDS = NO
 BED-LOAD TRANSPORT FORMULA FOR ALL SANDS = 1
 MPM COEFFICIENT = 8.
-CLASSES SHIELDS PARAMETERS = 0.047
+CLASSES SHIELDS PARAMETERS = {P["shields"]}
 SKIN FRICTION CORRECTION = 1
-LAYERS NON COHESIVE BED POROSITY = 0.4
+LAYERS NON COHESIVE BED POROSITY = {P["porosity"]}
 """)
     if cut:
         # Mesma condição hidráulica e mesmo polígono nos dois braços.
         mesh = read(RUN/"control.slf")
-        x, y, r = 170., 507., P["cut_radius_m"]
+        x, y = P["cut_center_m"]
+        r = P["cut_radius_m"]
         (RUN/"polygon.dat").write_text("NAME:201_Culm\n"+"".join(
             f"{x+dx*r} {y+dy*r}\n" for dx,dy in [(-1,-1),(1,-1),(1,1),(-1,1)])+"ENDFILE\n")
         inside = (abs(mesh.x-x)<r) & (abs(mesh.y-y)<r)
@@ -106,15 +118,22 @@ if __name__ == "__main__":
     for filename in ["geo_culm.slf","geo_culm.cli","ini_culm.slf"]:
         shutil.copyfile(BASE/filename,RUN/filename)
     if stage=="steady":
-        solve("steady",(ROOT/"poc/steady.cas").read_text())
+        solve("steady",steady_cas())
         print(steady_test())
     elif stage=="tracer":
         steady_test()
         scenario("control","r2d_culm.slf")
         scenario("tracer","r2d_culm.slf",True)
     elif stage=="bed":
+        control, dye = [read(RUN/(key+".slf")) for key in ("control","tracer")]
+        if dye.field("DYE",-1).max()<=0 or any(not np.array_equal(control.field(key,-1),dye.field(key,-1)) for key in ("WATER DEPTH","VELOCITY U","VELOCITY V","BOTTOM")):
+            raise ValueError("Controle passivo reprovado")
         scenario("bed","control.slf",bed=True)
         scenario("bed_dye","tracer.slf",True,True)
     elif stage=="cut":
+        for key in ("bed","bed_dye"):
+            residual = re.search(r"CUMULATED LOST MASS \(INI-FINAL\+FLUXES\)\s+=\s*([-.\dE+]+)",(RUN/(key+".log")).read_text())
+            if not residual or abs(float(residual.group(1)))>0.01:
+                raise ValueError("Balanço sedimentológico reprovado")
         scenario("cut","control.slf",bed=True,cut=True)
         scenario("cut_dye","tracer.slf",True,True,True)

@@ -4,9 +4,22 @@
   "print_period": 60,
   "dispersion_m2_s": 0.5,
   "diameter_m": 0.001,
-  "steady_depth_rate": 0.00001,
-  "steady_velocity_rate": 0.00001,
+  "steady_depth_rate": 1e-05,
+  "steady_velocity_rate": 1e-05,
   "steady_flux_fraction": 0.001,
   "cut_radius_m": 85,
-  "cut_depth_m": 0.1
+  "cut_depth_m": 0.1,
+  "steady_steps": 27000,
+  "steady_print_period": 1000,
+  "time_step_s": 2,
+  "flow_m3_s": 28.32,
+  "outlet_m": 23.77,
+  "strickler": 30,
+  "cut_center_m": [
+    170,
+    507
+  ],
+  "density_sediment": 2650,
+  "porosity": 0.4,
+  "shields": 0.047
 }
