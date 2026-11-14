@@ -1,0 +1,12 @@
+{
+  "image": "tapajos-telemac:source",
+  "steps": 600,
+  "print_period": 60,
+  "dispersion_m2_s": 0.5,
+  "diameter_m": 0.001,
+  "steady_depth_rate": 0.00001,
+  "steady_velocity_rate": 0.00001,
+  "steady_flux_fraction": 0.001,
+  "cut_radius_m": 85,
+  "cut_depth_m": 0.1
+}
