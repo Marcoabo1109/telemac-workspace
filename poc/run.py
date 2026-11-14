@@ -51,9 +51,14 @@ COEFFICIENT FOR DIFFUSION OF TRACERS = {P['dispersion_m2_s']}
                 row[7] = "5"
         (RUN/"tracer.cli").write_text("".join(" ".join(r)+"\n" for r in rows))
     if bed:
+        rows = [s.split() for s in (BASE/"geo_culm.cli").read_text().splitlines()]
+        for row in rows:
+            if row[:3] != ["2","2","2"]:
+                row[7] = "4"
+        (RUN/"mor.cli").write_text("".join(" ".join(r)+"\n" for r in rows))
         cas += f"COUPLING WITH = 'GAIA'\nGAIA STEERING FILE = {name}_gai.cas\n"
         (RUN/f"{name}_gai.cas").write_text(f"""GEOMETRY FILE = geo_culm.slf
-BOUNDARY CONDITIONS FILE = geo_culm.cli
+BOUNDARY CONDITIONS FILE = mor.cli
 RESULTS FILE = {name}_gai.slf
 VARIABLES FOR GRAPHIC PRINTOUTS = 'B,E,TOB,QSBL'
 MASS-BALANCE = YES
